@@ -1,0 +1,14 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-file-tree",
+  "type": "registry:example",
+  "title": "File Tree Demo",
+  "description": "Animated file-tree with nested folders, file-type icons, and highlighted files.",
+  "registryDependencies": ["@unlumen-ui/file-tree"],
+  "files": [
+    {
+      "path": "registry/demo/primitives/unlumen/file-tree/index.tsx",
+      "type": "registry:example"
+    }
+  ]
+}

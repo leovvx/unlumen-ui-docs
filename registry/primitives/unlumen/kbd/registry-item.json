@@ -1,0 +1,14 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "kbd",
+  "type": "registry:ui",
+  "title": "Kbd",
+  "description": "Keyboard key and shortcut display component with a realistic keycap style.",
+  "files": [
+    {
+      "path": "registry/primitives/unlumen/kbd/index.tsx",
+      "type": "registry:ui",
+      "target": "components/unlumen-ui/primitives/unlumen/kbd.tsx"
+    }
+  ]
+}

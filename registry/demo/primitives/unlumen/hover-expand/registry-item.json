@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-hover-expand",
+  "type": "registry:example",
+  "title": "Hover Expand Demo",
+  "description": "Five travel destinations that expand vertically on hover to reveal a full-width photograph.",
+  "registryDependencies": ["@unlumen-ui/hover-expand"],
+  "files": [
+    {
+      "path": "registry/demo/primitives/unlumen/hover-expand/index.tsx",
+      "type": "registry:example"
+    }
+  ],
+  "meta": {
+    "demoProps": {
+      "HoverExpandDemo": {
+        "collapsedHeight": { "value": 68, "min": 48, "max": 120, "step": 4 },
+        "expandedHeight": { "value": 320, "min": 200, "max": 500, "step": 20 }
+      }
+    }
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "motion-navigation-menu",
+  "type": "registry:component",
+  "title": "Motion Navigation Menu",
+  "description": "A spring-animated navigation menu with a single morphing container, layout-animated active pill, and direction-aware content transitions.",
+  "dependencies": [
+    "framer-motion",
+    "lucide-react",
+    "class-variance-authority"
+  ],
+  "registryDependencies": [
+    "@unlumen-ui/highlight"
+  ],
+  "files": [
+    {
+      "path": "registry/primitives/unlumen/motion-navigation-menu/index.tsx",
+      "type": "registry:component",
+      "target": "components/unlumen-ui/primitives/unlumen/motion-navigation-menu.tsx"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "math-graph",
+  "type": "registry:ui",
+  "title": "Math Graph",
+  "description": "A real-time visual math function builder with animated SVG curves, a pan/zoom canvas, crosshair tooltip, and support for multiple expressions simultaneously.",
+  "dependencies": [
+    "motion",
+    "react-use-measure"
+  ],
+  "files": [
+    {
+      "path": "registry/primitives/unlumen/math-graph/index.tsx",
+      "type": "registry:ui",
+      "target": "components/unlumen-ui/primitives/unlumen/math-graph.tsx"
+    }
+  ]
+}

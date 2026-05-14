@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "cursor-image-trail",
+  "type": "registry:ui",
+  "title": "Cursor Image Trail",
+  "description": "A trail of images that follows the cursor with spring-physics fade and rotation.",
+  "dependencies": [
+    "motion"
+  ],
+  "files": [
+    {
+      "path": "registry/primitives/unlumen/cursor-image-trail/index.tsx",
+      "type": "registry:ui",
+      "target": "components/unlumen-ui/primitives/unlumen/cursor-image-trail.tsx"
+    }
+  ]
+}

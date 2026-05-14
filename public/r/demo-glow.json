@@ -8,8 +8,8 @@
   ],
   "files": [
     {
-      "path": "registry/demo/components/buttons/glow/index.tsx",
-      "content": "\"use client\";\n\nimport {\n  ArrowRight01Icon as ArrowRight,\n  SparklesIcon as Sparkles,\n  FlashIcon as Zap,\n} from \"hugeicons-react\";\n\nimport {\n  GlowButton,\n  type GlowButtonProps,\n} from \"@/components/unlumen-ui/glow\";\n\ntype GlowButtonDemoProps = Pick<\n  GlowButtonProps,\n  \"mode\" | \"blur\" | \"duration\" | \"glowScale\"\n>;\n\nexport const GlowButtonDemo = ({\n  mode = \"rotate\",\n  blur = \"strong\",\n  duration = 5,\n  glowScale = 1,\n}: GlowButtonDemoProps) => {\n  return (\n    <div className=\"flex min-h-[240px] flex-wrap items-center justify-center gap-6 p-10\">\n      <GlowButton\n        mode={mode}\n        blur={blur}\n        duration={duration}\n        glowScale={glowScale}\n        colors={[\"#FF5733\", \"#33FF57\", \"#3357FF\", \"#F1C40F\"]}\n      >\n        Get Started\n        <ArrowRight />\n      </GlowButton>\n    </div>\n  );\n};\n",
+      "path": "registry/demo/primitives/buttons/glow/index.tsx",
+      "content": "\"use client\";\n\nimport {\n  ArrowRight01Icon as ArrowRight,\n  SparklesIcon as Sparkles,\n  FlashIcon as Zap,\n} from \"hugeicons-react\";\n\nimport {\n  GlowButton,\n  type GlowButtonProps,\n} from \"@/components/unlumen-ui/primitives/buttons/glow\";\n\ntype GlowButtonDemoProps = Pick<\n  GlowButtonProps,\n  \"mode\" | \"blur\" | \"duration\" | \"glowScale\"\n>;\n\nexport const GlowButtonDemo = ({\n  mode = \"rotate\",\n  blur = \"strong\",\n  duration = 5,\n  glowScale = 1,\n}: GlowButtonDemoProps) => {\n  return (\n    <div className=\"flex min-h-[240px] flex-wrap items-center justify-center gap-6 p-10\">\n      <GlowButton\n        mode={mode}\n        blur={blur}\n        duration={duration}\n        glowScale={glowScale}\n        colors={[\"#FF5733\", \"#33FF57\", \"#3357FF\", \"#F1C40F\"]}\n      >\n        Get Started\n        <ArrowRight />\n      </GlowButton>\n    </div>\n  );\n};\n",
       "type": "registry:example"
     }
   ],

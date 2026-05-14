@@ -8,8 +8,8 @@
   ],
   "files": [
     {
-      "path": "registry/demo/components/icons/sidebar-toggle-icon/index.tsx",
-      "content": "\"use client\";\n\nimport { useState } from \"react\";\nimport { SidebarToggleIcon } from \"@/components/unlumen-ui/sidebar-toggle-icon\";\n\ninterface SidebarToggleIconDemoProps {\n  strokeWidth?: number;\n}\n\nexport function SidebarToggleIconDemo({\n  strokeWidth,\n}: SidebarToggleIconDemoProps) {\n  const [isOpen, setIsOpen] = useState(false);\n\n  return (\n    <div className=\"flex flex-col items-center justify-center gap-6 p-8\">\n      <button\n        onClick={() => setIsOpen((prev) => !prev)}\n        className=\"flex items-center justify-center rounded-4xl hover:bg-accent hover:cursor-pointer p-3 text-foreground transition-colors\"\n        aria-label={isOpen ? \"Close sidebar\" : \"Open sidebar\"}\n      >\n        <SidebarToggleIcon\n          isOpen={isOpen}\n          strokeWidth={strokeWidth}\n          className=\"size-32\"\n        />\n      </button>\n    </div>\n  );\n}\n\nexport default SidebarToggleIconDemo;\n",
+      "path": "registry/demo/primitives/icons/sidebar-toggle-icon/index.tsx",
+      "content": "\"use client\";\n\nimport { useState } from \"react\";\nimport { SidebarToggleIcon } from \"@/components/unlumen-ui/primitives/icons/sidebar-toggle-icon\";\n\ninterface SidebarToggleIconDemoProps {\n  strokeWidth?: number;\n}\n\nexport function SidebarToggleIconDemo({\n  strokeWidth,\n}: SidebarToggleIconDemoProps) {\n  const [isOpen, setIsOpen] = useState(false);\n\n  return (\n    <div className=\"flex flex-col items-center justify-center gap-6 p-8\">\n      <button\n        onClick={() => setIsOpen((prev) => !prev)}\n        className=\"flex items-center justify-center rounded-4xl hover:bg-accent hover:cursor-pointer p-3 text-foreground transition-colors\"\n        aria-label={isOpen ? \"Close sidebar\" : \"Open sidebar\"}\n      >\n        <SidebarToggleIcon\n          isOpen={isOpen}\n          strokeWidth={strokeWidth}\n          className=\"size-32\"\n        />\n      </button>\n    </div>\n  );\n}\n\nexport default SidebarToggleIconDemo;\n",
       "type": "registry:example"
     }
   ],

@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "magnetic-button",
+  "type": "registry:ui",
+  "title": "Magnetic Button",
+  "description": "A button that magnetically follows cursor proximity with spring physics. Smoothly snaps back when the cursor leaves.",
+  "dependencies": [
+    "motion",
+    "class-variance-authority"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "registry/primitives/unlumen/magnetic-button/index.tsx",
+      "type": "registry:ui",
+      "target": "components/unlumen-ui/primitives/unlumen/magnetic-button.tsx"
+    }
+  ]
+}

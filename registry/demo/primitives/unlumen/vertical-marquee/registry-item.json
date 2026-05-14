@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-vertical-marquee",
+  "type": "registry:example",
+  "title": "Vertical Marquee Demo",
+  "description": "Two-column vertical tweet marquee scrolling in opposite directions with progressive fade edges.",
+  "registryDependencies": ["@unlumen-ui/vertical-marquee"],
+  "files": [
+    {
+      "path": "registry/demo/primitives/unlumen/vertical-marquee/index.tsx",
+      "type": "registry:example"
+    }
+  ],
+  "meta": {
+    "demoProps": {
+      "VerticalMarqueeDemo": {}
+    }
+  }
+}

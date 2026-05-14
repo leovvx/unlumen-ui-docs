@@ -11,10 +11,10 @@
   ],
   "files": [
     {
-      "path": "registry/demo/components/buttons/copy/index.tsx",
-      "content": "import {\n  CopyButton,\n  type CopyButtonProps,\n} from \"@/components/unlumen-ui/copy\";\n\ninterface CopyButtonDemoProps {\n  variant: CopyButtonProps[\"variant\"];\n  size: CopyButtonProps[\"size\"];\n}\n\nexport default function CopyButtonDemo({ variant, size }: CopyButtonDemoProps) {\n  return <CopyButton variant={variant} size={size} content=\"Hello world!\" />;\n}\n",
+      "path": "registry/demo/primitives/buttons/copy/index.tsx",
+      "content": "import {\n  CopyButton,\n  type CopyButtonProps,\n} from \"@/components/unlumen-ui/primitives/buttons/copy\";\n\ninterface CopyButtonDemoProps {\n  variant: CopyButtonProps[\"variant\"];\n  size: CopyButtonProps[\"size\"];\n}\n\nexport default function CopyButtonDemo({ variant, size }: CopyButtonDemoProps) {\n  return <CopyButton variant={variant} size={size} content=\"Hello world!\" />;\n}\n",
       "type": "registry:ui",
-      "target": "components/unlumen-ui/demo/components/buttons/copy.tsx"
+      "target": "components/unlumen-ui/demo/primitives/buttons/copy.tsx"
     }
   ],
   "meta": {

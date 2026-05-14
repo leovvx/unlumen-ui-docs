@@ -1,0 +1,14 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-page-transition",
+  "type": "registry:example",
+  "title": "Page Transition Demo",
+  "description": "Demo showing four fake pages cycling through curtain, slide, push, and fade transition variants.",
+  "registryDependencies": ["@unlumen-ui/page-transition"],
+  "files": [
+    {
+      "path": "registry/demo/primitives/unlumen/page-transition/index.tsx",
+      "type": "registry:example"
+    }
+  ]
+}

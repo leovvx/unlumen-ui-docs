@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "tilt",
+  "type": "registry:ui",
+  "title": "Tilt",
+  "description": "A spring-animated 3D tilt wrapper that tracks the cursor inside the element.",
+  "dependencies": [
+    "motion"
+  ],
+  "files": [
+    {
+      "path": "registry/primitives/unlumen/tilt/index.tsx",
+      "type": "registry:ui",
+      "target": "components/unlumen-ui/primitives/unlumen/tilt.tsx"
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "shimmer-skeleton",
+  "type": "registry:ui",
+  "title": "Shimmer Skeleton",
+  "description": "Lightweight loading skeleton with a smooth shimmer sweep animation.",
+  "files": [
+    {
+      "path": "registry/primitives/unlumen/shimmer-skeleton/index.tsx",
+      "type": "registry:ui",
+      "target": "components/unlumen-ui/primitives/unlumen/shimmer-skeleton.tsx"
+    }
+  ]
+}

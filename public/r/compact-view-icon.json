@@ -9,10 +9,10 @@
   "registryDependencies": [],
   "files": [
     {
-      "path": "registry/components/icons/compact-view-icon/index.tsx",
+      "path": "registry/primitives/icons/compact-view-icon/index.tsx",
       "content": "\"use client\";\n\nimport { motion } from \"motion/react\";\n\nconst COMPACT_DELAY_STEP = 0.018;\n\n// Active permutation: B C F / A D E (indices in a 3×2 grid 0-5)\nconst ACTIVE_ORDER = [1, 2, 5, 0, 3, 4];\nconst DEFAULT_ORDER = [0, 1, 2, 3, 4, 5];\n\nexport interface CompactViewIconProps {\n  /** Whether the icon is in its active (animated) state. */\n  isActive: boolean;\n  /** Extra classes applied to the root element. */\n  className?: string;\n}\n\nexport function CompactViewIcon({ isActive, className }: CompactViewIconProps) {\n  const order = isActive ? ACTIVE_ORDER : DEFAULT_ORDER;\n\n  return (\n    <motion.span\n      className={`inline-grid h-4 w-4 place-content-center grid-cols-3 gap-[2px] ${className ?? \"\"}`}\n      aria-hidden=\"true\"\n    >\n      {order.map((id, i) => (\n        <motion.span\n          key={id}\n          layout\n          className=\"size-[3px] rounded-[1px] bg-current\"\n          animate={isActive ? { opacity: [0.65, 1, 1] } : { opacity: 1 }}\n          transition={{\n            duration: 0.42,\n            delay: i === 0 ? 0 : i * COMPACT_DELAY_STEP,\n            ease: \"easeOut\",\n            layout: {\n              duration: 0.45,\n              delay: i === 0 ? 0 : i * COMPACT_DELAY_STEP,\n              ease: \"easeInOut\",\n            },\n          }}\n        />\n      ))}\n    </motion.span>\n  );\n}\n",
       "type": "registry:ui",
-      "target": "components/unlumen-ui/compact-view-icon.tsx"
+      "target": "components/unlumen-ui/primitives/icons/compact-view-icon.tsx"
     }
   ],
   "type": "registry:ui"

@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "orbiting-skills",
+  "type": "registry:ui",
+  "title": "Orbiting Skills",
+  "description": "Animated skill badges that orbit a center element. On desktop the ring follows the cursor on hover; on mobile the ring is always visible.",
+  "dependencies": [
+    "motion"
+  ],
+  "files": [
+    {
+      "path": "registry/primitives/unlumen/orbiting-skills/index.tsx",
+      "type": "registry:ui",
+      "target": "components/unlumen-ui/primitives/unlumen/orbiting-skills.tsx"
+    }
+  ]
+}

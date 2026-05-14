@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "count-up",
+  "type": "registry:ui",
+  "title": "Count Up",
+  "description": "An animated number counter that springs to its target value when it enters the viewport, with support for decimals, separators, and direction.",
+  "dependencies": [
+    "motion",
+    "react-use-measure"
+  ],
+  "files": [
+    {
+      "path": "registry/primitives/unlumen/count-up/index.tsx",
+      "type": "registry:ui",
+      "target": "components/unlumen-ui/primitives/unlumen/count-up.tsx"
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "scramble-text",
+  "type": "registry:ui",
+  "title": "Scramble Text",
+  "description": "A text animation component that reveals characters with a scramble/glitch effect, with imperative controls for manual triggering.",
+  "files": [
+    {
+      "path": "registry/primitives/unlumen/scramble-text/index.tsx",
+      "type": "registry:ui",
+      "target": "components/unlumen-ui/primitives/unlumen/scramble-text.tsx"
+    }
+  ]
+}

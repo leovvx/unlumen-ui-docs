@@ -8,10 +8,10 @@
   ],
   "files": [
     {
-      "path": "registry/components/unlumen/animate-count/index.tsx",
+      "path": "registry/primitives/unlumen/animate-count/index.tsx",
       "content": "\"use client\";\n\nimport { useEffect, useState } from \"react\";\nimport { AnimatePresence, motion } from \"motion/react\";\n\nimport { cn } from \"@/lib/utils\";\n\nexport const ANIMATE_COUNT_DURATION_MS = 450;\n\nconst EASING = [0.23, 0.88, 0.26, 0.92] as const;\n\ninterface AnimateCountProps {\n  children: number;\n  animate?: boolean;\n  className?: string;\n}\n\nfunction AnimateCount({\n  children: count,\n  animate = true,\n  className,\n}: AnimateCountProps) {\n  const [prev, setPrev] = useState<number | null>(null);\n  const [displayCount, setDisplayCount] = useState(count);\n\n  useEffect(() => {\n    if (animate) setPrev(displayCount);\n    setDisplayCount(count);\n    // eslint-disable-next-line react-hooks/exhaustive-deps\n  }, [count, animate]);\n\n  return (\n    <div\n      className={cn(\n        \"grid place-items-center tabular-nums tracking-tight\",\n        \"[&>*]:col-start-1 [&>*]:row-start-1\",\n        className,\n      )}\n    >\n      <AnimatePresence initial={false}>\n        {animate && prev !== null && prev !== displayCount && (\n          <motion.div\n            key={`exit-${prev}-${displayCount}`}\n            aria-hidden\n            initial={{ opacity: 1, filter: \"blur(0px)\", y: 0 }}\n            animate={{ opacity: 0, filter: \"blur(2px)\", y: -12 }}\n            transition={{\n              duration: ANIMATE_COUNT_DURATION_MS / 1000,\n              ease: EASING,\n            }}\n            onAnimationComplete={() => setPrev(null)}\n          >\n            {prev}\n          </motion.div>\n        )}\n      </AnimatePresence>\n      <motion.div\n        key={`enter-${displayCount}`}\n        initial={animate ? { opacity: 0, filter: \"blur(2px)\", y: 8 } : false}\n        animate={{ opacity: 1, filter: \"blur(0px)\", y: 0 }}\n        transition={{\n          duration: ANIMATE_COUNT_DURATION_MS / 1000,\n          ease: EASING,\n        }}\n      >\n        {displayCount}\n      </motion.div>\n    </div>\n  );\n}\n\nexport { AnimateCount, type AnimateCountProps };\n",
       "type": "registry:ui",
-      "target": "components/unlumen-ui/animate-count.tsx"
+      "target": "components/unlumen-ui/primitives/unlumen/animate-count.tsx"
     }
   ],
   "type": "registry:ui"

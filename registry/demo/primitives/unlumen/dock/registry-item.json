@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-dock",
+  "type": "registry:example",
+  "title": "Dock Demo",
+  "description": "Vercel-style dock with Lucide icons, separators, and Gaussian magnification.",
+  "dependencies": ["lucide-react"],
+  "registryDependencies": ["@unlumen-ui/dock"],
+  "files": [
+    {
+      "path": "registry/demo/primitives/unlumen/dock/index.tsx",
+      "type": "registry:example"
+    }
+  ],
+  "meta": {
+    "demoProps": {
+      "DockDemo": {}
+    }
+  }
+}

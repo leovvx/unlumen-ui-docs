@@ -1,0 +1,32 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-slider",
+  "type": "registry:example",
+  "title": "Slider Demo",
+  "description": "Three sliders showing volume, brightness and opacity controls with click-to-edit values.",
+  "registryDependencies": ["@unlumen-ui/slider"],
+  "files": [
+    {
+      "path": "registry/demo/primitives/unlumen/slider/index.tsx",
+      "type": "registry:example"
+    }
+  ],
+  "meta": {
+    "demoProps": {
+      "SliderDemo": {
+        "showValue": { "value": true },
+        "showSteps": { "value": false },
+        "valuePosition": {
+          "value": "bottom",
+          "options": {
+            "Top": "top",
+            "Bottom": "bottom",
+            "Left": "left",
+            "Right": "right",
+            "Tooltip": "tooltip"
+          }
+        }
+      }
+    }
+  }
+}

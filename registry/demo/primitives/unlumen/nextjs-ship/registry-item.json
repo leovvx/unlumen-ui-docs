@@ -1,0 +1,14 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-nextjs-ship",
+  "type": "registry:example",
+  "title": "Next.js Ship Demo",
+  "description": "Animated chip with gradient pulse circuit traces.",
+  "registryDependencies": ["@unlumen-ui/nextjs-ship"],
+  "files": [
+    {
+      "path": "registry/demo/primitives/unlumen/nextjs-ship/index.tsx",
+      "type": "registry:example"
+    }
+  ]
+}

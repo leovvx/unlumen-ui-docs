@@ -1,0 +1,24 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-math-graph",
+  "type": "registry:example",
+  "title": "Math Graph Demo",
+  "description": "Demo showing an interactive real-time math function visualizer.",
+  "registryDependencies": ["@unlumen-ui/math-graph"],
+  "files": [
+    {
+      "path": "registry/demo/primitives/unlumen/math-graph/index.tsx",
+      "type": "registry:example"
+    }
+  ],
+  "meta": {
+    "demoProps": {
+      "MathGraphDemo": {
+        "animated": { "value": true },
+        "showGrid": { "value": true },
+        "showLabels": { "value": true },
+        "resolution": { "value": 600, "min": 100, "max": 1000, "step": 100 }
+      }
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "tilt-card",
+  "type": "registry:ui",
+  "title": "Tilt Card",
+  "description": "A card with 3D spring tilt, optional floating image, badge and radial shine on hover.",
+  "dependencies": [
+    "motion"
+  ],
+  "registryDependencies": [
+    "https://ui.unlumen.com/r/tilt.json",
+    "https://ui.unlumen.com/r/clipped-circle.json"
+  ],
+  "files": [
+    {
+      "path": "registry/primitives/unlumen/tilt-card/index.tsx",
+      "type": "registry:ui",
+      "target": "components/unlumen-ui/primitives/unlumen/tilt-card.tsx"
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-scroll-reveal-image",
+  "type": "registry:example",
+  "title": "Scroll Reveal Image Demo",
+  "description": "Demo of the scroll-driven image reveal with spring physics.",
+  "registryDependencies": ["@unlumen-ui/scroll-reveal-image"],
+  "files": [
+    {
+      "path": "registry/demo/primitives/unlumen/scroll-reveal-image/index.tsx",
+      "type": "registry:example"
+    }
+  ]
+}

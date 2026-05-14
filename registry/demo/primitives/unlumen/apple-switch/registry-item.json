@@ -1,0 +1,35 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-apple-switch",
+  "type": "registry:example",
+  "title": "Apple Switch Demo",
+  "description": "A compact settings panel with animated switches, descriptions, sizes, and tone controls.",
+  "registryDependencies": ["@unlumen-ui/apple-switch"],
+  "files": [
+    {
+      "path": "registry/demo/primitives/unlumen/apple-switch/index.tsx",
+      "type": "registry:example"
+    }
+  ],
+  "meta": {
+    "demoProps": {
+      "AppleSwitchDemo": {
+        "size": {
+          "value": "md",
+          "options": {
+            "Small": "sm",
+            "Medium": "md",
+            "Large": "lg"
+          }
+        },
+        "tone": {
+          "value": "neutral",
+          "options": {
+            "Neutral": "neutral",
+            "Accent": "accent"
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "tag",
+  "type": "registry:component",
+  "title": "Tag",
+  "description": "Rounded outlined tags with six built-in pastel variants and an optional stacked group layout.",
+  "dependencies": [
+    "nucleo-arcade",
+    "motion"
+  ],
+  "files": [
+    {
+      "path": "registry/primitives/unlumen/tag/index.tsx",
+      "type": "registry:component",
+      "target": "components/unlumen-ui/primitives/unlumen/tag.tsx"
+    }
+  ]
+}

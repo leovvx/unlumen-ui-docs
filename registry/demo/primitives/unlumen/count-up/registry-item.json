@@ -1,0 +1,38 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-count-up",
+  "type": "registry:example",
+  "title": "Count Up Demo",
+  "description": "Demo showing animated number counters with spring physics.",
+  "registryDependencies": ["@unlumen-ui/count-up"],
+  "files": [
+    {
+      "path": "registry/demo/primitives/unlumen/count-up/index.tsx",
+      "type": "registry:example"
+    }
+  ],
+  "meta": {
+    "demoProps": {
+      "CountUpDemo": {
+        "digitEffect": {
+          "value": "none",
+          "options": {
+            "None": "none",
+            "Fade": "fade",
+            "Blur": "blur",
+            "Slide": "slide"
+          }
+        },
+        "duration": {
+          "value": 2,
+          "min": 0.5,
+          "max": 5,
+          "step": 0.5
+        },
+        "separator": {
+          "value": ","
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-glowing-badge",
+  "type": "registry:example",
+  "title": "Glowing Badge Demo",
+  "description": "Shows all badge variants with animated glow dots.",
+  "registryDependencies": ["@unlumen-ui/glowing-badge"],
+  "files": [
+    {
+      "path": "registry/demo/primitives/unlumen/glowing-badge/index.tsx",
+      "type": "registry:example"
+    }
+  ],
+  "meta": {
+    "demoProps": {
+      "GlowingBadgeDemo": {
+        "pulse": { "value": true },
+        "dot": { "value": true }
+      }
+    }
+  }
+}

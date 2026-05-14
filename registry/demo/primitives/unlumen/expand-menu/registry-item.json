@@ -1,0 +1,29 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-expand-menu",
+  "type": "registry:example",
+  "title": "Expand Menu Demo",
+  "description": "Demo for the Expand Menu component showing Edit, Copy, Share, and Archive actions.",
+  "registryDependencies": ["expand-menu"],
+  "files": [
+    {
+      "path": "registry/demo/primitives/unlumen/expand-menu/index.tsx",
+      "type": "registry:example",
+      "target": "components/demo/expand-menu-demo.tsx"
+    }
+  ],
+  "demoProps": {
+    "direction": {
+      "value": "down",
+      "options": ["up", "down", "left", "right"]
+    },
+    "layout": {
+      "value": "column",
+      "options": ["column", "row"]
+    },
+    "align": {
+      "value": "start",
+      "options": ["start", "center", "end"]
+    }
+  }
+}

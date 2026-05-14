@@ -1,0 +1,14 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-aurora-bars",
+  "type": "registry:example",
+  "title": "Aurora Bars Demo",
+  "description": "Demonstration of the Aurora Bars component with animated gradient effects.",
+  "registryDependencies": ["@unlumen-ui/aurora-bars"],
+  "files": [
+    {
+      "path": "registry/demo/primitives/unlumen/aurora-bars/index.tsx",
+      "type": "registry:example"
+    }
+  ]
+}

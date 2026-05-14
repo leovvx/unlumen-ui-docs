@@ -8,10 +8,10 @@
   ],
   "files": [
     {
-      "path": "registry/demo/components/backgrounds/pixel-liquid-bg/index.tsx",
-      "content": "import {\n  PixelLiquidBg,\n  type PixelLiquidBgProps,\n} from \"@/components/unlumen-ui/pixel-liquid-bg\";\n\ntype PixelLiquidBgDemoProps = Pick<\n  PixelLiquidBgProps,\n  \"pixelSize\" | \"resolution\" | \"mouseForce\" | \"cursorSize\" | \"autoDemo\"\n>;\n\nexport default function PixelLiquidBgDemo({\n  pixelSize,\n  resolution,\n  mouseForce,\n  cursorSize,\n  autoDemo,\n}: PixelLiquidBgDemoProps) {\n  return (\n    <PixelLiquidBg\n      className=\"absolute inset-0 flex items-center justify-center\"\n      pixelSize={pixelSize}\n      resolution={resolution}\n      mouseForce={mouseForce}\n      cursorSize={cursorSize}\n      autoDemo={autoDemo}\n    />\n  );\n}\n",
+      "path": "registry/demo/primitives/backgrounds/pixel-liquid-bg/index.tsx",
+      "content": "import {\n  PixelLiquidBg,\n  type PixelLiquidBgProps,\n} from \"@/components/unlumen-ui/primitives/backgrounds/pixel-liquid-bg\";\n\ntype PixelLiquidBgDemoProps = Pick<\n  PixelLiquidBgProps,\n  \"pixelSize\" | \"resolution\" | \"mouseForce\" | \"cursorSize\" | \"autoDemo\"\n>;\n\nexport default function PixelLiquidBgDemo({\n  pixelSize,\n  resolution,\n  mouseForce,\n  cursorSize,\n  autoDemo,\n}: PixelLiquidBgDemoProps) {\n  return (\n    <PixelLiquidBg\n      className=\"absolute inset-0 flex items-center justify-center\"\n      pixelSize={pixelSize}\n      resolution={resolution}\n      mouseForce={mouseForce}\n      cursorSize={cursorSize}\n      autoDemo={autoDemo}\n    />\n  );\n}\n",
       "type": "registry:ui",
-      "target": "components/unlumen-ui/demo/components/backgrounds/pixel-liquid-bg.tsx"
+      "target": "components/unlumen-ui/demo/primitives/backgrounds/pixel-liquid-bg.tsx"
     }
   ],
   "type": "registry:ui"

@@ -8,8 +8,8 @@
   ],
   "files": [
     {
-      "path": "registry/demo/components/unlumen/hover-feature-cards/index.tsx",
-      "content": "\"use client\";\n\nimport { HoverFeatureCard } from \"@/components/unlumen-ui/hover-feature-cards\";\n\nconst ITEM = {\n  name: \"Components\",\n  description:\n    \"Real components, not just primitives. Ready to use and customize in your projects.\",\n  img: \"/blocks.png\",\n  imgLight: \"/blocks-light.png\",\n  imgClassName: \"absolute -bottom-10 left-1/2 -translate-x-1/2\",\n  imgWidth: 320,\n  containerClassName: \"h-full rounded-3xl\",\n  fadeBottom: true,\n  soon: false,\n};\n\nexport default function HoverFeatureCardsDemo() {\n  return (\n    <div className=\"w-full max-w-md mx-auto px-5 py-10\">\n      <HoverFeatureCard item={ITEM} />\n    </div>\n  );\n}\n",
+      "path": "registry/demo/primitives/unlumen/hover-feature-cards/index.tsx",
+      "content": "\"use client\";\n\nimport { HoverFeatureCard } from \"@/components/unlumen-ui/primitives/unlumen/hover-feature-cards\";\n\nconst ITEM = {\n  name: \"Components\",\n  description:\n    \"Real components, not just primitives. Ready to use and customize in your projects.\",\n  img: \"/blocks.png\",\n  imgLight: \"/blocks-light.png\",\n  imgClassName: \"absolute -bottom-10 left-1/2 -translate-x-1/2\",\n  imgWidth: 320,\n  containerClassName: \"h-full rounded-3xl\",\n  fadeBottom: true,\n  soon: false,\n};\n\nexport default function HoverFeatureCardsDemo() {\n  return (\n    <div className=\"w-full max-w-md mx-auto px-5 py-10\">\n      <HoverFeatureCard item={ITEM} />\n    </div>\n  );\n}\n",
       "type": "registry:example"
     }
   ],

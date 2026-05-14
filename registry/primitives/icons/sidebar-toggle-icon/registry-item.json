@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "sidebar-toggle-icon",
+  "type": "registry:ui",
+  "title": "Sidebar Toggle Icon",
+  "description": "Animated SVG icon that morphs between open and closed sidebar panel states using Motion path interpolation.",
+  "dependencies": [
+    "motion"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "registry/primitives/icons/sidebar-toggle-icon/index.tsx",
+      "type": "registry:ui",
+      "target": "components/unlumen-ui/primitives/icons/sidebar-toggle-icon.tsx"
+    }
+  ]
+}

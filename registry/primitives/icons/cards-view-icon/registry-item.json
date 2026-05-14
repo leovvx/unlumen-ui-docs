@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "cards-view-icon",
+  "type": "registry:ui",
+  "title": "Cards View Icon",
+  "description": "Animated icon where four square dots reorder in a 2×2 grid via Motion layout animation when active, signaling a card view mode.",
+  "dependencies": [
+    "motion"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "registry/primitives/icons/cards-view-icon/index.tsx",
+      "type": "registry:ui",
+      "target": "components/unlumen-ui/primitives/icons/cards-view-icon.tsx"
+    }
+  ]
+}

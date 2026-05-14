@@ -8,8 +8,8 @@
   ],
   "files": [
     {
-      "path": "registry/demo/components/unlumen/aurora-bars/index.tsx",
-      "content": "\"use client\";\n\nimport {\n  AuroraBars,\n  type AuroraBarsProps,\n} from \"@/components/unlumen-ui/aurora-bars\";\n\ntype AuroraBarsDemo = Pick<\n  AuroraBarsProps,\n  \"barCount\" | \"speed\" | \"gap\" | \"blur\" | \"maxHeightRatio\" | \"minHeightRatio\"\n>;\n\nexport const AuroraBarsDemo = ({\n  barCount = 24,\n  speed = 0.5,\n  gap = 3,\n  blur = 18,\n  maxHeightRatio = 0.92,\n  minHeightRatio = 0.18,\n}: AuroraBarsDemo) => {\n  return (\n    <AuroraBars\n      barCount={barCount}\n      speed={speed}\n      gap={gap}\n      blur={blur}\n      maxHeightRatio={maxHeightRatio}\n      minHeightRatio={minHeightRatio}\n      className=\"w-full h-full\"\n    />\n  );\n};\n",
+      "path": "registry/demo/primitives/unlumen/aurora-bars/index.tsx",
+      "content": "\"use client\";\n\nimport {\n  AuroraBars,\n  type AuroraBarsProps,\n} from \"@/components/unlumen-ui/primitives/unlumen/aurora-bars\";\n\ntype AuroraBarsDemo = Pick<\n  AuroraBarsProps,\n  \"barCount\" | \"speed\" | \"gap\" | \"blur\" | \"maxHeightRatio\" | \"minHeightRatio\"\n>;\n\nexport const AuroraBarsDemo = ({\n  barCount = 24,\n  speed = 0.5,\n  gap = 3,\n  blur = 18,\n  maxHeightRatio = 0.92,\n  minHeightRatio = 0.18,\n}: AuroraBarsDemo) => {\n  return (\n    <AuroraBars\n      barCount={barCount}\n      speed={speed}\n      gap={gap}\n      blur={blur}\n      maxHeightRatio={maxHeightRatio}\n      minHeightRatio={minHeightRatio}\n      className=\"w-full h-full\"\n    />\n  );\n};\n",
       "type": "registry:example"
     }
   ],

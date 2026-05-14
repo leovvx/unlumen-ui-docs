@@ -10,10 +10,10 @@
   ],
   "files": [
     {
-      "path": "registry/demo/components/buttons/refresh/index.tsx",
-      "content": "\"use client\";\n\nimport {\n  RefreshButton,\n  type RefreshButtonProps,\n} from \"@/components/unlumen-ui/refresh\";\n\ntype RefreshButtonDemoProps = Pick<RefreshButtonProps, \"variant\" | \"size\">;\n\nexport const RefreshButtonDemo = ({\n  variant = \"neutral\",\n  size = \"icon-sm\",\n}: RefreshButtonDemoProps) => {\n  return (\n    <div className=\"flex min-h-[240px] items-center justify-center gap-3\">\n      <RefreshButton variant={variant} size={size} />\n      <RefreshButton variant={variant} label=\"Refresh\" />\n    </div>\n  );\n};\n",
+      "path": "registry/demo/primitives/buttons/refresh/index.tsx",
+      "content": "\"use client\";\n\nimport {\n  RefreshButton,\n  type RefreshButtonProps,\n} from \"@/components/unlumen-ui/primitives/buttons/refresh\";\n\ntype RefreshButtonDemoProps = Pick<RefreshButtonProps, \"variant\" | \"size\">;\n\nexport const RefreshButtonDemo = ({\n  variant = \"neutral\",\n  size = \"icon-sm\",\n}: RefreshButtonDemoProps) => {\n  return (\n    <div className=\"flex min-h-[240px] items-center justify-center gap-3\">\n      <RefreshButton variant={variant} size={size} />\n      <RefreshButton variant={variant} label=\"Refresh\" />\n    </div>\n  );\n};\n",
       "type": "registry:example",
-      "target": "components/unlumen-ui/demo/components/buttons/refresh.tsx"
+      "target": "components/unlumen-ui/demo/primitives/buttons/refresh.tsx"
     }
   ],
   "meta": {

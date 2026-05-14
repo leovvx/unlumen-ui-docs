@@ -8,8 +8,8 @@
   ],
   "files": [
     {
-      "path": "registry/demo/components/icons/compact-view-icon/index.tsx",
-      "content": "\"use client\";\n\nimport { useState } from \"react\";\nimport { CompactViewIcon } from \"@/components/unlumen-ui/compact-view-icon\";\n\nexport function CompactViewIconDemo() {\n  const [isActive, setIsActive] = useState(false);\n\n  return (\n    <div className=\"flex flex-col items-center justify-center gap-6 p-8\">\n      <button\n        onClick={() => setIsActive((prev) => !prev)}\n        className=\"flex items-center justify-center rounded-4xl hover:bg-accent hover:cursor-pointer p-3 text-foreground transition-colors\"\n        aria-label={\n          isActive ? \"Deactivate compact view\" : \"Activate compact view\"\n        }\n      >\n        <CompactViewIcon isActive={isActive} className=\"size-16\" />\n      </button>\n      <p className=\"text-sm text-foreground/50 select-none\">\n        {isActive ? \"Active\" : \"Inactive\"} — click to toggle\n      </p>\n    </div>\n  );\n}\n\nexport default CompactViewIconDemo;\n",
+      "path": "registry/demo/primitives/icons/compact-view-icon/index.tsx",
+      "content": "\"use client\";\n\nimport { useState } from \"react\";\nimport { CompactViewIcon } from \"@/components/unlumen-ui/primitives/icons/compact-view-icon\";\n\nexport function CompactViewIconDemo() {\n  const [isActive, setIsActive] = useState(false);\n\n  return (\n    <div className=\"flex flex-col items-center justify-center gap-6 p-8\">\n      <button\n        onClick={() => setIsActive((prev) => !prev)}\n        className=\"flex items-center justify-center rounded-4xl hover:bg-accent hover:cursor-pointer p-3 text-foreground transition-colors\"\n        aria-label={\n          isActive ? \"Deactivate compact view\" : \"Activate compact view\"\n        }\n      >\n        <CompactViewIcon isActive={isActive} className=\"size-16\" />\n      </button>\n      <p className=\"text-sm text-foreground/50 select-none\">\n        {isActive ? \"Active\" : \"Inactive\"} — click to toggle\n      </p>\n    </div>\n  );\n}\n\nexport default CompactViewIconDemo;\n",
       "type": "registry:example"
     }
   ],

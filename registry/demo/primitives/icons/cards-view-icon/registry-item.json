@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-cards-view-icon",
+  "type": "registry:example",
+  "title": "Cards View Icon Demo",
+  "description": "Four dots reorder themselves in a 2×2 grid via layout animation on toggle to indicate cards view.",
+  "registryDependencies": ["@unlumen-ui/cards-view-icon"],
+  "files": [
+    {
+      "path": "registry/demo/primitives/icons/cards-view-icon/index.tsx",
+      "type": "registry:example"
+    }
+  ],
+  "meta": {
+    "demoName": "CardsViewIconDemo",
+    "demoProps": {}
+  }
+}

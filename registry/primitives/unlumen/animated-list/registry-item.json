@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "animated-list",
+  "type": "registry:ui",
+  "title": "Animated List",
+  "description": "A real-time push feed where new items animate in from the top with spring physics — Stripe Radar style.",
+  "dependencies": [
+    "motion"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "registry/primitives/unlumen/animated-list/index.tsx",
+      "type": "registry:ui",
+      "target": "components/unlumen-ui/primitives/unlumen/animated-list.tsx"
+    }
+  ]
+}

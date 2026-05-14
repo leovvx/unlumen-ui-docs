@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-list-view-icon",
+  "type": "registry:example",
+  "title": "List View Icon Demo",
+  "description": "Three animated lines shuffle vertically on toggle to indicate list view.",
+  "registryDependencies": ["@unlumen-ui/list-view-icon"],
+  "files": [
+    {
+      "path": "registry/demo/primitives/icons/list-view-icon/index.tsx",
+      "type": "registry:example"
+    }
+  ],
+  "meta": {
+    "demoName": "ListViewIconDemo",
+    "demoProps": {}
+  }
+}

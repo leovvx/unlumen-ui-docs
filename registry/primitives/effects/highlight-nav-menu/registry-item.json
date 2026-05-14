@@ -9,7 +9,9 @@
     "class-variance-authority",
     "lucide-react"
   ],
-  "registryDependencies": ["@unlumen-ui/highlight"],
+  "registryDependencies": [
+    "@unlumen-ui/highlight"
+  ],
   "files": [
     {
       "path": "registry/primitives/effects/highlight-nav-menu/index.tsx",

@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "hover-expand",
+  "type": "registry:ui",
+  "title": "Hover Expand",
+  "description": "A vertical list of rows that expand on hover to reveal a full-width image, animated with Motion springs.",
+  "dependencies": [
+    "motion"
+  ],
+  "files": [
+    {
+      "path": "registry/primitives/unlumen/hover-expand/index.tsx",
+      "type": "registry:ui",
+      "target": "components/unlumen-ui/primitives/unlumen/hover-expand.tsx"
+    }
+  ]
+}

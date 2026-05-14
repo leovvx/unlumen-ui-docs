@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "expand-menu",
+  "type": "registry:ui",
+  "title": "Expand Menu",
+  "description": "An animated expanding menu that reveals items from a trigger button, with configurable direction, layout, and alignment.",
+  "dependencies": [
+    "motion"
+  ],
+  "files": [
+    {
+      "path": "registry/primitives/unlumen/expand-menu/index.tsx",
+      "type": "registry:ui",
+      "target": "components/unlumen-ui/primitives/unlumen/expand-menu.tsx"
+    }
+  ]
+}

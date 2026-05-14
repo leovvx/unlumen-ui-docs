@@ -4,8 +4,12 @@
   "type": "registry:ui",
   "title": "Files",
   "description": "Animated file-tree primitives with motion hover highlight, spring folder expand/collapse, and animated folder icon swap.",
-  "dependencies": ["motion"],
-  "registryDependencies": ["@unlumen-ui/lib-get-strict-context"],
+  "dependencies": [
+    "motion"
+  ],
+  "registryDependencies": [
+    "@unlumen-ui/lib-get-strict-context"
+  ],
   "files": [
     {
       "path": "registry/primitives/animate/files/index.tsx",
