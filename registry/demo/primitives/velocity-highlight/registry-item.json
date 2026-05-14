@@ -1,0 +1,26 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-velocity-highlight",
+  "type": "registry:example",
+  "title": "Velocity Highlight Demo",
+  "description": "Interactive highlight with velocity-based scaling effects.",
+  "registryDependencies": [
+    "@unlumen-ui/velocity-highlight"
+  ],
+  "files": [
+    {
+      "path": "registry/demo/primitives/velocity-highlight/index.tsx",
+      "type": "registry:example"
+    }
+  ],
+  "meta": {
+    "demoProps": {
+      "VelocityHighlightDemo": {
+        "hover": {
+          "value": true,
+          "type": "boolean"
+        }
+      }
+    }
+  }
+}

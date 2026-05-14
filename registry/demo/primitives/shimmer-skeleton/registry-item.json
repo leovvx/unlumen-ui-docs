@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-shimmer-skeleton",
+  "type": "registry:example",
+  "title": "Shimmer Skeleton Demo",
+  "description": "Card-shaped skeleton layout with shimmer animation.",
+  "registryDependencies": [
+    "@unlumen-ui/shimmer-skeleton"
+  ],
+  "files": [
+    {
+      "path": "registry/demo/primitives/shimmer-skeleton/index.tsx",
+      "type": "registry:example"
+    }
+  ],
+  "meta": {
+    "demoProps": {
+      "ShimmerSkeletonDemo": {
+        "animate": {
+          "value": true
+        }
+      }
+    }
+  }
+}

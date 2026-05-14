@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "shimmering-text",
+  "type": "registry:ui",
+  "title": "Shimmering Text",
+  "description": "Animated gradient shimmer text with viewport-triggered and repeating animation support.",
+  "dependencies": [
+    "motion"
+  ],
+  "files": [
+    {
+      "path": "registry/primitives/shimmering-text/index.tsx",
+      "type": "registry:ui",
+      "target": "components/unlumen-ui/primitives/shimmering-text.tsx"
+    }
+  ],
+  "registryDependencies": []
+}

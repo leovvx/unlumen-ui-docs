@@ -1,0 +1,30 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-kbd",
+  "type": "registry:example",
+  "title": "Kbd Demo",
+  "description": "Single keyboard keys and common shortcuts using the Kbd and Shortcut components.",
+  "registryDependencies": [
+    "@unlumen-ui/kbd"
+  ],
+  "files": [
+    {
+      "path": "registry/demo/primitives/kbd/index.tsx",
+      "type": "registry:example"
+    }
+  ],
+  "meta": {
+    "demoProps": {
+      "KbdDemo": {
+        "size": {
+          "value": "md",
+          "options": {
+            "Small": "sm",
+            "Medium": "md",
+            "Large": "lg"
+          }
+        }
+      }
+    }
+  }
+}

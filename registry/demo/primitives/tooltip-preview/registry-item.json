@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-tooltip-preview",
+  "type": "registry:example",
+  "title": "Tooltip Preview Demo",
+  "description": "Links showing website preview cards on hover.",
+  "registryDependencies": [
+    "@unlumen-ui/tooltip-preview"
+  ],
+  "files": [
+    {
+      "path": "registry/demo/primitives/tooltip-preview/index.tsx",
+      "type": "registry:example"
+    }
+  ]
+}

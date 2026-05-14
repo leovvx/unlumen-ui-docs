@@ -27,7 +27,7 @@ import {
   CommandList,
   CommandSeparator,
 } from "@/components/ui/command";
-import { ShimmeringText } from "@/registry/primitives/texts/shimmering";
+import { ShimmeringText } from "@/registry/primitives/shimmering-text";
 import { cn } from "@workspace/ui/lib/utils";
 
 type CommandMenuProps = {

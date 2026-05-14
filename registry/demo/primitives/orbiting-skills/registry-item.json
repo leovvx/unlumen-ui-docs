@@ -1,0 +1,40 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-orbiting-skills",
+  "type": "registry:example",
+  "title": "Orbiting Skills Demo",
+  "description": "Demo showing skill badges orbiting a center avatar, with cursor-following on desktop and always-on mobile mode.",
+  "registryDependencies": [
+    "@unlumen-ui/orbiting-skills"
+  ],
+  "files": [
+    {
+      "path": "registry/demo/primitives/orbiting-skills/index.tsx",
+      "type": "registry:example"
+    }
+  ],
+  "meta": {
+    "demoProps": {
+      "OrbitingSkillsDemo": {
+        "radius": {
+          "value": 100,
+          "min": 60,
+          "max": 160,
+          "step": 4
+        },
+        "duration": {
+          "value": 18,
+          "min": 5,
+          "max": 40,
+          "step": 1
+        },
+        "showPath": {
+          "value": true
+        },
+        "followCursor": {
+          "value": true
+        }
+      }
+    }
+  }
+}

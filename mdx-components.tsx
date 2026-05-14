@@ -4,7 +4,6 @@ import defaultMdxComponents from "fumadocs-ui/mdx";
 import type { MDXComponents } from "mdx/types";
 import { ComponentPreview } from "@/components/docs/component-preview";
 import { ComponentInstallation } from "@/components/docs/component-installation";
-import { ComponentFiles } from "@/components/docs/component-files";
 import { CliTabs } from "@/components/docs/cli-tabs";
 import { StayTuned } from "@/components/stay-tuned";
 import { ComponentsList } from "@/components/docs/components-list";
@@ -50,7 +49,6 @@ export function getMDXComponents(components?: MDXComponents): MDXComponents {
     ),
     ComponentPreview,
     ComponentInstallation,
-    ComponentFiles,
     CliTabs,
     StayTuned,
     ComponentsList,

@@ -3,12 +3,13 @@
   "name": "shimmer-skeleton",
   "title": "Shimmer Skeleton",
   "description": "Lightweight loading skeleton with a smooth shimmer sweep animation.",
+  "registryDependencies": [],
   "files": [
     {
-      "path": "registry/primitives/unlumen/shimmer-skeleton/index.tsx",
+      "path": "registry/primitives/shimmer-skeleton/index.tsx",
       "content": "import { type HTMLAttributes } from \"react\";\nimport { cn } from \"@/lib/utils\";\n\ninterface ShimmerSkeletonProps extends HTMLAttributes<HTMLDivElement> {\n  rounded?: \"none\" | \"sm\" | \"md\" | \"lg\" | \"full\";\n  animate?: boolean;\n}\n\nfunction ShimmerSkeleton({\n  className,\n  rounded = \"md\",\n  animate = true,\n  ...props\n}: ShimmerSkeletonProps) {\n  const roundedClass = {\n    none: \"rounded-none\",\n    sm: \"rounded-sm\",\n    md: \"rounded-md\",\n    lg: \"rounded-lg\",\n    full: \"rounded-full\",\n  }[rounded];\n\n  return (\n    <div\n      role=\"status\"\n      aria-label=\"Loading\"\n      className={cn(\n        \"relative overflow-hidden bg-muted\",\n        roundedClass,\n        className,\n      )}\n      {...props}\n    >\n      {animate && (\n        <span\n          aria-hidden=\"true\"\n          className=\"pointer-events-none absolute inset-0 -translate-x-full\"\n          style={{\n            background:\n              \"linear-gradient(90deg, transparent 0%, color-mix(in srgb, var(--foreground) 6%, transparent) 50%, transparent 100%)\",\n            animation: \"shimmer 1.6s ease-in-out infinite\",\n          }}\n        />\n      )}\n      <style>{`@keyframes shimmer { to { transform: translateX(200%); } }`}</style>\n    </div>\n  );\n}\n\nexport { ShimmerSkeleton };\nexport type { ShimmerSkeletonProps };\n",
       "type": "registry:ui",
-      "target": "components/unlumen-ui/primitives/unlumen/shimmer-skeleton.tsx"
+      "target": "components/unlumen-ui/primitives/shimmer-skeleton.tsx"
     }
   ],
   "type": "registry:ui"

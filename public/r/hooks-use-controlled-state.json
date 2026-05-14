@@ -3,6 +3,7 @@
   "name": "hooks-use-controlled-state",
   "title": "useControlledState",
   "description": "A hook that allows you to control a state.",
+  "registryDependencies": [],
   "files": [
     {
       "path": "registry/hooks/use-controlled-state/index.tsx",

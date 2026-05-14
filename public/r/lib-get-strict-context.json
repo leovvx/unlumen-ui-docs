@@ -3,6 +3,7 @@
   "name": "lib-get-strict-context",
   "title": "getStrictContext",
   "description": "A hook that allows you to create a strict context.",
+  "registryDependencies": [],
   "files": [
     {
       "path": "registry/lib/get-strict-context/index.tsx",

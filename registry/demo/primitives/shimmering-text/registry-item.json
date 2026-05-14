@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-shimmering-text",
+  "type": "registry:example",
+  "title": "Shimmering Text Demo",
+  "description": "Cycling shimmer text with AnimatePresence transitions.",
+  "registryDependencies": [
+    "@unlumen-ui/shimmering-text"
+  ],
+  "files": [
+    {
+      "path": "registry/demo/primitives/shimmering-text/index.tsx",
+      "type": "registry:example"
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-highlight",
+  "type": "registry:example",
+  "title": "Highlight Demo",
+  "description": "Interactive highlight effect with smooth spring animations.",
+  "registryDependencies": [
+    "@unlumen-ui/highlight"
+  ],
+  "files": [
+    {
+      "path": "registry/demo/primitives/highlight/index.tsx",
+      "type": "registry:example"
+    }
+  ],
+  "meta": {
+    "demoProps": {
+      "HighlightDemo": {
+        "hover": {
+          "value": true,
+          "type": "boolean"
+        }
+      }
+    }
+  }
+}

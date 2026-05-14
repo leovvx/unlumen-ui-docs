@@ -10,7 +10,7 @@ import {
   TabsContents,
   TabsHighlight,
   TabsHighlightItem,
-} from "@/registry/primitives/animate/tabs";
+} from "@/registry/primitives/tabs";
 import { cn } from "@workspace/ui/lib/utils";
 import {
   Loading03Icon as Loader,

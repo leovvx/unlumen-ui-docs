@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "button",
+  "type": "registry:ui",
+  "title": "Button",
+  "description": "A simple button that animates on hover and tap.",
+  "dependencies": [
+    "motion"
+  ],
+  "registryDependencies": [
+    "@unlumen-ui/slot"
+  ],
+  "files": [
+    {
+      "path": "registry/primitives/button/index.tsx",
+      "type": "registry:ui",
+      "target": "components/unlumen-ui/primitives/button.tsx"
+    }
+  ]
+}

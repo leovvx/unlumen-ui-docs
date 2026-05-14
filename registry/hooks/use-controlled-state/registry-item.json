@@ -10,5 +10,6 @@
       "type": "registry:hook",
       "target": "hooks/use-controlled-state.tsx"
     }
-  ]
+  ],
+  "registryDependencies": []
 }

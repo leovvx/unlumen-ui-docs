@@ -37,7 +37,7 @@ export function resolveRegistryDeps(
 
 /**
  * Clean display name from a registry key.
- * e.g. "primitives-effects-velocity-highlight" → "velocity-highlight"
+ * e.g. "hooks-use-controlled-state" → "use-controlled-state"
  */
 export function registryDisplayName(key: string): string {
   return key.replace(/^primitives-[a-z]+-/, "").replace(/^(?:lib|hooks)-/, "");

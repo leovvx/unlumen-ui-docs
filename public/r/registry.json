@@ -18,6 +18,145 @@
       "files": []
     },
     {
+      "name": "demo-clipped-circle",
+      "type": "registry:example",
+      "title": "Clipped Circle Demo",
+      "description": "Demo showing a clipped circle spotlight effect on a button, a card, and an image.",
+      "registryDependencies": [
+        "@unlumen-ui/clipped-circle"
+      ],
+      "files": [
+        {
+          "path": "registry/demo/primitives/clipped-circle/index.tsx",
+          "type": "registry:example"
+        }
+      ],
+      "meta": {
+        "demoProps": {
+          "ClippedCircleDemo": {
+            "circleSize": {
+              "value": 400,
+              "min": 100,
+              "max": 800,
+              "step": 50
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "demo-command-menu",
+      "type": "registry:example",
+      "title": "Command Menu Demo",
+      "description": "Demo showing a composable command palette with navigation, component links, and a built-in theme switcher.",
+      "registryDependencies": [
+        "@unlumen-ui/command-menu"
+      ],
+      "dependencies": [
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "registry/demo/primitives/command-menu/index.tsx",
+          "type": "registry:example"
+        }
+      ],
+      "meta": {
+        "demoProps": {
+          "CommandMenuDemo": {
+            "showThemeGroup": {
+              "value": true
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "demo-copy",
+      "type": "registry:ui",
+      "title": "Copy Button Demo",
+      "description": "Demo showing a copy button.",
+      "registryDependencies": [
+        "@unlumen-ui/copy"
+      ],
+      "dependencies": [
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "registry/demo/primitives/copy/index.tsx",
+          "type": "registry:ui",
+          "target": "components/unlumen-ui/demo/primitives/buttons/copy.tsx"
+        }
+      ],
+      "meta": {
+        "demoProps": {
+          "CopyButton": {
+            "variant": {
+              "value": "default",
+              "options": {
+                "default": "default",
+                "accent": "accent",
+                "destructive": "destructive",
+                "outline": "outline",
+                "secondary": "secondary",
+                "ghost": "ghost",
+                "link": "link"
+              }
+            },
+            "size": {
+              "value": "default",
+              "options": {
+                "default": "default",
+                "xs": "xs",
+                "sm": "sm",
+                "lg": "lg"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "demo-count-up",
+      "type": "registry:example",
+      "title": "Count Up Demo",
+      "description": "Demo showing animated number counters with spring physics.",
+      "registryDependencies": [
+        "@unlumen-ui/count-up"
+      ],
+      "files": [
+        {
+          "path": "registry/demo/primitives/count-up/index.tsx",
+          "type": "registry:example"
+        }
+      ],
+      "meta": {
+        "demoProps": {
+          "CountUpDemo": {
+            "digitEffect": {
+              "value": "none",
+              "options": {
+                "None": "none",
+                "Fade": "fade",
+                "Blur": "blur",
+                "Slide": "slide"
+              }
+            },
+            "duration": {
+              "value": 2,
+              "min": 0.5,
+              "max": 5,
+              "step": 0.5
+            },
+            "separator": {
+              "value": ","
+            }
+          }
+        }
+      }
+    },
+    {
       "name": "demo-cursor",
       "type": "registry:ui",
       "title": "Cursor Demo",
@@ -27,7 +166,7 @@
       ],
       "files": [
         {
-          "path": "registry/demo/primitives/animate/cursor/index.tsx",
+          "path": "registry/demo/primitives/cursor/index.tsx",
           "type": "registry:ui",
           "target": "components/unlumen-ui/demo/primitives/animate/cursor.tsx"
         }
@@ -74,66 +213,19 @@
       }
     },
     {
-      "name": "demo-pixel-liquid-bg",
-      "type": "registry:ui",
-      "title": "Pixel Liquid Background Demo",
-      "description": "Demo showing the Pixel Liquid Background component.",
+      "name": "demo-floating-tooltip",
+      "type": "registry:example",
+      "title": "Floating Tooltip Demo",
+      "description": "",
       "registryDependencies": [
-        "@unlumen-ui/pixel-liquid-bg"
+        "@unlumen-ui/floating-tooltip"
       ],
       "files": [
         {
-          "path": "registry/demo/primitives/backgrounds/pixel-liquid-bg/index.tsx",
-          "type": "registry:ui",
-          "target": "components/unlumen-ui/demo/primitives/backgrounds/pixel-liquid-bg.tsx"
+          "path": "registry/demo/primitives/floating-tooltip/index.tsx",
+          "type": "registry:example"
         }
       ]
-    },
-    {
-      "name": "demo-copy",
-      "type": "registry:ui",
-      "title": "Copy Button Demo",
-      "description": "Demo showing a copy button.",
-      "registryDependencies": [
-        "@unlumen-ui/copy"
-      ],
-      "dependencies": [
-        "lucide-react"
-      ],
-      "files": [
-        {
-          "path": "registry/demo/primitives/buttons/copy/index.tsx",
-          "type": "registry:ui",
-          "target": "components/unlumen-ui/demo/primitives/buttons/copy.tsx"
-        }
-      ],
-      "meta": {
-        "demoProps": {
-          "CopyButton": {
-            "variant": {
-              "value": "default",
-              "options": {
-                "default": "default",
-                "accent": "accent",
-                "destructive": "destructive",
-                "outline": "outline",
-                "secondary": "secondary",
-                "ghost": "ghost",
-                "link": "link"
-              }
-            },
-            "size": {
-              "value": "default",
-              "options": {
-                "default": "default",
-                "xs": "xs",
-                "sm": "sm",
-                "lg": "lg"
-              }
-            }
-          }
-        }
-      }
     },
     {
       "name": "demo-glow",
@@ -145,7 +237,7 @@
       ],
       "files": [
         {
-          "path": "registry/demo/primitives/buttons/glow/index.tsx",
+          "path": "registry/demo/primitives/glow/index.tsx",
           "type": "registry:example"
         }
       ],
@@ -189,524 +281,6 @@
       }
     },
     {
-      "name": "demo-refresh",
-      "type": "registry:example",
-      "title": "Refresh Button Demo",
-      "registryDependencies": [
-        "@unlumen-ui/refresh"
-      ],
-      "dependencies": [
-        "lucide-react"
-      ],
-      "files": [
-        {
-          "path": "registry/demo/primitives/buttons/refresh/index.tsx",
-          "type": "registry:example",
-          "target": "components/unlumen-ui/demo/primitives/buttons/refresh.tsx"
-        }
-      ],
-      "meta": {
-        "demoName": "RefreshButtonDemo",
-        "demoProps": {
-          "variant": {
-            "type": "select",
-            "label": "Variant",
-            "default": "neutral",
-            "options": {
-              "Neutral": "neutral",
-              "Default": "default",
-              "Ghost": "ghost",
-              "Outline": "outline",
-              "Secondary": "secondary"
-            }
-          },
-          "size": {
-            "type": "select",
-            "label": "Size",
-            "default": "icon-sm",
-            "options": {
-              "Icon SM": "icon-sm",
-              "Icon": "icon",
-              "SM": "sm"
-            }
-          }
-        }
-      }
-    },
-    {
-      "name": "demo-primitives-effects-highlight",
-      "type": "registry:example",
-      "title": "Highlight Demo",
-      "description": "Interactive highlight effect with smooth spring animations.",
-      "registryDependencies": [
-        "@unlumen-ui/highlight"
-      ],
-      "files": [
-        {
-          "path": "registry/demo/primitives/effects/highlight/index.tsx",
-          "type": "registry:example"
-        }
-      ],
-      "meta": {
-        "demoProps": {
-          "HighlightDemo": {
-            "hover": {
-              "value": true,
-              "type": "boolean"
-            }
-          }
-        }
-      }
-    },
-    {
-      "name": "demo-primitives-effects-velocity-highlight",
-      "type": "registry:example",
-      "title": "Velocity Highlight Demo",
-      "description": "Interactive highlight with velocity-based scaling effects.",
-      "registryDependencies": [
-        "@unlumen-ui/primitives-effects-velocity-highlight"
-      ],
-      "files": [
-        {
-          "path": "registry/demo/primitives/effects/velocity-highlight/index.tsx",
-          "type": "registry:example"
-        }
-      ],
-      "meta": {
-        "demoProps": {
-          "VelocityHighlightDemo": {
-            "hover": {
-              "value": true,
-              "type": "boolean"
-            }
-          }
-        }
-      }
-    },
-    {
-      "name": "demo-cards-view-icon",
-      "type": "registry:example",
-      "title": "Cards View Icon Demo",
-      "description": "Four dots reorder themselves in a 2×2 grid via layout animation on toggle to indicate cards view.",
-      "registryDependencies": [
-        "@unlumen-ui/cards-view-icon"
-      ],
-      "files": [
-        {
-          "path": "registry/demo/primitives/icons/cards-view-icon/index.tsx",
-          "type": "registry:example"
-        }
-      ],
-      "meta": {
-        "demoName": "CardsViewIconDemo",
-        "demoProps": {}
-      }
-    },
-    {
-      "name": "demo-compact-view-icon",
-      "type": "registry:example",
-      "title": "Compact View Icon Demo",
-      "description": "Six dots reorder themselves via layout animation on toggle to indicate compact view.",
-      "registryDependencies": [
-        "@unlumen-ui/compact-view-icon"
-      ],
-      "files": [
-        {
-          "path": "registry/demo/primitives/icons/compact-view-icon/index.tsx",
-          "type": "registry:example"
-        }
-      ],
-      "meta": {
-        "demoName": "CompactViewIconDemo",
-        "demoProps": {}
-      }
-    },
-    {
-      "name": "demo-list-view-icon",
-      "type": "registry:example",
-      "title": "List View Icon Demo",
-      "description": "Three animated lines shuffle vertically on toggle to indicate list view.",
-      "registryDependencies": [
-        "@unlumen-ui/list-view-icon"
-      ],
-      "files": [
-        {
-          "path": "registry/demo/primitives/icons/list-view-icon/index.tsx",
-          "type": "registry:example"
-        }
-      ],
-      "meta": {
-        "demoName": "ListViewIconDemo",
-        "demoProps": {}
-      }
-    },
-    {
-      "name": "demo-sidebar-toggle-icon",
-      "type": "registry:example",
-      "title": "Sidebar Toggle Icon Demo",
-      "description": "Animated SVG icon that morphs between open and closed sidebar states on click.",
-      "registryDependencies": [
-        "@unlumen-ui/sidebar-toggle-icon"
-      ],
-      "files": [
-        {
-          "path": "registry/demo/primitives/icons/sidebar-toggle-icon/index.tsx",
-          "type": "registry:example"
-        }
-      ],
-      "meta": {
-        "demoName": "SidebarToggleIconDemo",
-        "demoProps": {
-          "SidebarToggleIconDemo": {
-            "strokeWidth": {
-              "value": 1.5,
-              "min": 0.5,
-              "max": 3,
-              "step": 0.5
-            }
-          }
-        }
-      }
-    },
-    {
-      "name": "demo-blob-card",
-      "type": "registry:ui",
-      "title": "Blob Card Demo",
-      "description": "Demo showing the Blob Card component.",
-      "registryDependencies": [
-        "@unlumen-ui/blob-card"
-      ],
-      "files": [
-        {
-          "path": "registry/demo/primitives/ui/blob-card/index.tsx",
-          "type": "registry:ui",
-          "target": "components/unlumen-ui/demo/primitives/ui/blob-card.tsx"
-        }
-      ]
-    },
-    {
-      "name": "demo-animate-count",
-      "type": "registry:example",
-      "title": "Vercel Animate Count Demo",
-      "description": "Demo showing an animated number counter with blur + slide transitions.",
-      "registryDependencies": [
-        "@unlumen-ui/animate-count"
-      ],
-      "files": [
-        {
-          "path": "registry/demo/primitives/unlumen/animate-count/index.tsx",
-          "type": "registry:example"
-        }
-      ]
-    },
-    {
-      "name": "demo-animate-digits",
-      "type": "registry:example",
-      "title": "Animate Digits Demo",
-      "description": "Timer demo showcasing per-digit blur-slide animation.",
-      "registryDependencies": [
-        "@unlumen-ui/animate-digits"
-      ],
-      "files": [
-        {
-          "path": "registry/demo/primitives/unlumen/animate-digits/index.tsx",
-          "type": "registry:example"
-        }
-      ]
-    },
-    {
-      "name": "demo-animated-list",
-      "type": "registry:example",
-      "title": "Animated List Demo",
-      "description": "Auto-cycling notification feed with spring entry animations.",
-      "registryDependencies": [
-        "@unlumen-ui/animated-list"
-      ],
-      "files": [
-        {
-          "path": "registry/demo/primitives/unlumen/animated-list/index.tsx",
-          "type": "registry:example"
-        }
-      ],
-      "meta": {
-        "demoProps": {
-          "AnimatedListDemo": {}
-        }
-      }
-    },
-    {
-      "name": "demo-apple-switch",
-      "type": "registry:example",
-      "title": "Apple Switch Demo",
-      "description": "A compact settings panel with animated switches, descriptions, sizes, and tone controls.",
-      "registryDependencies": [
-        "@unlumen-ui/apple-switch"
-      ],
-      "files": [
-        {
-          "path": "registry/demo/primitives/unlumen/apple-switch/index.tsx",
-          "type": "registry:example"
-        }
-      ],
-      "meta": {
-        "demoProps": {
-          "AppleSwitchDemo": {
-            "size": {
-              "value": "md",
-              "options": {
-                "Small": "sm",
-                "Medium": "md",
-                "Large": "lg"
-              }
-            },
-            "tone": {
-              "value": "neutral",
-              "options": {
-                "Neutral": "neutral",
-                "Accent": "accent"
-              }
-            }
-          }
-        }
-      }
-    },
-    {
-      "name": "demo-aurora-bars",
-      "type": "registry:example",
-      "title": "Aurora Bars Demo",
-      "description": "Demonstration of the Aurora Bars component with animated gradient effects.",
-      "registryDependencies": [
-        "@unlumen-ui/aurora-bars"
-      ],
-      "files": [
-        {
-          "path": "registry/demo/primitives/unlumen/aurora-bars/index.tsx",
-          "type": "registry:example"
-        }
-      ]
-    },
-    {
-      "name": "demo-clipped-circle",
-      "type": "registry:example",
-      "title": "Clipped Circle Demo",
-      "description": "Demo showing a clipped circle spotlight effect on a button, a card, and an image.",
-      "registryDependencies": [
-        "@unlumen-ui/clipped-circle"
-      ],
-      "files": [
-        {
-          "path": "registry/demo/primitives/unlumen/clipped-circle/index.tsx",
-          "type": "registry:example"
-        }
-      ],
-      "meta": {
-        "demoProps": {
-          "ClippedCircleDemo": {
-            "circleSize": {
-              "value": 400,
-              "min": 100,
-              "max": 800,
-              "step": 50
-            }
-          }
-        }
-      }
-    },
-    {
-      "name": "demo-command-menu",
-      "type": "registry:example",
-      "title": "Command Menu Demo",
-      "description": "Demo showing a composable command palette with navigation, component links, and a built-in theme switcher.",
-      "registryDependencies": [
-        "@unlumen-ui/command-menu"
-      ],
-      "dependencies": [
-        "lucide-react"
-      ],
-      "files": [
-        {
-          "path": "registry/demo/primitives/unlumen/command-menu/index.tsx",
-          "type": "registry:example"
-        }
-      ],
-      "meta": {
-        "demoProps": {
-          "CommandMenuDemo": {
-            "showThemeGroup": {
-              "value": true
-            }
-          }
-        }
-      }
-    },
-    {
-      "name": "demo-count-up",
-      "type": "registry:example",
-      "title": "Count Up Demo",
-      "description": "Demo showing animated number counters with spring physics.",
-      "registryDependencies": [
-        "@unlumen-ui/count-up"
-      ],
-      "files": [
-        {
-          "path": "registry/demo/primitives/unlumen/count-up/index.tsx",
-          "type": "registry:example"
-        }
-      ],
-      "meta": {
-        "demoProps": {
-          "CountUpDemo": {
-            "digitEffect": {
-              "value": "none",
-              "options": {
-                "None": "none",
-                "Fade": "fade",
-                "Blur": "blur",
-                "Slide": "slide"
-              }
-            },
-            "duration": {
-              "value": 2,
-              "min": 0.5,
-              "max": 5,
-              "step": 0.5
-            },
-            "separator": {
-              "value": ","
-            }
-          }
-        }
-      }
-    },
-    {
-      "name": "demo-cursor-image-trail",
-      "type": "registry:example",
-      "title": "Cursor Image Trail Demo",
-      "description": "Demo showing a trail of images that follow the cursor with spring physics and fade-out.",
-      "registryDependencies": [
-        "@unlumen-ui/cursor-image-trail"
-      ],
-      "files": [
-        {
-          "path": "registry/demo/primitives/unlumen/cursor-image-trail/index.tsx",
-          "type": "registry:example"
-        }
-      ]
-    },
-    {
-      "name": "demo-dock",
-      "type": "registry:example",
-      "title": "Dock Demo",
-      "description": "Vercel-style dock with Lucide icons, separators, and Gaussian magnification.",
-      "dependencies": [
-        "lucide-react"
-      ],
-      "registryDependencies": [
-        "@unlumen-ui/dock"
-      ],
-      "files": [
-        {
-          "path": "registry/demo/primitives/unlumen/dock/index.tsx",
-          "type": "registry:example"
-        }
-      ],
-      "meta": {
-        "demoProps": {
-          "DockDemo": {}
-        }
-      }
-    },
-    {
-      "name": "demo-expand-menu",
-      "type": "registry:example",
-      "title": "Expand Menu Demo",
-      "description": "Demo for the Expand Menu component showing Edit, Copy, Share, and Archive actions.",
-      "registryDependencies": [
-        "expand-menu"
-      ],
-      "files": [
-        {
-          "path": "registry/demo/primitives/unlumen/expand-menu/index.tsx",
-          "type": "registry:example",
-          "target": "components/demo/expand-menu-demo.tsx"
-        }
-      ],
-      "demoProps": {
-        "direction": {
-          "value": "down",
-          "options": [
-            "up",
-            "down",
-            "left",
-            "right"
-          ]
-        },
-        "layout": {
-          "value": "column",
-          "options": [
-            "column",
-            "row"
-          ]
-        },
-        "align": {
-          "value": "start",
-          "options": [
-            "start",
-            "center",
-            "end"
-          ]
-        }
-      }
-    },
-    {
-      "name": "demo-favicon-search",
-      "type": "registry:example",
-      "title": "Favicon Search Demo",
-      "description": "Demo showing the FaviconSearch input — type a website URL and the brand logo animates in.",
-      "registryDependencies": [
-        "@unlumen-ui/favicon-search"
-      ],
-      "dependencies": [
-        "lucide-react"
-      ],
-      "files": [
-        {
-          "path": "registry/demo/primitives/unlumen/favicon-search/index.tsx",
-          "type": "registry:example"
-        }
-      ]
-    },
-    {
-      "name": "demo-file-tree",
-      "type": "registry:example",
-      "title": "File Tree Demo",
-      "description": "Animated file-tree with nested folders, file-type icons, and highlighted files.",
-      "registryDependencies": [
-        "@unlumen-ui/file-tree"
-      ],
-      "files": [
-        {
-          "path": "registry/demo/primitives/unlumen/file-tree/index.tsx",
-          "type": "registry:example"
-        }
-      ]
-    },
-    {
-      "name": "demo-floating-tooltip",
-      "type": "registry:example",
-      "title": "Floating Tooltip Demo",
-      "description": "",
-      "registryDependencies": [
-        "floating-tooltip"
-      ],
-      "files": [
-        {
-          "path": "registry/demo/primitives/unlumen/floating-tooltip/index.tsx",
-          "type": "registry:example"
-        }
-      ]
-    },
-    {
       "name": "demo-glowing-badge",
       "type": "registry:example",
       "title": "Glowing Badge Demo",
@@ -716,7 +290,7 @@
       ],
       "files": [
         {
-          "path": "registry/demo/primitives/unlumen/glowing-badge/index.tsx",
+          "path": "registry/demo/primitives/glowing-badge/index.tsx",
           "type": "registry:example"
         }
       ],
@@ -734,68 +308,29 @@
       }
     },
     {
-      "name": "demo-horizontal-depth-fade",
-      "type": "registry:ui",
-      "title": "Horizontal Depth Fade Demo",
-      "description": "Demo showing the Horizontal Depth Fade component.",
-      "registryDependencies": [
-        "@unlumen-ui/horizontal-depth-fade"
-      ],
-      "files": [
-        {
-          "path": "registry/demo/primitives/unlumen/horizontal-depth-fade/index.tsx",
-          "type": "registry:ui",
-          "target": "components/unlumen-ui/demo/primitives/unlumen/horizontal-depth-fade.tsx"
-        }
-      ]
-    },
-    {
-      "name": "demo-hover-expand",
+      "name": "demo-highlight",
       "type": "registry:example",
-      "title": "Hover Expand Demo",
-      "description": "Five travel destinations that expand vertically on hover to reveal a full-width photograph.",
+      "title": "Highlight Demo",
+      "description": "Interactive highlight effect with smooth spring animations.",
       "registryDependencies": [
-        "@unlumen-ui/hover-expand"
+        "@unlumen-ui/highlight"
       ],
       "files": [
         {
-          "path": "registry/demo/primitives/unlumen/hover-expand/index.tsx",
+          "path": "registry/demo/primitives/highlight/index.tsx",
           "type": "registry:example"
         }
       ],
       "meta": {
         "demoProps": {
-          "HoverExpandDemo": {
-            "collapsedHeight": {
-              "value": 68,
-              "min": 48,
-              "max": 120,
-              "step": 4
-            },
-            "expandedHeight": {
-              "value": 320,
-              "min": 200,
-              "max": 500,
-              "step": 20
+          "HighlightDemo": {
+            "hover": {
+              "value": true,
+              "type": "boolean"
             }
           }
         }
       }
-    },
-    {
-      "name": "demo-hover-feature-cards",
-      "type": "registry:example",
-      "title": "Hover Feature Cards Demo",
-      "description": "Two-column feature grid with hover-reveal description panels.",
-      "registryDependencies": [
-        "@unlumen-ui/hover-feature-cards"
-      ],
-      "files": [
-        {
-          "path": "registry/demo/primitives/unlumen/hover-feature-cards/index.tsx",
-          "type": "registry:example"
-        }
-      ]
     },
     {
       "name": "demo-kbd",
@@ -807,7 +342,7 @@
       ],
       "files": [
         {
-          "path": "registry/demo/primitives/unlumen/kbd/index.tsx",
+          "path": "registry/demo/primitives/kbd/index.tsx",
           "type": "registry:example"
         }
       ],
@@ -836,7 +371,7 @@
       ],
       "files": [
         {
-          "path": "registry/demo/primitives/unlumen/magnetic-button/index.tsx",
+          "path": "registry/demo/primitives/magnetic-button/index.tsx",
           "type": "registry:example"
         }
       ],
@@ -899,7 +434,7 @@
       ],
       "files": [
         {
-          "path": "registry/demo/primitives/unlumen/math-graph/index.tsx",
+          "path": "registry/demo/primitives/math-graph/index.tsx",
           "type": "registry:example"
         }
       ],
@@ -926,117 +461,6 @@
       }
     },
     {
-      "name": "demo-matrix",
-      "type": "registry:example",
-      "title": "Matrix Demo",
-      "description": "Interactive demo showcasing real-time clock, animation presets, VU meter, and a pixel draw pad.",
-      "registryDependencies": [
-        "@unlumen-ui/matrix"
-      ],
-      "files": [
-        {
-          "path": "registry/demo/primitives/unlumen/matrix/index.tsx",
-          "type": "registry:example"
-        }
-      ]
-    },
-    {
-      "name": "demo-matrix-image",
-      "type": "registry:example",
-      "title": "Matrix Image Demo",
-      "description": "Upload an image and render it as a grayscale LED dot matrix with adjustable resolution.",
-      "registryDependencies": [
-        "@unlumen-ui/matrix-image"
-      ],
-      "files": [
-        {
-          "path": "registry/demo/primitives/unlumen/matrix-image/index.tsx",
-          "type": "registry:example"
-        }
-      ]
-    },
-    {
-      "name": "demo-matrix-image-to-frame",
-      "type": "registry:example",
-      "title": "Matrix Image to Frame",
-      "description": "Upload an image and export it as a binary Frame (0s and 1s) for use with the Matrix component.",
-      "registryDependencies": [
-        "@unlumen-ui/matrix"
-      ],
-      "files": [
-        {
-          "path": "registry/demo/primitives/unlumen/matrix-image-to-frame/index.tsx",
-          "type": "registry:example"
-        }
-      ]
-    },
-    {
-      "name": "demo-motion-faqs-accordion",
-      "type": "registry:example",
-      "title": "Motion FAQs Accordion Demo",
-      "description": "5-item FAQ accordion with spring-animated content reveal.",
-      "registryDependencies": [
-        "@unlumen-ui/motion-faqs-accordion"
-      ],
-      "files": [
-        {
-          "path": "registry/demo/primitives/unlumen/motion-faqs-accordion/index.tsx",
-          "type": "registry:example"
-        }
-      ]
-    },
-    {
-      "name": "demo-motion-navigation-menu",
-      "type": "registry:example",
-      "title": "Motion Navigation Menu Demo",
-      "description": "Centered navigation menu with a single morphing container and direction-aware spring transitions.",
-      "registryDependencies": [
-        "@unlumen-ui/motion-navigation-menu"
-      ],
-      "files": [
-        {
-          "path": "registry/demo/primitives/unlumen/motion-navigation-menu/index.tsx",
-          "type": "registry:example"
-        }
-      ],
-      "meta": {
-        "demoProps": {
-          "MotionNavigationMenuDemo": {}
-        }
-      }
-    },
-    {
-      "name": "demo-nextjs-ship",
-      "type": "registry:example",
-      "title": "Next.js Ship Demo",
-      "description": "Animated chip with gradient pulse circuit traces.",
-      "registryDependencies": [
-        "@unlumen-ui/nextjs-ship"
-      ],
-      "files": [
-        {
-          "path": "registry/demo/primitives/unlumen/nextjs-ship/index.tsx",
-          "type": "registry:example"
-        }
-      ]
-    },
-    {
-      "name": "demo-orbital-image-wheel",
-      "type": "registry:ui",
-      "title": "Orbital Image Wheel Demo",
-      "description": "Demo showing the Orbital Image Wheel component.",
-      "registryDependencies": [
-        "@unlumen-ui/orbital-image-wheel"
-      ],
-      "files": [
-        {
-          "path": "registry/demo/primitives/unlumen/orbital-image-wheel/index.tsx",
-          "type": "registry:ui",
-          "target": "components/unlumen-ui/demo/primitives/unlumen/orbital-image-wheel.tsx"
-        }
-      ]
-    },
-    {
       "name": "demo-orbiting-skills",
       "type": "registry:example",
       "title": "Orbiting Skills Demo",
@@ -1046,7 +470,7 @@
       ],
       "files": [
         {
-          "path": "registry/demo/primitives/unlumen/orbiting-skills/index.tsx",
+          "path": "registry/demo/primitives/orbiting-skills/index.tsx",
           "type": "registry:example"
         }
       ],
@@ -1076,55 +500,6 @@
       }
     },
     {
-      "name": "demo-page-transition",
-      "type": "registry:example",
-      "title": "Page Transition Demo",
-      "description": "Demo showing four fake pages cycling through curtain, slide, push, and fade transition variants.",
-      "registryDependencies": [
-        "@unlumen-ui/page-transition"
-      ],
-      "files": [
-        {
-          "path": "registry/demo/primitives/unlumen/page-transition/index.tsx",
-          "type": "registry:example"
-        }
-      ]
-    },
-    {
-      "name": "demo-perspective-flow",
-      "type": "registry:ui",
-      "title": "Perspective Flow Demo",
-      "description": "Demo showing the Perspective Flow component.",
-      "registryDependencies": [
-        "@unlumen-ui/perspective-flow"
-      ],
-      "files": [
-        {
-          "path": "registry/demo/primitives/unlumen/perspective-flow/index.tsx",
-          "type": "registry:ui",
-          "target": "components/unlumen-ui/demo/primitives/unlumen/perspective-flow.tsx"
-        }
-      ]
-    },
-    {
-      "name": "demo-pinned-list",
-      "type": "registry:example",
-      "title": "Pinned List Demo",
-      "description": "5-item list with smooth pin/unpin layout animations.",
-      "registryDependencies": [
-        "@unlumen-ui/pinned-list"
-      ],
-      "dependencies": [
-        "lucide-react"
-      ],
-      "files": [
-        {
-          "path": "registry/demo/primitives/unlumen/pinned-list/index.tsx",
-          "type": "registry:example"
-        }
-      ]
-    },
-    {
       "name": "demo-progressive-blur",
       "type": "registry:example",
       "title": "Progressive Blur Demo",
@@ -1134,7 +509,7 @@
       ],
       "files": [
         {
-          "path": "registry/demo/primitives/unlumen/progressive-blur/index.tsx",
+          "path": "registry/demo/primitives/progressive-blur/index.tsx",
           "type": "registry:example"
         }
       ],
@@ -1165,6 +540,51 @@
       }
     },
     {
+      "name": "demo-refresh",
+      "type": "registry:example",
+      "title": "Refresh Button Demo",
+      "registryDependencies": [
+        "@unlumen-ui/refresh"
+      ],
+      "dependencies": [
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "registry/demo/primitives/refresh/index.tsx",
+          "type": "registry:example",
+          "target": "components/unlumen-ui/demo/primitives/buttons/refresh.tsx"
+        }
+      ],
+      "meta": {
+        "demoName": "RefreshButtonDemo",
+        "demoProps": {
+          "variant": {
+            "type": "select",
+            "label": "Variant",
+            "default": "neutral",
+            "options": {
+              "Neutral": "neutral",
+              "Default": "default",
+              "Ghost": "ghost",
+              "Outline": "outline",
+              "Secondary": "secondary"
+            }
+          },
+          "size": {
+            "type": "select",
+            "label": "Size",
+            "default": "icon-sm",
+            "options": {
+              "Icon SM": "icon-sm",
+              "Icon": "icon",
+              "SM": "sm"
+            }
+          }
+        }
+      }
+    },
+    {
       "name": "demo-scramble-text",
       "type": "registry:example",
       "title": "Scramble Text Demo",
@@ -1174,22 +594,7 @@
       ],
       "files": [
         {
-          "path": "registry/demo/primitives/unlumen/scramble-text/index.tsx",
-          "type": "registry:example"
-        }
-      ]
-    },
-    {
-      "name": "demo-scroll-reveal-image",
-      "type": "registry:example",
-      "title": "Scroll Reveal Image Demo",
-      "description": "Demo of the scroll-driven image reveal with spring physics.",
-      "registryDependencies": [
-        "@unlumen-ui/scroll-reveal-image"
-      ],
-      "files": [
-        {
-          "path": "registry/demo/primitives/unlumen/scroll-reveal-image/index.tsx",
+          "path": "registry/demo/primitives/scramble-text/index.tsx",
           "type": "registry:example"
         }
       ]
@@ -1204,7 +609,7 @@
       ],
       "files": [
         {
-          "path": "registry/demo/primitives/unlumen/shimmer-skeleton/index.tsx",
+          "path": "registry/demo/primitives/shimmer-skeleton/index.tsx",
           "type": "registry:example"
         }
       ],
@@ -1228,115 +633,7 @@
       ],
       "files": [
         {
-          "path": "registry/demo/primitives/unlumen/shimmering-text/index.tsx",
-          "type": "registry:example"
-        }
-      ]
-    },
-    {
-      "name": "demo-side-by-side-slide",
-      "type": "registry:example",
-      "title": "Side By Side Slide Demo",
-      "description": "Image comparison slider showing before/after with configurable divider and handle.",
-      "registryDependencies": [
-        "@unlumen-ui/side-by-side-slide"
-      ],
-      "files": [
-        {
-          "path": "registry/demo/primitives/unlumen/side-by-side-slide/index.tsx",
-          "type": "registry:example"
-        }
-      ],
-      "meta": {
-        "demoProps": {
-          "SideBySideSlideDemo": {
-            "orientation": {
-              "value": "horizontal",
-              "options": {
-                "Horizontal": "horizontal",
-                "Vertical": "vertical"
-              }
-            },
-            "initialPosition": {
-              "value": 50,
-              "min": 0,
-              "max": 100,
-              "step": 5
-            },
-            "dividerColor": {
-              "value": "white",
-              "options": {
-                "White": "white",
-                "Black": "black",
-                "Blue": "#3b82f6",
-                "Red": "#ef4444",
-                "Green": "#22c55e",
-                "Purple": "#a855f7",
-                "Yellow": "#eab308"
-              }
-            },
-            "dividerWidth": {
-              "value": 2,
-              "min": 1,
-              "max": 10,
-              "step": 1
-            },
-            "showHandle": {
-              "value": true
-            },
-            "handleSize": {
-              "value": 40,
-              "min": 24,
-              "max": 72,
-              "step": 4
-            },
-            "handleColor": {
-              "value": "white",
-              "options": {
-                "White": "white",
-                "Black": "black",
-                "Blue": "#3b82f6",
-                "Red": "#ef4444",
-                "Green": "#22c55e",
-                "Purple": "#a855f7",
-                "Yellow": "#eab308"
-              }
-            },
-            "cursor": {
-              "value": "none",
-              "options": {
-                "Hidden": "none",
-                "Resize": "col-resize",
-                "Pointer": "pointer"
-              }
-            },
-            "stiffness": {
-              "value": 300,
-              "min": 50,
-              "max": 600,
-              "step": 25
-            },
-            "damping": {
-              "value": 30,
-              "min": 5,
-              "max": 80,
-              "step": 5
-            }
-          }
-        }
-      }
-    },
-    {
-      "name": "demo-sidebar-001",
-      "type": "registry:example",
-      "title": "Sidebar 001 Demo",
-      "description": "Demo showing the Sidebar 001 animated vertical sidebar.",
-      "registryDependencies": [
-        "@unlumen-ui/sidebar-001"
-      ],
-      "files": [
-        {
-          "path": "registry/demo/primitives/unlumen/sidebar-001/index.tsx",
+          "path": "registry/demo/primitives/shimmering-text/index.tsx",
           "type": "registry:example"
         }
       ]
@@ -1351,7 +648,7 @@
       ],
       "files": [
         {
-          "path": "registry/demo/primitives/unlumen/slider/index.tsx",
+          "path": "registry/demo/primitives/slider/index.tsx",
           "type": "registry:example"
         }
       ],
@@ -1388,7 +685,7 @@
       ],
       "files": [
         {
-          "path": "registry/demo/primitives/unlumen/slider-range/index.tsx",
+          "path": "registry/demo/primitives/slider-range/index.tsx",
           "type": "registry:example"
         }
       ],
@@ -1412,7 +709,7 @@
       ],
       "files": [
         {
-          "path": "registry/demo/primitives/unlumen/slider-steps/index.tsx",
+          "path": "registry/demo/primitives/slider-steps/index.tsx",
           "type": "registry:example"
         }
       ],
@@ -1436,7 +733,7 @@
       ],
       "files": [
         {
-          "path": "registry/demo/primitives/unlumen/switch/index.tsx",
+          "path": "registry/demo/primitives/switch/index.tsx",
           "type": "registry:example"
         }
       ],
@@ -1455,21 +752,6 @@
       }
     },
     {
-      "name": "demo-tag",
-      "type": "registry:example",
-      "title": "Tag Demo",
-      "description": "A vertical stack of outlined icon tags using the six built-in color variants.",
-      "registryDependencies": [
-        "@unlumen-ui/tag"
-      ],
-      "files": [
-        {
-          "path": "registry/demo/primitives/unlumen/tag/index.tsx",
-          "type": "registry:example"
-        }
-      ]
-    },
-    {
       "name": "demo-text-reveal",
       "type": "registry:example",
       "title": "Text Reveal Demo",
@@ -1479,7 +761,7 @@
       ],
       "files": [
         {
-          "path": "registry/demo/primitives/unlumen/text-reveal/index.tsx",
+          "path": "registry/demo/primitives/text-reveal/index.tsx",
           "type": "registry:example"
         }
       ],
@@ -1522,7 +804,7 @@
       ],
       "files": [
         {
-          "path": "registry/demo/primitives/unlumen/theme-switch/index.tsx",
+          "path": "registry/demo/primitives/theme-switch/index.tsx",
           "type": "registry:example"
         }
       ],
@@ -1549,7 +831,7 @@
       ],
       "files": [
         {
-          "path": "registry/demo/primitives/unlumen/tilt-card/index.tsx",
+          "path": "registry/demo/primitives/tilt-card/index.tsx",
           "type": "registry:example"
         }
       ],
@@ -1583,56 +865,35 @@
       ],
       "files": [
         {
-          "path": "registry/demo/primitives/unlumen/tooltip-preview/index.tsx",
+          "path": "registry/demo/primitives/tooltip-preview/index.tsx",
           "type": "registry:example"
         }
       ]
     },
     {
-      "name": "demo-vertical-marquee",
+      "name": "demo-velocity-highlight",
       "type": "registry:example",
-      "title": "Vertical Marquee Demo",
-      "description": "Two-column vertical tweet marquee scrolling in opposite directions with progressive fade edges.",
+      "title": "Velocity Highlight Demo",
+      "description": "Interactive highlight with velocity-based scaling effects.",
       "registryDependencies": [
-        "@unlumen-ui/vertical-marquee"
+        "@unlumen-ui/velocity-highlight"
       ],
       "files": [
         {
-          "path": "registry/demo/primitives/unlumen/vertical-marquee/index.tsx",
+          "path": "registry/demo/primitives/velocity-highlight/index.tsx",
           "type": "registry:example"
         }
       ],
       "meta": {
         "demoProps": {
-          "VerticalMarqueeDemo": {}
+          "VelocityHighlightDemo": {
+            "hover": {
+              "value": true,
+              "type": "boolean"
+            }
+          }
         }
       }
-    },
-    {
-      "name": "demo-video-ambient",
-      "type": "registry:example",
-      "registryDependencies": [
-        "video-ambient"
-      ],
-      "files": [
-        {
-          "path": "registry/demo/primitives/unlumen/video-ambient/index.tsx",
-          "type": "registry:example"
-        }
-      ]
-    },
-    {
-      "name": "hooks-use-auto-height",
-      "type": "registry:hook",
-      "title": "useAutoHeight",
-      "description": "A hook that allows you to automatically adjust the height of an element based on its content.",
-      "files": [
-        {
-          "path": "registry/hooks/use-auto-height/index.tsx",
-          "type": "registry:hook",
-          "target": "hooks/use-auto-height.tsx"
-        }
-      ]
     },
     {
       "name": "hooks-use-controlled-state",
@@ -1645,52 +906,8 @@
           "type": "registry:hook",
           "target": "hooks/use-controlled-state.tsx"
         }
-      ]
-    },
-    {
-      "name": "hooks-use-data-state",
-      "type": "registry:hook",
-      "title": "useDataState",
-      "description": "A hook that allows you to get the data-state of an element.",
-      "files": [
-        {
-          "path": "registry/hooks/use-data-state/index.tsx",
-          "type": "registry:hook",
-          "target": "hooks/use-data-state.tsx"
-        }
-      ]
-    },
-    {
-      "name": "hooks-use-is-in-view",
-      "type": "registry:hook",
-      "title": "useIsInView",
-      "description": "A hook that allows you to check if an element is in view.",
-      "dependencies": [
-        "motion"
       ],
-      "files": [
-        {
-          "path": "registry/hooks/use-is-in-view/index.tsx",
-          "type": "registry:hook",
-          "target": "hooks/use-is-in-view.tsx"
-        }
-      ]
-    },
-    {
-      "name": "hooks-use-motion-value-state",
-      "type": "registry:hook",
-      "title": "useMotionValueState",
-      "description": "A hook that allows you to use a motion value state.",
-      "dependencies": [
-        "motion"
-      ],
-      "files": [
-        {
-          "path": "registry/hooks/use-motion-value-state/index.tsx",
-          "type": "registry:hook",
-          "target": "hooks/use-motion-value-state.tsx"
-        }
-      ]
+      "registryDependencies": []
     },
     {
       "name": "lib-get-strict-context",
@@ -1703,268 +920,11 @@
           "type": "registry:lib",
           "target": "lib/get-strict-context.tsx"
         }
-      ]
+      ],
+      "registryDependencies": []
     },
     {
-      "name": "primitives-animate-avatar-group",
-      "type": "registry:ui",
-      "title": "Avatar Group",
-      "description": "An animated avatar group that displays overlapping user images and smoothly shifts each avatar forward on hover to highlight it.",
-      "dependencies": [
-        "motion"
-      ],
-      "registryDependencies": [
-        "@unlumen-ui/primitives-animate-tooltip"
-      ],
-      "files": [
-        {
-          "path": "registry/primitives/animate/avatar-group/index.tsx",
-          "type": "registry:ui",
-          "target": "components/unlumen-ui/primitives/animate/avatar-group.tsx"
-        }
-      ]
-    },
-    {
-      "name": "primitives-animate-code-block",
-      "type": "registry:ui",
-      "title": "Code Block",
-      "description": "A code block component that animates the code as it is written.",
-      "dependencies": [
-        "shiki"
-      ],
-      "registryDependencies": [
-        "@unlumen-ui/hooks-use-is-in-view"
-      ],
-      "files": [
-        {
-          "path": "registry/primitives/animate/code-block/index.tsx",
-          "type": "registry:ui",
-          "target": "components/unlumen-ui/primitives/animate/code-block.tsx"
-        }
-      ]
-    },
-    {
-      "name": "primitives-animate-cursor",
-      "type": "registry:ui",
-      "title": "Cursor",
-      "description": "An animated cursor component that allows you to customize both the cursor and cursor follow elements with smooth animations.",
-      "dependencies": [
-        "motion"
-      ],
-      "registryDependencies": [
-        "@unlumen-ui/primitives-animate-slot",
-        "@unlumen-ui/lib-get-strict-context"
-      ],
-      "files": [
-        {
-          "path": "registry/primitives/animate/cursor/index.tsx",
-          "type": "registry:ui",
-          "target": "components/unlumen-ui/primitives/animate/cursor.tsx"
-        }
-      ]
-    },
-    {
-      "name": "primitives-animate-files",
-      "type": "registry:ui",
-      "title": "Files",
-      "description": "Animated file-tree primitives with motion hover highlight, spring folder expand/collapse, and animated folder icon swap.",
-      "dependencies": [
-        "motion"
-      ],
-      "registryDependencies": [
-        "@unlumen-ui/lib-get-strict-context"
-      ],
-      "files": [
-        {
-          "path": "registry/primitives/animate/files/index.tsx",
-          "type": "registry:ui",
-          "target": "components/unlumen-ui/primitives/animate/files.tsx"
-        }
-      ]
-    },
-    {
-      "name": "primitives-animate-github-stars",
-      "type": "registry:ui",
-      "title": "Github Stars",
-      "description": "A component that animates a number of stars, smoothly animating number transitions using the SlidingNumber component.",
-      "dependencies": [
-        "motion"
-      ],
-      "registryDependencies": [
-        "@unlumen-ui/primitives-animate-slot",
-        "@unlumen-ui/primitives-texts-sliding-number",
-        "@unlumen-ui/primitives-effects-particles",
-        "@unlumen-ui/hooks-use-is-in-view",
-        "@unlumen-ui/lib-get-strict-context"
-      ],
-      "files": [
-        {
-          "path": "registry/primitives/animate/github-stars/index.tsx",
-          "type": "registry:ui",
-          "target": "components/unlumen-ui/primitives/animate/github-stars.tsx"
-        }
-      ]
-    },
-    {
-      "name": "primitives-animate-motion-grid",
-      "type": "registry:ui",
-      "title": "Motion Grid",
-      "description": "A grid that displays animations in a grid.",
-      "dependencies": [
-        "motion"
-      ],
-      "registryDependencies": [
-        "@unlumen-ui/primitives-animate-slot",
-        "@unlumen-ui/lib-get-strict-context"
-      ],
-      "files": [
-        {
-          "path": "registry/primitives/animate/motion-grid/index.tsx",
-          "type": "registry:ui",
-          "target": "components/unlumen-ui/primitives/animate/motion-grid.tsx"
-        }
-      ]
-    },
-    {
-      "name": "primitives-animate-pinned-list",
-      "type": "registry:ui",
-      "title": "Pin List",
-      "description": "A pin list component that allows you to pin items to the top of the list.",
-      "dependencies": [
-        "motion"
-      ],
-      "registryDependencies": [
-        "@unlumen-ui/primitives-animate-slot"
-      ],
-      "files": [
-        {
-          "path": "registry/primitives/animate/pinned-list/index.tsx",
-          "type": "registry:ui",
-          "target": "components/unlumen-ui/primitives/animate/pinned-list.tsx"
-        }
-      ]
-    },
-    {
-      "name": "primitives-animate-scroll-progress",
-      "type": "registry:ui",
-      "title": "Scroll Progress",
-      "description": "A scroll progress component that allows you to track the progress of a scrollable element.",
-      "dependencies": [
-        "motion"
-      ],
-      "registryDependencies": [
-        "@unlumen-ui/primitives-animate-slot",
-        "@unlumen-ui/lib-get-strict-context",
-        "@unlumen-ui/hooks-use-motion-value-state"
-      ],
-      "files": [
-        {
-          "path": "registry/primitives/animate/scroll-progress/index.tsx",
-          "type": "registry:ui",
-          "target": "components/unlumen-ui/primitives/animate/scroll-progress.tsx"
-        }
-      ]
-    },
-    {
-      "name": "primitives-animate-slot",
-      "type": "registry:ui",
-      "title": "Animate Slot",
-      "description": "A slot component that allows you to use motion components with any element.",
-      "dependencies": [
-        "motion"
-      ],
-      "files": [
-        {
-          "path": "registry/primitives/animate/slot/index.tsx",
-          "type": "registry:ui",
-          "target": "components/unlumen-ui/primitives/animate/slot.tsx"
-        }
-      ]
-    },
-    {
-      "name": "primitives-animate-spring",
-      "type": "registry:ui",
-      "title": "Spring",
-      "description": "A flexible, animated spring component that attaches a draggable element to its origin with a spring line.",
-      "dependencies": [
-        "motion"
-      ],
-      "registryDependencies": [
-        "@unlumen-ui/primitives-animate-slot",
-        "@unlumen-ui/lib-get-strict-context",
-        "@unlumen-ui/hooks-use-motion-value-state"
-      ],
-      "files": [
-        {
-          "path": "registry/primitives/animate/spring/index.tsx",
-          "type": "registry:ui",
-          "target": "components/unlumen-ui/primitives/animate/spring.tsx"
-        }
-      ]
-    },
-    {
-      "name": "primitives-animate-tabs",
-      "type": "registry:ui",
-      "title": "Tabs",
-      "description": "A set of layered sections of content—known as tab panels—that are displayed one at a time.",
-      "dependencies": [
-        "motion"
-      ],
-      "registryDependencies": [
-        "@unlumen-ui/highlight",
-        "@unlumen-ui/primitives-animate-slot",
-        "@unlumen-ui/lib-get-strict-context"
-      ],
-      "files": [
-        {
-          "path": "registry/primitives/animate/tabs/index.tsx",
-          "type": "registry:ui",
-          "target": "components/unlumen-ui/primitives/animate/tabs.tsx"
-        }
-      ]
-    },
-    {
-      "name": "primitives-animate-tooltip",
-      "type": "registry:ui",
-      "title": "Tooltip",
-      "description": "An animated tooltip that shows contextual info on hover or focus and smoothly glides to the next element without disappearing between transitions.",
-      "dependencies": [
-        "motion",
-        "@floating-ui/react"
-      ],
-      "registryDependencies": [
-        "@unlumen-ui/primitives-animate-slot",
-        "@unlumen-ui/lib-get-strict-context"
-      ],
-      "files": [
-        {
-          "path": "registry/primitives/animate/tooltip/index.tsx",
-          "type": "registry:ui",
-          "target": "components/unlumen-ui/primitives/animate/tooltip.tsx"
-        }
-      ]
-    },
-    {
-      "name": "pixel-liquid-bg",
-      "type": "registry:ui",
-      "title": "Pixel Liquid Background",
-      "description": "A full Navier-Stokes fluid simulation background with pixelation, Bayer dithering, film-grain noise, and auto-demo mode. Reacts to cursor movement.",
-      "dependencies": [
-        "three"
-      ],
-      "devDependencies": [
-        "@types/three"
-      ],
-      "files": [
-        {
-          "path": "registry/primitives/backgrounds/pixel-liquid-bg/index.tsx",
-          "type": "registry:ui",
-          "target": "components/unlumen-ui/primitives/backgrounds/pixel-liquid-bg.tsx"
-        }
-      ]
-    },
-    {
-      "name": "primitives-buttons-button",
+      "name": "button",
       "type": "registry:ui",
       "title": "Button",
       "description": "A simple button that animates on hover and tap.",
@@ -1972,800 +932,13 @@
         "motion"
       ],
       "registryDependencies": [
-        "@unlumen-ui/primitives-animate-slot"
+        "@unlumen-ui/slot"
       ],
       "files": [
         {
-          "path": "registry/primitives/buttons/button/index.tsx",
+          "path": "registry/primitives/button/index.tsx",
           "type": "registry:ui",
-          "target": "components/unlumen-ui/primitives/buttons/button.tsx"
-        }
-      ]
-    },
-    {
-      "name": "copy",
-      "type": "registry:ui",
-      "title": "Copy Button",
-      "description": "A copy button component with a variety of styles and animations.",
-      "dependencies": [
-        "motion",
-        "lucide-react",
-        "class-variance-authority"
-      ],
-      "registryDependencies": [
-        "@unlumen-ui/primitives-buttons-button",
-        "@unlumen-ui/hooks-use-controlled-state"
-      ],
-      "files": [
-        {
-          "path": "registry/primitives/buttons/copy/index.tsx",
-          "type": "registry:ui",
-          "target": "components/unlumen-ui/primitives/buttons/copy.tsx"
-        }
-      ]
-    },
-    {
-      "name": "primitives-buttons-flip",
-      "type": "registry:ui",
-      "title": "Flip Button",
-      "description": "A button that flips between two states on hover.",
-      "dependencies": [
-        "motion"
-      ],
-      "registryDependencies": [
-        "@unlumen-ui/lib-get-strict-context",
-        "@unlumen-ui/primitives-animate-slot"
-      ],
-      "files": [
-        {
-          "path": "registry/primitives/buttons/flip/index.tsx",
-          "type": "registry:ui",
-          "target": "components/unlumen-ui/primitives/buttons/flip.tsx"
-        }
-      ]
-    },
-    {
-      "name": "glow",
-      "type": "registry:ui",
-      "title": "Glow Button",
-      "description": "A button with an animated conic-gradient glow layer behind it. Supports rotate, pulse, breathe, colorShift, flowHorizontal and static modes.",
-      "dependencies": [
-        "class-variance-authority",
-        "motion"
-      ],
-      "registryDependencies": [
-        "button"
-      ],
-      "files": [
-        {
-          "path": "registry/primitives/buttons/glow/index.tsx",
-          "type": "registry:ui",
-          "target": "components/unlumen-ui/primitives/buttons/glow.tsx"
-        }
-      ]
-    },
-    {
-      "name": "primitives-buttons-liquid",
-      "type": "registry:ui",
-      "title": "Liquid Button",
-      "description": "A button that fills on hover.",
-      "dependencies": [
-        "motion"
-      ],
-      "registryDependencies": [
-        "@unlumen-ui/lib-get-strict-context",
-        "@unlumen-ui/primitives-animate-slot"
-      ],
-      "files": [
-        {
-          "path": "registry/primitives/buttons/liquid/index.tsx",
-          "type": "registry:ui",
-          "target": "components/unlumen-ui/primitives/buttons/liquid.tsx"
-        }
-      ]
-    },
-    {
-      "name": "refresh",
-      "type": "registry:ui",
-      "title": "Refresh Button",
-      "description": "An icon button that spins on click and supports async refresh callbacks — ideal for reloading component previews or live data.",
-      "dependencies": [
-        "class-variance-authority",
-        "motion",
-        "lucide-react"
-      ],
-      "files": [
-        {
-          "path": "registry/primitives/buttons/refresh/index.tsx",
-          "type": "registry:ui",
-          "target": "components/unlumen-ui/primitives/buttons/refresh.tsx"
-        }
-      ]
-    },
-    {
-      "name": "primitives-buttons-ripple",
-      "type": "registry:ui",
-      "title": "Ripple Button",
-      "description": "A button that animates on tap with a ripple effect.",
-      "dependencies": [
-        "motion"
-      ],
-      "registryDependencies": [
-        "@unlumen-ui/lib-get-strict-context",
-        "@unlumen-ui/primitives-animate-slot"
-      ],
-      "files": [
-        {
-          "path": "registry/primitives/buttons/ripple/index.tsx",
-          "type": "registry:ui",
-          "target": "components/unlumen-ui/primitives/buttons/ripple.tsx"
-        }
-      ]
-    },
-    {
-      "name": "primitives-effects-auto-height",
-      "type": "registry:ui",
-      "title": "Auto Height",
-      "description": "An effect that automatically adjusts the height of an element based on its content.",
-      "dependencies": [
-        "motion"
-      ],
-      "registryDependencies": [
-        "@unlumen-ui/primitives-animate-slot",
-        "@unlumen-ui/hooks-use-auto-height"
-      ],
-      "files": [
-        {
-          "path": "registry/primitives/effects/auto-height/index.tsx",
-          "type": "registry:ui",
-          "target": "components/unlumen-ui/primitives/effects/auto-height.tsx"
-        }
-      ]
-    },
-    {
-      "name": "primitives-effects-blur",
-      "type": "registry:ui",
-      "title": "Blur",
-      "description": "An effect that allows you to animate elements with a blur effect on first view or load.",
-      "dependencies": [
-        "motion"
-      ],
-      "registryDependencies": [
-        "@unlumen-ui/primitives-animate-slot",
-        "@unlumen-ui/hooks-use-is-in-view"
-      ],
-      "files": [
-        {
-          "path": "registry/primitives/effects/blur/index.tsx",
-          "type": "registry:ui",
-          "target": "components/unlumen-ui/primitives/effects/blur.tsx"
-        }
-      ]
-    },
-    {
-      "name": "primitives-effects-click",
-      "type": "registry:ui",
-      "title": "Click",
-      "description": "An effect that creates animated effects at the click position, adding interactive feedback to user actions.",
-      "dependencies": [
-        "motion"
-      ],
-      "files": [
-        {
-          "path": "registry/primitives/effects/click/index.tsx",
-          "type": "registry:ui",
-          "target": "components/unlumen-ui/primitives/effects/click.tsx"
-        }
-      ]
-    },
-    {
-      "name": "primitives-effects-effect",
-      "type": "registry:ui",
-      "title": "Effect",
-      "description": "An effect that allows you to animate elements on first view or load.",
-      "dependencies": [
-        "motion"
-      ],
-      "registryDependencies": [
-        "@unlumen-ui/primitives-animate-slot",
-        "@unlumen-ui/hooks-use-is-in-view"
-      ],
-      "files": [
-        {
-          "path": "registry/primitives/effects/effect/index.tsx",
-          "type": "registry:ui",
-          "target": "components/unlumen-ui/primitives/effects/effect.tsx"
-        }
-      ]
-    },
-    {
-      "name": "primitives-effects-fade",
-      "type": "registry:ui",
-      "title": "Fade",
-      "description": "An effect that allows you to animate elements with a fade effect on first view or load.",
-      "dependencies": [
-        "motion"
-      ],
-      "registryDependencies": [
-        "@unlumen-ui/primitives-animate-slot",
-        "@unlumen-ui/hooks-use-is-in-view"
-      ],
-      "files": [
-        {
-          "path": "registry/primitives/effects/fade/index.tsx",
-          "type": "registry:ui",
-          "target": "components/unlumen-ui/primitives/effects/fade.tsx"
-        }
-      ]
-    },
-    {
-      "name": "primitives-effects-highlight-nav-menu",
-      "type": "registry:ui",
-      "title": "Highlight Nav Menu",
-      "description": "A Radix UI NavigationMenu with animated highlight hover effects built in.",
-      "dependencies": [
-        "@radix-ui/react-navigation-menu",
-        "class-variance-authority",
-        "lucide-react"
-      ],
-      "registryDependencies": [
-        "@unlumen-ui/highlight"
-      ],
-      "files": [
-        {
-          "path": "registry/primitives/effects/highlight-nav-menu/index.tsx",
-          "type": "registry:ui",
-          "target": "components/unlumen-ui/primitives/effects/highlight-nav-menu.tsx"
-        }
-      ]
-    },
-    {
-      "name": "primitives-effects-image-zoom",
-      "type": "registry:ui",
-      "title": "Image Zoom",
-      "description": "An effect that allows you to zoom in on an image on hover.",
-      "dependencies": [
-        "motion"
-      ],
-      "files": [
-        {
-          "path": "registry/primitives/effects/image-zoom/index.tsx",
-          "type": "registry:ui",
-          "target": "components/unlumen-ui/primitives/effects/image-zoom.tsx"
-        }
-      ]
-    },
-    {
-      "name": "primitives-effects-magnetic",
-      "type": "registry:ui",
-      "title": "Magnetic",
-      "description": "A magnetic effect that clings to the cursor, creating a magnetic attraction effect.",
-      "dependencies": [
-        "motion"
-      ],
-      "registryDependencies": [
-        "@unlumen-ui/primitives-animate-slot"
-      ],
-      "files": [
-        {
-          "path": "registry/primitives/effects/magnetic/index.tsx",
-          "type": "registry:ui",
-          "target": "components/unlumen-ui/primitives/effects/magnetic.tsx"
-        }
-      ]
-    },
-    {
-      "name": "primitives-effects-particles",
-      "type": "registry:ui",
-      "title": "Particles",
-      "description": "A particles effect that creates a particle system.",
-      "dependencies": [
-        "motion"
-      ],
-      "registryDependencies": [
-        "@unlumen-ui/primitives-animate-slot",
-        "@unlumen-ui/hooks-use-is-in-view",
-        "@unlumen-ui/lib-get-strict-context"
-      ],
-      "files": [
-        {
-          "path": "registry/primitives/effects/particles/index.tsx",
-          "type": "registry:ui",
-          "target": "components/unlumen-ui/primitives/effects/particles.tsx"
-        }
-      ]
-    },
-    {
-      "name": "primitives-effects-shine",
-      "type": "registry:ui",
-      "title": "Shine",
-      "description": "An animated light sweep effect with configurable timing, colors, and triggers (hover, tap, or continuous).",
-      "dependencies": [
-        "motion"
-      ],
-      "files": [
-        {
-          "path": "registry/primitives/effects/shine/index.tsx",
-          "type": "registry:ui",
-          "target": "components/unlumen-ui/primitives/effects/shine.tsx"
-        }
-      ]
-    },
-    {
-      "name": "primitives-effects-slide",
-      "type": "registry:ui",
-      "title": "Slide",
-      "description": "An effect that allows you to animate elements with a slide effect on first view or load.",
-      "dependencies": [
-        "motion"
-      ],
-      "registryDependencies": [
-        "@unlumen-ui/primitives-animate-slot",
-        "@unlumen-ui/hooks-use-is-in-view"
-      ],
-      "files": [
-        {
-          "path": "registry/primitives/effects/slide/index.tsx",
-          "type": "registry:ui",
-          "target": "components/unlumen-ui/primitives/effects/slide.tsx"
-        }
-      ]
-    },
-    {
-      "name": "primitives-effects-theme-toggler",
-      "type": "registry:ui",
-      "title": "Theme Toggler",
-      "description": "An effect that allows you to toggle the theme gradually.",
-      "files": [
-        {
-          "path": "registry/primitives/effects/theme-toggler/index.tsx",
-          "type": "registry:ui",
-          "target": "components/unlumen-ui/primitives/effects/theme-toggler.tsx"
-        }
-      ]
-    },
-    {
-      "name": "primitives-effects-tilt",
-      "type": "registry:ui",
-      "title": "Tilt",
-      "description": "An effect that allows you to animate elements with a tilt effect on mouse hover.",
-      "dependencies": [
-        "motion"
-      ],
-      "registryDependencies": [
-        "@unlumen-ui/primitives-animate-slot",
-        "@unlumen-ui/lib-get-strict-context"
-      ],
-      "files": [
-        {
-          "path": "registry/primitives/effects/tilt/index.tsx",
-          "type": "registry:ui",
-          "target": "components/unlumen-ui/primitives/effects/tilt.tsx"
-        }
-      ]
-    },
-    {
-      "name": "primitives-effects-velocity-highlight",
-      "type": "registry:ui",
-      "title": "Velocity Highlight",
-      "description": "A highlight effect with smooth spring physics that tracks the active element across hover or click interactions.",
-      "dependencies": [
-        "motion"
-      ],
-      "files": [
-        {
-          "path": "registry/primitives/effects/velocity-highlight/index.tsx",
-          "type": "registry:ui",
-          "target": "components/unlumen-ui/primitives/effects/velocity-highlight.tsx"
-        }
-      ]
-    },
-    {
-      "name": "primitives-effects-zoom",
-      "type": "registry:ui",
-      "title": "Zoom",
-      "description": "An effect that allows you to animate elements with a zoom effect on first view or load.",
-      "dependencies": [
-        "motion"
-      ],
-      "registryDependencies": [
-        "@unlumen-ui/primitives-animate-slot",
-        "@unlumen-ui/hooks-use-is-in-view"
-      ],
-      "files": [
-        {
-          "path": "registry/primitives/effects/zoom/index.tsx",
-          "type": "registry:ui",
-          "target": "components/unlumen-ui/primitives/effects/zoom.tsx"
-        }
-      ]
-    },
-    {
-      "name": "cards-view-icon",
-      "type": "registry:ui",
-      "title": "Cards View Icon",
-      "description": "Animated icon where four square dots reorder in a 2×2 grid via Motion layout animation when active, signaling a card view mode.",
-      "dependencies": [
-        "motion"
-      ],
-      "registryDependencies": [],
-      "files": [
-        {
-          "path": "registry/primitives/icons/cards-view-icon/index.tsx",
-          "type": "registry:ui",
-          "target": "components/unlumen-ui/primitives/icons/cards-view-icon.tsx"
-        }
-      ]
-    },
-    {
-      "name": "compact-view-icon",
-      "type": "registry:ui",
-      "title": "Compact View Icon",
-      "description": "Animated icon where a 3×2 grid of dots reorder themselves via Motion layout animation when active.",
-      "dependencies": [
-        "motion"
-      ],
-      "registryDependencies": [],
-      "files": [
-        {
-          "path": "registry/primitives/icons/compact-view-icon/index.tsx",
-          "type": "registry:ui",
-          "target": "components/unlumen-ui/primitives/icons/compact-view-icon.tsx"
-        }
-      ]
-    },
-    {
-      "name": "list-view-icon",
-      "type": "registry:ui",
-      "title": "List View Icon",
-      "description": "Animated icon where three horizontal lines shuffle vertically when active, signaling a list view mode.",
-      "dependencies": [
-        "motion"
-      ],
-      "registryDependencies": [],
-      "files": [
-        {
-          "path": "registry/primitives/icons/list-view-icon/index.tsx",
-          "type": "registry:ui",
-          "target": "components/unlumen-ui/primitives/icons/list-view-icon.tsx"
-        }
-      ]
-    },
-    {
-      "name": "sidebar-toggle-icon",
-      "type": "registry:ui",
-      "title": "Sidebar Toggle Icon",
-      "description": "Animated SVG icon that morphs between open and closed sidebar panel states using Motion path interpolation.",
-      "dependencies": [
-        "motion"
-      ],
-      "registryDependencies": [],
-      "files": [
-        {
-          "path": "registry/primitives/icons/sidebar-toggle-icon/index.tsx",
-          "type": "registry:ui",
-          "target": "components/unlumen-ui/primitives/icons/sidebar-toggle-icon.tsx"
-        }
-      ]
-    },
-    {
-      "name": "primitives-texts-counting-number",
-      "type": "registry:ui",
-      "title": "Counting Number",
-      "description": "A counting number animation.",
-      "dependencies": [
-        "motion"
-      ],
-      "registryDependencies": [
-        "@unlumen-ui/hooks-use-is-in-view"
-      ],
-      "files": [
-        {
-          "path": "registry/primitives/texts/counting-number/index.tsx",
-          "type": "registry:ui",
-          "target": "components/unlumen-ui/primitives/texts/counting-number.tsx"
-        }
-      ]
-    },
-    {
-      "name": "primitives-texts-gradient",
-      "type": "registry:ui",
-      "title": "Gradient Text",
-      "description": "A gradient text animation.",
-      "dependencies": [
-        "motion"
-      ],
-      "files": [
-        {
-          "path": "registry/primitives/texts/gradient/index.tsx",
-          "type": "registry:ui",
-          "target": "components/unlumen-ui/primitives/texts/gradient.tsx"
-        }
-      ]
-    },
-    {
-      "name": "primitives-texts-highlight",
-      "type": "registry:ui",
-      "title": "Highlight Text",
-      "description": "A highlight text animation.",
-      "dependencies": [
-        "motion"
-      ],
-      "registryDependencies": [
-        "@unlumen-ui/hooks-use-is-in-view"
-      ],
-      "files": [
-        {
-          "path": "registry/primitives/texts/highlight/index.tsx",
-          "type": "registry:ui",
-          "target": "components/unlumen-ui/primitives/texts/highlight.tsx"
-        }
-      ]
-    },
-    {
-      "name": "primitives-texts-morphing",
-      "type": "registry:ui",
-      "title": "Morphing Text",
-      "description": "A text component that smoothly morphs characters to transition between strings.",
-      "dependencies": [
-        "motion"
-      ],
-      "registryDependencies": [
-        "@unlumen-ui/hooks-use-is-in-view"
-      ],
-      "files": [
-        {
-          "path": "registry/primitives/texts/morphing/index.tsx",
-          "type": "registry:ui",
-          "target": "components/unlumen-ui/primitives/texts/morphing.tsx"
-        }
-      ]
-    },
-    {
-      "name": "primitives-texts-rolling",
-      "type": "registry:ui",
-      "title": "Rolling Text",
-      "description": "A rolling text animation.",
-      "dependencies": [
-        "motion"
-      ],
-      "registryDependencies": [
-        "@unlumen-ui/hooks-use-is-in-view"
-      ],
-      "files": [
-        {
-          "path": "registry/primitives/texts/rolling/index.tsx",
-          "type": "registry:ui",
-          "target": "components/unlumen-ui/primitives/texts/rolling.tsx"
-        }
-      ]
-    },
-    {
-      "name": "primitives-texts-rotating",
-      "type": "registry:ui",
-      "title": "Rotating Text",
-      "description": "A rotating text animation.",
-      "dependencies": [
-        "motion"
-      ],
-      "registryDependencies": [
-        "@unlumen-ui/hooks-use-is-in-view",
-        "@unlumen-ui/lib-get-strict-context"
-      ],
-      "files": [
-        {
-          "path": "registry/primitives/texts/rotating/index.tsx",
-          "type": "registry:ui",
-          "target": "components/unlumen-ui/primitives/texts/rotating.tsx"
-        }
-      ]
-    },
-    {
-      "name": "primitives-texts-scrolling-number",
-      "type": "registry:ui",
-      "title": "Scrolling Number",
-      "description": "A scrolling number animation.",
-      "dependencies": [
-        "motion"
-      ],
-      "registryDependencies": [
-        "@unlumen-ui/hooks-use-is-in-view",
-        "@unlumen-ui/lib-get-strict-context"
-      ],
-      "files": [
-        {
-          "path": "registry/primitives/texts/scrolling-number/index.tsx",
-          "type": "registry:ui",
-          "target": "components/unlumen-ui/primitives/texts/scrolling-number.tsx"
-        }
-      ]
-    },
-    {
-      "name": "primitives-texts-shimmering",
-      "type": "registry:ui",
-      "title": "Shimmering Text",
-      "description": "A shimmering text animation.",
-      "dependencies": [
-        "motion"
-      ],
-      "registryDependencies": [
-        "@unlumen-ui/hooks-use-is-in-view"
-      ],
-      "files": [
-        {
-          "path": "registry/primitives/texts/shimmering/index.tsx",
-          "type": "registry:ui",
-          "target": "components/unlumen-ui/primitives/texts/shimmering.tsx"
-        }
-      ]
-    },
-    {
-      "name": "primitives-texts-sliding-number",
-      "type": "registry:ui",
-      "title": "Sliding Number",
-      "description": "A sliding number animation.",
-      "dependencies": [
-        "motion",
-        "react-use-measure"
-      ],
-      "registryDependencies": [
-        "@unlumen-ui/hooks-use-is-in-view"
-      ],
-      "files": [
-        {
-          "path": "registry/primitives/texts/sliding-number/index.tsx",
-          "type": "registry:ui",
-          "target": "components/unlumen-ui/primitives/texts/sliding-number.tsx"
-        }
-      ]
-    },
-    {
-      "name": "primitives-texts-splitting",
-      "type": "registry:ui",
-      "title": "Splitting Text",
-      "description": "A splitting text animation.",
-      "dependencies": [
-        "motion"
-      ],
-      "registryDependencies": [
-        "@unlumen-ui/hooks-use-is-in-view"
-      ],
-      "files": [
-        {
-          "path": "registry/primitives/texts/splitting/index.tsx",
-          "type": "registry:ui",
-          "target": "components/unlumen-ui/primitives/texts/splitting.tsx"
-        }
-      ]
-    },
-    {
-      "name": "primitives-texts-typing",
-      "type": "registry:ui",
-      "title": "Typing Text",
-      "description": "A typing text animation.",
-      "dependencies": [
-        "motion"
-      ],
-      "registryDependencies": [
-        "@unlumen-ui/hooks-use-is-in-view",
-        "@unlumen-ui/lib-get-strict-context"
-      ],
-      "files": [
-        {
-          "path": "registry/primitives/texts/typing/index.tsx",
-          "type": "registry:ui",
-          "target": "components/unlumen-ui/primitives/texts/typing.tsx"
-        }
-      ]
-    },
-    {
-      "name": "aurora-blur",
-      "type": "registry:ui",
-      "title": "Aurora Blur",
-      "description": "Aurora blur shader layer used by Aurora Card.",
-      "dependencies": [
-        "@react-three/fiber",
-        "three"
-      ],
-      "files": [
-        {
-          "path": "registry/primitives/ui/blob-card/aurora-blur.tsx",
-          "type": "registry:ui",
-          "target": "components/unlumen-ui/primitives/ui/aurora-blur.tsx"
-        }
-      ]
-    },
-    {
-      "name": "blob-card",
-      "type": "registry:ui",
-      "title": "Blob Card",
-      "description": "Animated card with fluid blob header, animated glow border, and configurable colors.",
-      "files": [
-        {
-          "path": "registry/primitives/ui/blob-card/index.tsx",
-          "type": "registry:ui",
-          "target": "components/unlumen-ui/primitives/ui/blob-card.tsx"
-        }
-      ]
-    },
-    {
-      "name": "animate-count",
-      "type": "registry:ui",
-      "title": "Vercel Animate Count",
-      "description": "A number display that animates the transition between values with a blur + slide effect, with a hook to throttle rapid updates.",
-      "dependencies": [
-        "motion"
-      ],
-      "files": [
-        {
-          "path": "registry/primitives/unlumen/animate-count/index.tsx",
-          "type": "registry:ui",
-          "target": "components/unlumen-ui/primitives/unlumen/animate-count.tsx"
-        }
-      ]
-    },
-    {
-      "name": "animate-digits",
-      "type": "registry:ui",
-      "title": "Animate Digits",
-      "description": "Per-digit blur-slide animation — only the digits that change animate.",
-      "dependencies": [
-        "motion"
-      ],
-      "files": [
-        {
-          "path": "registry/primitives/unlumen/animate-digits/index.tsx",
-          "type": "registry:ui",
-          "target": "components/unlumen-ui/primitives/unlumen/animate-digits.tsx"
-        }
-      ]
-    },
-    {
-      "name": "animated-list",
-      "type": "registry:ui",
-      "title": "Animated List",
-      "description": "A real-time push feed where new items animate in from the top with spring physics — Stripe Radar style.",
-      "dependencies": [
-        "motion"
-      ],
-      "registryDependencies": [],
-      "files": [
-        {
-          "path": "registry/primitives/unlumen/animated-list/index.tsx",
-          "type": "registry:ui",
-          "target": "components/unlumen-ui/primitives/unlumen/animated-list.tsx"
-        }
-      ]
-    },
-    {
-      "name": "apple-switch",
-      "type": "registry:ui",
-      "title": "Apple Switch",
-      "description": "Animated toggle switch with separate track/thumb sizing, spring feedback, optional label text, and tone variants.",
-      "dependencies": [
-        "motion"
-      ],
-      "files": [
-        {
-          "path": "registry/primitives/unlumen/apple-switch/index.tsx",
-          "type": "registry:ui",
-          "target": "components/unlumen-ui/primitives/unlumen/apple-switch.tsx"
-        }
-      ]
-    },
-    {
-      "name": "aurora-bars",
-      "type": "registry:ui",
-      "title": "Aurora Bars",
-      "description": "Animated bars with aurora-inspired gradient effects and smooth transitions.",
-      "dependencies": [
-        "motion"
-      ],
-      "files": [
-        {
-          "path": "registry/primitives/unlumen/aurora-bars/index.tsx",
-          "type": "registry:ui",
-          "target": "components/unlumen-ui/primitives/unlumen/aurora-bars.tsx"
+          "target": "components/unlumen-ui/primitives/button.tsx"
         }
       ]
     },
@@ -2779,11 +952,12 @@
       ],
       "files": [
         {
-          "path": "registry/primitives/unlumen/clipped-circle/index.tsx",
+          "path": "registry/primitives/clipped-circle/index.tsx",
           "type": "registry:ui",
-          "target": "components/unlumen-ui/primitives/unlumen/clipped-circle.tsx"
+          "target": "components/unlumen-ui/primitives/clipped-circle.tsx"
         }
-      ]
+      ],
+      "registryDependencies": []
     },
     {
       "name": "command-menu",
@@ -2797,9 +971,32 @@
       ],
       "files": [
         {
-          "path": "registry/primitives/unlumen/command-menu/index.tsx",
+          "path": "registry/primitives/command-menu/index.tsx",
           "type": "registry:ui",
-          "target": "components/unlumen-ui/primitives/unlumen/command-menu.tsx"
+          "target": "components/unlumen-ui/primitives/command-menu.tsx"
+        }
+      ],
+      "registryDependencies": []
+    },
+    {
+      "name": "copy",
+      "type": "registry:ui",
+      "title": "Copy Button",
+      "description": "A copy button component with a variety of styles and animations.",
+      "dependencies": [
+        "motion",
+        "lucide-react",
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "@unlumen-ui/button",
+        "@unlumen-ui/hooks-use-controlled-state"
+      ],
+      "files": [
+        {
+          "path": "registry/primitives/copy/index.tsx",
+          "type": "registry:ui",
+          "target": "components/unlumen-ui/primitives/copy.tsx"
         }
       ]
     },
@@ -2814,11 +1011,12 @@
       ],
       "files": [
         {
-          "path": "registry/primitives/unlumen/count-up/index.tsx",
+          "path": "registry/primitives/count-up/index.tsx",
           "type": "registry:ui",
-          "target": "components/unlumen-ui/primitives/unlumen/count-up.tsx"
+          "target": "components/unlumen-ui/primitives/count-up.tsx"
         }
-      ]
+      ],
+      "registryDependencies": []
     },
     {
       "name": "cursor",
@@ -2829,96 +1027,33 @@
         "motion"
       ],
       "registryDependencies": [
-        "@unlumen-ui/primitives-animate-cursor"
+        "@unlumen-ui/cursor-primitive"
       ],
       "files": [
         {
-          "path": "registry/primitives/unlumen/cursor/index.tsx",
+          "path": "registry/primitives/cursor/index.tsx",
           "type": "registry:ui",
-          "target": "components/unlumen-ui/primitives/unlumen/cursor.tsx"
+          "target": "components/unlumen-ui/primitives/cursor.tsx"
         }
       ]
     },
     {
-      "name": "cursor-image-trail",
+      "name": "cursor-primitive",
       "type": "registry:ui",
-      "title": "Cursor Image Trail",
-      "description": "A trail of images that follows the cursor with spring-physics fade and rotation.",
+      "title": "Cursor",
+      "description": "An animated cursor component that allows you to customize both the cursor and cursor follow elements with smooth animations.",
       "dependencies": [
         "motion"
       ],
-      "files": [
-        {
-          "path": "registry/primitives/unlumen/cursor-image-trail/index.tsx",
-          "type": "registry:ui",
-          "target": "components/unlumen-ui/primitives/unlumen/cursor-image-trail.tsx"
-        }
-      ]
-    },
-    {
-      "name": "dock",
-      "type": "registry:ui",
-      "title": "Dock",
-      "description": "Animated dock with Gaussian magnification, spring physics, separators, and tooltip carets.",
-      "dependencies": [
-        "motion"
-      ],
-      "registryDependencies": [],
-      "files": [
-        {
-          "path": "registry/primitives/unlumen/dock/index.tsx",
-          "type": "registry:ui",
-          "target": "components/unlumen-ui/primitives/unlumen/dock.tsx"
-        }
-      ]
-    },
-    {
-      "name": "expand-menu",
-      "type": "registry:ui",
-      "title": "Expand Menu",
-      "description": "An animated expanding menu that reveals items from a trigger button, with configurable direction, layout, and alignment.",
-      "dependencies": [
-        "motion"
+      "registryDependencies": [
+        "@unlumen-ui/slot",
+        "@unlumen-ui/lib-get-strict-context"
       ],
       "files": [
         {
-          "path": "registry/primitives/unlumen/expand-menu/index.tsx",
+          "path": "registry/primitives/cursor-primitive/index.tsx",
           "type": "registry:ui",
-          "target": "components/unlumen-ui/primitives/unlumen/expand-menu.tsx"
-        }
-      ]
-    },
-    {
-      "name": "favicon-search",
-      "type": "registry:ui",
-      "title": "Favicon Search",
-      "description": "A search input that fetches and smoothly animates the site favicon into the search bar as you type a URL.",
-      "dependencies": [
-        "motion",
-        "lucide-react"
-      ],
-      "files": [
-        {
-          "path": "registry/primitives/unlumen/favicon-search/index.tsx",
-          "type": "registry:ui",
-          "target": "components/unlumen-ui/primitives/unlumen/favicon-search.tsx"
-        }
-      ]
-    },
-    {
-      "name": "file-tree",
-      "type": "registry:component",
-      "title": "File Tree",
-      "description": "Animated file-tree component with animated hover highlight, spring folder expand/collapse, and automatic file-type icons.",
-      "dependencies": [
-        "motion",
-        "lucide-react"
-      ],
-      "files": [
-        {
-          "path": "registry/primitives/unlumen/file-tree/index.tsx",
-          "type": "registry:component",
-          "target": "components/unlumen-ui/primitives/unlumen/file-tree.tsx"
+          "target": "components/unlumen-ui/primitives/cursor.tsx"
         }
       ]
     },
@@ -2932,9 +1067,30 @@
       ],
       "files": [
         {
-          "path": "registry/primitives/unlumen/floating-tooltip/index.tsx",
+          "path": "registry/primitives/floating-tooltip/index.tsx",
           "type": "registry:ui",
-          "target": "components/unlumen-ui/primitives/unlumen/floating-tooltip.tsx"
+          "target": "components/unlumen-ui/primitives/floating-tooltip.tsx"
+        }
+      ],
+      "registryDependencies": []
+    },
+    {
+      "name": "glow",
+      "type": "registry:ui",
+      "title": "Glow Button",
+      "description": "A button with an animated conic-gradient glow layer behind it. Supports rotate, pulse, breathe, colorShift, flowHorizontal and static modes.",
+      "dependencies": [
+        "class-variance-authority",
+        "motion"
+      ],
+      "registryDependencies": [
+        "@unlumen-ui/button"
+      ],
+      "files": [
+        {
+          "path": "registry/primitives/glow/index.tsx",
+          "type": "registry:ui",
+          "target": "components/unlumen-ui/primitives/glow.tsx"
         }
       ]
     },
@@ -2948,11 +1104,12 @@
       ],
       "files": [
         {
-          "path": "registry/primitives/unlumen/glowing-badge/index.tsx",
+          "path": "registry/primitives/glowing-badge/index.tsx",
           "type": "registry:ui",
-          "target": "components/unlumen-ui/primitives/unlumen/glowing-badge.tsx"
+          "target": "components/unlumen-ui/primitives/glowing-badge.tsx"
         }
-      ]
+      ],
+      "registryDependencies": []
     },
     {
       "name": "highlight",
@@ -2965,57 +1122,9 @@
       "registryDependencies": [],
       "files": [
         {
-          "path": "registry/primitives/effects/highlight/index.tsx",
+          "path": "registry/primitives/highlight/index.tsx",
           "type": "registry:ui",
-          "target": "components/unlumen-ui/primitives/effects/highlight.tsx"
-        }
-      ]
-    },
-    {
-      "name": "horizontal-depth-fade",
-      "type": "registry:ui",
-      "title": "Horizontal Depth Fade",
-      "description": "Scroll-driven horizontal image strip on a single line with cinematic blur and brightness focus. GSAP ScrollTrigger implementation.",
-      "dependencies": [
-        "gsap"
-      ],
-      "files": [
-        {
-          "path": "registry/primitives/unlumen/horizontal-depth-fade/index.tsx",
-          "type": "registry:ui",
-          "target": "components/unlumen-ui/primitives/unlumen/horizontal-depth-fade.tsx"
-        }
-      ]
-    },
-    {
-      "name": "hover-expand",
-      "type": "registry:ui",
-      "title": "Hover Expand",
-      "description": "A vertical list of rows that expand on hover to reveal a full-width image, animated with Motion springs.",
-      "dependencies": [
-        "motion"
-      ],
-      "files": [
-        {
-          "path": "registry/primitives/unlumen/hover-expand/index.tsx",
-          "type": "registry:ui",
-          "target": "components/unlumen-ui/primitives/unlumen/hover-expand.tsx"
-        }
-      ]
-    },
-    {
-      "name": "hover-feature-cards",
-      "type": "registry:ui",
-      "title": "Hover Feature Cards",
-      "description": "A responsive grid of feature cards where a description panel slides in from below on hover, with spring animation and optional image support.",
-      "dependencies": [
-        "motion"
-      ],
-      "files": [
-        {
-          "path": "registry/primitives/unlumen/hover-feature-cards/index.tsx",
-          "type": "registry:ui",
-          "target": "components/unlumen-ui/primitives/unlumen/hover-feature-cards.tsx"
+          "target": "components/unlumen-ui/primitives/highlight.tsx"
         }
       ]
     },
@@ -3026,11 +1135,12 @@
       "description": "Keyboard key and shortcut display component with a realistic keycap style.",
       "files": [
         {
-          "path": "registry/primitives/unlumen/kbd/index.tsx",
+          "path": "registry/primitives/kbd/index.tsx",
           "type": "registry:ui",
-          "target": "components/unlumen-ui/primitives/unlumen/kbd.tsx"
+          "target": "components/unlumen-ui/primitives/kbd.tsx"
         }
-      ]
+      ],
+      "registryDependencies": []
     },
     {
       "name": "magnetic-button",
@@ -3044,9 +1154,9 @@
       "registryDependencies": [],
       "files": [
         {
-          "path": "registry/primitives/unlumen/magnetic-button/index.tsx",
+          "path": "registry/primitives/magnetic-button/index.tsx",
           "type": "registry:ui",
-          "target": "components/unlumen-ui/primitives/unlumen/magnetic-button.tsx"
+          "target": "components/unlumen-ui/primitives/magnetic-button.tsx"
         }
       ]
     },
@@ -3061,128 +1171,12 @@
       ],
       "files": [
         {
-          "path": "registry/primitives/unlumen/math-graph/index.tsx",
+          "path": "registry/primitives/math-graph/index.tsx",
           "type": "registry:ui",
-          "target": "components/unlumen-ui/primitives/unlumen/math-graph.tsx"
+          "target": "components/unlumen-ui/primitives/math-graph.tsx"
         }
-      ]
-    },
-    {
-      "name": "matrix",
-      "type": "registry:ui",
-      "title": "Matrix",
-      "description": "An LED dot matrix display component with SVG pixels, radial glow, built-in digit/animation presets, and a VU meter mode.",
-      "files": [
-        {
-          "path": "registry/primitives/unlumen/matrix/index.tsx",
-          "type": "registry:ui",
-          "target": "components/unlumen-ui/primitives/unlumen/matrix.tsx"
-        }
-      ]
-    },
-    {
-      "name": "matrix-image",
-      "type": "registry:ui",
-      "title": "Matrix Image",
-      "description": "An animated image component that simulates the iconic Matrix digital rain effect.",
-      "dependencies": [
-        "motion"
       ],
-      "files": [
-        {
-          "path": "registry/primitives/unlumen/matrix-image/index.tsx",
-          "type": "registry:ui",
-          "target": "components/unlumen-ui/primitives/unlumen/matrix-image.tsx"
-        }
-      ]
-    },
-    {
-      "name": "motion-faqs-accordion",
-      "type": "registry:ui",
-      "title": "Motion FAQs Accordion",
-      "description": "A clean Motion-powered FAQ accordion with spring-animated content reveal.",
-      "dependencies": [
-        "motion"
-      ],
-      "files": [
-        {
-          "path": "registry/primitives/unlumen/motion-faqs-accordion/index.tsx",
-          "type": "registry:ui",
-          "target": "components/unlumen-ui/primitives/unlumen/motion-faqs-accordion.tsx"
-        }
-      ]
-    },
-    {
-      "name": "motion-navigation-menu",
-      "type": "registry:component",
-      "title": "Motion Navigation Menu",
-      "description": "A spring-animated navigation menu with a single morphing container, layout-animated active pill, and direction-aware content transitions.",
-      "dependencies": [
-        "framer-motion",
-        "lucide-react",
-        "class-variance-authority"
-      ],
-      "registryDependencies": [
-        "@unlumen-ui/highlight"
-      ],
-      "files": [
-        {
-          "path": "registry/primitives/unlumen/motion-navigation-menu/index.tsx",
-          "type": "registry:component",
-          "target": "components/unlumen-ui/primitives/unlumen/motion-navigation-menu.tsx"
-        }
-      ]
-    },
-    {
-      "name": "motion-subtitle",
-      "type": "registry:component",
-      "title": "Motion Subtitle",
-      "description": "Animated subtitle text with per-character reveal, blur transition, speed control, and top/bottom direction.",
-      "dependencies": [
-        "framer-motion"
-      ],
-      "files": [
-        {
-          "path": "registry/primitives/unlumen/motion-subtitle/index.tsx",
-          "type": "registry:component",
-          "target": "components/unlumen-ui/primitives/unlumen/motion-subtitle.tsx"
-        }
-      ]
-    },
-    {
-      "name": "nextjs-ship",
-      "type": "registry:ui",
-      "title": "Next.js Ship",
-      "description": "Animated chip/CPU circuit board visualization with gradient pulse traces traveling along PCB-style paths.",
-      "dependencies": [
-        "motion"
-      ],
-      "files": [
-        {
-          "path": "registry/primitives/unlumen/nextjs-ship/index.tsx",
-          "type": "registry:ui",
-          "target": "components/unlumen-ui/primitives/unlumen/nextjs-ship.tsx"
-        }
-      ]
-    },
-    {
-      "name": "orbital-image-wheel",
-      "type": "registry:ui",
-      "title": "Orbital Image Wheel",
-      "description": "Scroll-driven half-wheel image layout powered by GSAP ScrollTrigger, with cinematic blur/saturation/brightness focus and centered captions.",
-      "dependencies": [
-        "gsap"
-      ],
-      "registryDependencies": [
-        "@unlumen-ui/motion-subtitle"
-      ],
-      "files": [
-        {
-          "path": "registry/primitives/unlumen/orbital-image-wheel/index.tsx",
-          "type": "registry:ui",
-          "target": "components/unlumen-ui/primitives/unlumen/orbital-image-wheel.tsx"
-        }
-      ]
+      "registryDependencies": []
     },
     {
       "name": "orbiting-skills",
@@ -3194,63 +1188,12 @@
       ],
       "files": [
         {
-          "path": "registry/primitives/unlumen/orbiting-skills/index.tsx",
+          "path": "registry/primitives/orbiting-skills/index.tsx",
           "type": "registry:ui",
-          "target": "components/unlumen-ui/primitives/unlumen/orbiting-skills.tsx"
+          "target": "components/unlumen-ui/primitives/orbiting-skills.tsx"
         }
-      ]
-    },
-    {
-      "name": "page-transition",
-      "type": "registry:ui",
-      "title": "Page Transition",
-      "description": "GSAP-powered Next.js App Router page transition provider. Wraps your layout to animate between pages with a curtain reveal or slide push — ported from the Codrops async transition demo.",
-      "dependencies": [
-        "gsap",
-        "next"
       ],
-      "files": [
-        {
-          "path": "registry/primitives/unlumen/page-transition/index.tsx",
-          "type": "registry:ui",
-          "target": "components/unlumen-ui/primitives/unlumen/page-transition.tsx"
-        }
-      ]
-    },
-    {
-      "name": "perspective-flow",
-      "type": "registry:ui",
-      "title": "Perspective Flow",
-      "description": "Scroll-driven 3D image grid with perspective rotations, blur, brightness, and inner parallax — supports both GSAP ScrollTrigger and Framer Motion engines.",
-      "dependencies": [
-        "framer-motion",
-        "gsap"
-      ],
-      "files": [
-        {
-          "path": "registry/primitives/unlumen/perspective-flow/index.tsx",
-          "type": "registry:ui",
-          "target": "components/unlumen-ui/primitives/unlumen/perspective-flow.tsx"
-        }
-      ]
-    },
-    {
-      "name": "pinned-list",
-      "type": "registry:ui",
-      "title": "Pinned List",
-      "description": "A list of items that animate smoothly to a pinned section using Framer Motion layout animations.",
-      "dependencies": [
-        "motion",
-        "lucide-react"
-      ],
-      "registryDependencies": [],
-      "files": [
-        {
-          "path": "registry/primitives/unlumen/pinned-list/index.tsx",
-          "type": "registry:ui",
-          "target": "components/unlumen-ui/primitives/unlumen/pinned-list.tsx"
-        }
-      ]
+      "registryDependencies": []
     },
     {
       "name": "progressive-blur",
@@ -3260,11 +1203,31 @@
       "dependencies": [],
       "files": [
         {
-          "path": "registry/primitives/unlumen/progressive-blur/index.tsx",
+          "path": "registry/primitives/progressive-blur/index.tsx",
           "type": "registry:ui",
-          "target": "components/unlumen-ui/primitives/unlumen/progressive-blur.tsx"
+          "target": "components/unlumen-ui/primitives/progressive-blur.tsx"
         }
-      ]
+      ],
+      "registryDependencies": []
+    },
+    {
+      "name": "refresh",
+      "type": "registry:ui",
+      "title": "Refresh Button",
+      "description": "An icon button that spins on click and supports async refresh callbacks — ideal for reloading component previews or live data.",
+      "dependencies": [
+        "class-variance-authority",
+        "motion",
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "registry/primitives/refresh/index.tsx",
+          "type": "registry:ui",
+          "target": "components/unlumen-ui/primitives/refresh.tsx"
+        }
+      ],
+      "registryDependencies": []
     },
     {
       "name": "scramble-text",
@@ -3273,28 +1236,12 @@
       "description": "A text animation component that reveals characters with a scramble/glitch effect, with imperative controls for manual triggering.",
       "files": [
         {
-          "path": "registry/primitives/unlumen/scramble-text/index.tsx",
+          "path": "registry/primitives/scramble-text/index.tsx",
           "type": "registry:ui",
-          "target": "components/unlumen-ui/primitives/unlumen/scramble-text.tsx"
+          "target": "components/unlumen-ui/primitives/scramble-text.tsx"
         }
-      ]
-    },
-    {
-      "name": "scroll-reveal-image",
-      "type": "registry:ui",
-      "title": "Scroll Reveal Image",
-      "description": "Scroll-driven image reveal with spring-physics width expansion, zoom-out, and border radius animation.",
-      "dependencies": [
-        "framer-motion",
-        "next"
       ],
-      "files": [
-        {
-          "path": "registry/primitives/unlumen/scroll-reveal-image/index.tsx",
-          "type": "registry:ui",
-          "target": "components/unlumen-ui/primitives/unlumen/scroll-reveal-image.tsx"
-        }
-      ]
+      "registryDependencies": []
     },
     {
       "name": "shimmer-skeleton",
@@ -3303,11 +1250,12 @@
       "description": "Lightweight loading skeleton with a smooth shimmer sweep animation.",
       "files": [
         {
-          "path": "registry/primitives/unlumen/shimmer-skeleton/index.tsx",
+          "path": "registry/primitives/shimmer-skeleton/index.tsx",
           "type": "registry:ui",
-          "target": "components/unlumen-ui/primitives/unlumen/shimmer-skeleton.tsx"
+          "target": "components/unlumen-ui/primitives/shimmer-skeleton.tsx"
         }
-      ]
+      ],
+      "registryDependencies": []
     },
     {
       "name": "shimmering-text",
@@ -3319,44 +1267,12 @@
       ],
       "files": [
         {
-          "path": "registry/primitives/unlumen/shimmering-text/index.tsx",
+          "path": "registry/primitives/shimmering-text/index.tsx",
           "type": "registry:ui",
-          "target": "components/unlumen-ui/primitives/unlumen/shimmering-text.tsx"
+          "target": "components/unlumen-ui/primitives/shimmering-text.tsx"
         }
-      ]
-    },
-    {
-      "name": "side-by-side-slide",
-      "type": "registry:ui",
-      "title": "Side By Side Slide",
-      "description": "An image comparison slider with a spring-animated divider that follows the cursor on hover, revealing before/after images.",
-      "dependencies": [
-        "motion"
       ],
-      "files": [
-        {
-          "path": "registry/primitives/unlumen/side-by-side-slide/index.tsx",
-          "type": "registry:ui",
-          "target": "components/unlumen-ui/primitives/unlumen/side-by-side-slide.tsx"
-        }
-      ]
-    },
-    {
-      "name": "sidebar-001",
-      "type": "registry:ui",
-      "title": "Sidebar 001",
-      "description": "Animated vertical sidebar with spring hover highlight, active indicator bar, and per-item dash pattern.",
-      "dependencies": [
-        "motion",
-        "lucide-react"
-      ],
-      "files": [
-        {
-          "path": "registry/primitives/unlumen/sidebar-001/index.tsx",
-          "type": "registry:ui",
-          "target": "components/unlumen-ui/primitives/unlumen/sidebar-001.tsx"
-        }
-      ]
+      "registryDependencies": []
     },
     {
       "name": "slider",
@@ -3369,11 +1285,29 @@
       ],
       "files": [
         {
-          "path": "registry/primitives/unlumen/slider/index.tsx",
+          "path": "registry/primitives/slider/index.tsx",
           "type": "registry:ui",
-          "target": "components/unlumen-ui/primitives/unlumen/slider.tsx"
+          "target": "components/unlumen-ui/primitives/slider.tsx"
         }
-      ]
+      ],
+      "registryDependencies": []
+    },
+    {
+      "name": "slot",
+      "type": "registry:ui",
+      "title": "Animate Slot",
+      "description": "A slot component that allows you to use motion components with any element.",
+      "dependencies": [
+        "motion"
+      ],
+      "files": [
+        {
+          "path": "registry/primitives/slot/index.tsx",
+          "type": "registry:ui",
+          "target": "components/unlumen-ui/primitives/slot.tsx"
+        }
+      ],
+      "registryDependencies": []
     },
     {
       "name": "switch",
@@ -3386,26 +1320,31 @@
       ],
       "files": [
         {
-          "path": "registry/primitives/unlumen/switch/index.tsx",
+          "path": "registry/primitives/switch/index.tsx",
           "type": "registry:ui",
-          "target": "components/unlumen-ui/primitives/unlumen/switch.tsx"
+          "target": "components/unlumen-ui/primitives/switch.tsx"
         }
-      ]
+      ],
+      "registryDependencies": []
     },
     {
-      "name": "tag",
-      "type": "registry:component",
-      "title": "Tag",
-      "description": "Rounded outlined tags with six built-in pastel variants and an optional stacked group layout.",
+      "name": "tabs",
+      "type": "registry:ui",
+      "title": "Tabs",
+      "description": "A set of layered sections of content—known as tab panels—that are displayed one at a time.",
       "dependencies": [
-        "nucleo-arcade",
         "motion"
+      ],
+      "registryDependencies": [
+        "@unlumen-ui/highlight",
+        "@unlumen-ui/slot",
+        "@unlumen-ui/lib-get-strict-context"
       ],
       "files": [
         {
-          "path": "registry/primitives/unlumen/tag/index.tsx",
-          "type": "registry:component",
-          "target": "components/unlumen-ui/primitives/unlumen/tag.tsx"
+          "path": "registry/primitives/tabs/index.tsx",
+          "type": "registry:ui",
+          "target": "components/unlumen-ui/primitives/tabs.tsx"
         }
       ]
     },
@@ -3420,9 +1359,9 @@
       "registryDependencies": [],
       "files": [
         {
-          "path": "registry/primitives/unlumen/text-reveal/index.tsx",
+          "path": "registry/primitives/text-reveal/index.tsx",
           "type": "registry:ui",
-          "target": "components/unlumen-ui/primitives/unlumen/text-reveal.tsx"
+          "target": "components/unlumen-ui/primitives/text-reveal.tsx"
         }
       ]
     },
@@ -3437,11 +1376,12 @@
       ],
       "files": [
         {
-          "path": "registry/primitives/unlumen/theme-switch/index.tsx",
+          "path": "registry/primitives/theme-switch/index.tsx",
           "type": "registry:ui",
-          "target": "components/unlumen-ui/primitives/unlumen/theme-switch.tsx"
+          "target": "components/unlumen-ui/primitives/theme-switch.tsx"
         }
-      ]
+      ],
+      "registryDependencies": []
     },
     {
       "name": "tilt",
@@ -3453,11 +1393,12 @@
       ],
       "files": [
         {
-          "path": "registry/primitives/unlumen/tilt/index.tsx",
+          "path": "registry/primitives/tilt/index.tsx",
           "type": "registry:ui",
-          "target": "components/unlumen-ui/primitives/unlumen/tilt.tsx"
+          "target": "components/unlumen-ui/primitives/tilt.tsx"
         }
-      ]
+      ],
+      "registryDependencies": []
     },
     {
       "name": "tilt-card",
@@ -3468,14 +1409,14 @@
         "motion"
       ],
       "registryDependencies": [
-        "https://ui.unlumen.com/r/tilt.json",
-        "https://ui.unlumen.com/r/clipped-circle.json"
+        "@unlumen-ui/tilt",
+        "@unlumen-ui/clipped-circle"
       ],
       "files": [
         {
-          "path": "registry/primitives/unlumen/tilt-card/index.tsx",
+          "path": "registry/primitives/tilt-card/index.tsx",
           "type": "registry:ui",
-          "target": "components/unlumen-ui/primitives/unlumen/tilt-card.tsx"
+          "target": "components/unlumen-ui/primitives/tilt-card.tsx"
         }
       ]
     },
@@ -3489,11 +1430,12 @@
       ],
       "files": [
         {
-          "path": "registry/primitives/unlumen/tooltip-preview/index.tsx",
+          "path": "registry/primitives/tooltip-preview/index.tsx",
           "type": "registry:ui",
-          "target": "components/unlumen-ui/primitives/unlumen/tooltip-preview.tsx"
+          "target": "components/unlumen-ui/primitives/tooltip-preview.tsx"
         }
-      ]
+      ],
+      "registryDependencies": []
     },
     {
       "name": "velocity-highlight",
@@ -3505,53 +1447,12 @@
       ],
       "files": [
         {
-          "path": "registry/primitives/effects/velocity-highlight/index.tsx",
+          "path": "registry/primitives/velocity-highlight/index.tsx",
           "type": "registry:ui",
-          "target": "components/unlumen-ui/primitives/effects/velocity-highlight.tsx"
+          "target": "components/unlumen-ui/primitives/velocity-highlight.tsx"
         }
-      ]
-    },
-    {
-      "name": "vertical-marquee",
-      "type": "registry:ui",
-      "title": "Vertical Marquee",
-      "description": "Two columns of tweet cards scrolling vertically in opposite directions with progressive fade at the edges.",
-      "dependencies": [
-        "motion",
-        "react-tweet"
       ],
-      "registryDependencies": [],
-      "files": [
-        {
-          "path": "registry/primitives/unlumen/vertical-marquee/index.tsx",
-          "type": "registry:ui",
-          "target": "components/unlumen-ui/primitives/unlumen/vertical-marquee.tsx"
-        },
-        {
-          "path": "registry/primitives/unlumen/vertical-marquee/vertical-marquee-client.tsx",
-          "type": "registry:ui",
-          "target": "components/unlumen-ui/primitives/unlumen/vertical-marquee-client.tsx"
-        },
-        {
-          "path": "registry/primitives/unlumen/vertical-marquee/vertical-marquee.types.ts",
-          "type": "registry:ui",
-          "target": "components/unlumen-ui/primitives/unlumen/vertical-marquee.types.ts"
-        }
-      ]
-    },
-    {
-      "name": "video-ambient",
-      "type": "registry:ui",
-      "title": "Video Ambient",
-      "description": "A video card with ambient blurred reflections and optional overlay styling.",
-      "dependencies": [],
-      "files": [
-        {
-          "path": "registry/primitives/unlumen/video-ambient/index.tsx",
-          "type": "registry:ui",
-          "target": "components/unlumen-ui/primitives/unlumen/video-ambient.tsx"
-        }
-      ]
+      "registryDependencies": []
     }
   ]
 }

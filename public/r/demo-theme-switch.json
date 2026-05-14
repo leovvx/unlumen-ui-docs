@@ -8,8 +8,8 @@
   ],
   "files": [
     {
-      "path": "registry/demo/primitives/unlumen/theme-switch/index.tsx",
-      "content": "\"use client\";\n\nimport { ThemeSwitch } from \"@/components/unlumen-ui/primitives/unlumen/theme-switch\";\n\nexport const ThemeSwitchDemo = ({ iconSize = 16 }: { iconSize?: number }) => {\n  return (\n    <div className=\"flex items-center justify-center gap-4 p-8\">\n      <ThemeSwitch iconSize={iconSize} />\n    </div>\n  );\n};\n",
+      "path": "registry/demo/primitives/theme-switch/index.tsx",
+      "content": "\"use client\";\n\nimport { ThemeSwitch } from \"@/components/unlumen-ui/primitives/theme-switch\";\n\nexport const ThemeSwitchDemo = ({ iconSize = 16 }: { iconSize?: number }) => {\n  return (\n    <div className=\"flex items-center justify-center gap-4 p-8\">\n      <ThemeSwitch iconSize={iconSize} />\n    </div>\n  );\n};\n",
       "type": "registry:example"
     }
   ],

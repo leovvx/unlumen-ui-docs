@@ -13,8 +13,8 @@ import {
   TabsHighlight,
   TabsHighlightItem,
   type TabsProps,
-} from "@/registry/primitives/animate/tabs";
-import { CopyButton } from "@/registry/primitives/buttons/copy";
+} from "@/registry/primitives/tabs";
+import { CopyButton } from "@/registry/primitives/copy";
 
 type CodeTabsProps = {
   codes: Record<string, string>;

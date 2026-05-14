@@ -10,5 +10,6 @@
       "type": "registry:lib",
       "target": "lib/get-strict-context.tsx"
     }
-  ]
+  ],
+  "registryDependencies": []
 }

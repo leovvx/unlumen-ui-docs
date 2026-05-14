@@ -8,12 +8,13 @@
     "motion",
     "lucide-react"
   ],
+  "registryDependencies": [],
   "files": [
     {
-      "path": "registry/primitives/buttons/refresh/index.tsx",
+      "path": "registry/primitives/refresh/index.tsx",
       "content": "\"use client\";\n\nimport * as React from \"react\";\nimport { motion, useAnimation, type HTMLMotionProps } from \"motion/react\";\nimport { RotateCcw } from \"lucide-react\";\nimport { type VariantProps } from \"class-variance-authority\";\n\nimport { buttonVariants } from \"@/components/ui/button\";\nimport { cn } from \"@/lib/utils\";\n\ntype ButtonProps = HTMLMotionProps<\"button\"> &\n  VariantProps<typeof buttonVariants>;\n\nexport interface RefreshButtonProps extends Omit<\n  ButtonProps,\n  \"children\" | \"asChild\"\n> {\n  /** Called on tap. Can be async — awaited before resetting the animation. */\n  onRefresh?: () => void | Promise<void>;\n  /** Icon size in px. @default 14 */\n  iconSize?: number;\n  /** Optional text label displayed next to the icon. */\n  label?: string;\n}\n\nexport function RefreshButton({\n  className,\n  variant = \"neutral\",\n  size,\n  onRefresh,\n  iconSize = 14,\n  label,\n  disabled,\n  ...props\n}: RefreshButtonProps) {\n  const rotateControls = useAnimation();\n  const resolvedSize = size ?? (label ? \"sm\" : \"icon-sm\");\n  // Accumulated rotation — always increments negatively so it never reverses\n  const totalRotation = React.useRef(0);\n\n  const animateTo = React.useCallback(\n    (delta: number, transition: object) => {\n      totalRotation.current += delta;\n      return rotateControls.start({\n        rotate: totalRotation.current,\n        transition,\n      });\n    },\n    [rotateControls],\n  );\n\n  return (\n    <motion.button\n      className={cn(\n        buttonVariants({ variant, size: resolvedSize }),\n        \"flex items-center rounded-lg\",\n        className,\n      )}\n      onTapStart={() =>\n        animateTo(-20, { type: \"spring\", stiffness: 400, damping: 25 })\n      }\n      onTap={async () => {\n        await onRefresh?.();\n        await animateTo(-340, {\n          type: \"spring\",\n          stiffness: 200,\n          damping: 18,\n        });\n      }}\n      onTapCancel={() =>\n        animateTo(-340, { type: \"spring\", stiffness: 200, damping: 18 })\n      }\n      whileHover={{ scale: 1.05 }}\n      whileTap={{ scale: 0.95 }}\n      disabled={disabled}\n      {...props}\n    >\n      <motion.span className=\"inline-flex self-center\" animate={rotateControls}>\n        <RotateCcw aria-label=\"restart-btn\" size={iconSize} />\n      </motion.span>\n      {label && <span>{label}</span>}\n    </motion.button>\n  );\n}\n",
       "type": "registry:ui",
-      "target": "components/unlumen-ui/primitives/buttons/refresh.tsx"
+      "target": "components/unlumen-ui/primitives/refresh.tsx"
     }
   ],
   "type": "registry:ui"

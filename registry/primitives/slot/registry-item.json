@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "slot",
+  "type": "registry:ui",
+  "title": "Animate Slot",
+  "description": "A slot component that allows you to use motion components with any element.",
+  "dependencies": [
+    "motion"
+  ],
+  "files": [
+    {
+      "path": "registry/primitives/slot/index.tsx",
+      "type": "registry:ui",
+      "target": "components/unlumen-ui/primitives/slot.tsx"
+    }
+  ],
+  "registryDependencies": []
+}

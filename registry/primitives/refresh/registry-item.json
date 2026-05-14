@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "refresh",
+  "type": "registry:ui",
+  "title": "Refresh Button",
+  "description": "An icon button that spins on click and supports async refresh callbacks — ideal for reloading component previews or live data.",
+  "dependencies": [
+    "class-variance-authority",
+    "motion",
+    "lucide-react"
+  ],
+  "files": [
+    {
+      "path": "registry/primitives/refresh/index.tsx",
+      "type": "registry:ui",
+      "target": "components/unlumen-ui/primitives/refresh.tsx"
+    }
+  ],
+  "registryDependencies": []
+}

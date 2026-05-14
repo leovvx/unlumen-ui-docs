@@ -8,7 +8,7 @@ import {
   InboxIcon as Mails,
 } from "hugeicons-react";
 import { cn } from "@workspace/ui/lib/utils";
-import { ShimmeringText } from "@/registry/primitives/texts/shimmering";
+import { ShimmeringText } from "@/registry/primitives/shimmering-text";
 
 type StayTunedProps = {
   title?: string;

@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "progressive-blur",
+  "type": "registry:ui",
+  "title": "Progressive Blur",
+  "description": "Top and bottom progressive blur overlays that stack multiple backdrop-filter layers to produce a smooth edge-to-transparent blur effect.",
+  "dependencies": [],
+  "files": [
+    {
+      "path": "registry/primitives/progressive-blur/index.tsx",
+      "type": "registry:ui",
+      "target": "components/unlumen-ui/primitives/progressive-blur.tsx"
+    }
+  ],
+  "registryDependencies": []
+}

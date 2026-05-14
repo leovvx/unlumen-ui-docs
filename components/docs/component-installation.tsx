@@ -10,7 +10,7 @@ import {
   TabsContents,
   TabsHighlight,
   TabsHighlightItem,
-} from "@/registry/primitives/animate/tabs";
+} from "@/registry/primitives/tabs";
 import { CodeTabs } from "@/components/docs/code-tabs";
 import { CliTabs } from "@/components/docs/cli-tabs";
 import { ComponentManualInstallation } from "./component-manual-installation";
