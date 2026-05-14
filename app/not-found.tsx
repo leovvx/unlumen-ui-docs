@@ -10,7 +10,7 @@ export default function NotFound() {
       <p className="max-w-md text-sm text-muted-foreground">
         The documentation page you are looking for does not exist.
       </p>
-      <Link href="/docs" className="text-sm underline underline-offset-4">
+      <Link href="/" className="text-sm underline underline-offset-4">
         Back to docs
       </Link>
     </main>

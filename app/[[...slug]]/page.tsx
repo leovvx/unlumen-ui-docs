@@ -28,7 +28,7 @@ function DocsUiTocCtas() {
   return (
     <div className="mt-6 flex flex-col gap-3">
       <Link
-        href="/components"
+        href="https://ui.unlumen.com/components"
         className="group rounded-xl bg-surface p-4.5 text-sm transition-colors hover:bg-accent/40"
       >
         <p className="text-lg tracking-tight leading-6 font-medium ">
@@ -70,7 +70,7 @@ export default async function Page(props: {
   if (!page) notFound();
 
   const MDXContent = page.data.body;
-  const showDocsUiTocCtas = page.url.startsWith("/docs/ui/");
+  const showDocsUiTocCtas = page.url.startsWith("/ui/");
 
   const tree = source.getPageTree();
   const { previous, next: nextPage } = findNeighbour(tree, page.url);
@@ -102,11 +102,11 @@ export default async function Page(props: {
       } as const;
     }
 
-    if (page.url.startsWith("/docs/ui/")) {
-      return { url: "/docs/ui", name: "UI" } as const;
+    if (page.url.startsWith("/ui/")) {
+      return { url: "/ui", name: "UI" } as const;
     }
     const isSectionRoot =
-      page.url === "/docs/ui" || page.url === "/docs/icons/get-started";
+      page.url === "/ui" || page.url === "/icons/get-started";
     if (isSectionRoot && guideItems.length > 0) {
       const last = guideItems[guideItems.length - 1];
       return { url: last.url, name: last.text } as const;
@@ -122,7 +122,7 @@ export default async function Page(props: {
             url: guideItems[guideIndex + 1].url,
             name: guideItems[guideIndex + 1].text,
           }
-        : { url: "/docs/ui", name: "UI" }
+        : { url: "/ui", name: "UI" }
       : nextPage
         ? { url: nextPage.url, name: String(nextPage.name ?? "Suivant") }
         : undefined;

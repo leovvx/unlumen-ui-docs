@@ -21,7 +21,7 @@ export function ShowcaseGrid({ className }: { className?: string }) {
           Be the first to share what you&apos;ve built with Unlumen UI.
         </p>
         <Link
-          href="/docs/showcase/submit"
+          href="/showcase/submit"
           className="mt-4 inline-flex no-underline items-center gap-1.5 rounded-lg bg-foreground px-4 py-2 text-sm font-medium text-background transition-opacity hover:opacity-90"
         >
           Submit your project

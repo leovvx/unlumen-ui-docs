@@ -61,13 +61,13 @@ const NAVIGATION_ITEMS = [
   },
   {
     label: "Documentation",
-    href: "/docs/installation",
+    href: "/installation",
     icon: BookOpen,
     keywords: ["docs", "documentation", "guide", "getting started", "install"],
   },
   {
     label: "primitives",
-    href: "/docs/ui",
+    href: "/ui",
     icon: Component,
     keywords: ["ui", "library", "browse", "refined"],
   },
@@ -323,9 +323,7 @@ export function CommandMenu({
                 GitHub
               </CommandItem>
               <CommandItem
-                onSelect={() =>
-                  runCommand(() => router.push("/docs/installation"))
-                }
+                onSelect={() => runCommand(() => router.push("/installation"))}
                 keywords={["get started", "start", "begin", "install"]}
               >
                 <Rocket className="mr-2 size-4" />

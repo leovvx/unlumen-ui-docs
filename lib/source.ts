@@ -8,7 +8,7 @@ import {
 } from "fumadocs-core/source";
 
 export const source = loader({
-  baseUrl: "/docs",
+  baseUrl: "/",
   source: docs.toFumadocsSource(),
   pageTree: {
     attachFile,

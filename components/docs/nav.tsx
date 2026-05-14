@@ -16,11 +16,11 @@ import { CommandMenu } from "@/components/command-menu";
 export const NAV_ITEMS = [
   {
     title: "Docs",
-    url: "/docs/installation",
+    url: "/installation",
   },
   {
     title: "Primitives",
-    url: "/docs/ui",
+    url: "/ui",
   },
   {
     title: "Components",

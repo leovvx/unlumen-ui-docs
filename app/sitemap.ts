@@ -5,7 +5,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const base = "https://ui.unlumen.com";
 
   return source.getPages().map((page) => ({
-    url: `${base}${page.url}`,
+    url: `${base}/docs${page.url === "/" ? "" : page.url}`,
     lastModified: page.data.lastModified
       ? new Date(page.data.lastModified)
       : new Date(),

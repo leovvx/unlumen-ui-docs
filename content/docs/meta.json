@@ -1,3 +1,20 @@
 {
-  "pages": ["---Menu---", "ui", "[Components](/components)"]
+  "pages": [
+    "---Guide---",
+    "index",
+    "installation",
+    "accessibility",
+    "mcp",
+    "changelog",
+    "roadmap",
+    "license",
+    "troubleshooting",
+    "other-animated-distributions",
+    "showcase",
+    "newsletter",
+    "credits",
+    "---Registry---",
+    "ui",
+    "[Components](https://ui.unlumen.com/components)"
+  ]
 }

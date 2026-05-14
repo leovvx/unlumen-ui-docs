@@ -31,8 +31,10 @@ export const SIDEBAR_TABS = [
       <TabsDescription
         title="Animated UI"
         count={
-          Object.values(index).filter((item) =>
-            item.name.startsWith("components-"),
+          Object.values(index).filter(
+            (item) =>
+              !item.name.startsWith("demo-") &&
+              ["registry:ui", "registry:block"].includes(item.type),
           ).length
         }
       />
@@ -42,6 +44,6 @@ export const SIDEBAR_TABS = [
         <Component />
       </div>
     ),
-    url: "/docs/ui",
+    url: "/ui",
   },
 ];

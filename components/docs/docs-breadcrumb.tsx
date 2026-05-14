@@ -14,7 +14,7 @@ export const DocsBreadcrumb = ({ slug }: { slug?: string[] }) => {
     <Breadcrumb className="mb-2 max-xl:hidden">
       <BreadcrumbList>
         <BreadcrumbItem>
-          <BreadcrumbLink href="/docs">Docs</BreadcrumbLink>
+          <BreadcrumbLink href="/">Docs</BreadcrumbLink>
         </BreadcrumbItem>
 
         {slug &&
