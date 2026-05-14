@@ -41,11 +41,6 @@ export const REFINED_UI_SECTIONS: RefinedUISectionConfig[] = [
     iconProps: { strokeWidth: 1.5 },
   },
   {
-    name: "Backgrounds",
-    Icon: AiImageIcon,
-    iconProps: { strokeWidth: 1.5 },
-  },
-  {
     name: "Guide",
     Icon: CodeSimpleIcon,
     iconProps: { strokeWidth: 1.5 },

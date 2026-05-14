@@ -204,6 +204,12 @@ const getIsActive = (pathname: string, href: string) => {
   return href !== undefined && isActive(href, pathname, false);
 };
 
+const isRootFolder = (
+  root: PageTree.Root | PageTree.Folder,
+): root is PageTree.Folder => {
+  return "type" in root && root.type === "folder";
+};
+
 // ─── Animated sidebar link ─────────────────────────────────────────────
 const AnimatedSidebarLink = memo(function AnimatedSidebarLink({
   href,
@@ -422,6 +428,8 @@ export const DocsSidebar = ({
 }: DocsLayoutProps) => {
   const pathname = usePathname();
   const links = getLinks(props.links ?? [], props.githubUrl);
+  const { root } = useTreeContext();
+  const shouldRenderLayoutLinks = isRootFolder(root) && root.root === true;
   const containerRef = useRef<HTMLDivElement>(null);
 
   return (
@@ -435,7 +443,7 @@ export const DocsSidebar = ({
           <SidebarViewport className="md:[&_[data-radix-scroll-area-viewport]]:pb-14 [&_[data-radix-scroll-area-viewport]]:pb-4 max-md:pt-2">
             <div ref={containerRef} className="relative">
               <SidebarHoverHighlight />
-              {links
+              {(shouldRenderLayoutLinks ? links : [])
                 .filter((v) => v.type !== "icon")
                 .map((item, i, list) => (
                   <SidebarLinkItem

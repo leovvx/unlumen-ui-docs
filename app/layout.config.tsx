@@ -1,4 +1,5 @@
 import type { BaseLayoutProps } from "fumadocs-ui/layouts/shared";
+import { CodeSimpleIcon } from "hugeicons-react";
 
 /**
  * Shared layout configurations
@@ -12,6 +13,7 @@ export const baseOptions: BaseLayoutProps = {
     {
       type: "separator",
       name: "Guide",
+      icon: <CodeSimpleIcon strokeWidth={1.5} />,
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
     } as any,
     {
