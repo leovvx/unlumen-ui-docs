@@ -1,0 +1,43 @@
+---
+title: Tooltip Preview
+description: Link tooltip that reveals a website preview card with title, description, image and favicon on hover.
+author:
+  name: Léo
+  url: https://x.com/leouiux
+---
+
+<ComponentPreview name="demo-tooltip-preview" />
+
+## Installation
+
+<ComponentInstallation name="tooltip-preview" />
+
+## Usage
+
+```tsx
+import { TooltipPreview } from "@/components/unlumen-ui/tooltip-preview";
+```
+
+```tsx
+<TooltipPreview
+  href="https://nextjs.org"
+  title="Next.js"
+  description="The React framework for the web."
+  image="https://nextjs.org/static/twitter-cards/home.jpg"
+  favicon="https://nextjs.org/favicon.ico"
+>
+  Next.js
+</TooltipPreview>
+```
+
+## Props
+
+| Prop          | Type        | Default | Description                                         |
+| ------------- | ----------- | ------- | --------------------------------------------------- |
+| `href`        | `string`    | —       | The URL the link points to.                         |
+| `title`       | `string`    | —       | Site title shown in the preview card.               |
+| `description` | `string`    | —       | Optional description shown below the title.         |
+| `image`       | `string`    | —       | Optional OG image URL shown at the top of the card. |
+| `favicon`     | `string`    | —       | Optional favicon URL. Falls back to first letter.   |
+| `children`    | `ReactNode` | —       | The link text content.                              |
+| `className`   | `string`    | —       | Extra classes on the anchor element.                |

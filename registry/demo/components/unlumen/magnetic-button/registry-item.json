@@ -1,0 +1,42 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-magnetic-button",
+  "type": "registry:example",
+  "title": "Magnetic Button Demo",
+  "description": "Three magnetic buttons showing different radius and spring configurations.",
+  "registryDependencies": ["@unlumen-ui/magnetic-button"],
+  "files": [
+    {
+      "path": "registry/demo/components/unlumen/magnetic-button/index.tsx",
+      "type": "registry:example"
+    }
+  ],
+  "meta": {
+    "demoProps": {
+      "MagneticButtonDemo": {
+        "radius": { "value": 100, "min": 40, "max": 200, "step": 10 },
+        "strength": { "value": 0.5, "min": 0.1, "max": 1, "step": 0.05 },
+        "stiffness": { "value": 150, "min": 50, "max": 500, "step": 25 },
+        "damping": { "value": 15, "min": 5, "max": 60, "step": 1 },
+        "variant": {
+          "value": "default",
+          "options": {
+            "Default": "default",
+            "Secondary": "secondary",
+            "Outline": "outline",
+            "Ghost": "ghost",
+            "Destructive": "destructive"
+          }
+        },
+        "size": {
+          "value": "default",
+          "options": {
+            "Small": "sm",
+            "Default": "default",
+            "Large": "lg"
+          }
+        }
+      }
+    }
+  }
+}

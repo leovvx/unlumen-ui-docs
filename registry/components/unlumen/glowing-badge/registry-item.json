@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "glowing-badge",
+  "type": "registry:ui",
+  "title": "Glowing Badge",
+  "description": "Badge with an animated pulsing glow dot. Supports status variants: default, success, warning, error, info.",
+  "dependencies": ["motion"],
+  "files": [
+    {
+      "path": "registry/components/unlumen/glowing-badge/index.tsx",
+      "type": "registry:ui",
+      "target": "components/unlumen-ui/glowing-badge.tsx"
+    }
+  ]
+}

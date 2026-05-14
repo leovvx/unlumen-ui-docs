@@ -1,0 +1,163 @@
+---
+title: Highlight
+description: An animated highlight component that tracks elements with smooth spring animations.
+---
+
+<ComponentPreview name="demo-primitives-effects-highlight" />
+
+## Installation
+
+<ComponentInstallation name="highlight" />
+
+## Usage
+
+```tsx
+import {
+  Highlight,
+  HighlightItem,
+} from "@/components/unlumen-ui/primitives/effects/highlight";
+```
+
+```tsx
+<Highlight
+  mode="parent"
+  className="rounded-lg bg-muted"
+  containerClassName="flex gap-2 p-2"
+>
+  <HighlightItem value="a">
+    <div className="px-4 py-2 cursor-pointer">Option A</div>
+  </HighlightItem>
+  <HighlightItem value="b">
+    <div className="px-4 py-2 cursor-pointer">Option B</div>
+  </HighlightItem>
+</Highlight>
+```
+
+## API Reference
+
+### Highlight
+
+<TypeTable
+  type={{
+    mode: {
+      description:
+        "Highlight mode — parent renders one shared background, children renders per-item.",
+      type: '"children" | "parent"',
+      required: false,
+      default: '"children"',
+    },
+    hover: {
+      description: "Trigger highlight on hover instead of click.",
+      type: "boolean",
+      required: false,
+      default: "false",
+    },
+    value: {
+      description: "Controlled active value.",
+      type: "string | null",
+      required: false,
+    },
+    defaultValue: {
+      description: "Initial active value (uncontrolled).",
+      type: "string | null",
+      required: false,
+    },
+    onValueChange: {
+      description: "Callback when the active value changes.",
+      type: "(value: string | null) => void",
+      required: false,
+    },
+    className: {
+      description: "CSS classes applied to the highlight background element.",
+      type: "string",
+      required: false,
+    },
+    containerClassName: {
+      description: "CSS classes for the container div (parent mode only).",
+      type: "string",
+      required: false,
+    },
+    transition: {
+      description: "Motion transition config.",
+      type: "Transition",
+      required: false,
+      default: "{ type: 'spring', stiffness: 350, damping: 35 }",
+    },
+    exitDelay: {
+      description: "Delay in seconds before the exit animation starts.",
+      type: "number",
+      required: false,
+      default: "0.2",
+    },
+    enabled: {
+      description: "Enable or disable the highlight effect.",
+      type: "boolean",
+      required: false,
+      default: "true",
+    },
+    disabled: {
+      description: "Disable all items.",
+      type: "boolean",
+      required: false,
+      default: "false",
+    },
+    controlledItems: {
+      description:
+        "Use manually wrapped HighlightItem children instead of auto-wrapping.",
+      type: "boolean",
+      required: false,
+      default: "false",
+    },
+  }}
+/>
+
+### HighlightItem
+
+<TypeTable
+  type={{
+    value: {
+      description: "Unique identifier for this item.",
+      type: "string",
+      required: false,
+    },
+    disabled: {
+      description: "Disable highlight for this specific item.",
+      type: "boolean",
+      required: false,
+      default: "false",
+    },
+    activeClassName: {
+      description:
+        "CSS classes added to the highlight when this item is active.",
+      type: "string",
+      required: false,
+    },
+    className: {
+      description: "CSS classes for the item wrapper.",
+      type: "string",
+      required: false,
+    },
+    transition: {
+      description: "Override the transition for this item.",
+      type: "Transition",
+      required: false,
+    },
+    exitDelay: {
+      description: "Override exit delay for this item.",
+      type: "number",
+      required: false,
+    },
+    asChild: {
+      description: "Merge props and behavior onto the child element.",
+      type: "boolean",
+      required: false,
+      default: "false",
+    },
+    forceUpdateBounds: {
+      description:
+        "Continuously update bounds via rAF (useful for animated layouts).",
+      type: "boolean",
+      required: false,
+    },
+  }}
+/>

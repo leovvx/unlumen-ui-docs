@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "primitives-animate-spring",
+  "type": "registry:ui",
+  "title": "Spring",
+  "description": "A flexible, animated spring component that attaches a draggable element to its origin with a spring line.",
+  "dependencies": [
+    "motion"
+  ],
+  "registryDependencies": [
+    "@unlumen-ui/primitives-animate-slot",
+    "@unlumen-ui/lib-get-strict-context",
+    "@unlumen-ui/hooks-use-motion-value-state"
+  ],
+  "files": [
+    {
+      "path": "registry/primitives/animate/spring/index.tsx",
+      "type": "registry:ui",
+      "target": "components/unlumen-ui/primitives/animate/spring.tsx"
+    }
+  ]
+}

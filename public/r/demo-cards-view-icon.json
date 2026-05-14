@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-cards-view-icon",
+  "title": "Cards View Icon Demo",
+  "description": "Four dots reorder themselves in a 2×2 grid via layout animation on toggle to indicate cards view.",
+  "registryDependencies": [
+    "@unlumen-ui/cards-view-icon"
+  ],
+  "files": [
+    {
+      "path": "registry/demo/components/icons/cards-view-icon/index.tsx",
+      "content": "\"use client\";\n\nimport { useState } from \"react\";\nimport { CardsViewIcon } from \"@/components/unlumen-ui/cards-view-icon\";\n\nexport function CardsViewIconDemo() {\n  const [isActive, setIsActive] = useState(false);\n\n  return (\n    <div className=\"flex flex-col items-center justify-center gap-6 p-8\">\n      <button\n        onClick={() => setIsActive((prev) => !prev)}\n        className=\"flex items-center justify-center rounded-4xl hover:bg-accent hover:cursor-pointer p-3 text-foreground transition-colors\"\n        aria-label={isActive ? \"Deactivate cards view\" : \"Activate cards view\"}\n      >\n        <CardsViewIcon isActive={isActive} className=\"size-16\" />\n      </button>\n      <p className=\"text-sm text-foreground/50 select-none\">\n        {isActive ? \"Active\" : \"Inactive\"} — click to toggle\n      </p>\n    </div>\n  );\n}\n\nexport default CardsViewIconDemo;\n",
+      "type": "registry:example"
+    }
+  ],
+  "meta": {
+    "demoName": "CardsViewIconDemo",
+    "demoProps": {}
+  },
+  "type": "registry:example"
+}

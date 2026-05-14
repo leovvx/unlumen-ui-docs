@@ -1,0 +1,87 @@
+---
+title: Magnetic Button
+description: A button that magnetically follows cursor proximity with smooth spring physics.
+author:
+  name: Léo
+  url: https://x.com/leouiux
+---
+
+<ComponentPreview name="demo-magnetic-button" />
+
+## Installation
+
+<ComponentInstallation name="magnetic-button" />
+
+## Usage
+
+```tsx
+import { MagneticButton } from "@/components/unlumen-ui/magnetic-button";
+
+<MagneticButton>Click me</MagneticButton>;
+```
+
+## Custom Radius
+
+Control the activation radius around the button (in pixels).
+
+```tsx
+{
+  /* Small radius - activates only very close */
+}
+<MagneticButton radius={50}>Tight Magnetic</MagneticButton>;
+
+{
+  /* Large radius - activates from far away */
+}
+<MagneticButton radius={200}>Wide Magnetic</MagneticButton>;
+```
+
+## Spring Physics
+
+Customize the spring behavior to control how the button follows the cursor.
+
+```tsx
+<MagneticButton
+  springOptions={{
+    stiffness: 200,
+    damping: 20,
+    mass: 0.1,
+  }}
+>
+  Snappier Response
+</MagneticButton>
+
+<MagneticButton
+  springOptions={{
+    stiffness: 100,
+    damping: 30,
+    mass: 0.2,
+  }}
+>
+  Smoother Follow
+</MagneticButton>
+```
+
+## Styling
+
+Style the button with any CSS classes or inline styles.
+
+```tsx
+<MagneticButton className="bg-gradient-to-r from-purple-500 to-pink-500 text-white">
+  Gradient Button
+</MagneticButton>
+
+<MagneticButton className="bg-slate-900 hover:bg-slate-800 text-white px-8 py-4 text-lg font-semibold">
+  Dark Theme
+</MagneticButton>
+```
+
+## Props
+
+| Prop            | Type                   | Default                                      | Description                                |
+| --------------- | ---------------------- | -------------------------------------------- | ------------------------------------------ |
+| `children`      | `React.ReactNode`      | —                                            | Button content                             |
+| `radius`        | `number`               | `100`                                        | Magnetic activation radius (px)            |
+| `springOptions` | `SpringOptions`        | `{ stiffness: 150, damping: 15, mass: 0.1 }` | Motion spring configuration                |
+| `className`     | `string`               | —                                            | Extra CSS classes                          |
+| `...props`      | Button HTML attributes | —                                            | Standard button attributes (onClick, etc.) |

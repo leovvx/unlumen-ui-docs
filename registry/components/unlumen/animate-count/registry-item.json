@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "animate-count",
+  "type": "registry:ui",
+  "title": "Vercel Animate Count",
+  "description": "A number display that animates the transition between values with a blur + slide effect, with a hook to throttle rapid updates.",
+  "dependencies": ["motion"],
+  "files": [
+    {
+      "path": "registry/components/unlumen/animate-count/index.tsx",
+      "type": "registry:ui",
+      "target": "components/unlumen-ui/animate-count.tsx"
+    }
+  ]
+}

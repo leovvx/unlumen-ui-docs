@@ -1,0 +1,46 @@
+---
+title: Floating Tooltip
+description: A cursor-following tooltip that squishes and skews based on mouse velocity.
+author:
+  name: Léo
+  url: https://x.com/leouiux
+---
+
+<ComponentPreview name="demo-floating-tooltip" />
+
+## Installation
+
+<ComponentInstallation name="floating-tooltip" />
+
+## Usage
+
+```tsx
+import { FloatingTooltip } from "@/components/unlumen-ui/floating-tooltip";
+
+<FloatingTooltip.Provider>
+  <FloatingTooltip.Trigger content="Hello" description="Optional description">
+    <button>Hover me</button>
+  </FloatingTooltip.Trigger>
+</FloatingTooltip.Provider>;
+```
+
+## API Reference
+
+### FloatingTooltip.Provider
+
+Wraps your content and renders the tooltip portal. Place it high in your tree so all triggers share a single tooltip instance.
+
+| Prop        | Type        | Default | Description                                 |
+| ----------- | ----------- | ------- | ------------------------------------------- |
+| `children`  | `ReactNode` | —       | Content to render                           |
+| `className` | `string`    | —       | Extra classes applied to the tooltip bubble |
+
+### FloatingTooltip.Trigger
+
+Attach this around any element to make it show the tooltip on hover.
+
+| Prop          | Type        | Default | Description                                   |
+| ------------- | ----------- | ------- | --------------------------------------------- |
+| `content`     | `string`    | —       | Main label shown in the tooltip               |
+| `description` | `string`    | —       | Optional secondary text shown below the label |
+| `children`    | `ReactNode` | —       | The element that triggers the tooltip         |

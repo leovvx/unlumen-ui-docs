@@ -1,0 +1,14 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-sidebar-001",
+  "type": "registry:example",
+  "title": "Sidebar 001 Demo",
+  "description": "Demo showing the Sidebar 001 animated vertical sidebar.",
+  "registryDependencies": ["@unlumen-ui/sidebar-001"],
+  "files": [
+    {
+      "path": "registry/demo/components/unlumen/sidebar-001/index.tsx",
+      "type": "registry:example"
+    }
+  ]
+}

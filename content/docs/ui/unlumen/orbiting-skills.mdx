@@ -1,0 +1,61 @@
+---
+title: Orbiting Skills
+description: Animated skill badges that orbit a center element. On desktop the ring follows the cursor on hover; on mobile it's always visible.
+author:
+  name: Léo
+  url: https://x.com/leouiux
+premium: true
+---
+
+<ComponentPreview name="demo-orbiting-skills" />
+
+## Installation
+
+<ComponentInstallation name="orbiting-skills" />
+
+## Usage
+
+```tsx
+import {
+  OrbitingSkills,
+  type OrbitSkillItem,
+} from "@/components/unlumen-ui/orbiting-skills";
+
+const SKILLS: OrbitSkillItem[] = [
+  { label: "React", icon: <span>⚛️</span> },
+  { label: "TypeScript", icon: <span>🔷</span> },
+  { label: "Tailwind", icon: <span>🌊</span> },
+];
+
+<OrbitingSkills items={SKILLS} radius={100}>
+  <div className="size-20 rounded-full bg-muted" />
+</OrbitingSkills>;
+```
+
+## Props
+
+| Prop           | Type               | Default | Description                                                                 |
+| -------------- | ------------------ | ------- | --------------------------------------------------------------------------- |
+| `items`        | `OrbitSkillItem[]` | —       | Skill items (label + optional icon) to orbit                                |
+| `radius`       | `number`           | `88`    | Orbit radius in pixels                                                      |
+| `duration`     | `number`           | `18`    | Duration of one full orbit in seconds                                       |
+| `showPath`     | `boolean`          | `true`  | Whether to render the circular orbit ring                                   |
+| `followCursor` | `boolean`          | `true`  | On desktop: follow the cursor on hover. Set `false` to always stay centered |
+| `children`     | `ReactNode`        | —       | Center element (avatar, logo, …)                                            |
+| `className`    | `string`           | —       | Extra class names on the wrapper                                            |
+
+## OrbitSkillItem
+
+```ts
+type OrbitSkillItem = {
+  label: string; // Text displayed under the icon
+  icon?: ReactNode; // Any icon element
+};
+```
+
+## Behavior
+
+- **Desktop (`followCursor={true}`)** — the orbit ring and badges appear on hover and smoothly track the cursor position via a spring animation.
+- **Desktop (`followCursor={false}`)** — the orbit is always visible and centered on the `children` element.
+- **Mobile** — the orbit is always on and centered, with a spring entrance animation when the component scrolls into view. Badges are slightly smaller to avoid overflow.
+- All badges counter-rotate so their labels stay upright regardless of the orbit angle.

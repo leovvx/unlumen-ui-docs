@@ -1,0 +1,47 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-refresh",
+  "title": "Refresh Button Demo",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "@unlumen-ui/refresh"
+  ],
+  "files": [
+    {
+      "path": "registry/demo/components/buttons/refresh/index.tsx",
+      "content": "\"use client\";\n\nimport {\n  RefreshButton,\n  type RefreshButtonProps,\n} from \"@/components/unlumen-ui/refresh\";\n\ntype RefreshButtonDemoProps = Pick<RefreshButtonProps, \"variant\" | \"size\">;\n\nexport const RefreshButtonDemo = ({\n  variant = \"neutral\",\n  size = \"icon-sm\",\n}: RefreshButtonDemoProps) => {\n  return (\n    <div className=\"flex min-h-[240px] items-center justify-center gap-3\">\n      <RefreshButton variant={variant} size={size} />\n      <RefreshButton variant={variant} label=\"Refresh\" />\n    </div>\n  );\n};\n",
+      "type": "registry:example",
+      "target": "components/unlumen-ui/demo/components/buttons/refresh.tsx"
+    }
+  ],
+  "meta": {
+    "demoName": "RefreshButtonDemo",
+    "demoProps": {
+      "variant": {
+        "type": "select",
+        "label": "Variant",
+        "default": "neutral",
+        "options": {
+          "Neutral": "neutral",
+          "Default": "default",
+          "Ghost": "ghost",
+          "Outline": "outline",
+          "Secondary": "secondary"
+        }
+      },
+      "size": {
+        "type": "select",
+        "label": "Size",
+        "default": "icon-sm",
+        "options": {
+          "Icon SM": "icon-sm",
+          "Icon": "icon",
+          "SM": "sm"
+        }
+      }
+    }
+  },
+  "type": "registry:example"
+}

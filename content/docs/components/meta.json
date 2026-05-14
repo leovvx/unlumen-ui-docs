@@ -1,0 +1,10 @@
+{
+  "title": "Components",
+  "description": "Animated components for React — icons, illustrations, and more.",
+  "icon": "Layers",
+  "root": true,
+  "pages": [
+    "---Icons---",
+    "sidebar-toggle-icon"
+  ]
+}

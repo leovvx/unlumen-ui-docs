@@ -1,0 +1,99 @@
+---
+title: Math Graph
+description: A real-time visual math function builder with animated SVG curves, pan & zoom, crosshair tooltip, and support for multiple simultaneous expressions.
+author:
+  name: Léo
+  url: https://x.com/leouiux
+---
+
+<ComponentPreview name="demo-math-graph" />
+
+## Installation
+
+<ComponentInstallation name="math-graph" />
+
+## Usage
+
+```tsx
+import { MathGraph } from "@/components/unlumen-ui/components/effects/math-graph";
+
+<MathGraph initialExpressions={["sin(x)", "cos(x)"]} />;
+```
+
+## Supported syntax
+
+The evaluator accepts standard JavaScript math syntax with a few convenience shorthands:
+
+| Input                                          | Interpreted as            |
+| ---------------------------------------------- | ------------------------- |
+| `sin(x)`, `cos(x)`, `tan(x)`                   | Trigonometric functions   |
+| `sqrt(x)`, `cbrt(x)`, `abs(x)`                 | Root and absolute value   |
+| `log(x)`, `log2(x)`, `log10(x)`, `exp(x)`      | Logarithmic / exponential |
+| `x^2`                                          | `x**2` (caret shorthand)  |
+| `PI`, `E`                                      | `Math.PI`, `Math.E`       |
+| `floor`, `ceil`, `round`, `min`, `max`, `sign` | Rounding and comparison   |
+
+## Interactions
+
+- **Scroll** inside the graph to zoom in/out around the cursor
+- **Drag** horizontally to pan the x-axis
+- **Hover** to see exact coordinates and per-curve values at the crosshair
+- **+ function** adds a second curve (up to 4 simultaneous expressions)
+- **Preset buttons** quickly load common functions
+- **reset view** restores the original x-range after panning/zooming
+
+## API Reference
+
+### MathGraph
+
+<TypeTable
+  type={{
+    initialExpressions: {
+      description: "Initial array of math expression strings (max 4).",
+      type: "string[]",
+      required: false,
+      default: '["sin(x)", "cos(x)"]',
+    },
+    xMin: {
+      description: "Initial left boundary of the x-axis.",
+      type: "number",
+      required: false,
+      default: "-2π",
+    },
+    xMax: {
+      description: "Initial right boundary of the x-axis.",
+      type: "number",
+      required: false,
+      default: "2π",
+    },
+    resolution: {
+      description: "Number of sample points used to build each curve path.",
+      type: "number",
+      required: false,
+      default: "600",
+    },
+    showGrid: {
+      description: "Whether to render the background grid lines.",
+      type: "boolean",
+      required: false,
+      default: "true",
+    },
+    showLabels: {
+      description: "Whether to render tick labels on the axes.",
+      type: "boolean",
+      required: false,
+      default: "true",
+    },
+    animated: {
+      description: "Whether new curves animate their path-drawing on mount.",
+      type: "boolean",
+      required: false,
+      default: "true",
+    },
+    className: {
+      description: "Additional CSS classes applied to the root element.",
+      type: "string",
+      required: false,
+    },
+  }}
+/>

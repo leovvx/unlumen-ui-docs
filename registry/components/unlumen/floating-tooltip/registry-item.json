@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "floating-tooltip",
+  "type": "registry:ui",
+  "title": "Floating Tooltip",
+  "description": "A floating tooltip component.",
+  "dependencies": ["motion"],
+  "files": [
+    {
+      "path": "registry/components/unlumen/floating-tooltip/index.tsx",
+      "type": "registry:ui",
+      "target": "components/unlumen-ui/floating-tooltip.tsx"
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "highlight",
+  "type": "registry:ui",
+  "title": "Highlight",
+  "description": "An animated highlight component that tracks elements with smooth spring animations.",
+  "dependencies": ["motion"],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "registry/primitives/effects/highlight/index.tsx",
+      "type": "registry:ui",
+      "target": "components/unlumen-ui/primitives/effects/highlight.tsx"
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "sidebar-001",
+  "type": "registry:ui",
+  "title": "Sidebar 001",
+  "description": "Animated vertical sidebar with spring hover highlight, active indicator bar, and per-item dash pattern.",
+  "dependencies": ["motion", "lucide-react"],
+  "files": [
+    {
+      "path": "registry/components/unlumen/sidebar-001/index.tsx",
+      "type": "registry:ui",
+      "target": "components/unlumen-ui/sidebar-001.tsx"
+    }
+  ]
+}

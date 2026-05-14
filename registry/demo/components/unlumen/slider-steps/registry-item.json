@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-slider-steps",
+  "type": "registry:example",
+  "title": "Slider Steps Demo",
+  "description": "Sliders with visible step dots for rating, quality and zoom level selection.",
+  "registryDependencies": ["@unlumen-ui/slider"],
+  "files": [
+    {
+      "path": "registry/demo/components/unlumen/slider-steps/index.tsx",
+      "type": "registry:example"
+    }
+  ],
+  "meta": {
+    "demoProps": {
+      "SliderStepsDemo": {
+        "showValue": { "value": true }
+      }
+    }
+  }
+}

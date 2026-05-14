@@ -1,0 +1,14 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-scramble-text",
+  "type": "registry:example",
+  "title": "Scramble Text Demo",
+  "description": "Interactive demo cycling through phrases with a character-scramble reveal animation.",
+  "registryDependencies": ["@unlumen-ui/scramble-text"],
+  "files": [
+    {
+      "path": "registry/demo/components/unlumen/scramble-text/index.tsx",
+      "type": "registry:example"
+    }
+  ]
+}

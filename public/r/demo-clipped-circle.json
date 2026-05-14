@@ -1,0 +1,29 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-clipped-circle",
+  "title": "Clipped Circle Demo",
+  "description": "Demo showing a clipped circle spotlight effect on a button, a card, and an image.",
+  "registryDependencies": [
+    "@unlumen-ui/clipped-circle"
+  ],
+  "files": [
+    {
+      "path": "registry/demo/components/unlumen/clipped-circle/index.tsx",
+      "content": "\"use client\";\n\nimport { ClippedCircle } from \"@/components/unlumen-ui/clipped-circle\";\nimport { Button } from \"@/components/ui/button\";\nimport Image from \"next/image\";\n\ninterface ClippedCircleDemoProps {\n  circleSize: number;\n}\n\nexport default function ClippedCircleDemo({\n  circleSize = 400,\n}: ClippedCircleDemoProps) {\n  return (\n    <div className=\"flex flex-wrap gap-8 items-center justify-center p-8\">\n      {/* Button */}\n      <Button variant=\"outline\" className=\"overflow-hidden relative group\">\n        Get Started\n        <ClippedCircle circleSize={300} circleClassName=\"bg-white\" />\n      </Button>\n\n      {/* Card */}\n      <div className=\"relative text-background border aspect-square overflow-hidden rounded-xl bg-primary p-6 w-64 cursor-default\">\n        <h3 className=\"font-medium text-3xl mb-1\">Fast & Lightweight</h3>\n        <p className=\"text-background/50 text-xs leading-relaxed\">\n          Built with performance in mind, keeping your bundle size minimal.\n        </p>\n        <ClippedCircle circleSize={circleSize} circleClassName=\"bg-white\" />\n      </div>\n\n      {/* Image */}\n      <div className=\"relative border-5 overflow-hidden rounded-xl cursor-default\">\n        <Image\n          src=\"/web-app-manifest-512x512.png\"\n          width={200}\n          height={200}\n          alt=\"Clipped Circle Demo\"\n          className=\"w-full h-full object-cover\"\n        />\n        <ClippedCircle circleSize={circleSize} circleClassName=\"bg-white\" />\n      </div>\n    </div>\n  );\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "meta": {
+    "demoProps": {
+      "ClippedCircleDemo": {
+        "circleSize": {
+          "value": 400,
+          "min": 100,
+          "max": 800,
+          "step": 50
+        }
+      }
+    }
+  },
+  "type": "registry:example"
+}

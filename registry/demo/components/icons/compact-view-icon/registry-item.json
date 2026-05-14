@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-compact-view-icon",
+  "type": "registry:example",
+  "title": "Compact View Icon Demo",
+  "description": "Six dots reorder themselves via layout animation on toggle to indicate compact view.",
+  "registryDependencies": ["@unlumen-ui/compact-view-icon"],
+  "files": [
+    {
+      "path": "registry/demo/components/icons/compact-view-icon/index.tsx",
+      "type": "registry:example"
+    }
+  ],
+  "meta": {
+    "demoName": "CompactViewIconDemo",
+    "demoProps": {}
+  }
+}

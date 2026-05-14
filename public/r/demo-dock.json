@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-dock",
+  "title": "Dock Demo",
+  "description": "Vercel-style dock with Lucide icons, separators, and Gaussian magnification.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "@unlumen-ui/dock"
+  ],
+  "files": [
+    {
+      "path": "registry/demo/components/unlumen/dock/index.tsx",
+      "content": "\"use client\";\n\nimport {\n  Globe02Icon as Globe,\n  FolderOpenIcon as FolderOpen,\n  MusicNote01Icon as Music,\n  Image01Icon as Image,\n  Settings01Icon as Settings,\n  BubbleChatIcon as MessageCircle,\n  ComputerTerminal01Icon as Terminal,\n} from \"hugeicons-react\";\n\nimport { Dock, type DockItem } from \"@/components/unlumen-ui/dock\";\n\nconst ITEMS: DockItem[] = [\n  { icon: <Globe />, label: \"Browser\" },\n  { icon: <FolderOpen />, label: \"Files\" },\n  { icon: <Terminal />, label: \"Terminal\" },\n  { icon: <Music />, label: \"Music\", separator: true },\n  { icon: <Image />, label: \"Photos\" },\n  { icon: <MessageCircle />, label: \"Messages\", separator: true },\n  { icon: <Settings />, label: \"Settings\" },\n];\n\ninterface DockDemoProps {\n  magnification?: number;\n  distance?: number;\n  iconSize?: number;\n  gap?: number;\n  alwaysShowLabels?: boolean;\n  borderRadius?: number;\n}\n\nexport const DockDemo = ({\n  magnification,\n  distance,\n  iconSize,\n  gap,\n  alwaysShowLabels,\n  borderRadius,\n}: DockDemoProps) => {\n  return (\n    <div className=\"flex items-end justify-center p-16 min-h-[200px]\">\n      <Dock\n        items={ITEMS}\n        magnification={magnification}\n        distance={distance}\n        iconSize={iconSize}\n        gap={gap}\n        alwaysShowLabels={alwaysShowLabels}\n        borderRadius={borderRadius}\n      />\n    </div>\n  );\n};\n\nexport default DockDemo;\n",
+      "type": "registry:example"
+    }
+  ],
+  "meta": {
+    "demoProps": {
+      "DockDemo": {}
+    }
+  },
+  "type": "registry:example"
+}

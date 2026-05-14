@@ -1,0 +1,14 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-animate-digits",
+  "type": "registry:example",
+  "title": "Animate Digits Demo",
+  "description": "Timer demo showcasing per-digit blur-slide animation.",
+  "registryDependencies": ["@unlumen-ui/animate-digits"],
+  "files": [
+    {
+      "path": "registry/demo/components/unlumen/animate-digits/index.tsx",
+      "type": "registry:example"
+    }
+  ]
+}

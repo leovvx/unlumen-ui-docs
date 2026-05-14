@@ -1,0 +1,12 @@
+# Unlumen UI
+
+> Unlumen UI is an animated React component library built with TypeScript, Tailwind CSS, and Motion. Components are distributed via the shadcn CLI and can be installed directly into your project.
+
+## Documentation
+- [Installation](https://ui.unlumen.com/docs/installation): How to set up and install components
+- [UI Components](https://ui.unlumen.com/docs/ui): Full list of animated UI primitives
+- [Component Gallery](https://ui.unlumen.com/components): All free and pro components
+- [Pricing](https://ui.unlumen.com/pricing): Pro plan with lifetime access
+
+## About
+Built by Léo (Unlumen). Open-source components are free; pro components require a one-time purchase.

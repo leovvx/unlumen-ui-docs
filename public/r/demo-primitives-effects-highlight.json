@@ -1,0 +1,27 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-primitives-effects-highlight",
+  "title": "Highlight Demo",
+  "description": "Interactive highlight effect with smooth spring animations.",
+  "registryDependencies": [
+    "@unlumen-ui/highlight"
+  ],
+  "files": [
+    {
+      "path": "registry/demo/primitives/effects/highlight/index.tsx",
+      "content": "\"use client\";\n\nimport {\n  Highlight,\n  HighlightItem,\n} from \"@/components/unlumen-ui/primitives/effects/highlight\";\n\nconst ITEMS = [\n  { id: \"react\", label: \"React\" },\n  { id: \"vue\", label: \"Vue\" },\n  { id: \"svelte\", label: \"Svelte\" },\n  { id: \"next\", label: \"Next.js\" },\n];\n\nexport const HighlightDemo = ({ hover = true }: { hover?: boolean }) => {\n  return (\n    <div className=\"flex items-center justify-center min-h-[300px] w-full p-8\">\n      <Highlight\n        mode=\"parent\"\n        hover={hover}\n        defaultValue={hover ? undefined : \"react\"}\n        className=\"rounded-lg bg-muted\"\n        containerClassName=\"flex gap-3 p-4 flex-wrap justify-center\"\n      >\n        {ITEMS.map((item) => (\n          <HighlightItem\n            key={item.id}\n            value={item.id}\n            className=\"px-4 py-2 rounded-md font-medium cursor-pointer\"\n          >\n            <div>{item.label}</div>\n          </HighlightItem>\n        ))}\n      </Highlight>\n    </div>\n  );\n};\n",
+      "type": "registry:example"
+    }
+  ],
+  "meta": {
+    "demoProps": {
+      "HighlightDemo": {
+        "hover": {
+          "value": true,
+          "type": "boolean"
+        }
+      }
+    }
+  },
+  "type": "registry:example"
+}

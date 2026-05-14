@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "primitives-buttons-liquid",
+  "type": "registry:ui",
+  "title": "Liquid Button",
+  "description": "A button that fills on hover.",
+  "dependencies": [
+    "motion"
+  ],
+  "registryDependencies": [
+    "@unlumen-ui/lib-get-strict-context",
+    "@unlumen-ui/primitives-animate-slot"
+  ],
+  "files": [
+    {
+      "path": "registry/primitives/buttons/liquid/index.tsx",
+      "type": "registry:ui",
+      "target": "components/unlumen-ui/primitives/buttons/liquid.tsx"
+    }
+  ]
+}

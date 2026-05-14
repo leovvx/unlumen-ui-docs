@@ -1,0 +1,113 @@
+---
+title: Scramble Text
+description: Reveals text with a randomized character scramble/glitch effect. Perfect for status messages, dynamic content, or adding visual interest to text transitions.
+author:
+  name: Léo
+  url: https://x.com/leouiux
+---
+
+<ComponentPreview name="demo-scramble-text" />
+
+## Overview
+
+The Scramble Text component animates text by revealing characters one by one, with unrevealed characters displaying random glitches. It's ideal for loading states, status updates, code snippets, or any moment where you want text to have impact.
+
+## Installation
+
+<ComponentInstallation name="scramble-text" />
+
+## Usage
+
+```tsx
+import { ScrambleText } from "@/components/unlumen-ui/scramble-text";
+```
+
+### Basic
+
+```tsx
+<ScrambleText text="Hello, World." />
+```
+
+### Custom styling
+
+```tsx
+<ScrambleText text="Access granted." scrambledClassName="text-orange-500" />
+```
+
+### Manual control
+
+```tsx
+import { useRef } from "react";
+import {
+  ScrambleText,
+  ScrambleTextHandle,
+} from "@/components/unlumen-ui/scramble-text";
+
+export function Example() {
+  const ref = useRef<ScrambleTextHandle>(null);
+
+  return (
+    <>
+      <ScrambleText ref={ref} text="Click to reveal" autoStart={false} />
+      <button onClick={() => ref.current?.start()}>Start</button>
+      <button onClick={() => ref.current?.reset()}>Reset</button>
+    </>
+  );
+}
+```
+
+### Auto-cycling through phrases
+
+```tsx
+import { useEffect, useRef, useState } from "react";
+import {
+  ScrambleText,
+  ScrambleTextHandle,
+} from "@/components/unlumen-ui/scramble-text";
+
+export function Example() {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [key, setKey] = useState(0);
+  const ref = useRef<ScrambleTextHandle>(null);
+  const phrases = ["Loading...", "Processing...", "Done!"];
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex((prev) => (prev + 1) % phrases.length);
+      setKey((k) => k + 1);
+    }, 2000);
+    return () => clearInterval(interval);
+  }, []);
+
+  return (
+    <ScrambleText
+      key={key}
+      ref={ref}
+      text={phrases[currentIndex]}
+      scrambleSpeed={30}
+    />
+  );
+}
+```
+
+## Props
+
+| Prop                   | Type         | Default                            | Description                                                  |
+| ---------------------- | ------------ | ---------------------------------- | ------------------------------------------------------------ |
+| `text`                 | `string`     | —                                  | The final text to reveal.                                    |
+| `scrambleSpeed`        | `number`     | `50`                               | Interval in ms between each animation tick.                  |
+| `scrambledLetterCount` | `number`     | `2`                                | Number of scrambled characters shown ahead of revealed text. |
+| `characters`           | `string`     | `"abcdefghijklmnopqrstuvwxyz!@#…"` | Pool of characters used for the scramble effect.             |
+| `className`            | `string`     | —                                  | Class applied to the revealed portion of text.               |
+| `scrambledClassName`   | `string`     | —                                  | Class applied to the scrambled (unrevealed) portion of text. |
+| `autoStart`            | `boolean`    | `true`                             | Whether to start the animation automatically on mount.       |
+| `delay`                | `number`     | `0`                                | Delay in ms before `autoStart` fires.                        |
+| `onStart`              | `() => void` | —                                  | Callback fired when the animation begins.                    |
+| `onComplete`           | `() => void` | —                                  | Callback fired when the animation completes.                 |
+
+## Methods
+
+| Method    | Description                                  |
+| --------- | -------------------------------------------- |
+| `start()` | Starts (or restarts) the scramble animation. |
+| `reset()` | Stops the animation and clears the text.     |

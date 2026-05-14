@@ -1,0 +1,14 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-matrix",
+  "type": "registry:example",
+  "title": "Matrix Demo",
+  "description": "Interactive demo showcasing real-time clock, animation presets, VU meter, and a pixel draw pad.",
+  "registryDependencies": ["@unlumen-ui/matrix"],
+  "files": [
+    {
+      "path": "registry/demo/components/unlumen/matrix/index.tsx",
+      "type": "registry:example"
+    }
+  ]
+}

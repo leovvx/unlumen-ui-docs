@@ -1,0 +1,52 @@
+---
+title: Glow Button
+description: A button with an animated conic-gradient glow layer. Supports six animation modes and fully customisable colours and blur strength.
+author:
+  name: léo
+  url: https://x.com/leouiux
+---
+
+<ComponentPreview name="demo-glow" />
+
+## Installation
+
+<ComponentInstallation name="glow" />
+
+## Usage
+
+```tsx
+import { GlowButton } from "@/components/unlumen-ui/components/buttons/glow";
+
+<GlowButton colors={["#FF5733", "#33FF57", "#3357FF", "#F1C40F"]}>
+  Get Started
+</GlowButton>;
+```
+
+## Modes
+
+| Mode             | Description                                |
+| ---------------- | ------------------------------------------ |
+| `rotate`         | Conic gradient rotates continuously        |
+| `pulse`          | Radial gradient pulses in/out              |
+| `breathe`        | Gentle scale breathe on radial gradient    |
+| `colorShift`     | Conic gradient morphs between colour stops |
+| `flowHorizontal` | Linear gradient slides left to right       |
+| `static`         | Fixed linear gradient, no animation        |
+
+## Props
+
+| Prop               | Type       | Default                                        | Description                                                           |
+| ------------------ | ---------- | ---------------------------------------------- | --------------------------------------------------------------------- |
+| `mode`             | `GlowMode` | `"rotate"`                                     | Animation mode                                                        |
+| `colors`           | `string[]` | `["#FF5733", "#33FF57", "#3357FF", "#F1C40F"]` | Glow colour stops                                                     |
+| `blur`             | `GlowBlur` | `"strong"`                                     | Blur strength (`"soft"` → `"strongest"` or a pixel value)             |
+| `duration`         | `number`   | `5`                                            | Animation cycle duration in seconds                                   |
+| `glowScale`        | `number`   | `1`                                            | Scale of the glow layer. Values > 1 spread the glow beyond the button |
+| `wrapperClassName` | `string`   | —                                              | Extra classes on the outer `<span>` wrapper                           |
+| `className`        | `string`   | —                                              | Extra classes on the `<button>` element                               |
+
+All standard `<button>` props (`onClick`, `disabled`, …) are forwarded.
+
+## Credit
+
+Inpired by the rainbow button from [Magic UI](https://magicui.design/docs/components/rainbow-button) by [@Dillion](https://twitter.com/dillionverma)

@@ -1,0 +1,197 @@
+---
+title: Command Menu
+description: A composable ⌘K command palette with fuzzy search, custom groups, built-in theme switcher, and animated content reveal.
+author:
+  name: Léo
+  url: https://x.com/leouiux
+premium: true
+---
+
+<ComponentPreview name="demo-command-menu" />
+
+## Installation
+
+<ComponentInstallation name="command-menu" />
+
+## Usage
+
+```tsx
+import {
+  CommandMenu,
+  type CommandMenuGroupDef,
+} from "@/components/unlumen-ui/command-menu";
+
+const groups: CommandMenuGroupDef[] = [
+  {
+    heading: "Navigation",
+    items: [
+      { label: "Home", href: "/" },
+      { label: "Docs", href: "/docs" },
+    ],
+  },
+];
+
+<CommandMenu groups={groups} />;
+```
+
+## Custom trigger
+
+Pass any element as `trigger` to replace the default search button entirely.
+
+```tsx
+import { CommandMenu } from "@/components/unlumen-ui/command-menu";
+import { Button } from "@/components/ui/button";
+import { ComputerTerminal01Icon as Terminal } from "hugeicons-react";
+
+<CommandMenu
+  trigger={
+    <Button variant="outline" size="sm">
+      <Terminal className="size-4 mr-2" />
+      Command
+    </Button>
+  }
+/>;
+```
+
+## Keyboard shortcut
+
+The dialog opens and closes with **⌘ K** (macOS) / **Ctrl K** (Windows/Linux) by default. Use the `shortcutKey` prop to change the key portion.
+
+```tsx
+<CommandMenu shortcutKey="j" /> // ⌘J / Ctrl J
+```
+
+## API Reference
+
+### CommandMenu
+
+<TypeTable
+  type={{
+    groups: {
+      description:
+        "Array of CommandGroup definitions rendered inside the dialog.",
+      type: "CommandMenuGroupDef[]",
+      required: false,
+      default: "[]",
+    },
+    showThemeGroup: {
+      description:
+        "Whether to append the built-in Light / Dark / System theme group.",
+      type: "boolean",
+      required: false,
+      default: "true",
+    },
+    placeholder: {
+      description: "Placeholder text inside the search input.",
+      type: "string",
+      required: false,
+      default: '"Search…"',
+    },
+    shortcutKey: {
+      description: "Key paired with ⌘/Ctrl to toggle the dialog.",
+      type: "string",
+      required: false,
+      default: '"k"',
+    },
+    contentDelay: {
+      description:
+        "Milliseconds to wait after the dialog opens before revealing content.",
+      type: "number",
+      required: false,
+      default: "150",
+    },
+    trigger: {
+      description:
+        "Custom trigger element. Replaces the default search button when provided.",
+      type: "ReactNode",
+      required: false,
+    },
+    triggerProps: {
+      description: "Props forwarded to the default trigger button.",
+      type: "CommandMenuTriggerProps",
+      required: false,
+    },
+    className: {
+      description: "Extra className applied to the CommandDialog.",
+      type: "string",
+      required: false,
+    },
+  }}
+/>
+
+### CommandMenuGroupDef
+
+<TypeTable
+  type={{
+    heading: {
+      description: "Section heading displayed above the group.",
+      type: "string",
+      required: true,
+    },
+    items: {
+      description: "Array of command items inside this group.",
+      type: "CommandMenuItemDef[]",
+      required: true,
+    },
+  }}
+/>
+
+### CommandMenuItemDef
+
+<TypeTable
+  type={{
+    label: {
+      description: "Display label for the command item.",
+      type: "string",
+      required: true,
+    },
+    icon: {
+      description: "Icon component rendered to the left of the label.",
+      type: "ComponentType<{ className?: string }>",
+      required: false,
+    },
+    href: {
+      description: "Route to navigate to via next/navigation on select.",
+      type: "string",
+      required: false,
+    },
+    action: {
+      description:
+        "Custom callback invoked on select. Takes precedence over href.",
+      type: "() => void",
+      required: false,
+    },
+    keywords: {
+      description: "Extra words used for fuzzy matching.",
+      type: "string[]",
+      required: false,
+    },
+  }}
+/>
+
+### CommandMenuTriggerProps
+
+Extends native `<button>` props.
+
+<TypeTable
+  type={{
+    label: {
+      description: "Text shown in the trigger button.",
+      type: "string",
+      required: false,
+      default: '"Search…"',
+    },
+    shortcut: {
+      description: "Key letter shown in the keyboard shortcut badge.",
+      type: "string",
+      required: false,
+      default: '"K"',
+    },
+    showShortcut: {
+      description: "Whether to render the ⌘K badge.",
+      type: "boolean",
+      required: false,
+      default: "true",
+    },
+  }}
+/>

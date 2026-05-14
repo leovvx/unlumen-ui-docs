@@ -1,0 +1,14 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-tag",
+  "type": "registry:example",
+  "title": "Tag Demo",
+  "description": "A vertical stack of outlined icon tags using the six built-in color variants.",
+  "registryDependencies": ["@unlumen-ui/tag"],
+  "files": [
+    {
+      "path": "registry/demo/components/unlumen/tag/index.tsx",
+      "type": "registry:example"
+    }
+  ]
+}

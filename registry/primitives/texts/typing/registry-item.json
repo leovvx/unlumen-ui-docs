@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "primitives-texts-typing",
+  "type": "registry:ui",
+  "title": "Typing Text",
+  "description": "A typing text animation.",
+  "dependencies": [
+    "motion"
+  ],
+  "registryDependencies": [
+    "@unlumen-ui/hooks-use-is-in-view",
+    "@unlumen-ui/lib-get-strict-context"
+  ],
+  "files": [
+    {
+      "path": "registry/primitives/texts/typing/index.tsx",
+      "type": "registry:ui",
+      "target": "components/unlumen-ui/primitives/texts/typing.tsx"
+    }
+  ]
+}

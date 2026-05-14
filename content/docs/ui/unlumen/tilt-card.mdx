@@ -1,0 +1,54 @@
+---
+title: Tilt Card
+description: A card with 3D spring tilt, optional floating image, badge variants and a radial shine on hover. Built on top of the Tilt primitive.
+author:
+  name: Léo
+  url: https://x.com/leouiux
+---
+
+<ComponentPreview name="demo-tilt-card" />
+
+## Installation
+
+<ComponentInstallation name="tilt-card" />
+
+## Usage
+
+```tsx
+import { TiltCard } from "@/components/unlumen-ui/tilt-card";
+
+<TiltCard
+  title="Starter Kit"
+  description="Everything you need to ship fast."
+  badge="Free"
+  imageSrc="/preview.png"
+  href="/templates/starter"
+/>;
+```
+
+## Custom children
+
+Content passed as `children` is rendered below the description — useful for feature lists, CTAs, or meta info.
+
+```tsx
+<TiltCard title="Pro" badge="$49" badgeVariant="warning">
+  <ul className="text-sm text-muted-foreground space-y-1">
+    <li>✓ Unlimited projects</li>
+    <li>✓ Priority support</li>
+  </ul>
+</TiltCard>
+```
+
+## Props
+
+| Prop           | Type                                         | Default     | Description                           |
+| -------------- | -------------------------------------------- | ----------- | ------------------------------------- |
+| `title`        | `string`                                     | —           | Card heading                          |
+| `description`  | `string`                                     | —           | Subtitle text                         |
+| `badge`        | `string`                                     | —           | Badge label (omit to hide)            |
+| `badgeVariant` | `"default" \| "success" \| "warning"`        | `"default"` | Badge colour scheme                   |
+| `imageSrc`     | `string`                                     | —           | Floating image URL                    |
+| `imageAlt`     | `string`                                     | `""`        | Alt text for the image                |
+| `href`         | `string`                                     | —           | Wraps the card in an `<a>` tag        |
+| `tiltProps`    | `Omit<TiltProps, "children" \| "className">` | —           | Props forwarded to the inner `<Tilt>` |
+| `className`    | `string`                                     | —           | Extra classes on the card surface     |

@@ -1,0 +1,470 @@
+---
+title: Changelog
+description: Latest updates and announcements.
+new: true
+---
+
+{/* Copy this to create a new changelog item */}
+
+import {
+  Changelog,
+  ChangelogItem,
+  ChangelogItemTitle,
+  ChangelogItemDescription,
+  ChangelogItemVersion,
+} from "@/components/docs/changelog";
+
+<Changelog>
+
+<ChangelogItem date="2026-05-05">
+<ChangelogItemVersion>
+
+## 1.9
+
+</ChangelogItemVersion>
+<ChangelogItemTitle>Search index, refreshed homepage, and testimonials</ChangelogItemTitle>
+<ChangelogItemDescription>
+
+This update makes the site faster to navigate, improves the homepage presentation, and adds a new social proof section.
+
+- **Search index API** — the command menu now uses a dynamic search index, making docs and component discovery more useful from anywhere on the site.
+- **Command menu improvements** — search results now handle indexed content more cleanly, with better grouping and interaction polish.
+- **Component showcase** — the homepage now includes a richer animated showcase area for highlighting components with video-ready previews.
+- **Testimonials** — new testimonial section with tweet-style integration for stronger product context on the homepage.
+- **Hover Feature Cards** — new installable component for animated feature cards, with docs and registry output included.
+- **Video source handling** — component previews and showcase videos now handle sources more consistently.
+- **Site stability** — pricing, routing, not-found states, and layout details received small cleanup fixes.
+
+</ChangelogItemDescription>
+</ChangelogItem>
+
+<ChangelogItem date="2026-05-03">
+<ChangelogItemVersion>
+
+## 1.8
+
+</ChangelogItemVersion>
+<ChangelogItemTitle>Square Pattern, File Tree, and safer component previews</ChangelogItemTitle>
+<ChangelogItemDescription>
+
+This cycle adds a new batch of installable components, a cleaner preview workflow for recordings, and stronger guardrails around component pages and registry publishing.
+
+- **Square Pattern** — interactive grid background that responds to hover and can now auto-animate for ambient motion.
+- **File Tree** — animated file explorer component with matching file primitives for repo mockups, docs layouts, and showcase UIs.
+- **Apple Switch, Motion FAQs Accordion, and Stacked Feature Cards** — three new installable components for toggles, expandable FAQ blocks, and layered content sections.
+- **Motion Navigation Menu** — new animated navigation component, with registry dependency metadata fixed so installs resolve correctly.
+- **Preview film mode** — component pages now support a cleaner recording layout for capture-ready demos.
+- **Preview resilience** — preview failures are now isolated behind dedicated error boundaries instead of taking down the whole component page.
+- **Registry validation** — source and generated registry checks are stricter now, which should catch broken component metadata before publish.
+- **Pricing updates** — the pricing page now shows CLI pull counts and loads heavy video content more efficiently.
+
+</ChangelogItemDescription>
+</ChangelogItem>
+
+<ChangelogItem date="2026-04-24">
+<ChangelogItemVersion>
+
+## 1.7
+
+</ChangelogItemVersion>
+<ChangelogItemTitle>Pro components now discoverable via MCP and AI agents</ChangelogItemTitle>
+<ChangelogItemDescription>
+
+Pro components are now visible in the public registry index, so AI agents, the shadcn MCP, and catalog tools can discover them without needing to probe endpoints blindly.
+
+**What changed**
+
+Previously, pro component slugs were excluded from `registry.json`. Tools that read the index to build a component list would miss them entirely, and agents that tried to probe individual endpoints would hit rate limits.
+
+Pro components now appear in `registry.json` with `files: []` and a `meta.premium` flag. The source is still protected — the route handler requires a valid license key before returning any code. The index just lets agents know the components exist and what license is needed.
+
+**For AI agents**
+
+When an agent reads the registry and encounters a pro component, it sees:
+
+```json
+{
+  "name": "glow",
+  "meta": {
+    "premium": true,
+    "requiresAuth": "Bearer token required. Set UNLUMEN_LICENSE_KEY in .env.local and configure components.json. See https://ui.unlumen.com/docs/mcp"
+  }
+}
+```
+
+No ambiguous 404. No silent skip. The agent knows what's needed and can tell the user.
+
+**`/r/registry-licensed.json`**
+
+A new authenticated endpoint returns the full index including pro metadata. Useful for catalog tools that want a single authenticated fetch rather than reading the public index.
+
+**MCP docs updated**
+
+The [MCP page](/docs/mcp) now includes a Pro section with the full `components.json` setup for license-authenticated installs.
+
+</ChangelogItemDescription>
+</ChangelogItem>
+
+<ChangelogItem date="2026-04-04">
+<ChangelogItemVersion>
+
+## 1.6
+
+</ChangelogItemVersion>
+<ChangelogItemTitle>New components and build stability improvements</ChangelogItemTitle>
+<ChangelogItemDescription>
+
+This release adds three new components and includes a round of TypeScript build fixes to improve reliability in strict production builds.
+
+- **Perspective Flow** — animated layered flow effect with perspective depth, useful for hero sections and motion-heavy showcases.
+- **Horizontal Depth Fade** — horizontal fade treatment that adds a soft depth transition on the sides of content containers.
+- **Animate Digits** — animated number display component for counters and stats with smooth digit transitions.
+
+**Build fixes (user impact)**
+
+If you install or reuse these primitives in strict TypeScript setups, builds should be more predictable now. A set of polymorphic components were adjusted to avoid edge cases where type inference could fail only during production checks.
+
+**Build fixes (dev note)**
+
+We had a recurring `never` typing pattern in polymorphic React components (`as` + generic element types). The fix was to make rendering and icon typings more explicit in key primitives and docs components so TypeScript can resolve props consistently in `next build`.
+
+</ChangelogItemDescription>
+</ChangelogItem>
+
+<ChangelogItem date="2026-03-29">
+<ChangelogItemVersion>
+
+## 1.5
+
+</ChangelogItemVersion>
+<ChangelogItemTitle>Gooey SVG Filter and MotionTabsMenu spring controls</ChangelogItemTitle>
+<ChangelogItemDescription>
+
+One new component and a configurability improvement.
+
+- **Gooey SVG Filter** — SVG filter that makes adjacent animated elements fluidly merge together with a gooey effect. Wrap it around any animated group.
+- **MotionTabsMenu** — spring properties (stiffness, damping, mass) are now fully exposed in the settings panel so you can tune the feel without touching code.
+
+</ChangelogItemDescription>
+</ChangelogItem>
+
+<ChangelogItem date="2026-03-28">
+<ChangelogItemVersion>
+
+## 1.4
+
+</ChangelogItemVersion>
+<ChangelogItemTitle>Motion Tabs Menu, Scroll Reveal Image, and Vertical Marquee</ChangelogItemTitle>
+<ChangelogItemDescription>
+
+Three new components.
+
+- **Motion Tabs Menu** — floating bottom tab bar that expands upward with spring animations to reveal tab-specific content. Direction-aware slide transitions between tabs.
+- **Scroll Reveal Image** — scroll-driven image reveal with spring-physics width expansion, zoom-out, and border-radius animation.
+- **Vertical Marquee** — two columns of images scrolling vertically in opposite directions with a progressive blur fade at the edges.
+
+</ChangelogItemDescription>
+</ChangelogItem>
+
+<ChangelogItem date="2026-03-25">
+<ChangelogItemVersion>
+
+## 1.3
+
+</ChangelogItemVersion>
+<ChangelogItemTitle>Inline Testimonials, Side by Side Slide, and Sidebar Toggle Icon</ChangelogItemTitle>
+<ChangelogItemDescription>
+
+Three new components.
+
+- **Inline Testimonials** — testimonials flowing inline as text with circular avatars. Hover any quote to blur the rest and reveal the author's name and role.
+- **Side by Side Slide** — before/after image comparison with a spring-animated draggable divider. Horizontal and vertical orientations supported.
+- **Sidebar Toggle Icon** — animated SVG icon that morphs between open and closed sidebar states using path interpolation.
+
+</ChangelogItemDescription>
+</ChangelogItem>
+
+<ChangelogItem date="2026-03-21">
+<ChangelogItemVersion>
+## 1.2
+</ChangelogItemVersion>
+<ChangelogItemTitle>AI Chat, Video Ambient, and icons update</ChangelogItemTitle>
+<ChangelogItemDescription>
+
+Two new components plus a visual refresh across the site.
+
+- **AI Chat** — animated chat UI with reply-to threading and spring-driven message bubbles. Drop it in as a demo shell or wire it up to a real backend.
+- **Video Ambient** — video player that samples the current frame and projects a soft ambient glow behind the player using a canvas layer. Zero configuration required.
+
+**Icons**
+
+Site icons switched from Lucide to Hugeicons — bigger selection, same free tier. Registry components still ship with Lucide since it's more widely used in the community.
+
+Also added a custom animated sidebar icon for the /components section, inspired by the skiper-ui design.
+
+</ChangelogItemDescription>
+</ChangelogItem>
+
+<ChangelogItem date="2026-03-21">
+<ChangelogItemVersion>
+
+## 1.1
+
+</ChangelogItemVersion>
+<ChangelogItemTitle>Expandable Navbar, sidebar-aware fullscreen, and typography</ChangelogItemTitle>
+<ChangelogItemDescription>
+
+One new component and a handful of quality-of-life improvements to the site itself.
+
+- **Glowing Button** — animated button treatment for high-emphasis actions. Install with `npx shadcn@latest add @unlumen-ui/glow`.
+
+**Fullscreen preview**
+
+The fullscreen expand/collapse in component previews now accounts for the sidebar. When the sidebar is open the panel slides to fill only the remaining space — no more layout jump mid-animation.
+
+</ChangelogItemDescription>
+</ChangelogItem>
+
+<ChangelogItem date="2026-03-19" major>
+<ChangelogItemVersion>
+
+<ChangelogItemVersion>
+
+## 1.0
+
+</ChangelogItemVersion>
+<ChangelogItemTitle>Unlumen UI is now officially available on the shadcn/ui trusted registry!</ChangelogItemTitle>
+<ChangelogItemDescription>
+Huge milestone for the project. After months of development, testing, and iteration, Unlumen UI is now live on the shadcn registry. You can install any component directly into your Next.js projects with the CLI command provided on each doc page.
+
+</ChangelogItemDescription>
+
+</ChangelogItemVersion>
+
+**Plus,**
+
+<ChangelogItemTitle>Visual redesign and six new components</ChangelogItemTitle>
+<ChangelogItemDescription>
+
+A fairly big visual pass landed this cycle — mostly things you feel rather than notice. Six new installable components ship alongside it.
+
+- **Switch** — animated toggle with smooth thumb transition.
+- **ThemeSwitch** — same primitive, pre-wired to next-themes so it just works.
+- **Tilt** — spring-driven 3D wrapper that reacts to the cursor. Compose it around anything.
+- **Tilt Card** — built on the Tilt primitive; adds a floating image slot and a radial shine that follows the cursor.
+- **Text Reveal** — scroll-triggered word-by-word or character-by-character reveal.
+- **Tooltip Preview** — link tooltip that shows a live preview of the target on hover.
+
+**Design system**
+
+All colour tokens were audited and consolidated. Dark mode used to have a noticeably different sidebar background — it now matches `--background` so the sidebar feels like part of the page rather than a separate panel. Chart colours shifted to warm coral tones. The logo in the top-left switched from a PNG to an inline SVG so it stays sharp at any resolution and flips instantly with the theme.
+
+**Sidebar**
+
+Each section in the docs sidebar now has its own icon, making it faster to orient yourself. The fisheye magnification on link hover was removed — it looked cool but made the sidebar feel restless. TypeTable backgrounds are now transparent so they inherit the page colour correctly in both light and dark mode.
+
+</ChangelogItemDescription>
+
+</ChangelogItem>
+
+<ChangelogItem date="2026-03-15">
+<ChangelogItemVersion>
+
+## 0.8
+
+</ChangelogItemVersion>
+<ChangelogItemTitle>DownloadFile component and SEO improvements</ChangelogItemTitle>
+<ChangelogItemDescription>
+
+Small release — one new utility component and some under-the-hood site hygiene.
+
+- **DownloadFile** — drop-in component that exposes a file download button backed by a Next.js API route (`/api/download/[name]`). Useful for letting users grab component source files or assets directly from a doc page.
+
+**Site improvements**
+
+Added `robots.txt`, `sitemap.xml`, and `llms.txt` for better search engine and AI crawler indexing. Open Graph URLs and page metadata were also tightened up across the docs.
+
+</ChangelogItemDescription>
+</ChangelogItem>
+
+<ChangelogItem date="2026-03-11">
+<ChangelogItemVersion>
+
+## 0.7
+
+</ChangelogItemVersion>
+<ChangelogItemTitle>Dia Text Reveal, Floating Navbar, new pro components, and Open in v0</ChangelogItemTitle>
+<ChangelogItemDescription>
+
+New components and pro-tier improvements.
+
+- **Dia Text Reveal** — animated text reveal with a sweeping gradient that highlights words as they appear. Configurable duration, spread, and easing.
+- **Floating Navbar** — scroll-velocity-aware navigation bar with dropdown menus and smooth show/hide behaviour.
+- **Scramble Text** — characters shuffle randomly before resolving to the final string. Good for loading states and data reveals.
+- **Shimmering Text** — lightweight shimmer animation layered over text, no canvas required.
+- **Favicon Search** — fetches and displays favicons for any domain, with fallback handling.
+- **Switch & ThemeSwitch** — animated toggle primitives; ThemeSwitch wires directly into next-themes.
+
+**Open in v0**
+
+Component previews now include an _Open in v0_ button so you can fork any component directly into a v0 project.
+
+**Pro updates**
+
+Gravity Stars is now a pro component. The Highlight component received improved mouse-event handling and bounds management. GlowingBadge variants were refined with updated glow styles. Pricing and activation pages were redesigned.
+
+</ChangelogItemDescription>
+</ChangelogItem>
+
+<ChangelogItem date="2026-03-09">
+<ChangelogItemVersion>
+
+## 0.6
+
+</ChangelogItemVersion>
+<ChangelogItemTitle>New components, UnlumenSlider and CDN previews</ChangelogItemTitle>
+<ChangelogItemDescription>
+
+New components added to the registry this cycle.
+
+- **Dock** — macOS-style icon dock with magnification on hover.
+- **Magnetic Button** — button that snaps toward the cursor when hovered. Good for CTAs.
+- **Text Reveal** — word-by-word or character-by-character reveal animation triggered on scroll.
+- **Animated List** — staggered list that animates items in as they mount.
+
+**UnlumenSlider**
+
+The settings panel now uses a custom `UnlumenSlider` component instead of the generic shadcn `Slider`. Tighter styling, same API.
+
+**Component preview CDN**
+
+Preview thumbnails in the component gallery now load from Vercel Blob instead of local paths — faster cold loads and no more 404s after deploys.
+
+</ChangelogItemDescription>
+</ChangelogItem>
+
+<ChangelogItem date="2026-03-01">
+<ChangelogItemVersion>
+
+## 0.5
+
+</ChangelogItemVersion>
+<ChangelogItemTitle>Registry cleanup and premium config refactor</ChangelogItemTitle>
+<ChangelogItemDescription>
+
+Mostly infrastructure — nothing visible in the UI, but the codebase is cleaner and easier to maintain.
+
+**Registry naming**
+
+All component install commands are now shorter — the old verbose naming is gone.
+
+**Dependency security patches**
+
+Updated several components and utilities to address security advisories.
+
+</ChangelogItemDescription>
+</ChangelogItem>
+
+<ChangelogItem date="2026-03-01" major>
+<ChangelogItemVersion>
+
+## 0.4
+
+</ChangelogItemVersion>
+<ChangelogItemTitle>Premium components, feedback loop & newsletter</ChangelogItemTitle>
+<ChangelogItemDescription>
+
+Biggest update so far. A lot of infrastructure work this week — things that aren't flashy but make the project feel like a real product.
+
+**Premium components**
+
+Some components are now gated behind a premium flag. They still show up in the docs with full previews, but the installation tab shows a premium gate instead of the CLI command. The gate has a pixel shimmer background, a mouse-reveal spotlight, and a "Maybe later" button that morphs into a feedback text field.
+
+**Feedback API**
+
+When someone clicks "Maybe later", they can optionally leave a note. That note gets emailed directly to the team. Rate-limited to one submission per hour.
+
+**Newsletter**
+
+The Stay Tuned section on the landing page is now wired up. Subscriptions are handled cleanly — deduplication and unsubscribe links included.
+
+**Theme transition performance**
+
+The circular reveal animation on dark/light mode toggle was laggy on large screens. Fixed by compositing the animation on the GPU and shortening its duration slightly. On very wide screens the transition is skipped entirely, where it was too expensive to be smooth.
+
+**Pixel canvas stability**
+
+The Pixel Background now updates instantly on theme change — no lag, no flicker, no canvas rebuild.
+
+</ChangelogItemDescription>
+</ChangelogItem>
+
+<ChangelogItem date="2026-02-26">
+<ChangelogItemVersion>
+
+## 0.3
+
+</ChangelogItemVersion>
+<ChangelogItemTitle>Command Menu, Orbiting Skills, Tilt Card, Math Graph and more</ChangelogItemTitle>
+<ChangelogItemDescription>
+
+A big batch of new components. Most of these came from personal projects and felt worth extracting and documenting properly.
+
+- **Command Menu** — composable ⌘K command palette with fuzzy search, custom groups, built-in theme switcher, and animated content reveal. This one took a while to get right.
+- **Orbiting Skills** — animated badges that orbit a center element. On desktop the ring follows the cursor on hover; on mobile it's always visible. Good for hero sections and about pages.
+- **Progressive Blur** — stacked `backdrop-filter` layers that create a smooth edge blur without any color overlay. Drop it at the top or bottom of a scrollable container.
+- **Tilt** — spring-animated 3D tilt wrapper that reacts to cursor position. Primitive you can wrap around anything.
+- **Tilt Card** — built on top of the Tilt primitive. Adds a floating image slot, badge variants, and a radial shine that follows the cursor.
+- **Cursor** — custom cursor with a follower element. Velocity-based squish and skew on fast moves.
+- **Math Graph** — real-time SVG math plotter with pan & zoom, crosshair tooltip, and support for multiple simultaneous expressions. Genuinely had no idea this would turn out this cool.
+- **Count Up** — number counter that springs to its target value when it enters the viewport. Supports decimals, separators, and direction.
+
+</ChangelogItemDescription>
+</ChangelogItem>
+
+<ChangelogItem date="2026-02-24">
+<ChangelogItemVersion>
+
+## 0.2
+
+</ChangelogItemVersion>
+<ChangelogItemTitle>Backgrounds, buttons and effects</ChangelogItemTitle>
+<ChangelogItemDescription>
+
+Filling out the library with utility-heavy components that work well as building blocks.
+
+- **Pixel Background** — interactive canvas with tiny pixel particles that ripple outward from the center on hover. Configurable gap, speed, and palette.
+- **Gravity Stars** — canvas background with gravity-driven star particles. Hover to attract or repel, click to spawn new ones.
+- **Clipped Circle** — cursor-following soft glow spotlight inside a container. Pure CSS, no canvas.
+- **Copy Button** — copy-to-clipboard button with animated icon swap and confirmation state.
+- **Glow Button** — conic-gradient glow layer with six animation modes. Fully configurable colours and blur strength.
+- **Refresh Button** — icon button that spins on click, with support for async callbacks. Handy for reloading live data or component previews.
+
+</ChangelogItemDescription>
+</ChangelogItem>
+
+<ChangelogItem date="2026-02-23" major>
+<ChangelogItemVersion>
+
+## 0.1
+
+</ChangelogItemVersion>
+<ChangelogItemTitle>Initial release</ChangelogItemTitle>
+<ChangelogItemDescription>
+
+First public version. The project was originally called Animate UI — renamed to Unlumen UI to better reflect where it's going.
+
+The idea is simple: a registry of animated React components you can install with the shadcn CLI. Components are copied directly into your codebase, so you own the code and there's no dependency lock-in.
+
+**Included in this release:**
+
+- **Floating Tooltip** — cursor-following tooltip with velocity-based squish and skew. Supports a main label and an optional description. First component, and still one of my favourites.
+- Core primitives and hooks shared across components.
+- Documentation site built with Fumadocs.
+
+More components coming fast — this was mostly about getting the foundation right.
+
+</ChangelogItemDescription>
+</ChangelogItem>
+
+</Changelog>

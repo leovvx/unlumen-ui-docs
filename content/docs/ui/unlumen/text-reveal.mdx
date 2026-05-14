@@ -1,0 +1,75 @@
+---
+title: Text Reveal
+description: Scroll-driven word-by-word or character-by-character text reveal animation using Motion.
+author:
+  name: Léo
+  url: https://x.com/leouiux
+---
+
+<ComponentPreview name="demo-text-reveal" />
+
+## Installation
+
+<ComponentInstallation name="text-reveal" />
+
+## Usage
+
+```tsx
+import { TextReveal } from "@/components/unlumen-ui/text-reveal";
+
+<TextReveal text="Your text animates as you scroll" />;
+```
+
+## Split Modes
+
+Choose between word-by-word or character-by-character reveal animations.
+
+```tsx
+{
+  /* Word-by-word (default) */
+}
+<TextReveal text="This reveals word by word as you scroll" splitBy="words" />;
+
+{
+  /* Character-by-character */
+}
+<TextReveal text="This reveals character by character" splitBy="characters" />;
+```
+
+## Custom Container
+
+Use any HTML tag as the container element.
+
+```tsx
+<TextReveal
+  text="This is styled as a heading"
+  as="h2"
+  className="text-4xl font-bold"
+/>
+```
+
+## Threshold Control
+
+Control how far into the viewport the reveal completes (0–1). Lower values reveal sooner.
+
+```tsx
+{
+  /* Reveals earlier when entering viewport */
+}
+<TextReveal text="Reveals at 50% into viewport" threshold={0.5} />;
+
+{
+  /* Reveals later (default is 0.85) */
+}
+<TextReveal text="Reveals at 85% into viewport" threshold={0.85} />;
+```
+
+## Props
+
+| Prop        | Type                      | Default  | Description                              |
+| ----------- | ------------------------- | -------- | ---------------------------------------- |
+| `text`      | `string`                  | —        | The text to animate                      |
+| `as`        | HTML tag                  | `"p"`    | Container element type                   |
+| `splitBy`   | `"words" \| "characters"` | `"words" | Split animation mode                     |
+| `threshold` | `number` (0–1)            | `0.85`   | Viewport position where reveal completes |
+| `className` | `string`                  | —        | Extra CSS classes for the container      |

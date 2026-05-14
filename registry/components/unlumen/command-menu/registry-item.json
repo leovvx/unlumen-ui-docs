@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "command-menu",
+  "type": "registry:ui",
+  "title": "Command Menu",
+  "description": "A composable ⌘K command palette with fuzzy search, custom groups, built-in theme switcher, and animated content reveal.",
+  "dependencies": ["next", "next-themes", "lucide-react"],
+  "files": [
+    {
+      "path": "registry/components/unlumen/command-menu/index.tsx",
+      "type": "registry:ui",
+      "target": "components/unlumen-ui/command-menu.tsx"
+    }
+  ]
+}

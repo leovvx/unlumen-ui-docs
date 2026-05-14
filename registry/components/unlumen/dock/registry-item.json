@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "dock",
+  "type": "registry:ui",
+  "title": "Dock",
+  "description": "Animated dock with Gaussian magnification, spring physics, separators, and tooltip carets.",
+  "dependencies": ["motion"],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "registry/components/unlumen/dock/index.tsx",
+      "type": "registry:ui",
+      "target": "components/unlumen-ui/dock.tsx"
+    }
+  ]
+}

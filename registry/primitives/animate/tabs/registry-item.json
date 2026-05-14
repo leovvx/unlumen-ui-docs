@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "primitives-animate-tabs",
+  "type": "registry:ui",
+  "title": "Tabs",
+  "description": "A set of layered sections of content—known as tab panels—that are displayed one at a time.",
+  "dependencies": [
+    "motion"
+  ],
+  "registryDependencies": [
+    "@unlumen-ui/highlight",
+    "@unlumen-ui/primitives-animate-slot",
+    "@unlumen-ui/lib-get-strict-context"
+  ],
+  "files": [
+    {
+      "path": "registry/primitives/animate/tabs/index.tsx",
+      "type": "registry:ui",
+      "target": "components/unlumen-ui/primitives/animate/tabs.tsx"
+    }
+  ]
+}

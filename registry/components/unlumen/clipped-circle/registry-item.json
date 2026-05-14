@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "clipped-circle",
+  "type": "registry:ui",
+  "title": "Clipped Circle",
+  "description": "A cursor-following spotlight effect that reveals a soft glowing circle wherever the user moves their mouse inside the container.",
+  "dependencies": [
+    "motion"
+  ],
+  "files": [
+    {
+      "path": "registry/components/unlumen/clipped-circle/index.tsx",
+      "type": "registry:ui",
+      "target": "components/unlumen-ui/clipped-circle.tsx"
+    }
+  ]
+}

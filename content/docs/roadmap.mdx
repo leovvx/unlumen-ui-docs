@@ -1,0 +1,101 @@
+---
+title: Roadmap
+description: What's next for Unlumen UI.
+---
+
+import {
+  Roadmap,
+  RoadmapSection,
+  RoadmapItem,
+  RoadmapObjectives,
+  RoadmapObjective,
+  RoadmapRequest,
+} from "@/components/docs/roadmap";
+
+<RoadmapObjectives>
+  <RoadmapObjective
+    index={1}
+    title="Interaction-focused components"
+    description="Purposeful motion that responds to user input."
+  />
+  <RoadmapObjective
+    index={2}
+    title="Blocks"
+    description="Pre-built composable sections to accelerate UI development."
+  />
+  <RoadmapObjective
+    index={3}
+    title="Templates"
+    description="Full page starters built on Unlumen UI components."
+  />
+</RoadmapObjectives>
+
+<RoadmapRequest />
+
+<Roadmap>
+
+<RoadmapSection title="Interaction & Feedback">
+  <RoadmapItem
+    status="done"
+    title="Floating Tooltip"
+    description="Cursor-following tooltip with velocity-based squish and skew."
+  />
+  <RoadmapItem status="in-progress" title="New interaction patterns…" />
+  <RoadmapItem
+    status="done"
+    title="Magnetic Button"
+    description="Button that attracts to the cursor on hover."
+  />
+  <RoadmapItem
+    status="planned"
+    title="Elastic Drawer"
+    description="Drawer with spring-physics resistance on drag."
+  />
+  <RoadmapItem
+    status="planned"
+    title="Morph Dialog"
+    description="Dialog that morphs from its trigger element."
+  />
+</RoadmapSection>
+
+<RoadmapSection title="Backgrounds & Decoration">
+  <RoadmapItem
+    status="in-progress"
+    title="Animated Backgrounds"
+    description="New animated background variants."
+  />
+  <RoadmapItem
+    status="planned"
+    title="Particle Field"
+    description="Configurable ambient particle canvas."
+  />
+  <RoadmapItem status="tbd" title="And more…" />
+</RoadmapSection>
+
+<RoadmapSection title="Text">
+  <RoadmapItem
+    status="done"
+    title="Typewriter"
+    description="Character-by-character text reveal."
+  />
+  <RoadmapItem status="tbd" title="And more…" />
+</RoadmapSection>
+
+<RoadmapSection title="Blocks">
+  <RoadmapItem status="planned" title="Heroes / Headers" />
+  <RoadmapItem status="planned" title="Feature Grids" />
+  <RoadmapItem status="planned" title="Pricing Sections" />
+  <RoadmapItem status="planned" title="FAQ / Accordions" />
+  <RoadmapItem status="planned" title="Steps / Onboarding flows" />
+  <RoadmapItem status="experimental" title="And more…" />
+</RoadmapSection>
+
+<RoadmapSection title="Templates">
+  <RoadmapItem
+    status="planned"
+    title="Templates section"
+    description="Complete page examples built on Unlumen UI components. Specific templates are TBD and will be shaped by community usage."
+  />
+</RoadmapSection>
+
+</Roadmap>

@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-sidebar-toggle-icon",
+  "type": "registry:example",
+  "title": "Sidebar Toggle Icon Demo",
+  "description": "Animated SVG icon that morphs between open and closed sidebar states on click.",
+  "registryDependencies": ["@unlumen-ui/sidebar-toggle-icon"],
+  "files": [
+    {
+      "path": "registry/demo/components/icons/sidebar-toggle-icon/index.tsx",
+      "type": "registry:example"
+    }
+  ],
+  "meta": {
+    "demoName": "SidebarToggleIconDemo",
+    "demoProps": {
+      "SidebarToggleIconDemo": {
+        "strokeWidth": { "value": 1.5, "min": 0.5, "max": 3, "step": 0.5 }
+      }
+    }
+  }
+}

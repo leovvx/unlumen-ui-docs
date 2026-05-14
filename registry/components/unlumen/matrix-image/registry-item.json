@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "matrix-image",
+  "type": "registry:ui",
+  "title": "Matrix Image",
+  "description": "An animated image component that simulates the iconic Matrix digital rain effect.",
+  "dependencies": ["motion"],
+  "files": [
+    {
+      "path": "registry/components/unlumen/matrix-image/index.tsx",
+      "type": "registry:ui",
+      "target": "components/unlumen-ui/matrix-image.tsx"
+    }
+  ]
+}

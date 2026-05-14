@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "animated-list",
+  "title": "Animated List",
+  "description": "A real-time push feed where new items animate in from the top with spring physics — Stripe Radar style.",
+  "dependencies": [
+    "motion"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "registry/components/unlumen/animated-list/index.tsx",
+      "content": "\"use client\";\n\nimport * as React from \"react\";\nimport { AnimatePresence, motion } from \"motion/react\";\n\nimport { cn } from \"@/lib/utils\";\n\nexport type AnimationType = \"scale\" | \"slide\" | \"fade\" | \"bounce\";\n\nexport interface AnimatedListProps<T> {\n  /** index 0 = newest */\n  items: T[];\n  renderItem: (item: T, index: number) => React.ReactNode;\n  /** @default 8 */\n  maxVisible?: number;\n  /** @default 12 */\n  gap?: number;\n  /** @default \"scale\" */\n  animation?: AnimationType;\n  className?: string;\n}\n\nfunction getAnimationVariants(type: AnimationType) {\n  switch (type) {\n    case \"slide\":\n      return {\n        initial: { opacity: 0, y: -30 },\n        animate: { opacity: 1, y: 0 },\n        exit: { opacity: 0, y: -20 },\n      };\n    case \"fade\":\n      return {\n        initial: { opacity: 0 },\n        animate: { opacity: 1 },\n        exit: { opacity: 0 },\n      };\n    case \"bounce\":\n      return {\n        initial: { opacity: 0, y: -20, scale: 0.8 },\n        animate: { opacity: 1, y: 0, scale: 1 },\n        exit: { opacity: 0, scale: 0.8 },\n      };\n    case \"scale\":\n    default:\n      return {\n        initial: { opacity: 0, y: -20, scale: 0.95 },\n        animate: { opacity: 1, y: 0, scale: 1 },\n        exit: { opacity: 0, scale: 0.9 },\n      };\n  }\n}\n\nexport function AnimatedList<T extends { id: string | number }>({\n  items,\n  renderItem,\n  maxVisible = 8,\n  gap = 12,\n  animation = \"scale\",\n  className,\n}: AnimatedListProps<T>) {\n  const visible = items.slice(0, maxVisible);\n  const variants = getAnimationVariants(animation);\n\n  return (\n    <div className={cn(\"flex flex-col\", className)} style={{ gap: `${gap}px` }}>\n      <AnimatePresence mode=\"popLayout\" initial={false}>\n        {visible.map((item, index) => (\n          <motion.div\n            key={item.id}\n            layout\n            initial={variants.initial}\n            animate={variants.animate}\n            exit={variants.exit}\n            transition={{\n              type: \"spring\",\n              stiffness: 350,\n              damping: 28,\n              layout: { type: \"spring\", stiffness: 350, damping: 28 },\n            }}\n          >\n            {renderItem(item, index)}\n          </motion.div>\n        ))}\n      </AnimatePresence>\n    </div>\n  );\n}\n",
+      "type": "registry:ui",
+      "target": "components/unlumen-ui/animated-list.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

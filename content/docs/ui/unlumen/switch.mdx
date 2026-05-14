@@ -1,0 +1,54 @@
+---
+title: Switch
+description: Animated toggle switch with a spring-driven thumb and smooth fill transition. Built on Radix UI Switch.
+author:
+  name: Léo
+  url: https://x.com/leouiux
+---
+
+<ComponentPreview name="demo-switch" />
+
+## Installation
+
+<ComponentInstallation name="switch" />
+
+## Usage
+
+```tsx
+import { Switch } from "@/components/unlumen-ui/switch";
+```
+
+```tsx
+const [enabled, setEnabled] = useState(false);
+
+<Switch checked={enabled} onCheckedChange={setEnabled} />;
+```
+
+## With label
+
+```tsx
+<Switch
+  checked={enabled}
+  onCheckedChange={setEnabled}
+  label="Notifications"
+/>
+
+// Label on the left
+<Switch
+  checked={enabled}
+  onCheckedChange={setEnabled}
+  label="Dark mode"
+  labelSide="left"
+/>
+```
+
+## Props
+
+| Prop              | Type                   | Default   | Description                              |
+| ----------------- | ---------------------- | --------- | ---------------------------------------- |
+| `checked`         | `boolean`              | —         | Controlled checked state.                |
+| `onCheckedChange` | `(v: boolean) => void` | —         | Called when the switch is toggled.       |
+| `label`           | `string`               | —         | Text label rendered beside the switch.   |
+| `labelSide`       | `"left" \| "right"`    | `"right"` | Which side of the switch the label sits. |
+| `disabled`        | `boolean`              | `false`   | Disables interaction.                    |
+| `className`       | `string`               | —         | Extra classes on the switch root.        |

@@ -1,0 +1,26 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-slider-range",
+  "title": "Slider Range Demo",
+  "description": "Range sliders for price, temperature and year selection with dual spring-snapped thumbs.",
+  "registryDependencies": [
+    "@unlumen-ui/slider"
+  ],
+  "files": [
+    {
+      "path": "registry/demo/components/unlumen/slider-range/index.tsx",
+      "content": "\"use client\";\n\nimport { useState } from \"react\";\nimport { Slider } from \"@/components/unlumen-ui/slider\";\n\nexport const SliderRangeDemo = ({\n  showValue = true,\n}: {\n  showValue?: boolean;\n}) => {\n  const [priceRange, setPriceRange] = useState<[number, number]>([200, 800]);\n  const [tempRange, setTempRange] = useState<[number, number]>([18, 26]);\n  const [yearRange, setYearRange] = useState<[number, number]>([2018, 2024]);\n\n  return (\n    <div className=\"flex flex-col gap-8 w-full max-w-sm px-4 py-8\">\n      <Slider\n        value={priceRange}\n        onChange={(v) => setPriceRange(v as [number, number])}\n        min={0}\n        max={1000}\n        step={10}\n        label=\"Price\"\n        showValue={showValue}\n        formatValue={(v) => `$${v}`}\n      />\n      <Slider\n        value={tempRange}\n        onChange={(v) => setTempRange(v as [number, number])}\n        min={-10}\n        max={40}\n        step={1}\n        label=\"Temperature\"\n        showValue={showValue}\n        formatValue={(v) => `${v}°C`}\n      />\n      <Slider\n        value={yearRange}\n        onChange={(v) => setYearRange(v as [number, number])}\n        min={2010}\n        max={2025}\n        step={1}\n        label=\"Year\"\n        showValue={showValue}\n        formatValue={(v) => String(v)}\n      />\n    </div>\n  );\n};\n",
+      "type": "registry:example"
+    }
+  ],
+  "meta": {
+    "demoProps": {
+      "SliderRangeDemo": {
+        "showValue": {
+          "value": true
+        }
+      }
+    }
+  },
+  "type": "registry:example"
+}

@@ -1,0 +1,30 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-switch",
+  "title": "Switch Demo",
+  "description": "Four labeled toggle switches showing common settings controls.",
+  "registryDependencies": [
+    "@unlumen-ui/switch"
+  ],
+  "files": [
+    {
+      "path": "registry/demo/components/unlumen/switch/index.tsx",
+      "content": "\"use client\";\n\nimport { useState } from \"react\";\nimport { Switch } from \"@/components/unlumen-ui/switch\";\n\nexport const SwitchDemo = ({\n  labelSide = \"right\",\n}: {\n  labelSide?: \"left\" | \"right\";\n}) => {\n  const [wifi, setWifi] = useState(true);\n  const [bluetooth, setBluetooth] = useState(false);\n  const [notifications, setNotifications] = useState(true);\n  const [darkMode, setDarkMode] = useState(false);\n\n  return (\n    <div className=\"flex flex-col gap-4 p-8\">\n      <Switch\n        checked={wifi}\n        onCheckedChange={setWifi}\n        label=\"Wi-Fi\"\n        labelSide={labelSide}\n      />\n      <Switch\n        checked={bluetooth}\n        onCheckedChange={setBluetooth}\n        label=\"Bluetooth\"\n        labelSide={labelSide}\n      />\n      <Switch\n        checked={notifications}\n        onCheckedChange={setNotifications}\n        label=\"Notifications\"\n        labelSide={labelSide}\n      />\n      <Switch\n        checked={darkMode}\n        onCheckedChange={setDarkMode}\n        label=\"Dark mode\"\n        labelSide={labelSide}\n      />\n    </div>\n  );\n};\n",
+      "type": "registry:example"
+    }
+  ],
+  "meta": {
+    "demoProps": {
+      "SwitchDemo": {
+        "labelSide": {
+          "value": "right",
+          "options": {
+            "Left": "left",
+            "Right": "right"
+          }
+        }
+      }
+    }
+  },
+  "type": "registry:example"
+}

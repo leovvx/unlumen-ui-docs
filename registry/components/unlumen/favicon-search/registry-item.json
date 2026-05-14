@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "favicon-search",
+  "type": "registry:ui",
+  "title": "Favicon Search",
+  "description": "A search input that fetches and smoothly animates the site favicon into the search bar as you type a URL.",
+  "dependencies": ["motion", "lucide-react"],
+  "files": [
+    {
+      "path": "registry/components/unlumen/favicon-search/index.tsx",
+      "type": "registry:ui",
+      "target": "components/unlumen-ui/favicon-search.tsx"
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "aurora-blur",
+  "type": "registry:ui",
+  "title": "Aurora Blur",
+  "description": "Aurora blur shader layer used by Aurora Card.",
+  "dependencies": ["@react-three/fiber", "three"],
+  "files": [
+    {
+      "path": "registry/components/ui/blob-card/aurora-blur.tsx",
+      "type": "registry:ui",
+      "target": "components/unlumen-ui/aurora-blur.tsx"
+    }
+  ]
+}

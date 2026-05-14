@@ -1,0 +1,14 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-matrix-image-to-frame",
+  "type": "registry:example",
+  "title": "Matrix Image to Frame",
+  "description": "Upload an image and export it as a binary Frame (0s and 1s) for use with the Matrix component.",
+  "registryDependencies": ["@unlumen-ui/matrix"],
+  "files": [
+    {
+      "path": "registry/demo/components/unlumen/matrix-image-to-frame/index.tsx",
+      "type": "registry:example"
+    }
+  ]
+}

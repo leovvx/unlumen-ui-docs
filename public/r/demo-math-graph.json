@@ -1,0 +1,38 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-math-graph",
+  "title": "Math Graph Demo",
+  "description": "Demo showing an interactive real-time math function visualizer.",
+  "registryDependencies": [
+    "@unlumen-ui/math-graph"
+  ],
+  "files": [
+    {
+      "path": "registry/demo/components/unlumen/math-graph/index.tsx",
+      "content": "\"use client\";\n\nimport { MathGraph } from \"@/components/unlumen-ui/math-graph\";\n\ninterface MathGraphDemoProps {\n  resolution: number;\n  showGrid: boolean;\n  showLabels: boolean;\n  animated: boolean;\n}\n\nexport const MathGraphDemo = ({\n  resolution = 600,\n  showGrid = true,\n  showLabels = true,\n  animated = true,\n}: MathGraphDemoProps) => {\n  return (\n    <div className=\"w-full max-w-3xl mx-auto p-4\">\n      <MathGraph\n        initialExpressions={[\"sin(x)\", \"cos(x)\"]}\n        resolution={resolution}\n        showGrid={showGrid}\n        showLabels={showLabels}\n        animated={animated}\n        className=\"w-full\"\n      />\n    </div>\n  );\n};\n",
+      "type": "registry:example"
+    }
+  ],
+  "meta": {
+    "demoProps": {
+      "MathGraphDemo": {
+        "animated": {
+          "value": true
+        },
+        "showGrid": {
+          "value": true
+        },
+        "showLabels": {
+          "value": true
+        },
+        "resolution": {
+          "value": 600,
+          "min": 100,
+          "max": 1000,
+          "step": 100
+        }
+      }
+    }
+  },
+  "type": "registry:example"
+}

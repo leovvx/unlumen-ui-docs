@@ -1,0 +1,26 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-shimmer-skeleton",
+  "title": "Shimmer Skeleton Demo",
+  "description": "Card-shaped skeleton layout with shimmer animation.",
+  "registryDependencies": [
+    "@unlumen-ui/shimmer-skeleton"
+  ],
+  "files": [
+    {
+      "path": "registry/demo/components/unlumen/shimmer-skeleton/index.tsx",
+      "content": "\"use client\";\n\nimport { ShimmerSkeleton } from \"@/components/unlumen-ui/shimmer-skeleton\";\n\nexport const ShimmerSkeletonDemo = ({\n  animate = true,\n}: {\n  animate?: boolean;\n}) => {\n  return (\n    <div className=\"w-full max-w-sm space-y-4 p-8\">\n      {/* Card skeleton */}\n      <div className=\"space-y-3\">\n        <ShimmerSkeleton\n          className=\"h-40 w-full\"\n          rounded=\"lg\"\n          animate={animate}\n        />\n        <div className=\"flex items-center gap-3\">\n          <ShimmerSkeleton\n            className=\"h-10 w-10 shrink-0\"\n            rounded=\"full\"\n            animate={animate}\n          />\n          <div className=\"flex-1 space-y-2\">\n            <ShimmerSkeleton className=\"h-3.5 w-3/4\" animate={animate} />\n            <ShimmerSkeleton className=\"h-3 w-1/2\" animate={animate} />\n          </div>\n        </div>\n        <ShimmerSkeleton className=\"h-3 w-full\" animate={animate} />\n        <ShimmerSkeleton className=\"h-3 w-5/6\" animate={animate} />\n        <ShimmerSkeleton className=\"h-3 w-4/6\" animate={animate} />\n      </div>\n    </div>\n  );\n};\n",
+      "type": "registry:example"
+    }
+  ],
+  "meta": {
+    "demoProps": {
+      "ShimmerSkeletonDemo": {
+        "animate": {
+          "value": true
+        }
+      }
+    }
+  },
+  "type": "registry:example"
+}

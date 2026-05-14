@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "primitives-animate-tooltip",
+  "type": "registry:ui",
+  "title": "Tooltip",
+  "description": "An animated tooltip that shows contextual info on hover or focus and smoothly glides to the next element without disappearing between transitions.",
+  "dependencies": [
+    "motion",
+    "@floating-ui/react"
+  ],
+  "registryDependencies": [
+    "@unlumen-ui/primitives-animate-slot",
+    "@unlumen-ui/lib-get-strict-context"
+  ],
+  "files": [
+    {
+      "path": "registry/primitives/animate/tooltip/index.tsx",
+      "type": "registry:ui",
+      "target": "components/unlumen-ui/primitives/animate/tooltip.tsx"
+    }
+  ]
+}

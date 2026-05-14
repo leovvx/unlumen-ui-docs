@@ -1,0 +1,27 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-switch",
+  "type": "registry:example",
+  "title": "Switch Demo",
+  "description": "Four labeled toggle switches showing common settings controls.",
+  "registryDependencies": ["@unlumen-ui/switch"],
+  "files": [
+    {
+      "path": "registry/demo/components/unlumen/switch/index.tsx",
+      "type": "registry:example"
+    }
+  ],
+  "meta": {
+    "demoProps": {
+      "SwitchDemo": {
+        "labelSide": {
+          "value": "right",
+          "options": {
+            "Left": "left",
+            "Right": "right"
+          }
+        }
+      }
+    }
+  }
+}

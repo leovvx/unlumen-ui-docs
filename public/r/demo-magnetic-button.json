@@ -1,0 +1,65 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-magnetic-button",
+  "title": "Magnetic Button Demo",
+  "description": "Three magnetic buttons showing different radius and spring configurations.",
+  "registryDependencies": [
+    "@unlumen-ui/magnetic-button"
+  ],
+  "files": [
+    {
+      "path": "registry/demo/components/unlumen/magnetic-button/index.tsx",
+      "content": "\"use client\";\n\nimport { MagneticButton } from \"@/components/unlumen-ui/magnetic-button\";\nimport type { VariantProps } from \"class-variance-authority\";\nimport type { magneticButtonVariants } from \"@/components/unlumen-ui/magnetic-button\";\n\ninterface MagneticButtonDemoProps {\n  radius?: number;\n  strength?: number;\n  stiffness?: number;\n  damping?: number;\n  variant?: VariantProps<typeof magneticButtonVariants>[\"variant\"];\n  size?: VariantProps<typeof magneticButtonVariants>[\"size\"];\n}\n\nexport const MagneticButtonDemo = ({\n  radius = 100,\n  strength = 0.5,\n  stiffness = 150,\n  damping = 15,\n  variant = \"default\",\n  size = \"default\",\n}: MagneticButtonDemoProps) => {\n  const springOptions = { stiffness, damping, mass: 0.1 };\n\n  return (\n    <div className=\"flex flex-wrap items-center justify-center gap-6 p-16\">\n      <MagneticButton\n        variant={variant}\n        size={size}\n        radius={radius}\n        strength={strength}\n        springOptions={springOptions}\n      >\n        Deploy\n      </MagneticButton>\n\n      <MagneticButton\n        variant={variant}\n        size={size}\n        radius={radius}\n        strength={strength}\n        springOptions={springOptions}\n      >\n        Preview\n      </MagneticButton>\n\n      <MagneticButton\n        variant={variant}\n        size={size}\n        radius={radius}\n        strength={strength}\n        springOptions={springOptions}\n      >\n        Cancel\n      </MagneticButton>\n    </div>\n  );\n};\n\nexport default MagneticButtonDemo;\n",
+      "type": "registry:example"
+    }
+  ],
+  "meta": {
+    "demoProps": {
+      "MagneticButtonDemo": {
+        "radius": {
+          "value": 100,
+          "min": 40,
+          "max": 200,
+          "step": 10
+        },
+        "strength": {
+          "value": 0.5,
+          "min": 0.1,
+          "max": 1,
+          "step": 0.05
+        },
+        "stiffness": {
+          "value": 150,
+          "min": 50,
+          "max": 500,
+          "step": 25
+        },
+        "damping": {
+          "value": 15,
+          "min": 5,
+          "max": 60,
+          "step": 1
+        },
+        "variant": {
+          "value": "default",
+          "options": {
+            "Default": "default",
+            "Secondary": "secondary",
+            "Outline": "outline",
+            "Ghost": "ghost",
+            "Destructive": "destructive"
+          }
+        },
+        "size": {
+          "value": "default",
+          "options": {
+            "Small": "sm",
+            "Default": "default",
+            "Large": "lg"
+          }
+        }
+      }
+    }
+  },
+  "type": "registry:example"
+}

@@ -1,0 +1,83 @@
+---
+title: Progressive Blur
+description: A single-layer backdrop-filter overlay with a CSS mask gradient — lightweight and GPU-friendly blur fade for any edge.
+author:
+  name: Léo
+  url: https://x.com/leouiux
+premium: false
+---
+
+<ComponentPreview name="demo-progressive-blur" />
+
+## Installation
+
+<ComponentInstallation name="progressive-blur" />
+
+## Usage
+
+```tsx
+import { ProgressiveBlur } from "@/components/unlumen-ui/progressive-blur";
+
+// Wrap your scrollable container in `relative overflow-hidden`, then add:
+<div className="relative h-64 overflow-hidden">
+  <ProgressiveBlur side="top" />
+
+  <div className="h-full overflow-y-auto">{/* content */}</div>
+
+  <ProgressiveBlur side="bottom" />
+</div>;
+```
+
+## How it works
+
+Instead of stacking multiple `backdrop-filter` layers (which creates N compositing surfaces), this component uses **a single `backdropFilter: blur(Xpx)` div** masked with a CSS gradient. The mask goes from fully opaque at the edge to transparent at the interior, producing a smooth perceptual fade with minimal GPU overhead.
+
+Tint is rendered via `color-mix(in oklch, var(--background) N%, transparent)` — one paint operation, no extra DOM node.
+
+## Props
+
+| Prop           | Type                                     | Default    | Description                                     |
+| -------------- | ---------------------------------------- | ---------- | ----------------------------------------------- |
+| `side`         | `"top" \| "bottom" \| "left" \| "right"` | `"bottom"` | The edge the blur is strongest at               |
+| `strength`     | `number`                                 | `4`        | Blur amount in pixels                           |
+| `size`         | `string \| number`                       | `"160px"`  | Thickness of the blurred area                   |
+| `tint`         | `boolean`                                | `true`     | Adds a background-color fade alongside the blur |
+| `tintStrength` | `number`                                 | `1`        | Opacity of the tint at the solid edge (0–1)     |
+| `className`    | `string`                                 | —          | Extra class names on the wrapper                |
+
+The component also forwards all standard `HTMLDivElement` props.
+
+## Examples
+
+### Bottom only
+
+```tsx
+<div className="relative h-64 overflow-hidden">
+  <div className="h-full overflow-y-auto">{/* ... */}</div>
+  <ProgressiveBlur side="bottom" strength={8} size="96px" />
+</div>
+```
+
+### Horizontal (left / right)
+
+```tsx
+<div className="relative flex overflow-hidden">
+  <ProgressiveBlur side="left" size="64px" />
+  <div className="flex gap-4 overflow-x-auto">{/* ... */}</div>
+  <ProgressiveBlur side="right" size="64px" />
+</div>
+```
+
+### Without background tint
+
+Set `tint={false}` to keep the pure blur effect without any colour overlay — useful over images or gradient backgrounds.
+
+```tsx
+<ProgressiveBlur side="top" tint={false} strength={12} />
+```
+
+### Custom tint opacity
+
+```tsx
+<ProgressiveBlur side="bottom" tintStrength={0.6} strength={6} />
+```

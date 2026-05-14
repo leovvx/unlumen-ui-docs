@@ -1,0 +1,34 @@
+---
+title: Glowing Badge
+description: Badge with an animated pulsing glow dot. Supports status variants out of the box.
+author:
+  name: Léo
+  url: https://x.com/leouiux
+---
+
+<ComponentPreview name="demo-glowing-badge" />
+
+## Installation
+
+<ComponentInstallation name="glowing-badge" />
+
+## Usage
+
+```tsx
+import { GlowingBadge } from "@/components/unlumen-ui/glowing-badge";
+```
+
+```tsx
+<GlowingBadge variant="success">Live</GlowingBadge>
+<GlowingBadge variant="warning" pulse={false}>Pending</GlowingBadge>
+```
+
+## Props
+
+| Prop        | Type                                                       | Default     | Description                          |
+| ----------- | ---------------------------------------------------------- | ----------- | ------------------------------------ |
+| `variant`   | `"default" \| "success" \| "warning" \| "error" \| "info"` | `"default"` | Color variant for the badge.         |
+| `pulse`     | `boolean`                                                  | `true`      | Animate the dot with a pulsing ring. |
+| `dot`       | `boolean`                                                  | `true`      | Show the status dot.                 |
+| `children`  | `ReactNode`                                                | —           | Badge label content.                 |
+| `className` | `string`                                                   | —           | Extra classes on the root element.   |

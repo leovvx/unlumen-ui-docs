@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "tilt",
+  "title": "Tilt",
+  "description": "A spring-animated 3D tilt wrapper that tracks the cursor inside the element.",
+  "dependencies": [
+    "motion"
+  ],
+  "files": [
+    {
+      "path": "registry/components/unlumen/tilt/index.tsx",
+      "content": "\"use client\";\n\nimport * as React from \"react\";\nimport {\n  motion,\n  useMotionTemplate,\n  useMotionValue,\n  useSpring,\n  useTransform,\n  type MotionStyle,\n  type SpringOptions,\n} from \"motion/react\";\n\nexport type TiltProps = {\n  children: React.ReactNode;\n  className?: string;\n  style?: MotionStyle;\n  /**\n   * Maximum rotation angle in degrees.\n   * @default 15\n   */\n  rotationFactor?: number;\n  /**\n   * Reverse the tilt direction.\n   * @default false\n   */\n  isReverse?: boolean;\n  springOptions?: SpringOptions;\n};\n\nexport function Tilt({\n  children,\n  className,\n  style,\n  rotationFactor = 15,\n  isReverse = false,\n  springOptions,\n}: TiltProps) {\n  const ref = React.useRef<HTMLDivElement>(null);\n\n  const x = useMotionValue(0);\n  const y = useMotionValue(0);\n\n  const xSpring = useSpring(x, springOptions);\n  const ySpring = useSpring(y, springOptions);\n\n  const rotateX = useTransform(\n    ySpring,\n    [-0.5, 0.5],\n    isReverse\n      ? [rotationFactor, -rotationFactor]\n      : [-rotationFactor, rotationFactor],\n  );\n  const rotateY = useTransform(\n    xSpring,\n    [-0.5, 0.5],\n    isReverse\n      ? [-rotationFactor, rotationFactor]\n      : [rotationFactor, -rotationFactor],\n  );\n\n  const transform = useMotionTemplate`perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;\n\n  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {\n    if (!ref.current) return;\n    const rect = ref.current.getBoundingClientRect();\n    x.set((e.clientX - rect.left) / rect.width - 0.5);\n    y.set((e.clientY - rect.top) / rect.height - 0.5);\n  };\n\n  const handleMouseLeave = () => {\n    x.set(0);\n    y.set(0);\n  };\n\n  return (\n    <motion.div\n      ref={ref}\n      className={className}\n      style={{ transformStyle: \"preserve-3d\", ...style, transform }}\n      onMouseMove={handleMouseMove}\n      onMouseLeave={handleMouseLeave}\n    >\n      {children}\n    </motion.div>\n  );\n}\n",
+      "type": "registry:ui",
+      "target": "components/unlumen-ui/tilt.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "page-transition",
+  "type": "registry:ui",
+  "title": "Page Transition",
+  "description": "GSAP-powered Next.js App Router page transition provider. Wraps your layout to animate between pages with a curtain reveal or slide push — ported from the Codrops async transition demo.",
+  "dependencies": ["gsap", "next"],
+  "files": [
+    {
+      "path": "registry/components/unlumen/page-transition/index.tsx",
+      "type": "registry:ui",
+      "target": "components/unlumen-ui/page-transition.tsx"
+    }
+  ]
+}

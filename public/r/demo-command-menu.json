@@ -1,0 +1,29 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-command-menu",
+  "title": "Command Menu Demo",
+  "description": "Demo showing a composable command palette with navigation, component links, and a built-in theme switcher.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "@unlumen-ui/command-menu"
+  ],
+  "files": [
+    {
+      "path": "registry/demo/components/unlumen/command-menu/index.tsx",
+      "content": "\"use client\";\n\nimport {\n  BookOpen01Icon as BookOpen,\n  PuzzleIcon as Component,\n  Home01Icon as Home,\n  RocketIcon as Rocket,\n  Mouse01Icon as MousePointer,\n  MagicWand01Icon as Wand2,\n  PaintBrush01Icon as Paintbrush,\n  Github01Icon as Github,\n} from \"hugeicons-react\";\n\nimport {\n  CommandMenu,\n  type CommandMenuGroupDef,\n} from \"@/components/unlumen-ui/command-menu\";\n\nconst GROUPS: CommandMenuGroupDef[] = [\n  {\n    heading: \"Navigation\",\n    items: [\n      {\n        label: \"Home\",\n        icon: Home,\n        href: \"/\",\n        keywords: [\"home\", \"main\", \"accueil\"],\n      },\n      {\n        label: \"Documentation\",\n        icon: BookOpen,\n        href: \"/docs/installation\",\n        keywords: [\"docs\", \"documentation\", \"guide\", \"getting started\"],\n      },\n      {\n        label: \"Components\",\n        icon: Component,\n        href: \"/docs/ui\",\n        keywords: [\"components\", \"ui\", \"library\", \"browse\"],\n      },\n    ],\n  },\n  {\n    heading: \"Components\",\n    items: [\n      {\n        label: \"Animated Components\",\n        icon: Wand2,\n        href: \"/docs/ui/animate\",\n        keywords: [\"animated\", \"motion\", \"framer\"],\n      },\n      {\n        label: \"Buttons\",\n        icon: MousePointer,\n        href: \"/docs/ui/buttons\",\n        keywords: [\"buttons\", \"cta\", \"click\"],\n      },\n      {\n        label: \"Backgrounds\",\n        icon: Paintbrush,\n        href: \"/docs/ui/backgrounds\",\n        keywords: [\"backgrounds\", \"bg\", \"gradient\", \"pattern\"],\n      },\n    ],\n  },\n  {\n    heading: \"Links\",\n    items: [\n      {\n        label: \"GitHub\",\n        icon: Github,\n        action: () =>\n          window.open(\n            \"https://github.com/wicki-leonard-emf/unlumen-ui-pv\",\n            \"_blank\",\n          ),\n        keywords: [\"github\", \"source\", \"code\", \"repo\"],\n      },\n      {\n        label: \"Get Started\",\n        icon: Rocket,\n        href: \"/docs/installation\",\n        keywords: [\"get started\", \"start\", \"begin\", \"install\"],\n      },\n    ],\n  },\n];\n\nexport const CommandMenuDemo = () => {\n  return (\n    <div className=\"flex items-center justify-center p-8 w-full\">\n      <CommandMenu\n        groups={GROUPS}\n        showThemeGroup\n        placeholder=\"Search components, pages, actions…\"\n        triggerProps={{ label: \"Search components…\" }}\n      />\n    </div>\n  );\n};\n",
+      "type": "registry:example"
+    }
+  ],
+  "meta": {
+    "demoProps": {
+      "CommandMenuDemo": {
+        "showThemeGroup": {
+          "value": true
+        }
+      }
+    }
+  },
+  "type": "registry:example"
+}

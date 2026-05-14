@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-animated-list",
+  "type": "registry:example",
+  "title": "Animated List Demo",
+  "description": "Auto-cycling notification feed with spring entry animations.",
+  "registryDependencies": ["@unlumen-ui/animated-list"],
+  "files": [
+    {
+      "path": "registry/demo/components/unlumen/animated-list/index.tsx",
+      "type": "registry:example"
+    }
+  ],
+  "meta": {
+    "demoProps": {
+      "AnimatedListDemo": {}
+    }
+  }
+}

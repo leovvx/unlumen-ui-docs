@@ -1,0 +1,113 @@
+---
+title: Slider
+description: Animated slider with spring-snapped thumb, step dots, range mode, and click-to-edit value display. Built on Radix UI Slider.
+author:
+  name: Léo
+  url: https://x.com/leouiux
+releaseDate: 2026-03-20
+new: true
+---
+
+<ComponentPreview name="demo-slider" />
+
+## Installation
+
+<ComponentInstallation name="slider" />
+
+## Usage
+
+```tsx
+import { Slider } from "@/components/unlumen-ui/slider";
+```
+
+```tsx
+const [value, setValue] = useState(50);
+
+<Slider
+  value={value}
+  onChange={(v) => setValue(v as number)}
+  min={0}
+  max={100}
+  step={1}
+  label="Volume"
+  formatValue={(v) => `${v}%`}
+/>;
+```
+
+## Range mode
+
+Pass a tuple `[number, number]` as `value` to enable dual-thumb range selection. The thumbs are spring-animated and prevent crossing each other.
+
+<ComponentPreview name="demo-slider-range" />
+
+```tsx
+const [range, setRange] = useState<[number, number]>([20, 80]);
+
+<Slider
+  value={range}
+  onChange={(v) => setRange(v as [number, number])}
+  min={0}
+  max={100}
+  label="Price"
+  formatValue={(v) => `$${v}`}
+/>;
+```
+
+## Step dots
+
+Enable `showSteps` to render visible tick marks at each step position. Works well with a small number of discrete steps.
+
+<ComponentPreview name="demo-slider-steps" />
+
+```tsx
+<Slider
+  value={rating}
+  onChange={(v) => setRating(v as number)}
+  min={1}
+  max={5}
+  step={1}
+  showSteps
+  label="Rating"
+  formatValue={(v) => `${v} / 5`}
+/>
+```
+
+## Value position
+
+Control where the value label is displayed with `valuePosition`. Use `"tooltip"` to show a floating label that follows the thumb on interaction.
+
+```tsx
+// Inline positions
+<Slider value={v} onChange={...} valuePosition="top" />
+<Slider value={v} onChange={...} valuePosition="bottom" />  {/* default */}
+<Slider value={v} onChange={...} valuePosition="left" />
+<Slider value={v} onChange={...} valuePosition="right" />
+
+// Floating tooltip above the thumb
+<Slider value={v} onChange={...} valuePosition="tooltip" />
+```
+
+## Click-to-edit
+
+Click on the displayed value to enter an exact number. Press `Enter` to confirm or `Escape` to cancel.
+
+## Props
+
+| Prop            | Type                                                  | Default    | Description                                   |
+| --------------- | ----------------------------------------------------- | ---------- | --------------------------------------------- |
+| `value`         | `number \| [number, number]`                          | —          | Controlled value. A tuple enables range mode. |
+| `onChange`      | `(value: number \| [number, number]) => void`         | —          | Called on every change.                       |
+| `min`           | `number`                                              | `0`        | Minimum value.                                |
+| `max`           | `number`                                              | `100`      | Maximum value.                                |
+| `step`          | `number`                                              | `1`        | Step increment.                               |
+| `showSteps`     | `boolean`                                             | `false`    | Show step dots along the track.               |
+| `showValue`     | `boolean`                                             | `true`     | Show the current value.                       |
+| `valuePosition` | `"top" \| "bottom" \| "left" \| "right" \| "tooltip"` | `"bottom"` | Where to render the value label.              |
+| `formatValue`   | `(v: number) => string`                               | `String`   | Custom value formatter.                       |
+| `label`         | `string`                                              | —          | Label shown before the value.                 |
+| `disabled`      | `boolean`                                             | `false`    | Disables the slider.                          |
+| `className`     | `string`                                              | —          | Extra classes on the root element.            |
+
+## Credits
+
+Original idea from [@micka_design](https://twitter.com/micka_design) and source code also available on [fluidfunctionalism](https://www.fluidfunctionalism.com/).

@@ -1,0 +1,29 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-theme-switch",
+  "title": "Theme Switch Demo",
+  "description": "Animated dark/light mode toggle with spring icon transitions.",
+  "registryDependencies": [
+    "@unlumen-ui/theme-switch"
+  ],
+  "files": [
+    {
+      "path": "registry/demo/components/unlumen/theme-switch/index.tsx",
+      "content": "\"use client\";\n\nimport { ThemeSwitch } from \"@/components/unlumen-ui/theme-switch\";\n\nexport const ThemeSwitchDemo = ({ iconSize = 16 }: { iconSize?: number }) => {\n  return (\n    <div className=\"flex items-center justify-center gap-4 p-8\">\n      <ThemeSwitch iconSize={iconSize} />\n    </div>\n  );\n};\n",
+      "type": "registry:example"
+    }
+  ],
+  "meta": {
+    "demoProps": {
+      "ThemeSwitchDemo": {
+        "iconSize": {
+          "value": 16,
+          "min": 12,
+          "max": 24,
+          "step": 2
+        }
+      }
+    }
+  },
+  "type": "registry:example"
+}

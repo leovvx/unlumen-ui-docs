@@ -1,0 +1,48 @@
+---
+title: Refresh Button
+description: An icon button that spins on click and supports async refresh callbacks. Perfect for reloading component previews or any live data widget.
+author:
+  name: Léo
+  url: https://x.com/leouiux
+---
+
+<ComponentPreview name="demo-refresh" />
+
+## Installation
+
+<ComponentInstallation name="refresh" />
+
+## Usage
+
+```tsx
+import { RefreshButton } from "@/components/unlumen-ui/components/buttons/refresh";
+
+<RefreshButton onRefresh={() => refetch()} />;
+```
+
+### Async refresh
+
+The button disables itself and spins continuously while the promise is pending:
+
+```tsx
+<RefreshButton
+  onRefresh={async () => {
+    await fetchData();
+  }}
+/>
+```
+
+### Controlled
+
+```tsx
+<RefreshButton isRefreshing={loading} onRefresh={handleRefresh} />
+```
+
+## API
+
+| Prop           | Type                                               | Default     | Description                                          |
+| -------------- | -------------------------------------------------- | ----------- | ---------------------------------------------------- |
+| `onRefresh`    | `() => void \| Promise<void>`                      | —           | Callback fired on click. Async promises are awaited. |
+| `isRefreshing` | `boolean`                                          | —           | Controlled refreshing state (disables button).       |
+| `variant`      | `"default" \| "ghost" \| "outline" \| "secondary"` | `"ghost"`   | Visual variant.                                      |
+| `size`         | `"sm" \| "default" \| "lg"`                        | `"default"` | Button size.                                         |

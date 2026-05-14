@@ -1,0 +1,38 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-apple-switch",
+  "title": "Apple Switch Demo",
+  "description": "A compact settings panel with animated switches, descriptions, sizes, and tone controls.",
+  "registryDependencies": [
+    "@unlumen-ui/apple-switch"
+  ],
+  "files": [
+    {
+      "path": "registry/demo/components/unlumen/apple-switch/index.tsx",
+      "content": "\"use client\";\n\nimport { useState } from \"react\";\nimport { AppleSwitch } from \"@/components/unlumen-ui/apple-switch\";\nimport { cn } from \"@/lib/utils\";\n\nconst tones = [\"neutral\", \"accent\"] as const;\n\nconst AppleSwitchDemo = () => {\n  const [tone, setTone] = useState<(typeof tones)[number]>(\"neutral\");\n  const [active, setActive] = useState(true);\n  const [inactive, setInactive] = useState(false);\n\n  return (\n    <div className=\"mx-auto flex w-full max-w-sm flex-col items-center gap-5 rounded-xl p-5\">\n      <div className=\"flex items-center gap-2\">\n        {tones.map((toneOption) => (\n          <button\n            key={toneOption}\n            type=\"button\"\n            aria-label={`${toneOption} color`}\n            aria-pressed={tone === toneOption}\n            onClick={() => setTone(toneOption)}\n            className={cn(\n              \"size-5 rounded-full border border-white/30 outline-none transition\",\n              \"focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background\",\n              tone === toneOption && \"ring-2 ring-foreground/70 ring-offset-2\",\n              toneOption === \"neutral\" ? \"bg-[#34c759]\" : \"bg-foreground\",\n            )}\n          />\n        ))}\n      </div>\n\n      <div className=\" gap-8 text-center\">\n        <div className=\"flex flex-col items-center gap-3\">\n          <AppleSwitch\n            checked={active}\n            onCheckedChange={setActive}\n            aria-label=\"Active switch\"\n            size=\"md\"\n            tone={tone}\n          />\n        </div>\n      </div>\n    </div>\n  );\n};\n\nexport default AppleSwitchDemo;\nexport { AppleSwitchDemo };\n",
+      "type": "registry:example"
+    }
+  ],
+  "meta": {
+    "demoProps": {
+      "AppleSwitchDemo": {
+        "size": {
+          "value": "md",
+          "options": {
+            "Small": "sm",
+            "Medium": "md",
+            "Large": "lg"
+          }
+        },
+        "tone": {
+          "value": "neutral",
+          "options": {
+            "Neutral": "neutral",
+            "Accent": "accent"
+          }
+        }
+      }
+    }
+  },
+  "type": "registry:example"
+}

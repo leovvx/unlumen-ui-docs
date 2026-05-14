@@ -1,0 +1,86 @@
+---
+title: Count Up
+description: An animated number counter that springs to its target value when it enters the viewport, with support for decimals, separators, and direction.
+author:
+  name: Léo
+  url: https://x.com/leouiux
+---
+
+<ComponentPreview name="demo-count-up" />
+
+## Installation
+
+<ComponentInstallation name="count-up" />
+
+## Usage
+
+```tsx
+import { CountUp } from "@/components/unlumen-ui/components/effects/count-up";
+
+<CountUp to={1000000} separator="," className="text-4xl font-bold" />;
+```
+
+## API Reference
+
+### CountUp
+
+<TypeTable
+  type={{
+    to: {
+      description: "Target number to count to.",
+      type: "number",
+      required: true,
+    },
+    from: {
+      description: "Starting number.",
+      type: "number",
+      required: false,
+      default: "0",
+    },
+    direction: {
+      description: "Count direction.",
+      type: '"up" | "down"',
+      required: false,
+      default: '"up"',
+    },
+    duration: {
+      description: "Animation duration in seconds.",
+      type: "number",
+      required: false,
+      default: "2",
+    },
+    delay: {
+      description: "Delay before animation starts, in seconds.",
+      type: "number",
+      required: false,
+      default: "0",
+    },
+    separator: {
+      description: 'Thousands separator character (e.g. "," or ".").',
+      type: "string",
+      required: false,
+      default: '""',
+    },
+    startWhen: {
+      description: "Conditionally start the animation.",
+      type: "boolean",
+      required: false,
+      default: "true",
+    },
+    onStart: {
+      description: "Callback fired when the animation starts.",
+      type: "() => void",
+      required: false,
+    },
+    onEnd: {
+      description: "Callback fired when the animation ends.",
+      type: "() => void",
+      required: false,
+    },
+    className: {
+      description: "Class applied to the span element.",
+      type: "string",
+      required: false,
+    },
+  }}
+/>

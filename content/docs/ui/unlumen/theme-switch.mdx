@@ -1,0 +1,76 @@
+---
+title: Theme Switch
+description: Animated dark / light mode toggle button with a spring-driven sun ↔ moon icon swap and View Transition page reveal.
+author:
+  name: Léo
+  url: https://x.com/leouiux
+---
+
+<ComponentPreview name="demo-theme-switch" />
+
+## Installation
+
+<ComponentInstallation name="theme-switch" />
+
+## Setup
+
+This component requires `next-themes`. Wrap your app with `ThemeProvider` if you haven't already:
+
+```tsx
+// app/layout.tsx
+import { ThemeProvider } from "next-themes";
+
+export default function RootLayout({ children }) {
+  return (
+    <html suppressHydrationWarning>
+      <body>
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+          {children}
+        </ThemeProvider>
+      </body>
+    </html>
+  );
+}
+```
+
+## Usage
+
+```tsx
+import { ThemeSwitch } from "@/components/unlumen-ui/theme-switch";
+```
+
+```tsx
+<ThemeSwitch />
+```
+
+## View Transition
+
+When the browser supports the [View Transition API](https://developer.mozilla.org/en-US/docs/Web/API/View_Transitions_API), clicking the button triggers a circular reveal animation originating from the click position. It falls back gracefully to an instant theme change on unsupported browsers.
+
+Add these CSS variables to your global stylesheet to control the animation:
+
+```css
+@keyframes theme-reveal {
+  from {
+    clip-path: circle(0% at var(--vt-x) var(--vt-y));
+  }
+  to {
+    clip-path: circle(var(--vt-r) at var(--vt-x) var(--vt-y));
+  }
+}
+
+::view-transition-new(root) {
+  animation: theme-reveal 500ms ease-in-out;
+}
+
+::view-transition-old(root) {
+  animation: none;
+}
+```
+
+## Props
+
+| Prop        | Type     | Default | Description                  |
+| ----------- | -------- | ------- | ---------------------------- |
+| `iconSize`  | `number` | `16`    | Size of the sun / moon icon. |
+| `className` | `string` | —       | Extra classes on the button. |

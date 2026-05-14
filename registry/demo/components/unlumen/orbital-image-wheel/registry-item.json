@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-orbital-image-wheel",
+  "type": "registry:ui",
+  "title": "Orbital Image Wheel Demo",
+  "description": "Demo showing the Orbital Image Wheel component.",
+  "registryDependencies": ["@unlumen-ui/orbital-image-wheel"],
+  "files": [
+    {
+      "path": "registry/demo/components/unlumen/orbital-image-wheel/index.tsx",
+      "type": "registry:ui",
+      "target": "components/unlumen-ui/demo/components/unlumen/orbital-image-wheel.tsx"
+    }
+  ]
+}

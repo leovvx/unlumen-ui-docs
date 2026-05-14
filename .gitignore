@@ -1,0 +1,11 @@
+.next
+node_modules
+.env*
+.turbo
+*.tsbuildinfo
+.DS_Store
+
+.source
+.vercel
+.claude
+.mcp.json

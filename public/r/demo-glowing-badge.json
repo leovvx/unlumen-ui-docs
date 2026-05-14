@@ -1,0 +1,29 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-glowing-badge",
+  "title": "Glowing Badge Demo",
+  "description": "Shows all badge variants with animated glow dots.",
+  "registryDependencies": [
+    "@unlumen-ui/glowing-badge"
+  ],
+  "files": [
+    {
+      "path": "registry/demo/components/unlumen/glowing-badge/index.tsx",
+      "content": "\"use client\";\n\nimport { GlowingBadge } from \"@/components/unlumen-ui/glowing-badge\";\n\nexport const GlowingBadgeDemo = ({\n  variant = \"success\",\n  pulse = true,\n  dot = true,\n}: {\n  variant?: \"default\" | \"success\" | \"warning\" | \"error\" | \"info\";\n  pulse?: boolean;\n  dot?: boolean;\n}) => {\n  return (\n    <div className=\"flex flex-wrap items-center justify-center gap-3 p-8\">\n      <GlowingBadge variant=\"success\" pulse={pulse} dot={dot}>\n        Live\n      </GlowingBadge>\n      <GlowingBadge variant=\"neutral\" pulse={pulse} dot={dot}>\n        Ghost\n      </GlowingBadge>\n      <GlowingBadge variant=\"info\" pulse={pulse} dot={dot}>\n        In Progress\n      </GlowingBadge>\n      <GlowingBadge variant=\"warning\" pulse={pulse} dot={dot}>\n        Pending\n      </GlowingBadge>\n      <GlowingBadge variant=\"error\" pulse={pulse} dot={dot}>\n        Offline\n      </GlowingBadge>\n      <GlowingBadge variant=\"default\" pulse={pulse} dot={dot}>\n        Draft\n      </GlowingBadge>\n    </div>\n  );\n};\n",
+      "type": "registry:example"
+    }
+  ],
+  "meta": {
+    "demoProps": {
+      "GlowingBadgeDemo": {
+        "pulse": {
+          "value": true
+        },
+        "dot": {
+          "value": true
+        }
+      }
+    }
+  },
+  "type": "registry:example"
+}

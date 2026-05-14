@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-blob-card",
+  "type": "registry:ui",
+  "title": "Blob Card Demo",
+  "description": "Demo showing the Blob Card component.",
+  "registryDependencies": ["@unlumen-ui/blob-card"],
+  "files": [
+    {
+      "path": "registry/demo/components/ui/blob-card/index.tsx",
+      "type": "registry:ui",
+      "target": "components/unlumen-ui/demo/components/ui/blob-card.tsx"
+    }
+  ]
+}

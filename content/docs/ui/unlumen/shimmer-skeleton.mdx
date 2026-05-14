@@ -1,0 +1,32 @@
+---
+title: Shimmer Skeleton
+description: Lightweight loading skeleton with a smooth shimmer sweep animation.
+author:
+  name: Léo
+  url: https://x.com/leouiux
+---
+
+<ComponentPreview name="demo-shimmer-skeleton" />
+
+## Installation
+
+<ComponentInstallation name="shimmer-skeleton" />
+
+## Usage
+
+```tsx
+import { ShimmerSkeleton } from "@/components/unlumen-ui/shimmer-skeleton";
+```
+
+```tsx
+<ShimmerSkeleton className="h-4 w-48" />
+<ShimmerSkeleton className="h-10 w-10" rounded="full" />
+```
+
+## Props
+
+| Prop        | Type                                       | Default | Description                               |
+| ----------- | ------------------------------------------ | ------- | ----------------------------------------- |
+| `rounded`   | `"none" \| "sm" \| "md" \| "lg" \| "full"` | `"md"`  | Border radius of the skeleton block.      |
+| `animate`   | `boolean`                                  | `true`  | Toggle the shimmer sweep animation.       |
+| `className` | `string`                                   | —       | Controls width, height, and extra styles. |

@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "horizontal-depth-fade",
+  "type": "registry:ui",
+  "title": "Horizontal Depth Fade",
+  "description": "Scroll-driven horizontal image strip on a single line with cinematic blur and brightness focus. GSAP ScrollTrigger implementation.",
+  "dependencies": ["gsap"],
+  "files": [
+    {
+      "path": "registry/components/unlumen/horizontal-depth-fade/index.tsx",
+      "type": "registry:ui",
+      "target": "components/unlumen-ui/horizontal-depth-fade.tsx"
+    }
+  ]
+}

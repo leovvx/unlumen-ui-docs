@@ -1,0 +1,60 @@
+---
+title: Clipped Circle
+description: A cursor-following spotlight effect that reveals a soft glowing circle wherever the user moves their mouse inside a container.
+author:
+  name: Léo
+  url: https://x.com/leouiux
+---
+
+<ComponentPreview name="demo-clipped-circle" />
+
+## Installation
+
+<ComponentInstallation name="clipped-circle" />
+
+## Usage
+
+Place `ClippedCircle` as a **direct child** of any `relative overflow-hidden` container. It attaches mouse listeners to its parent element automatically.
+
+```tsx
+import { ClippedCircle } from "@/components/unlumen-ui/components/effects/clipped-circle";
+
+// Inside a button
+<button className="relative overflow-hidden ...">
+  Click me
+  <ClippedCircle circleSize={300} circleClassName="bg-white/25" />
+</button>
+
+// Inside a card
+<div className="relative overflow-hidden ...">
+  <p>Card content</p>
+  <ClippedCircle circleSize={500} circleClassName="bg-violet-500/30" />
+</div>
+```
+
+## API Reference
+
+### ClippedCircle
+
+<TypeTable
+  type={{
+    circleSize: {
+      description: "Diameter of the spotlight circle in pixels.",
+      type: "number",
+      required: false,
+      default: "400",
+    },
+    circleClassName: {
+      description:
+        "Tailwind class(es) applied to the circle element. Use bg-* classes to control color and opacity.",
+      type: "string",
+      required: false,
+      default: '"bg-white/20"',
+    },
+    className: {
+      description: "Class applied to the wrapper div (absolute inset-0).",
+      type: "string",
+      required: false,
+    },
+  }}
+/>

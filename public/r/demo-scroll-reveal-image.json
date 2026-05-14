@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-scroll-reveal-image",
+  "title": "Scroll Reveal Image Demo",
+  "description": "Demo of the scroll-driven image reveal with spring physics.",
+  "registryDependencies": [
+    "@unlumen-ui/scroll-reveal-image"
+  ],
+  "files": [
+    {
+      "path": "registry/demo/components/unlumen/scroll-reveal-image/index.tsx",
+      "content": "\"use client\";\n\nimport { useRef } from \"react\";\nimport ScrollRevealImage from \"@/components/unlumen-ui/scroll-reveal-image\";\n\nconst IMAGES = [\n  {\n    src: \"https://images.unsplash.com/photo-1707978813846-dbf6c4dfbbe3?q=80&w=1920&auto=format&fit=crop&ixlib=rb-4.1.0\",\n    alt: \"Landscape — wide cinematic shot\",\n    height: \"900px\",\n  },\n  {\n    src: \"https://images.unsplash.com/photo-1759834857095-4e172a6d03f5?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0\",\n    alt: \"Portrait — vertical composition\",\n    height: \"90vh\",\n  },\n  {\n    src: \"https://images.unsplash.com/photo-1506905925346-21bda4d32df4?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0\",\n    alt: \"Panoramic — mountain range\",\n    height: \"50vh\",\n  },\n];\n\nexport function ScrollRevealImageDemo({\n  fromWidth = \"40%\",\n  toWidth = \"95%\",\n  fromScale = 1.6,\n  toScale = 1,\n  fromRadius = \"0px\",\n  toRadius = \"22px\",\n  stiffness = 120,\n  damping = 80,\n}: {\n  fromWidth?: string;\n  toWidth?: string;\n  fromScale?: number;\n  toScale?: number;\n  fromRadius?: string;\n  toRadius?: string;\n  stiffness?: number;\n  damping?: number;\n}) {\n  const scrollRef = useRef<HTMLDivElement>(null);\n\n  return (\n    <div ref={scrollRef} className=\"w-full h-full overflow-y-auto\">\n      <div className=\"space-y-23 flex flex-col gap-12 pb-[50vh] pt-[50vh]\">\n        {IMAGES.map((img) => (\n          <ScrollRevealImage\n            key={img.src}\n            src={img.src}\n            alt={img.alt}\n            height={img.height}\n            fromWidth={fromWidth}\n            toWidth={toWidth}\n            innerWidth=\"95%\"\n            fromScale={fromScale}\n            toScale={toScale}\n            fromRadius={fromRadius}\n            toRadius={toRadius}\n            stiffness={stiffness}\n            damping={damping}\n            container={scrollRef}\n          />\n        ))}\n      </div>\n    </div>\n  );\n}\n\nexport default ScrollRevealImageDemo;\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

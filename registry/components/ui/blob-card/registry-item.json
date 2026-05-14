@@ -1,0 +1,14 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "blob-card",
+  "type": "registry:ui",
+  "title": "Blob Card",
+  "description": "Animated card with fluid blob header, animated glow border, and configurable colors.",
+  "files": [
+    {
+      "path": "registry/components/ui/blob-card/index.tsx",
+      "type": "registry:ui",
+      "target": "components/unlumen-ui/blob-card.tsx"
+    }
+  ]
+}

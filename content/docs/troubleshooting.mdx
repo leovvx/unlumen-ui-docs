@@ -1,0 +1,80 @@
+---
+title: Troubleshooting
+description: How to troubleshoot common issues with Unlumen UI.
+---
+
+## Verify your versions
+
+| Dependency       | Minimum recommended version |
+| ---------------- | --------------------------- |
+| **Motion**       | `≥ 12.23.0`                 |
+| **React**        | `≥ 19`                      |
+| **Tailwind CSS** | `≥ 4.1.0`                   |
+
+Make sure your environment meets or exceeds these versions to ensure Unlumen UI remains compatible and stable.
+
+## Documentation display issues
+
+Certain browser extensions can interfere with how the documentation is rendered. Common culprits include:
+
+- **[Screen Shader | Smart Screen Tinting](https://chromewebstore.google.com/detail/screen-shader-smart-scree/fmlboobidmkelggdainpknloccojpppi?hl=fr&utm_source=ext_sidebar)**
+
+If problems persist after disabling extensions, clear your browser cache and refresh the page.
+
+## The CLI installation does not respect aliases
+
+In some projects, components may not install in the desired location configured via the aliases in your `components.json` file. This is a known limitation of the shadcn CLI — it cannot use a target path with aliases.
+
+An [issue has been filed on shadcn/ui](https://github.com/shadcn-ui/ui/issues/8169) and it is on their roadmap.
+
+For now, we recommend using the manual installation method.
+
+## Authentication failed for Pro CLI installs
+
+If you try to install a Pro component and see an authentication error in the
+terminal, check the following:
+
+1. Your project `.env.local` includes a valid key:
+
+```bash
+UNLUMEN_LICENSE_KEY=0UNLU_...
+```
+
+2. Your `components.json` registry includes one of these valid auth formats:
+
+```json
+{
+  "registries": {
+    "@unlumen-ui": {
+      "url": "https://ui.unlumen.com/r/{name}.json",
+      "headers": {
+        "Authorization": "Bearer ${UNLUMEN_LICENSE_KEY}"
+      }
+    }
+  }
+}
+```
+
+Or, if your project currently has a simple string registry entry:
+
+```json
+{
+  "registries": {
+    "@unlumen-ui": "https://ui.unlumen.com/r/{name}.json?token=${UNLUMEN_LICENSE_KEY}"
+  }
+}
+```
+
+3. You restarted the terminal after editing environment variables.
+
+4. You are using your Polar license key from your purchase email.
+
+Status codes you may see:
+
+- `401 Unauthorized`: missing or invalid key
+- `403 Forbidden`: key is valid but not in granted state
+- `429 Too Many Requests`: too many attempts in a short window
+
+## Other issues
+
+If you encounter any other problem, don't hesitate to reach out on X [@leouiux](https://x.com/leouiux) or via email at [leo@unlumen.com](mailto:leo@unlumen.com).

@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-blob-card",
+  "title": "Blob Card Demo",
+  "description": "Demo showing the Blob Card component.",
+  "registryDependencies": [
+    "@unlumen-ui/blob-card"
+  ],
+  "files": [
+    {
+      "path": "registry/demo/components/ui/blob-card/index.tsx",
+      "content": "import {\n  BlobCard,\n  type BlobCardProps,\n} from \"@/components/unlumen-ui/blob-card\";\nimport { Button } from \"@/components/ui/button\";\n\nimport {\n  SparklesIcon,\n  CodeSimpleIcon as Code2,\n  Refresh03Icon as RefreshCw,\n} from \"hugeicons-react\";\n\ntype BlobCardDemoProps = Pick<BlobCardProps, \"headerHeight\">;\n\nexport default function BlobCardDemo({\n  headerHeight = 224,\n}: BlobCardDemoProps) {\n  const FEATURES = [\n    { label: \"Animated surface with layered depth\", icon: SparklesIcon },\n    { label: \"Composable header and body sections\", icon: Code2 },\n    { label: \"Tunable motion and layout props\", icon: RefreshCw },\n  ];\n\n  return (\n    <div className=\"absolute inset-0 flex w-full items-center justify-center p-8\">\n      <div className=\"max-w-sm\">\n        <BlobCard\n          headerHeight={headerHeight}\n          header={\n            <>\n              <span className=\"text-lg font-serif\">\n                Launch{\" \"}\n                <span className=\"text-sm text-foreground/50\">\n                  {\" \"}\n                  [ Product Card ]{\" \"}\n                </span>\n              </span>\n              <div className=\"mt-2 flex items-baseline gap-3\">\n                <span className=\"text-6xl font-medium tracking-tighter\">\n                  UI\n                </span>\n                <div className=\"flex flex-col text-xs leading-snug text-foreground/70\">\n                  <span>animated card</span>\n                  <span>responsive content</span>\n                </div>\n              </div>\n            </>\n          }\n        >\n          <div className=\"flex w-full items-center justify-center\">\n            <Button variant=\"default\" size=\"lg\" className=\"px-10\">\n              Explore\n            </Button>\n          </div>\n          <div className=\"px-8 pt-8 pb-8\">\n            <ul className=\"space-y-5\">\n              {FEATURES.map((f) => (\n                <li\n                  key={f.label}\n                  className=\"flex items-center gap-4 text-sm text-foreground/80\"\n                >\n                  <f.icon\n                    className=\"size-5 shrink-0 text-foreground/50\"\n                    strokeWidth={1.5}\n                  />\n                  {f.label}\n                </li>\n              ))}\n            </ul>\n            <p className=\"mt-8 text-center text-xs text-muted-foreground/80\">\n              Built for polished feature and product cards.\n            </p>\n          </div>\n        </BlobCard>\n      </div>\n    </div>\n  );\n}\n",
+      "type": "registry:ui",
+      "target": "components/unlumen-ui/demo/components/ui/blob-card.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

@@ -1,0 +1,41 @@
+---
+title: Shimmering Text
+description: Animated gradient shimmer text with viewport-triggered and repeating animation support.
+author:
+  name: Léo
+  url: https://x.com/leouiux
+---
+
+<ComponentPreview name="demo-shimmering-text" />
+
+## Installation
+
+<ComponentInstallation name="shimmering-text" />
+
+## Usage
+
+```tsx
+import { ShimmeringText } from "@/components/unlumen-ui/shimmering-text";
+```
+
+```tsx
+<ShimmeringText text="Agent is thinking..." />
+<ShimmeringText text="Processing..." duration={1.5} repeat={false} />
+```
+
+## Props
+
+| Prop           | Type      | Default | Description                                           |
+| -------------- | --------- | ------- | ----------------------------------------------------- |
+| `text`         | `string`  | —       | Text to display with the shimmer effect.              |
+| `duration`     | `number`  | `2`     | Shimmer sweep duration in seconds.                    |
+| `delay`        | `number`  | `0`     | Delay before the animation starts.                    |
+| `repeat`       | `boolean` | `true`  | Whether the shimmer repeats infinitely.               |
+| `repeatDelay`  | `number`  | `0.5`   | Pause between repeats in seconds.                     |
+| `startOnView`  | `boolean` | `true`  | Start animation when the element enters the viewport. |
+| `once`         | `boolean` | `false` | Only animate once when entering the viewport.         |
+| `inViewMargin` | `string`  | —       | Root margin for the in-view observer.                 |
+| `spread`       | `number`  | `2`     | Shimmer spread multiplier (scales with text length).  |
+| `color`        | `string`  | —       | Override the base text color CSS value.               |
+| `shimmerColor` | `string`  | —       | Override the shimmer highlight color CSS value.       |
+| `className`    | `string`  | —       | Additional CSS classes.                               |

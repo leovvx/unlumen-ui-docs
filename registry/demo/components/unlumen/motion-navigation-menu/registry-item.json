@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-motion-navigation-menu",
+  "type": "registry:example",
+  "title": "Motion Navigation Menu Demo",
+  "description": "Centered navigation menu with a single morphing container and direction-aware spring transitions.",
+  "registryDependencies": ["@unlumen-ui/motion-navigation-menu"],
+  "files": [
+    {
+      "path": "registry/demo/components/unlumen/motion-navigation-menu/index.tsx",
+      "type": "registry:example"
+    }
+  ],
+  "meta": {
+    "demoProps": {
+      "MotionNavigationMenuDemo": {}
+    }
+  }
+}

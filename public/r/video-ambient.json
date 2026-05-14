@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "video-ambient",
+  "title": "Video Ambient",
+  "description": "A video card with ambient blurred reflections and optional overlay styling.",
+  "dependencies": [],
+  "files": [
+    {
+      "path": "registry/components/unlumen/video-ambient/index.tsx",
+      "content": "\"use client\";\n\nimport { useRef, useEffect } from \"react\";\nimport { cn } from \"@/lib/utils\";\n\ninterface VideoAmbientProps {\n  src: string;\n  poster?: string;\n  blurAmount?: number;\n  intensity?: number;\n  autoPlay?: boolean;\n  muted?: boolean;\n  className?: string;\n}\n\n// Low resolution for the canvas — the blur hides any pixel detail anyway.\nconst CANVAS_W = 64;\nconst CANVAS_H = 36;\n\nexport function VideoAmbient({\n  src,\n  poster,\n  blurAmount = 60,\n  intensity = 0.85,\n  autoPlay = false,\n  muted = false,\n  className,\n}: VideoAmbientProps) {\n  const videoRef = useRef<HTMLVideoElement>(null);\n  const canvasRef = useRef<HTMLCanvasElement>(null);\n  const rafRef = useRef<number>(0);\n\n  useEffect(() => {\n    const video = videoRef.current;\n    const canvas = canvasRef.current;\n    if (!video || !canvas) return;\n\n    const ctx = canvas.getContext(\"2d\");\n    if (!ctx) return;\n\n    const draw = () => {\n      // Only paint when the video has pixel data to show.\n      if (!video.paused || video.readyState >= 2) {\n        try {\n          ctx.drawImage(video, 0, 0, CANVAS_W, CANVAS_H);\n        } catch {\n          // Ignore cross-origin canvas restrictions; video playback should continue.\n        }\n      }\n      rafRef.current = requestAnimationFrame(draw);\n    };\n\n    rafRef.current = requestAnimationFrame(draw);\n\n    return () => {\n      cancelAnimationFrame(rafRef.current);\n    };\n  }, []);\n\n  return (\n    <div className={cn(\"relative w-full\", className)}>\n      {/* Glow canvas — same approach as YouTube's ambient mode.\n          Canvas drawImage() runs in the normal paint cycle, so adjacent\n          elements repaint automatically without composite-layer tricks. */}\n      <canvas\n        ref={canvasRef}\n        width={CANVAS_W}\n        height={CANVAS_H}\n        aria-hidden\n        className=\"absolute pointer-events-none rounded-xl\"\n        style={{\n          inset: 0,\n          width: \"100%\",\n          height: \"100%\",\n          filter: `blur(${blurAmount}px)`,\n          opacity: intensity,\n          transform: \"scale(1.08)\",\n          zIndex: 0,\n        }}\n      />\n      {/* Main video */}\n      <video\n        ref={videoRef}\n        src={src}\n        poster={poster}\n        controls\n        playsInline\n        preload=\"metadata\"\n        autoPlay={autoPlay}\n        muted={muted}\n        className=\"relative w-full rounded-xl\"\n        style={{ zIndex: 1 }}\n      />\n    </div>\n  );\n}\n",
+      "type": "registry:ui",
+      "target": "components/unlumen-ui/video-ambient.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

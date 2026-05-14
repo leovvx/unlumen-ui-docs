@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "primitives-effects-highlight-nav-menu",
+  "type": "registry:ui",
+  "title": "Highlight Nav Menu",
+  "description": "A Radix UI NavigationMenu with animated highlight hover effects built in.",
+  "dependencies": [
+    "@radix-ui/react-navigation-menu",
+    "class-variance-authority",
+    "lucide-react"
+  ],
+  "registryDependencies": ["@unlumen-ui/highlight"],
+  "files": [
+    {
+      "path": "registry/primitives/effects/highlight-nav-menu/index.tsx",
+      "type": "registry:ui",
+      "target": "components/unlumen-ui/primitives/effects/highlight-nav-menu.tsx"
+    }
+  ]
+}

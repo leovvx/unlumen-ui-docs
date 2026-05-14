@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "list-view-icon",
+  "type": "registry:ui",
+  "title": "List View Icon",
+  "description": "Animated icon where three horizontal lines shuffle vertically when active, signaling a list view mode.",
+  "dependencies": ["motion"],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "registry/components/icons/list-view-icon/index.tsx",
+      "type": "registry:ui",
+      "target": "components/unlumen-ui/list-view-icon.tsx"
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "animate-digits",
+  "type": "registry:ui",
+  "title": "Animate Digits",
+  "description": "Per-digit blur-slide animation — only the digits that change animate.",
+  "dependencies": ["motion"],
+  "files": [
+    {
+      "path": "registry/components/unlumen/animate-digits/index.tsx",
+      "type": "registry:ui",
+      "target": "components/unlumen-ui/animate-digits.tsx"
+    }
+  ]
+}

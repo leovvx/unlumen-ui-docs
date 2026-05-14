@@ -1,0 +1,26 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-slider-steps",
+  "title": "Slider Steps Demo",
+  "description": "Sliders with visible step dots for rating, quality and zoom level selection.",
+  "registryDependencies": [
+    "@unlumen-ui/slider"
+  ],
+  "files": [
+    {
+      "path": "registry/demo/components/unlumen/slider-steps/index.tsx",
+      "content": "\"use client\";\n\nimport { useState } from \"react\";\nimport { Slider } from \"@/components/unlumen-ui/slider\";\n\nexport const SliderStepsDemo = ({\n  showValue = true,\n}: {\n  showValue?: boolean;\n}) => {\n  const [rating, setRating] = useState(3);\n  const [quality, setQuality] = useState(2);\n  const [zoom, setZoom] = useState(100);\n\n  return (\n    <div className=\"flex flex-col gap-8 w-full max-w-sm px-4 py-8\">\n      <Slider\n        value={rating}\n        onChange={(v) => setRating(v as number)}\n        min={1}\n        max={5}\n        step={1}\n        showSteps\n        label=\"Rating\"\n        showValue={showValue}\n        formatValue={(v) => `${v} / 5`}\n      />\n      <Slider\n        value={quality}\n        onChange={(v) => setQuality(v as number)}\n        min={0}\n        max={4}\n        step={1}\n        showSteps\n        label=\"Quality\"\n        showValue={showValue}\n        formatValue={(v) =>\n          [\"Draft\", \"Low\", \"Medium\", \"High\", \"Ultra\"][v] ?? String(v)\n        }\n      />\n      <Slider\n        value={zoom}\n        onChange={(v) => setZoom(v as number)}\n        min={25}\n        max={200}\n        step={25}\n        showSteps\n        label=\"Zoom\"\n        showValue={showValue}\n        formatValue={(v) => `${v}%`}\n      />\n    </div>\n  );\n};\n",
+      "type": "registry:example"
+    }
+  ],
+  "meta": {
+    "demoProps": {
+      "SliderStepsDemo": {
+        "showValue": {
+          "value": true
+        }
+      }
+    }
+  },
+  "type": "registry:example"
+}

@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "shimmering-text",
+  "title": "Shimmering Text",
+  "description": "Animated gradient shimmer text with viewport-triggered and repeating animation support.",
+  "dependencies": [
+    "motion"
+  ],
+  "files": [
+    {
+      "path": "registry/components/unlumen/shimmering-text/index.tsx",
+      "content": "\"use client\";\n\nimport React, { useMemo, useRef } from \"react\";\nimport { motion, useInView, UseInViewOptions } from \"motion/react\";\n\nimport { cn } from \"@/lib/utils\";\n\ninterface ShimmeringTextProps {\n  text: string;\n  duration?: number;\n  delay?: number;\n  repeat?: boolean;\n  repeatDelay?: number;\n  className?: string;\n  startOnView?: boolean;\n  once?: boolean;\n  /** rootMargin for in-view detection */\n  inViewMargin?: UseInViewOptions[\"margin\"];\n  /** spread multiplier based on text length */\n  spread?: number;\n  color?: string;\n  shimmerColor?: string;\n}\n\nexport function ShimmeringText({\n  text,\n  duration = 2,\n  delay = 0,\n  repeat = true,\n  repeatDelay = 0.5,\n  className,\n  startOnView = true,\n  once = false,\n  inViewMargin,\n  spread = 2,\n  color,\n  shimmerColor,\n}: ShimmeringTextProps) {\n  const ref = useRef<HTMLSpanElement>(null);\n  const isInView = useInView(ref, { once, margin: inViewMargin });\n\n  const dynamicSpread = useMemo(() => {\n    return text.length * spread;\n  }, [text, spread]);\n\n  const shouldAnimate = !startOnView || isInView;\n\n  return (\n    <motion.span\n      ref={ref}\n      className={cn(\n        \"relative inline-block bg-[length:250%_100%,auto] bg-clip-text text-transparent\",\n        \"[--base-color:var(--muted-foreground)] [--shimmer-color:var(--foreground)]\",\n        \"[background-repeat:no-repeat,padding-box]\",\n        \"[--shimmer-bg:linear-gradient(90deg,transparent_calc(50%-var(--spread)),var(--shimmer-color),transparent_calc(50%+var(--spread)))]\",\n        \"dark:[--base-color:var(--muted-foreground)] dark:[--shimmer-color:var(--foreground)]\",\n        className,\n      )}\n      style={\n        {\n          \"--spread\": `${dynamicSpread}px`,\n          ...(color && { \"--base-color\": color }),\n          ...(shimmerColor && { \"--shimmer-color\": shimmerColor }),\n          backgroundImage: `var(--shimmer-bg), linear-gradient(var(--base-color), var(--base-color))`,\n        } as React.CSSProperties\n      }\n      initial={{\n        backgroundPosition: \"100% center\",\n        opacity: 0,\n      }}\n      animate={\n        shouldAnimate\n          ? {\n              backgroundPosition: \"0% center\",\n              opacity: 1,\n            }\n          : {}\n      }\n      transition={{\n        backgroundPosition: {\n          repeat: repeat ? Infinity : 0,\n          duration,\n          delay,\n          repeatDelay,\n          ease: \"linear\",\n        },\n        opacity: {\n          duration: 0.3,\n          delay,\n        },\n      }}\n    >\n      {text}\n    </motion.span>\n  );\n}\n",
+      "type": "registry:ui",
+      "target": "components/unlumen-ui/shimmering-text.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

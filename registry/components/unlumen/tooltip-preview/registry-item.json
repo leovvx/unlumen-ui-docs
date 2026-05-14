@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "tooltip-preview",
+  "type": "registry:ui",
+  "title": "Tooltip Preview",
+  "description": "Link tooltip that reveals a website preview card with title, description, image and favicon.",
+  "dependencies": ["motion"],
+  "files": [
+    {
+      "path": "registry/components/unlumen/tooltip-preview/index.tsx",
+      "type": "registry:ui",
+      "target": "components/unlumen-ui/tooltip-preview.tsx"
+    }
+  ]
+}

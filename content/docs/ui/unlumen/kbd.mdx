@@ -1,0 +1,48 @@
+---
+title: Kbd
+description: Keyboard key and shortcut display component with a realistic keycap style.
+author:
+  name: Léo
+  url: https://x.com/leouiux
+---
+
+<ComponentPreview name="demo-kbd" />
+
+## Installation
+
+<ComponentInstallation name="kbd" />
+
+## Usage
+
+```tsx
+import { Kbd, Shortcut } from "@/components/unlumen-ui/kbd";
+```
+
+```tsx
+// Single key
+<Kbd>⌘</Kbd>
+<Kbd>Enter</Kbd>
+
+// Shortcut combo
+<Shortcut keys={["⌘", "K"]} />
+<Shortcut keys={["⌘", "⇧", "P"]} />
+```
+
+## Props
+
+### Kbd
+
+| Prop        | Type                   | Default | Description                       |
+| ----------- | ---------------------- | ------- | --------------------------------- |
+| `size`      | `"sm" \| "md" \| "lg"` | `"md"`  | Size of the key cap.              |
+| `children`  | `ReactNode`            | —       | The key label (text or symbol).   |
+| `className` | `string`               | —       | Extra classes on the kbd element. |
+
+### Shortcut
+
+| Prop        | Type                   | Default | Description                           |
+| ----------- | ---------------------- | ------- | ------------------------------------- |
+| `keys`      | `string[]`             | —       | Ordered list of keys in the shortcut. |
+| `separator` | `ReactNode`            | `"+"`   | Separator displayed between keys.     |
+| `size`      | `"sm" \| "md" \| "lg"` | `"md"`  | Size passed to each `Kbd`.            |
+| `className` | `string`               | —       | Extra classes on the wrapper span.    |

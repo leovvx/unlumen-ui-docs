@@ -1,0 +1,31 @@
+---
+title: Tilt
+description: A spring-animated 3D tilt wrapper that tracks the cursor position inside the element.
+author:
+  name: Léo
+  url: https://x.com/leouiux
+---
+
+## Installation
+
+<ComponentInstallation name="tilt" />
+
+## Usage
+
+```tsx
+import { Tilt } from "@/components/unlumen-ui/tilt";
+
+<Tilt rotationFactor={15}>
+  <div className="rounded-xl border bg-card p-6">Hover me</div>
+</Tilt>;
+```
+
+## Props
+
+| Prop             | Type            | Default | Description                                      |
+| ---------------- | --------------- | ------- | ------------------------------------------------ |
+| `rotationFactor` | `number`        | `15`    | Maximum rotation in degrees                      |
+| `isReverse`      | `boolean`       | `false` | Reverse the tilt direction                       |
+| `springOptions`  | `SpringOptions` | —       | Forwarded to `useSpring` (stiffness, damping, …) |
+| `className`      | `string`        | —       | Class applied to the motion wrapper              |
+| `style`          | `MotionStyle`   | —       | Style applied to the motion wrapper              |

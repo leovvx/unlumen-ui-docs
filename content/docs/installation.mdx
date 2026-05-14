@@ -1,0 +1,129 @@
+---
+title: Installation
+description: How to install dependencies and add components to your project.
+---
+
+import { Step, Steps } from "fumadocs-ui/components/steps";
+import { CodeTabs } from "@/components/docs/code-tabs";
+
+<Callout>
+  **Note:** Unlumen UI uses the same installation process as
+  [shadcn/ui](https://ui.shadcn.com/docs/installation). Components are added
+  directly to your codebase via the shadcn CLI.
+</Callout>
+
+<Steps>
+<Step>
+
+### Initialize shadcn/ui
+
+Run the `init` command to create a new project with shadcn/ui or setup an existing one.
+
+<CodeTabs
+  codes={{
+    pnpm: `pnpm dlx shadcn@latest init`,
+    npm: `npx shadcn@latest init`,
+    yarn: `yarn shadcn@latest init`,
+    bun: `bunx --bun shadcn@latest init`,
+  }}
+/>
+
+</Step>
+<Step>
+
+### Add Components
+
+Run the `add` command to add a component to your project.
+
+<CodeTabs
+  codes={{
+    pnpm: `pnpm dlx shadcn@latest add @unlumen-ui/floating-tooltip`,
+    npm: `npx shadcn@latest add @unlumen-ui/floating-tooltip`,
+    yarn: `npx shadcn@latest add @unlumen-ui/floating-tooltip`,
+    bun: `bunx --bun shadcn@latest add @unlumen-ui/floating-tooltip`,
+  }}
+/>
+
+</Step>
+<Step>
+
+<div id="pro-cli-authentication" />
+
+### Configure Pro CLI Authentication
+
+Pro component installs use the same Polar license key you use on `/activate`.
+
+1. Add your license key to your project `.env.local`.
+
+```bash
+UNLUMEN_LICENSE_KEY=0UNLU_...
+```
+
+2. Configure the `@unlumen-ui` registry in your project's `components.json`.
+
+Recommended object format (Authorization header):
+
+```json
+{
+  "registries": {
+    "@unlumen-ui": {
+      "url": "https://ui.unlumen.com/r/{name}.json",
+      "headers": {
+        "Authorization": "Bearer ${UNLUMEN_LICENSE_KEY}"
+      }
+    }
+  }
+}
+```
+
+If shadcn generated `@unlumen-ui` as a simple string in a new project, this
+format also works:
+
+```json
+{
+  "registries": {
+    "@unlumen-ui": "https://ui.unlumen.com/r/{name}.json?token=${UNLUMEN_LICENSE_KEY}"
+  }
+}
+```
+
+3. Install any Pro component with the same CLI command pattern.
+
+<CodeTabs
+  codes={{
+    pnpm: `pnpm dlx shadcn@latest add @unlumen-ui/glow`,
+    npm: `npx shadcn@latest add @unlumen-ui/glow`,
+    yarn: `npx shadcn@latest add @unlumen-ui/glow`,
+    bun: `bunx --bun shadcn@latest add @unlumen-ui/glow`,
+  }}
+/>
+
+<Callout>
+  Free components still work without authentication. Only Pro slugs require a
+  valid license key, provided either through the Authorization header or the
+  `token` query parameter.
+</Callout>
+
+</Step>
+<Step>
+
+### Import Components
+
+Import the component into your project.
+
+```tsx
+import { FloatingTooltip } from "@/components/unlumen-ui/floating-tooltip";
+
+export default function Home() {
+  return (
+    <FloatingTooltip.Provider>
+      <FloatingTooltip.Trigger content="Hello">
+        <button>Hover me</button>
+      </FloatingTooltip.Trigger>
+    </FloatingTooltip.Provider>
+  );
+}
+```
+
+</Step>
+</Steps>

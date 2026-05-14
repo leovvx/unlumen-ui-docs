@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "kbd",
+  "title": "Kbd",
+  "description": "Keyboard key and shortcut display component with a realistic keycap style.",
+  "files": [
+    {
+      "path": "registry/components/unlumen/kbd/index.tsx",
+      "content": "import { Fragment, type HTMLAttributes, type ReactNode } from \"react\";\nimport { cn } from \"@/lib/utils\";\n\ntype KbdSize = \"sm\" | \"md\" | \"lg\";\n\ninterface KbdProps extends HTMLAttributes<HTMLElement> {\n  size?: KbdSize;\n  children: ReactNode;\n}\n\ninterface ShortcutProps extends HTMLAttributes<HTMLSpanElement> {\n  keys: string[];\n  separator?: ReactNode;\n  size?: KbdSize;\n}\n\nfunction Kbd({ size = \"md\", children, className, ...props }: KbdProps) {\n  const sizeClass: Record<KbdSize, string> = {\n    sm: \"h-5 min-w-5 px-1 text-[10px]\",\n    md: \"h-6 min-w-6 px-1.5 text-[11px]\",\n    lg: \"h-7 min-w-7 px-2 text-[12px]\",\n  };\n\n  return (\n    <kbd\n      className={cn(\n        \"inline-flex items-center justify-center rounded border font-mono font-medium leading-none select-none\",\n        \"border-b-2 border-border bg-muted text-muted-foreground\",\n        \"shadow-[inset_0_-1px_0_rgba(0,0,0,0.08)]\",\n        sizeClass[size],\n        className,\n      )}\n      {...props}\n    >\n      {children}\n    </kbd>\n  );\n}\n\nfunction Shortcut({\n  keys,\n  separator = \"+\",\n  size = \"md\",\n  className,\n  ...props\n}: ShortcutProps) {\n  return (\n    <span\n      className={cn(\"inline-flex items-center gap-0.5\", className)}\n      aria-label={keys.join(separator === \"+\" ? \" + \" : \" then \")}\n      {...props}\n    >\n      {keys.map((key, i) => (\n        <Fragment key={key}>\n          <Kbd size={size}>{key}</Kbd>\n          {i < keys.length - 1 && (\n            <span\n              className=\"text-muted-foreground/60 text-[10px] font-medium px-0.5\"\n              aria-hidden\n            >\n              {separator}\n            </span>\n          )}\n        </Fragment>\n      ))}\n    </span>\n  );\n}\n\nexport { Kbd, Shortcut };\nexport type { KbdProps, ShortcutProps, KbdSize };\n",
+      "type": "registry:ui",
+      "target": "components/unlumen-ui/kbd.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}
