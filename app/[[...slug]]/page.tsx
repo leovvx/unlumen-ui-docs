@@ -119,9 +119,9 @@ export default async function Page(props: {
     guideIndex >= 0 && guideItems.length > 0
       ? guideIndex < guideItems.length - 1
         ? {
-            url: guideItems[guideIndex + 1].url,
-            name: guideItems[guideIndex + 1].text,
-          }
+          url: guideItems[guideIndex + 1].url,
+          name: guideItems[guideIndex + 1].text,
+        }
         : { url: "/ui", name: "UI" }
       : nextPage
         ? { url: nextPage.url, name: String(nextPage.name ?? "Suivant") }
@@ -134,16 +134,16 @@ export default async function Page(props: {
       tableOfContent={
         showDocsUiTocCtas
           ? {
-              enabled: true,
-              footer: <DocsUiTocCtas />,
-            }
+            enabled: true,
+            footer: <DocsUiTocCtas />,
+          }
           : undefined
       }
       tableOfContentPopover={
         showDocsUiTocCtas
           ? {
-              footer: <DocsUiTocCtas />,
-            }
+            footer: <DocsUiTocCtas />,
+          }
           : undefined
       }
       footer={{
@@ -159,7 +159,7 @@ export default async function Page(props: {
       }}
     >
       <div className="flex flex-row gap-2 items-start w-full justify-between">
-        <DocsTitle className="font-medium text-4xl tracking-tight">
+        <DocsTitle className="font-serif text-4xl sm:text-5xl tracking-normal font-light">
           {page.data.title}
         </DocsTitle>
         {(prevNav || nextNav) && (
@@ -195,7 +195,7 @@ export default async function Page(props: {
           </div>
         )}
       </div>
-      <DocsDescription className="mb-1 font-normal">
+      <DocsDescription className="mb-1 mt-3 text-base font-normal text-muted-foreground md:text-lg">
         {page.data.description}
       </DocsDescription>
       {page.data.author && (
@@ -240,15 +240,15 @@ export async function generateMetadata(props: {
     description: page.data.description,
     authors: page.data?.author
       ? [
-          {
-            name: page.data.author.name,
-            ...(page.data.author?.url && { url: page.data.author.url }),
-          },
-        ]
-      : {
-          name: "Léo",
-          url: "https://unlumen.com",
+        {
+          name: page.data.author.name,
+          ...(page.data.author?.url && { url: page.data.author.url }),
         },
+      ]
+      : {
+        name: "Léo",
+        url: "https://unlumen.com",
+      },
     openGraph: {
       title: page.data.title,
       description: page.data.description,

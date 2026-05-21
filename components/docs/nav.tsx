@@ -11,12 +11,18 @@ import { Menu01Icon as Menu } from "hugeicons-react";
 import { Highlight, HighlightItem } from "../animate/highlight";
 import { ThemeSwitcher } from "../animate/theme-switcher";
 import { motion } from "motion/react";
-import { CommandMenu } from "@/components/command-menu";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipTrigger,
+} from "@workspace/ui/components/ui/tooltip";
+import GithubIcon from "@workspace/ui/components/icons/github-icon";
+import XIcon from "@workspace/ui/components/icons/x-icon";
 
 export const NAV_ITEMS = [
   {
     title: "Docs",
-    url: "/installation",
+    url: "/",
   },
   {
     title: "Primitives",
@@ -27,7 +33,7 @@ export const NAV_ITEMS = [
     url: "https://ui.unlumen.com/components",
   },
   {
-    title: "Pro",
+    title: "Pricing",
     url: "https://ui.unlumen.com/pricing",
   },
 ];
@@ -42,7 +48,7 @@ export const Nav = ({ sidebar = "fumadocs" }: NavProps = {}) => {
   }
 
   if (sidebar === false) {
-    return <NavContent onMobileMenuClick={() => {}} />;
+    return <NavContent onMobileMenuClick={() => { }} />;
   }
 
   return <FumadocsNav />;
@@ -73,8 +79,7 @@ function NavContent({ onMobileMenuClick }: { onMobileMenuClick: () => void }) {
       <motion.nav
         className={cn(
           "fixed top-0 inset-x-0 z-500 w-full h-16 bg-background flex items-center px-6 gap-4",
-          "border-b transition-colors duration-200",
-          isScrolled ? "border-border/50" : "border-transparent",
+          " transition-colors duration-200",
         )}
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -117,17 +122,42 @@ function NavContent({ onMobileMenuClick }: { onMobileMenuClick: () => void }) {
           </Highlight>
         </nav>
 
-        {/* Search */}
-        <div className="hidden md:flex flex-1 justify-center max-w-xs">
-          <CommandMenu
-            triggerLabel="Search..."
-            className="h-9 max-w-none border-border/50 bg-background pl-3 pr-1.5 py-0 hover:bg-accent/30"
-          />
-        </div>
-
         {/* Actions */}
         <div className="flex items-center gap-3">
+          <div className="hidden items-center gap-1 md:flex">
+            <Tooltip>
+              <TooltipTrigger asChild>
+                <span className="inline-flex">
+                  <Button
+                    variant="ghost"
+                    size="icon-sm"
+                    disabled
+                    aria-label="GitHub"
+                  >
+                    <GithubIcon className="size-4" />
+                  </Button>
+                </span>
+              </TooltipTrigger>
+              <TooltipContent className="z-500">Soon</TooltipContent>
+            </Tooltip>
+
+            <Button variant="ghost" size="icon-sm" asChild>
+              <Link
+                href="https://x.com/leouiux"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="X"
+              >
+                <XIcon className="size-4" />
+              </Link>
+            </Button>
+          </div>
+
           <ThemeSwitcher className="max-md:hidden" />
+
+          <Button variant="neutral" size="sm" asChild className="max-md:hidden">
+            <Link href="https://ui.unlumen.com/login">Login</Link>
+          </Button>
 
           {/* Mobile sidebar toggle */}
           <button

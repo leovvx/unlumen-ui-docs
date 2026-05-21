@@ -45,9 +45,9 @@ export function ComponentInstallation({
           <TabsList className="flex items-center gap-0.5">
             <TabsHighlight
               mode="parent"
-              className="rounded-md bg-muted h-full"
-              containerClassName="flex items-center gap-0.5"
-              transition={{ type: "spring", stiffness: 300, damping: 20 }}
+              className="h-full rounded-md bg-accent"
+              containerClassName="relative isolate flex items-center gap-0.5"
+              transition={{ type: "spring", stiffness: 750, damping: 40 }}
             >
               <TabsHighlightItem value="cli">
                 <TabsTrigger

@@ -1,4 +1,4 @@
-@import 'tailwindcss';
+@import "tailwindcss";
 @source "../../../apps/**/*.{ts,tsx}";
 @source "../../../components/**/*.{ts,tsx}";
 @source "../../../packages/**/*.{ts,tsx}";
@@ -6,13 +6,13 @@
 @source "../**/*.{ts,tsx,mdx}";
 @source "./(playground)/**/*.{ts,tsx,mdx}";
 
-@import 'tw-animate-css';
+@import "tw-animate-css";
 @plugin 'tailwind-scrollbar';
 
 @custom-variant dark (&:is(.dark *));
 
-@import 'fumadocs-ui/css/black.css';
-@import 'fumadocs-ui/css/preset.css';
+@import "fumadocs-ui/css/black.css";
+@import "fumadocs-ui/css/preset.css";
 
 @source '../node_modules/fumadocs-ui/dist/**/*.js';
 
@@ -34,7 +34,6 @@ tr {
 }
 
 :root {
-
   --card: #f5f5f5;
 
   --card-foreground: #333333;
@@ -55,7 +54,7 @@ tr {
 
   --muted-foreground: oklch(0.556 0 0);
 
-  --accent: oklch(0.97 0 0);
+  --accent: oklch(0.95 0 0);
 
   --accent-foreground: oklch(0.205 0 0);
 
@@ -67,7 +66,7 @@ tr {
 
   --destructive-foreground: hsl(0 0% 98%);
 
-  --border: oklch(0.922 0 0);
+  --border: oklch(0.94 0 0);
 
   --input: oklch(0.922 0 0);
 
@@ -105,7 +104,7 @@ tr {
 
   --surface: #f7f7f7;
 
-  --accent-pro: #F12E54;
+  --accent-pro: #f12e54;
 
   --background: oklch(1 0 0);
 
@@ -113,9 +112,9 @@ tr {
 }
 
 .dark {
-  --surface: hsl(0, 0%, 8%);
+  --surface: hsl(0, 0%, 9%);
 
-  --accent-pro: #F12E54;
+  --accent-pro: #f12e54;
 
   --background: #121212;
 
@@ -269,15 +268,25 @@ tr {
 
   --breakpoint-3xl: 1670px;
 
-  --font-sans: var(--font-instrument-sans), "Instrument Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-sans:
+    var(--font-instrument-sans), "Instrument Sans", ui-sans-serif, system-ui,
+    sans-serif;
 
-  --font-geist: var(--font-geist-sans), "Geist", "Geist Fallback", ui-sans-serif, system-ui, sans-serif;
+  --font-geist:
+    var(--font-geist-sans), "Geist", "Geist Fallback", ui-sans-serif, system-ui,
+    sans-serif;
 
-  --font-serif: var(--font-instrument-serif), ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+  --font-serif:
+    var(--font-instrument-serif), ui-serif, Georgia, Cambria, "Times New Roman",
+    Times, serif;
 
-  --font-heading: var(--font-instrument-sans), "Instrument Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-heading:
+    var(--font-instrument-sans), "Instrument Sans", ui-sans-serif, system-ui,
+    sans-serif;
 
-  --font-rounded: var(--font-nunito), "Nunito", ui-rounded, ui-sans-serif, system-ui, sans-serif;
+  --font-rounded:
+    var(--font-nunito), "Nunito", ui-rounded, ui-sans-serif, system-ui,
+    sans-serif;
 
   --radius-2xl: calc(var(--radius) * 1.8);
 
@@ -302,9 +311,9 @@ tr {
     @apply md:!border-0;
   }
 
-  #nd-sidebar div div div a[href^='/docs/components']>svg[data-icon='true'],
-  #nd-sidebar div div div a[href^='/docs/primitives']>svg[data-icon='true'],
-  #nd-sidebar div div div a+div[data-state='open'] {
+  #nd-sidebar div div div a[href^="/docs/components"] > svg[data-icon="true"],
+  #nd-sidebar div div div a[href^="/docs/primitives"] > svg[data-icon="true"],
+  #nd-sidebar div div div a + div[data-state="open"] {
     @apply !hidden;
   }
 
@@ -331,7 +340,7 @@ tr {
     @apply !pl-px;
   }
 
-  #nd-toc div[role='none'] {
+  #nd-toc div[role="none"] {
     @apply !w-[3px] !rounded-full -ml-px;
   }
 
@@ -340,20 +349,48 @@ tr {
   }
 
   #docs-body h1,
-  #docs-body h2,
-  #docs-body h3,
   #docs-body h4,
   #docs-body h5,
   #docs-body h6 {
     @apply text-foreground;
   }
 
-  #docs-body p,
-  #docs-body ul, ol  { @apply text-lg text-foreground/90 leading-relaxed max-w-prose; }
+  #docs-body h2 {
+    @apply mt-8 mb-5 text-3xl tracking-tight text-foreground;
+  }
+
+  #docs-body h3 {
+    @apply mt-7 mb-3 text-lg text-foreground;
+  }
+
+  #docs-body p {
+    @apply max-w-prose text-lg font-light leading-relaxed tracking-[-0.025em] text-muted-foreground;
+  }
+
+  #docs-body ul {
+    @apply flex max-w-prose list-disc flex-col gap-3 pl-5 text-lg tracking-normal text-foreground/80;
+  }
+
+  #docs-body ol {
+    @apply flex max-w-prose list-decimal flex-col gap-1 pl-5 text-lg text-foreground/60;
+  }
 
   #docs-body ul li::marker,
   #docs-body ol li::marker {
     @apply !text-accent-pro;
+  }
+
+  #docs-body a {
+    @apply text-accent-pro decoration-accent-pro underline-offset-4 transition-colors hover:underline;
+  }
+
+  #docs-body h1 a,
+  #docs-body h2 a,
+  #docs-body h3 a,
+  #docs-body h4 a,
+  #docs-body h5 a,
+  #docs-body h6 a {
+    @apply text-foreground no-underline hover:no-underline;
   }
 
   @keyframes blink {
@@ -365,10 +402,21 @@ tr {
 
 .screenshot-mode #nd-sidebar,
 .screenshot-mode #nd-toc,
-.screenshot-mode #nd-page article>*:not(#docs-body),
-.screenshot-mode #nd-page #docs-body>*:not(#component-preview),
+.screenshot-mode #nd-page article > *:not(#docs-body),
+.screenshot-mode #nd-page #docs-body > *:not(#component-preview),
 .screenshot-mode #component-preview-tab-list {
   opacity: 0 !important;
+}
+
+@media (max-width: 767px) {
+  html[data-mobile-menu-open] #limited-discount {
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(0.5rem);
+    transition:
+      opacity 180ms ease,
+      transform 180ms ease;
+  }
 }
 
 /* ── Theme transition: circular reveal from click origin ah ───────────────── */
@@ -397,7 +445,9 @@ tr {
   to {
     /* --vt-r is set precisely in JS (Math.hypot to farthest corner).
        Fallback uses 100vmax instead of 150vmax — enough to cover any screen. */
-    clip-path: circle(var(--vt-r, 100vmax) at var(--vt-x, 50%) var(--vt-y, 50%));
+    clip-path: circle(
+      var(--vt-r, 100vmax) at var(--vt-x, 50%) var(--vt-y, 50%)
+    );
   }
 }
 

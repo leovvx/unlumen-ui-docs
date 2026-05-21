@@ -73,6 +73,23 @@ export function getMDXComponents(components?: MDXComponents): MDXComponents {
         <Pre>{props.children}</Pre>
       </CodeBlock>
     ),
+    // Inline code. Fenced code blocks are handled by the `pre` mapping above.
+    code: ({ children, className, ...props }) => {
+      if (typeof children !== "string")
+        return (
+          <code className={className} {...props}>
+            {children}
+          </code>
+        );
+      return (
+        <code
+          className="rounded-md bg-accent px-2.5 py-1 text-sm font-mono tracking-tight text-foreground"
+          {...props}
+        >
+          {children}
+        </code>
+      );
+    },
   };
 }
 
@@ -138,7 +155,7 @@ export function getComponentsMDXComponents(
         );
       return (
         <code
-          className="rounded-md bg-muted px-1.5 py-0.5 text-base font-mono text-foreground/80"
+          className="rounded-md bg-accent px-2.5 py-1 text-sm font-mono tracking-tight text-foreground"
           {...props}
         >
           {children}

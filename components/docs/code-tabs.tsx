@@ -81,7 +81,7 @@ function CodeTabs({
     <Tabs
       data-slot="install-tabs"
       className={cn(
-        "w-full gap-0 rounded-xl overflow-hidden border border-border/60",
+        "w-full gap-0 rounded-xl overflow-hidden border-0 bg-surface",
         className,
       )}
       {...props}
@@ -91,13 +91,13 @@ function CodeTabs({
         onValueChange?.(val);
       }}
     >
-      <div className="flex items-center justify-between px-3 h-10 border-b border-border/50">
+      <div className="flex items-center justify-between px-3 h-10">
         <TabsList className="flex items-center gap-0.5">
           <TabsHighlight
             mode="parent"
-            className="rounded-md bg-muted h-full"
-            containerClassName="flex items-center gap-0.5"
-            transition={{ type: "spring", stiffness: 300, damping: 20 }}
+            className="h-full rounded-md bg-accent"
+            containerClassName="relative isolate flex items-center gap-0.5"
+            transition={{ type: "spring", stiffness: 750, damping: 40 }}
           >
             {Object.keys(codes).map((code) => (
               <TabsHighlightItem key={code} value={code}>
@@ -126,7 +126,7 @@ function CodeTabs({
       <div className="p-1.5">
         <TabsContents
           data-slot="install-tabs-contents"
-          className="bg-background rounded-lg"
+          className="rounded-lg bg-surface"
         >
           {highlightedCodes &&
             Object.entries(highlightedCodes).map(([code, val]) => (
