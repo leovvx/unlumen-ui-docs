@@ -7,6 +7,9 @@
   "registryDependencies": [
     "@unlumen-ui/glow"
   ],
+  "dependencies": [
+    "lucide-react"
+  ],
   "files": [
     {
       "path": "registry/demo/primitives/glow/index.tsx",

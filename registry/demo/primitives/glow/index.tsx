@@ -1,10 +1,6 @@
 "use client";
 
-import {
-  ArrowRight01Icon as ArrowRight,
-  SparklesIcon as Sparkles,
-  FlashIcon as Zap,
-} from "hugeicons-react";
+import { ArrowRight, Sparkles, Zap } from "lucide-react";
 
 import { GlowButton, type GlowButtonProps } from "@/registry/primitives/glow";
 

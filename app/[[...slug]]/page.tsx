@@ -13,13 +13,11 @@ import { DocsAuthor } from "@/components/docs/docs-author";
 import { ViewOptions } from "@/components/docs/page-actions";
 import { Footer } from "@workspace/ui/components/docs/footer";
 import { Button } from "@workspace/ui/components/ui/button";
-import {
-  ArrowLeft01Icon as ArrowLeft,
-  ArrowRight01Icon as ArrowRight,
-} from "hugeicons-react";
+import { ArrowLeft, ArrowRight } from "lucide-react";
 import Link from "next/link";
 import { findNeighbour } from "fumadocs-core/server";
 import { baseOptions } from "@/app/layout.config";
+import { cn } from "@workspace/ui/lib/utils";
 
 const SPONSOR_CONTACT_URL =
   "mailto:leo@unlumen.com?subject=Unlumen%20UI%20sponsorship";
@@ -70,6 +68,7 @@ export default async function Page(props: {
   if (!page) notFound();
 
   const MDXContent = page.data.body;
+  const RelativeLink = createRelativeLink(source, page);
   const showDocsUiTocCtas = page.url.startsWith("/ui/");
 
   const tree = source.getPageTree();
@@ -207,16 +206,21 @@ export default async function Page(props: {
       )}
 
       <div className="flex flex-row gap-2 items-center">
-        <ViewOptions
-          markdownUrl={`${page.url}.mdx`}
-          githubUrl={`https://github.com/wicki-leonard-emf/unlumen-ui-docs/blob/main/content/docs/${page.path}`}
-        />
+        <ViewOptions markdown={page.data.content} />
       </div>
 
       <DocsBody id="docs-body" className="pb-10 pt-4">
         <MDXContent
           components={getMDXComponents({
-            a: createRelativeLink(source, page),
+            a: ({ className, ...props }) => (
+              <RelativeLink
+                className={cn(
+                  "text-accent-pro decoration-accent-pro underline-offset-4 no-underline hover:underline",
+                  className,
+                )}
+                {...props}
+              />
+            ),
           })}
         />
       </DocsBody>

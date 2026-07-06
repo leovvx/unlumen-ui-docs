@@ -3,7 +3,7 @@
 import * as React from "react";
 import * as NavigationMenuPrimitive from "@radix-ui/react-navigation-menu";
 import { cva } from "class-variance-authority";
-import { ArrowDown01Icon as ChevronDownIcon } from "hugeicons-react";
+import { ChevronDown as ChevronDownIcon } from "lucide-react";
 import {
   Highlight,
   HighlightItem,

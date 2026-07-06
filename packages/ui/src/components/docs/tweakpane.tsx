@@ -19,10 +19,7 @@ import {
   SelectValue,
 } from "@workspace/ui/components/ui/select";
 import { Switch } from "@workspace/ui/components/ui/switch";
-import {
-  ArrowUpDownIcon as ChevronsUpDown,
-  Settings02Icon as Settings2Icon,
-} from "hugeicons-react";
+import { ChevronsUpDown, Settings2 as Settings2Icon } from "lucide-react";
 
 type BaseBindNumber = { value: number };
 type BindNumberSlider = BaseBindNumber & {

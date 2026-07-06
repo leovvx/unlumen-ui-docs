@@ -2,7 +2,7 @@
 
 import { showcaseProjects } from "@/lib/showcase";
 import { cn } from "@workspace/ui/lib/utils";
-import { LinkSquare02Icon as ExternalIcon } from "hugeicons-react";
+import { ExternalLink as ExternalIcon } from "lucide-react";
 import Link from "next/link";
 
 export function ShowcaseGrid({ className }: { className?: string }) {

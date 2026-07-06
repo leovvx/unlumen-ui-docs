@@ -1,6 +1,6 @@
 "use client";
 
-import { PuzzleIcon as Component } from "hugeicons-react";
+import { Puzzle as Component } from "lucide-react";
 import { cn } from "@workspace/ui/lib/utils";
 import { index } from "@/__registry__";
 import { Dancing_Script } from "next/font/google";

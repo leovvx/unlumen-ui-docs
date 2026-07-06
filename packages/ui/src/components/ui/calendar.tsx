@@ -1,10 +1,7 @@
 "use client";
 
 import * as React from "react";
-import {
-  ArrowLeft01Icon as ChevronLeft,
-  ArrowRight01Icon as ChevronRight,
-} from "hugeicons-react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 import { DayPicker } from "react-day-picker";
 
 import { cn } from "@workspace/ui/lib/utils";

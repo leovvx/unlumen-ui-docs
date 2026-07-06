@@ -2,10 +2,10 @@
 
 import * as React from "react";
 import {
-  Tick01Icon as CheckIcon,
-  ArrowDown01Icon as ChevronDownIcon,
-  ArrowUp01Icon as ChevronUpIcon,
-} from "hugeicons-react";
+  Check as CheckIcon,
+  ChevronDown as ChevronDownIcon,
+  ChevronUp as ChevronUpIcon,
+} from "lucide-react";
 import { Select as SelectPrimitive } from "radix-ui";
 
 import { cn } from "@workspace/ui/lib/utils";

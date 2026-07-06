@@ -2,14 +2,13 @@
 
 import { FloatingTooltip } from "@/registry/primitives/floating-tooltip";
 import {
-  Share02Icon as Share2,
-  PencilEdit01Icon as Pencil,
-  Copy01Icon as Copy,
-  Archive01Icon as Archive,
-  Delete01Icon as Trash2,
-  Move01Icon as MoveHorizontal,
-} from "hugeicons-react";
-const MoveVertical = MoveHorizontal;
+  Archive,
+  Copy,
+  MoveVertical,
+  Pencil,
+  Share2,
+  Trash2,
+} from "lucide-react";
 
 const ACTIONS = [
   {

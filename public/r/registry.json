@@ -220,6 +220,9 @@
       "registryDependencies": [
         "@unlumen-ui/floating-tooltip"
       ],
+      "dependencies": [
+        "lucide-react"
+      ],
       "files": [
         {
           "path": "registry/demo/primitives/floating-tooltip/index.tsx",
@@ -234,6 +237,9 @@
       "description": "Three glow buttons with different colour palettes and animation modes.",
       "registryDependencies": [
         "@unlumen-ui/glow"
+      ],
+      "dependencies": [
+        "lucide-react"
       ],
       "files": [
         {
@@ -467,6 +473,9 @@
       "description": "Demo showing skill badges orbiting a center avatar, with cursor-following on desktop and always-on mobile mode.",
       "registryDependencies": [
         "@unlumen-ui/orbiting-skills"
+      ],
+      "dependencies": [
+        "lucide-react"
       ],
       "files": [
         {

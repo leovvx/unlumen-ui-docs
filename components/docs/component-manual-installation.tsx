@@ -132,7 +132,7 @@ export const ComponentManualInstallation = ({
                 <CollapsibleTrigger asChild>
                   <Button
                     variant="secondary"
-                    className="h-7 text-xs px-3 rounded-full shadow-sm border border-border/40"
+                    className="h-7 text-xs px-3 rounded-full  border border-border/40"
                   >
                     {isOpened ? "Collapse" : "Expand"}
                   </Button>

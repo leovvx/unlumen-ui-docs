@@ -43,7 +43,7 @@ const EFFECTS_STORAGE_KEY = "sidebar-effects";
 const EffectsContext = createContext<{
   enabled: boolean;
   toggle: () => void;
-}>({ enabled: true, toggle: () => {} });
+}>({ enabled: true, toggle: () => { } });
 
 function EffectsProvider({ children }: { children: React.ReactNode }) {
   const [enabled, setEnabled] = useState(() => {
@@ -130,7 +130,7 @@ const HoverContext = createContext<{
   hoveredCenter: null,
   hoverRect: null,
   containerRef: { current: null },
-  setHovered: () => {},
+  setHovered: () => { },
 });
 
 function HoverProvider({
@@ -189,7 +189,7 @@ function SidebarHoverHighlight() {
             opacity: 1,
           }}
           exit={{ opacity: 0 }}
-          transition={{ type: "spring", stiffness: 800, damping: 40 }}
+          transition={{ type: "spring", stiffness: 750, damping: 35, mass: 0.5 }}
         />
       )}
     </AnimatePresence>
@@ -232,7 +232,7 @@ const AnimatedSidebarLink = memo(function AnimatedSidebarLink({
   const itemRef = useScrollToActive(active);
 
   // ── Opacity and x translation pattern ──
-  const opacity = active ? 1 : hovered !== null ? (isHovered ? 1 : 0.3) : 0.55;
+  const opacity = active || isHovered ? 1 : 0.55;
   const x = active ? 8 : isHovered ? 6 : 0;
 
   return (
@@ -287,7 +287,7 @@ const AnimatedSidebarLink = memo(function AnimatedSidebarLink({
           {/* Label */}
           <span
             className={cn(
-              "relative z-1 text-sm w-full pl-2.5 transition-all duration-200 ease-out inline-flex items-center gap-2",
+              "relative z-1 text-md w-full pl-2.5 transition-all duration-200 ease-out inline-flex items-center gap-2",
               active ? "text-foreground" : "text-foreground",
             )}
           >
@@ -385,7 +385,10 @@ export function SidebarLinkItem({
 
   if (item.type === ("separator" as any)) {
     return (
-      <SidebarSeparator className={cn("mb-1", props.className, "!pl-0")}>
+      <SidebarSeparator
+        className="mb-2 p-0! ml-0!"
+        style={{ paddingInlineStart: 0 }}
+      >
         <Separator icon={item.icon} name={(item as any).name} />
       </SidebarSeparator>
     );

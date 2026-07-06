@@ -3,13 +3,16 @@
   "name": "demo-glow",
   "title": "Glow Button Demo",
   "description": "Three glow buttons with different colour palettes and animation modes.",
+  "dependencies": [
+    "lucide-react"
+  ],
   "registryDependencies": [
     "@unlumen-ui/glow"
   ],
   "files": [
     {
       "path": "registry/demo/primitives/glow/index.tsx",
-      "content": "\"use client\";\n\nimport {\n  ArrowRight01Icon as ArrowRight,\n  SparklesIcon as Sparkles,\n  FlashIcon as Zap,\n} from \"hugeicons-react\";\n\nimport { GlowButton, type GlowButtonProps } from \"@/components/unlumen-ui/primitives/glow\";\n\ntype GlowButtonDemoProps = Pick<\n  GlowButtonProps,\n  \"mode\" | \"blur\" | \"duration\" | \"glowScale\"\n>;\n\nexport const GlowButtonDemo = ({\n  mode = \"rotate\",\n  blur = \"strong\",\n  duration = 5,\n  glowScale = 1,\n}: GlowButtonDemoProps) => {\n  return (\n    <div className=\"flex min-h-[240px] flex-wrap items-center justify-center gap-6 p-10\">\n      <GlowButton\n        mode={mode}\n        blur={blur}\n        duration={duration}\n        glowScale={glowScale}\n        colors={[\"#FF5733\", \"#33FF57\", \"#3357FF\", \"#F1C40F\"]}\n      >\n        Get Started\n        <ArrowRight />\n      </GlowButton>\n    </div>\n  );\n};\n",
+      "content": "\"use client\";\n\nimport { ArrowRight, Sparkles, Zap } from \"lucide-react\";\n\nimport { GlowButton, type GlowButtonProps } from \"@/components/unlumen-ui/primitives/glow\";\n\ntype GlowButtonDemoProps = Pick<\n  GlowButtonProps,\n  \"mode\" | \"blur\" | \"duration\" | \"glowScale\"\n>;\n\nexport const GlowButtonDemo = ({\n  mode = \"rotate\",\n  blur = \"strong\",\n  duration = 5,\n  glowScale = 1,\n}: GlowButtonDemoProps) => {\n  return (\n    <div className=\"flex min-h-[240px] flex-wrap items-center justify-center gap-6 p-10\">\n      <GlowButton\n        mode={mode}\n        blur={blur}\n        duration={duration}\n        glowScale={glowScale}\n        colors={[\"#FF5733\", \"#33FF57\", \"#3357FF\", \"#F1C40F\"]}\n      >\n        Get Started\n        <ArrowRight />\n      </GlowButton>\n    </div>\n  );\n};\n",
       "type": "registry:example"
     }
   ],

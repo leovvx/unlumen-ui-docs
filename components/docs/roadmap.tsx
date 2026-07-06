@@ -2,12 +2,12 @@
 
 import { cn } from "@workspace/ui/lib/utils";
 import {
-  CheckmarkCircle01Icon as CheckCircle2,
-  Refresh03Icon as RefreshCw,
-  Bookmark01Icon as Bookmark,
-  TestTube01Icon as FlaskConical,
-  HelpSquareIcon as FileQuestion,
-} from "hugeicons-react";
+  Bookmark,
+  CheckCircle2,
+  FileQuestion,
+  FlaskConical,
+  RefreshCw,
+} from "lucide-react";
 import { useState } from "react";
 
 // ─── Status config ─────────────────────────────────────────────────────────

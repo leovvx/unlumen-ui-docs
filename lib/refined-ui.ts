@@ -7,13 +7,13 @@
 
 import DAlogo from "@/components/docs/DAlogo";
 import {
-  RectangularIcon,
-  TextFontIcon,
-  AiImageIcon,
-  CodeSimpleIcon,
-  LayoutGridIcon,
-  SparklesIcon,
-} from "hugeicons-react";
+  Code2 as CodeSimpleIcon,
+  Image as AiImageIcon,
+  LayoutGrid as LayoutGridIcon,
+  RectangleHorizontal as RectangularIcon,
+  Sparkles as SparklesIcon,
+  Type as TextFontIcon,
+} from "lucide-react";
 
 export type RefinedUISectionConfig = {
   /** Section name (matched against node.name in attachSeparator) */
@@ -43,7 +43,7 @@ export const REFINED_UI_SECTIONS: RefinedUISectionConfig[] = [
   {
     name: "Guide",
     Icon: CodeSimpleIcon,
-    iconProps: { strokeWidth: 1.5 },
+    iconProps: { strokeWidth: 1.25 },
   },
   {
     name: "Menu",

@@ -4,18 +4,18 @@ import * as React from "react";
 import { useRouter, usePathname } from "next/navigation";
 import { useTheme } from "next-themes";
 import {
-  BookOpen01Icon as BookOpen,
-  PuzzleIcon as Component,
-  Home01Icon as Home,
-  Moon02Icon as Moon,
-  RocketIcon as Rocket,
-  Search01Icon as Search,
-  Sun03Icon as Sun,
-  ComputerIcon as Monitor,
-  SparklesIcon as Sparkles,
-  MagicWand01Icon as Wand2,
-  Github01Icon as Github,
-} from "hugeicons-react";
+  BookOpen,
+  Github,
+  Home,
+  Monitor,
+  Moon,
+  Puzzle as Component,
+  Rocket,
+  Search,
+  Sparkles,
+  Sun,
+  Wand2,
+} from "lucide-react";
 const SearchIcon = Search;
 
 import {

@@ -3,7 +3,7 @@
 import { useDocsSearch } from "fumadocs-core/search/client";
 import { useOnChange } from "fumadocs-core/utils/use-on-change";
 import { motion, AnimatePresence } from "motion/react";
-import { FileEditIcon as FileText, HashtagIcon as Hash } from "hugeicons-react";
+import { FileText, Hash } from "lucide-react";
 import { useMemo, useState, useCallback, Fragment } from "react";
 import {
   SearchDialog,

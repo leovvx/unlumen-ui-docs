@@ -7,6 +7,9 @@
   "registryDependencies": [
     "@unlumen-ui/floating-tooltip"
   ],
+  "dependencies": [
+    "lucide-react"
+  ],
   "files": [
     {
       "path": "registry/demo/primitives/floating-tooltip/index.tsx",

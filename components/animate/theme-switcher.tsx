@@ -1,6 +1,6 @@
 "use client";
 
-import { Moon02Icon as Moon, Sun03Icon as Sun } from "hugeicons-react";
+import { Moon, Sun } from "lucide-react";
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
 import { Button } from "@workspace/ui/components/ui/button";

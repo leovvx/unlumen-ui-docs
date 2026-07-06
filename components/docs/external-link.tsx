@@ -1,6 +1,6 @@
 "use client";
 
-import { LinkSquare01Icon as ExternalLinkIcon } from "hugeicons-react";
+import { ExternalLink as ExternalLinkIcon } from "lucide-react";
 import { motion } from "motion/react";
 
 export const ExternalLink = ({

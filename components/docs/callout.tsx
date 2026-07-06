@@ -1,9 +1,4 @@
-import {
-  CheckmarkCircle01Icon as CircleCheck,
-  CancelCircleIcon as CircleX,
-  InformationCircleIcon as Info,
-  Alert01Icon as TriangleAlert,
-} from "hugeicons-react";
+import { CircleCheck, CircleX, Info, TriangleAlert } from "lucide-react";
 import { forwardRef, type HTMLAttributes, type ReactNode } from "react";
 
 import { cn } from "@workspace/ui/lib/utils";

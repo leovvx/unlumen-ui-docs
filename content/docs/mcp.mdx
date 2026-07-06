@@ -4,13 +4,6 @@ description: How to use the Registry MCP with Unlumen UI.
 ---
 
 import { CodeTabs } from "@/components/docs/code-tabs";
-import {
-  Tabs,
-  TabsList,
-  TabsTrigger,
-  TabsContents,
-  TabsContent,
-} from "@/registry/primitives/tabs";
 
 For more information about the MCP server, please refer to the [shadcn/ui MCP documentation](https://ui.shadcn.com/docs/mcp).
 
@@ -18,48 +11,17 @@ For more information about the MCP server, please refer to the [shadcn/ui MCP do
 
 Select your MCP client and follow the instructions to configure the shadcn MCP server.
 
-<Tabs defaultValue="claude">
-  <TabsList>
-    <TabsTrigger value="claude">Claude Code</TabsTrigger>
-    <TabsTrigger value="cursor">Cursor</TabsTrigger>
-    <TabsTrigger value="vscode">VS Code</TabsTrigger>
-  </TabsList>
-  <TabsContents>
-    <TabsContent value="claude" className="h-[100px]">
-      <CodeTabs
-        lang="bash"
-        codes={{
-          pnpm: `pnpm dlx shadcn@latest mcp init --client claude`,
-          npm: `npx shadcn@latest mcp init --client claude`,
-          yarn: `yarn shadcn@latest mcp init --client claude`,
-          bun: `bunx --bun shadcn@latest mcp init --client claude`,
-        }}
-      />
-    </TabsContent>
-    <TabsContent value="cursor" className="h-[100px]">
-      <CodeTabs
-        lang="bash"
-        codes={{
-          pnpm: `pnpm dlx shadcn@latest mcp init --client cursor`,
-          npm: `npx shadcn@latest mcp init --client cursor`,
-          yarn: `yarn shadcn@latest mcp init --client cursor`,
-          bun: `bunx --bun shadcn@latest mcp init --client cursor`,
-        }}
-      />
-    </TabsContent>
-    <TabsContent value="vscode" className="h-[100px]">
-      <CodeTabs
-        lang="bash"
-        codes={{
-          pnpm: `pnpm dlx shadcn@latest mcp init --client vscode`,
-          npm: `npx shadcn@latest mcp init --client vscode`,
-          yarn: `yarn shadcn@latest mcp init --client vscode`,
-          bun: `bunx --bun shadcn@latest mcp init --client vscode`,
-        }}
-      />
-    </TabsContent>
-  </TabsContents>
-</Tabs>
+<CodeTabs
+  lang="bash"
+  codes={{
+    pnpm: `pnpm dlx shadcn@latest mcp init --client claude`,
+    npm: `npx shadcn@latest mcp init --client claude`,
+    yarn: `yarn shadcn@latest mcp init --client claude`,
+    bun: `bunx --bun shadcn@latest mcp init --client claude`,
+  }}
+/>
+
+Use `--client cursor` or `--client vscode` instead of `--client claude` to configure Cursor or VS Code.
 
 ## Manual configuration
 

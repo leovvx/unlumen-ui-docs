@@ -7,7 +7,7 @@ import { cn } from "@workspace/ui/lib/utils";
 import { Button } from "@workspace/ui/components/ui/button";
 import { buttonVariants } from "fumadocs-ui/components/ui/button";
 import { useSidebar } from "fumadocs-ui/provider";
-import { Menu01Icon as Menu } from "hugeicons-react";
+import { Menu } from "lucide-react";
 import { Highlight, HighlightItem } from "../animate/highlight";
 import { ThemeSwitcher } from "../animate/theme-switcher";
 import { motion } from "motion/react";
@@ -94,7 +94,7 @@ function NavContent({ onMobileMenuClick }: { onMobileMenuClick: () => void }) {
             value={null}
             className="bg-accent rounded-md"
             containerClassName="flex items-center gap-1"
-            transition={{ type: "spring", stiffness: 400, damping: 30 }}
+            transition={{ type: "spring", stiffness: 750, damping: 40, mass: 0.5 }}
           >
             <HighlightItem value="/" asChild>
               <Link

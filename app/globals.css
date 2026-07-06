@@ -345,10 +345,13 @@ tr {
   }
 
   #nd-tocnav {
-    @apply !hidden;
+    @apply hidden!;
   }
 
-  #docs-body h1,
+  #docs-body h1 {
+    @apply mt-10 mb-6 scroll-m-28 text-4xl font-medium! leading-none tracking-tight text-foreground;
+  }
+
   #docs-body h4,
   #docs-body h5,
   #docs-body h6 {
@@ -356,11 +359,11 @@ tr {
   }
 
   #docs-body h2 {
-    @apply mt-8 mb-5 text-3xl tracking-tight text-foreground;
+    @apply mt-11 mb-4 scroll-m-28 text-2xl font-medium! leading-tight tracking-tight text-foreground;
   }
 
   #docs-body h3 {
-    @apply mt-7 mb-3 text-lg text-foreground;
+    @apply mt-8 mb-3 scroll-m-28 text-xl font-medium leading-snug tracking-normal text-foreground;
   }
 
   #docs-body p {

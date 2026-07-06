@@ -2,11 +2,7 @@
 
 import { useRef, useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
-import {
-  ArrowRight01Icon as ArrowRight,
-  Tick01Icon as Check,
-  InboxIcon as Mails,
-} from "hugeicons-react";
+import { ArrowRight, Check, Mails } from "lucide-react";
 import { cn } from "@workspace/ui/lib/utils";
 import { ShimmeringText } from "@/registry/primitives/shimmering-text";
 

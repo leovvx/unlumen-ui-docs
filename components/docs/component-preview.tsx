@@ -12,10 +12,7 @@ import {
   TabsHighlightItem,
 } from "@/registry/primitives/tabs";
 import { cn } from "@workspace/ui/lib/utils";
-import {
-  Loading03Icon as Loader,
-  FullScreenIcon as Fullscreen,
-} from "hugeicons-react";
+import { Fullscreen, Loader } from "lucide-react";
 import { Suspense, useEffect, useMemo, useState } from "react";
 import { DynamicCodeBlock } from "@/components/docs/dynamic-codeblock";
 import ReactIcon from "@workspace/ui/components/icons/react-icon";

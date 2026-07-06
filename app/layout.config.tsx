@@ -1,5 +1,5 @@
 import type { BaseLayoutProps } from "fumadocs-ui/layouts/shared";
-import { CodeSimpleIcon } from "hugeicons-react";
+import { Code2 as CodeSimpleIcon } from "lucide-react";
 
 /**
  * Shared layout configurations
@@ -13,7 +13,7 @@ export const baseOptions: BaseLayoutProps = {
     {
       type: "separator",
       name: "Guide",
-      icon: <CodeSimpleIcon strokeWidth={1.5} />,
+      icon: <CodeSimpleIcon strokeWidth={1.25} />,
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
     } as any,
     {
@@ -46,11 +46,6 @@ export const baseOptions: BaseLayoutProps = {
     {
       text: "Roadmap",
       url: "/roadmap",
-      secondary: false,
-    },
-    {
-      text: "My recommendations",
-      url: "/other-animated-distributions",
       secondary: false,
     },
     {

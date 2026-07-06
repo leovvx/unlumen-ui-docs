@@ -1,7 +1,7 @@
 "use client";
 
 import { cn } from "@workspace/ui/lib/utils";
-import { ArrowUpRight01Icon as ArrowUpRight } from "hugeicons-react";
+import { ArrowUpRight } from "lucide-react";
 
 // ─── Featured card (top picks) ──────────────────────────────────────────────
 

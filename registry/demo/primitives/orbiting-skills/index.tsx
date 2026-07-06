@@ -3,15 +3,15 @@
 import type { ReactNode } from "react";
 
 import {
-  FirstBracketIcon as Braces,
-  Database01Icon as Database,
-  FigmaIcon as Figma,
-  Github01Icon as Github,
-  Globe02Icon as Globe,
-  Layers01Icon as Layers,
-  ColorsIcon as Palette,
-  FastWindIcon as Wind,
-} from "hugeicons-react";
+  Braces,
+  Database,
+  Figma,
+  Github,
+  Globe,
+  Layers,
+  Palette,
+  Wind,
+} from "lucide-react";
 
 import {
   OrbitingSkills,

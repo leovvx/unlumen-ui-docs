@@ -2,10 +2,7 @@
 
 import * as React from "react";
 import { AnimatePresence, HTMLMotionProps, motion } from "motion/react";
-import {
-  Tick01Icon as CheckIcon,
-  Copy01Icon as CopyIcon,
-} from "hugeicons-react";
+import { Check as CheckIcon, Copy as CopyIcon } from "lucide-react";
 import { cva, type VariantProps } from "class-variance-authority";
 
 import { cn } from "@workspace/ui/lib/utils";

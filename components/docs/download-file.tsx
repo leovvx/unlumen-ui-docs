@@ -1,10 +1,7 @@
 "use client";
 
 import { cn } from "@workspace/ui/lib/utils";
-import {
-  Download01Icon as Download,
-  File01Icon as File,
-} from "hugeicons-react";
+import { Download, File } from "lucide-react";
 
 interface DownloadFileProps {
   /**

@@ -83,7 +83,7 @@ export function getMDXComponents(components?: MDXComponents): MDXComponents {
         );
       return (
         <code
-          className="rounded-md bg-accent px-2.5 py-1 text-sm font-mono tracking-tight text-foreground"
+          className="not-prose rounded-md bg-accent px-2.5 py-1 text-sm font-mono tracking-tight text-foreground"
           {...props}
         >
           {children}
@@ -133,7 +133,7 @@ export function getComponentsMDXComponents(
     a: ({ children, href, ...props }) => (
       <a
         href={href}
-        className="text-foreground underline underline-offset-4 decoration-foreground/30 hover:decoration-blue-400 transition-colors"
+        className="text-accent-pro decoration-accent-pro underline-offset-4 hover:underline"
         {...props}
       >
         {children}
@@ -155,7 +155,7 @@ export function getComponentsMDXComponents(
         );
       return (
         <code
-          className="rounded-md bg-accent px-2.5 py-1 text-sm font-mono tracking-tight text-foreground"
+          className="not-prose rounded-md bg-accent px-2.5 py-1 text-sm font-mono tracking-tight text-foreground"
           {...props}
         >
           {children}

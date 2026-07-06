@@ -1,15 +1,15 @@
 "use client";
 
 import {
-  BookOpen01Icon as BookOpen,
-  PuzzleIcon as Component,
-  Home01Icon as Home,
-  RocketIcon as Rocket,
-  Mouse01Icon as MousePointer,
-  MagicWand01Icon as Wand2,
-  PaintBrush01Icon as Paintbrush,
-  Github01Icon as Github,
-} from "hugeicons-react";
+  BookOpen,
+  Github,
+  Home,
+  MousePointer,
+  Paintbrush,
+  Puzzle as Component,
+  Rocket,
+  Wand2,
+} from "lucide-react";
 
 import {
   CommandMenu,
