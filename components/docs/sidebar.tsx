@@ -450,9 +450,7 @@ export const DocsSidebar = ({
           {...sidebarProps}
         >
           <div ref={sidebarScrollRef} className="min-h-0 flex-1">
-            <SidebarViewport
-              className="md:[&_[data-radix-scroll-area-viewport]]:pb-14 [&_[data-radix-scroll-area-viewport]]:pb-4 max-md:pt-2"
-            >
+            <SidebarViewport className="md:[&_[data-radix-scroll-area-viewport]]:pb-14 [&_[data-radix-scroll-area-viewport]]:pb-4 max-md:pt-2">
               <div ref={containerRef} className="relative">
                 <SidebarHoverHighlight />
                 {(shouldRenderLayoutLinks ? links : [])
