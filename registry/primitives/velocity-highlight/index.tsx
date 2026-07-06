@@ -3,12 +3,10 @@
 import * as React from "react";
 import {
   AnimatePresence,
+  animate,
   motion,
   type Transition,
   useMotionValue,
-  useSpring,
-  useVelocity,
-  useTransform,
 } from "motion/react";
 
 import { cn } from "@workspace/ui/lib/utils";
@@ -21,6 +19,28 @@ type Bounds = {
   width: number;
   height: number;
 };
+
+const DEFAULT_TRANSITION: Transition = {
+  type: "spring",
+  stiffness: 1250,
+  damping: 40,
+  mass: 0.5,
+};
+
+const MAX_AXIS_SPEED = 1800;
+const MAX_STRETCH = 0.28;
+const MAX_SQUASH = 0.2;
+const STRETCH_TRANSITION = {
+  type: "spring" as const,
+  damping: 22,
+  stiffness: 700,
+};
+const SETTLE_TRANSITION = {
+  type: "spring" as const,
+  damping: 24,
+  stiffness: 460,
+};
+const STRETCH_DURATION = 110;
 
 const DEFAULT_BOUNDS_OFFSET: Bounds = {
   top: 0,
@@ -50,7 +70,6 @@ type HighlightContextType<T extends string> = {
   forceUpdateBounds?: boolean;
   scaleX?: unknown;
   scaleY?: unknown;
-  borderRadius?: unknown;
 };
 
 const HighlightContext = React.createContext<
@@ -140,7 +159,7 @@ function Highlight<T extends React.ElementType = "div">({
     onValueChange,
     className,
     style,
-    transition = { type: "spring", stiffness: 350, damping: 35 },
+    transition = DEFAULT_TRANSITION,
     hover = false,
     click = true,
     enabled = true,
@@ -188,24 +207,67 @@ function Highlight<T extends React.ElementType = "div">({
   const [activeClassNameState, setActiveClassNameState] =
     React.useState<string>("");
 
-  const mouseX = useMotionValue(0);
-  const mouseY = useMotionValue(0);
+  const scaleX = useMotionValue(1);
+  const scaleY = useMotionValue(1);
+  const lastBoundsRef = React.useRef<{
+    bounds: Bounds;
+    timestamp: number;
+  } | null>(null);
+  const stretchRunRef = React.useRef(0);
 
-  const springConfig = { damping: 20, stiffness: 250 };
-  const smoothMouseX = useSpring(mouseX, springConfig);
-  const smoothMouseY = useSpring(mouseY, springConfig);
+  const triggerStretch = React.useCallback(
+    (nextBounds: Bounds) => {
+      const timestamp = performance.now();
+      const previous = lastBoundsRef.current;
+      lastBoundsRef.current = { bounds: nextBounds, timestamp };
 
-  const velocityX = useVelocity(smoothMouseX);
-  const velocityY = useVelocity(smoothMouseY);
+      if (!previous) return;
 
-  const scaleX = useTransform(velocityX, [-1000, 0, 1000], [0.98, 1, 1.05]);
-  const scaleY = useTransform(velocityY, [-1000, 0, 1000], [1.02, 1, 0.95]);
+      const elapsed = Math.max(timestamp - previous.timestamp, 16);
+      const horizontal = Math.min(
+        (Math.abs(nextBounds.left - previous.bounds.left) /
+          elapsed /
+          MAX_AXIS_SPEED) *
+          1000,
+        1,
+      );
+      const vertical = Math.min(
+        (Math.abs(nextBounds.top - previous.bounds.top) /
+          elapsed /
+          MAX_AXIS_SPEED) *
+          1000,
+        1,
+      );
 
-  const borderRadius = useTransform([velocityX, velocityY], ([vx, vy]) => {
-    const velocity = Math.sqrt((vx as number) ** 2 + (vy as number) ** 2);
-    const radius = 8 + Math.min(velocity / 100, 12);
-    return `${radius}px`;
-  });
+      if (horizontal === 0 && vertical === 0) return;
+
+      const nextScaleX = Math.max(
+        1 - MAX_SQUASH,
+        Math.min(
+          1 + MAX_STRETCH,
+          1 + horizontal * MAX_STRETCH - vertical * MAX_SQUASH,
+        ),
+      );
+      const nextScaleY = Math.max(
+        1 - MAX_SQUASH,
+        Math.min(
+          1 + MAX_STRETCH,
+          1 + vertical * MAX_STRETCH - horizontal * MAX_SQUASH,
+        ),
+      );
+      const run = ++stretchRunRef.current;
+
+      animate(scaleX, nextScaleX, STRETCH_TRANSITION);
+      animate(scaleY, nextScaleY, STRETCH_TRANSITION);
+
+      window.setTimeout(() => {
+        if (stretchRunRef.current !== run) return;
+        animate(scaleX, 1, SETTLE_TRANSITION);
+        animate(scaleY, 1, SETTLE_TRANSITION);
+      }, STRETCH_DURATION);
+    },
+    [scaleX, scaleY],
+  );
 
   const safeSetActiveValue = (id: string | null) => {
     setActiveValue((prev) => {
@@ -234,6 +296,8 @@ function Highlight<T extends React.ElementType = "div">({
         height: bounds.height + offset.height,
       };
 
+      triggerStretch(newBounds);
+
       setBoundsState((prev) => {
         if (
           prev &&
@@ -254,22 +318,17 @@ function Highlight<T extends React.ElementType = "div">({
   };
 
   const clearBounds = React.useCallback(() => {
+    lastBoundsRef.current = null;
+    stretchRunRef.current += 1;
+    animate(scaleX, 1, SETTLE_TRANSITION);
+    animate(scaleY, 1, SETTLE_TRANSITION);
     setBoundsState((prev) => (prev === null ? prev : null));
-  }, []);
+  }, [scaleX, scaleY]);
 
   React.useEffect(() => {
     if (value !== undefined) setActiveValue(value);
     else if (defaultValue !== undefined) setActiveValue(defaultValue);
   }, [value, defaultValue]);
-
-  React.useEffect(() => {
-    const handleMouseMove = (e: MouseEvent) => {
-      mouseX.set(e.clientX);
-      mouseY.set(e.clientY);
-    };
-    window.addEventListener("mousemove", handleMouseMove);
-    return () => window.removeEventListener("mousemove", handleMouseMove);
-  }, [mouseX, mouseY]);
 
   const id = React.useId();
 
@@ -339,7 +398,6 @@ function Highlight<T extends React.ElementType = "div">({
                   zIndex: 0,
                   scaleX,
                   scaleY,
-                  borderRadius,
                   ...style,
                 }}
                 className={cn(className, activeClassNameState)}
@@ -377,7 +435,6 @@ function Highlight<T extends React.ElementType = "div">({
           ?.forceUpdateBounds,
         scaleX,
         scaleY,
-        borderRadius,
       }}
     >
       {enabled
@@ -462,7 +519,6 @@ function HighlightItem<T extends React.ElementType>({
     setActiveValue,
     mode,
     setBounds,
-    clearBounds,
     hover,
     click,
     enabled,
@@ -476,7 +532,6 @@ function HighlightItem<T extends React.ElementType>({
     setActiveClassName,
     scaleX,
     scaleY,
-    borderRadius,
   } = useHighlight();
 
   const Component = (as ?? "div") as React.ElementType;
@@ -533,7 +588,7 @@ function HighlightItem<T extends React.ElementType>({
     if (isActive) {
       updateBounds();
       setActiveClassName(activeClassName ?? "");
-    } else if (!activeValue) clearBounds();
+    }
 
     if (shouldUpdateBounds) return () => cancelAnimationFrame(rafId);
   }, [
@@ -541,7 +596,6 @@ function HighlightItem<T extends React.ElementType>({
     isActive,
     activeValue,
     setBounds,
-    clearBounds,
     activeClassName,
     setActiveClassName,
     forceUpdateBounds,
@@ -606,7 +660,6 @@ function HighlightItem<T extends React.ElementType>({
                   zIndex: 0,
                   scaleX,
                   scaleY,
-                  borderRadius,
                   ...contextStyle,
                   ...style,
                 }}
@@ -676,7 +729,6 @@ function HighlightItem<T extends React.ElementType>({
                     zIndex: 0,
                     scaleX,
                     scaleY,
-                    borderRadius,
                     ...contextStyle,
                     ...style,
                   }}

@@ -3,11 +3,7 @@
   "name": "command-menu",
   "title": "Command Menu",
   "description": "A composable ⌘K command palette with fuzzy search, custom groups, built-in theme switcher, and animated content reveal.",
-  "dependencies": [
-    "next",
-    "next-themes",
-    "lucide-react"
-  ],
+  "dependencies": ["next", "next-themes", "lucide-react"],
   "registryDependencies": [],
   "files": [
     {

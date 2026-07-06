@@ -3,13 +3,8 @@
   "name": "glow",
   "title": "Glow Button",
   "description": "A button with an animated conic-gradient glow layer behind it. Supports rotate, pulse, breathe, colorShift, flowHorizontal and static modes.",
-  "dependencies": [
-    "class-variance-authority",
-    "motion"
-  ],
-  "registryDependencies": [
-    "@unlumen-ui/button"
-  ],
+  "dependencies": ["class-variance-authority", "motion"],
+  "registryDependencies": ["@unlumen-ui/button"],
   "files": [
     {
       "path": "registry/primitives/glow/index.tsx",

@@ -4,15 +4,17 @@
   "type": "registry:ui",
   "title": "Math Graph",
   "description": "A real-time visual math function builder with animated SVG curves, a pan/zoom canvas, crosshair tooltip, and support for multiple expressions simultaneously.",
-  "dependencies": [
-    "motion",
-    "react-use-measure"
-  ],
+  "dependencies": ["motion", "react-use-measure"],
   "files": [
     {
       "path": "registry/primitives/math-graph/index.tsx",
       "type": "registry:ui",
       "target": "components/unlumen-ui/primitives/math-graph.tsx"
+    },
+    {
+      "path": "registry/primitives/math-graph/math-expression.ts",
+      "type": "registry:lib",
+      "target": "components/unlumen-ui/primitives/math-expression.ts"
     }
   ],
   "registryDependencies": []

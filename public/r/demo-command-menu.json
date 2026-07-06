@@ -3,12 +3,8 @@
   "name": "demo-command-menu",
   "title": "Command Menu Demo",
   "description": "Demo showing a composable command palette with navigation, component links, and a built-in theme switcher.",
-  "dependencies": [
-    "lucide-react"
-  ],
-  "registryDependencies": [
-    "@unlumen-ui/command-menu"
-  ],
+  "dependencies": ["lucide-react"],
+  "registryDependencies": ["@unlumen-ui/command-menu"],
   "files": [
     {
       "path": "registry/demo/primitives/command-menu/index.tsx",

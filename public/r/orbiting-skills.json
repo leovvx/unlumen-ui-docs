@@ -3,9 +3,7 @@
   "name": "orbiting-skills",
   "title": "Orbiting Skills",
   "description": "Animated skill badges that orbit a center element. On desktop the ring follows the cursor on hover; on mobile the ring is always visible.",
-  "dependencies": [
-    "motion"
-  ],
+  "dependencies": ["motion"],
   "registryDependencies": [],
   "files": [
     {

@@ -3,9 +3,7 @@
   "name": "demo-progressive-blur",
   "title": "Progressive Blur Demo",
   "description": "Scrollable content with progressive blur overlays at the top and bottom edges.",
-  "registryDependencies": [
-    "@unlumen-ui/progressive-blur"
-  ],
+  "registryDependencies": ["@unlumen-ui/progressive-blur"],
   "files": [
     {
       "path": "registry/demo/primitives/progressive-blur/index.tsx",

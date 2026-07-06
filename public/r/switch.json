@@ -3,10 +3,7 @@
   "name": "switch",
   "title": "Switch",
   "description": "Animated toggle switch with a spring-driven thumb, smooth fill transition, and optional label.",
-  "dependencies": [
-    "motion",
-    "@radix-ui/react-switch"
-  ],
+  "dependencies": ["motion", "@radix-ui/react-switch"],
   "registryDependencies": [],
   "files": [
     {

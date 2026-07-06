@@ -3,9 +3,7 @@
   "name": "demo-shimmer-skeleton",
   "title": "Shimmer Skeleton Demo",
   "description": "Card-shaped skeleton layout with shimmer animation.",
-  "registryDependencies": [
-    "@unlumen-ui/shimmer-skeleton"
-  ],
+  "registryDependencies": ["@unlumen-ui/shimmer-skeleton"],
   "files": [
     {
       "path": "registry/demo/primitives/shimmer-skeleton/index.tsx",

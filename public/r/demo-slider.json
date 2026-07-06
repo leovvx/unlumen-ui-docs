@@ -3,9 +3,7 @@
   "name": "demo-slider",
   "title": "Slider Demo",
   "description": "Three sliders showing volume, brightness and opacity controls with click-to-edit values.",
-  "registryDependencies": [
-    "@unlumen-ui/slider"
-  ],
+  "registryDependencies": ["@unlumen-ui/slider"],
   "files": [
     {
       "path": "registry/demo/primitives/slider/index.tsx",

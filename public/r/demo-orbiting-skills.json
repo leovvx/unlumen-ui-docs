@@ -3,12 +3,8 @@
   "name": "demo-orbiting-skills",
   "title": "Orbiting Skills Demo",
   "description": "Demo showing skill badges orbiting a center avatar, with cursor-following on desktop and always-on mobile mode.",
-  "dependencies": [
-    "lucide-react"
-  ],
-  "registryDependencies": [
-    "@unlumen-ui/orbiting-skills"
-  ],
+  "dependencies": ["lucide-react"],
+  "registryDependencies": ["@unlumen-ui/orbiting-skills"],
   "files": [
     {
       "path": "registry/demo/primitives/orbiting-skills/index.tsx",

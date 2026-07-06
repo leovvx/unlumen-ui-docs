@@ -3,9 +3,7 @@
   "name": "demo-math-graph",
   "title": "Math Graph Demo",
   "description": "Demo showing an interactive real-time math function visualizer.",
-  "registryDependencies": [
-    "@unlumen-ui/math-graph"
-  ],
+  "registryDependencies": ["@unlumen-ui/math-graph"],
   "files": [
     {
       "path": "registry/demo/primitives/math-graph/index.tsx",

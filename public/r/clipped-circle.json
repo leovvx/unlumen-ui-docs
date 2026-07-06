@@ -3,9 +3,7 @@
   "name": "clipped-circle",
   "title": "Clipped Circle",
   "description": "A cursor-following spotlight effect that reveals a soft glowing circle wherever the user moves their mouse inside the container.",
-  "dependencies": [
-    "motion"
-  ],
+  "dependencies": ["motion"],
   "registryDependencies": [],
   "files": [
     {

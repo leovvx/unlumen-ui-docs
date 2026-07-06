@@ -3,9 +3,7 @@
   "name": "demo-tilt-card",
   "title": "Tilt Card Demo",
   "description": "Three tilt cards showcasing badge variants, floating image and custom children.",
-  "registryDependencies": [
-    "@unlumen-ui/tilt-card"
-  ],
+  "registryDependencies": ["@unlumen-ui/tilt-card"],
   "files": [
     {
       "path": "registry/demo/primitives/tilt-card/index.tsx",

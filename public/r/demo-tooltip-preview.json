@@ -3,9 +3,7 @@
   "name": "demo-tooltip-preview",
   "title": "Tooltip Preview Demo",
   "description": "Links showing website preview cards on hover.",
-  "registryDependencies": [
-    "@unlumen-ui/tooltip-preview"
-  ],
+  "registryDependencies": ["@unlumen-ui/tooltip-preview"],
   "files": [
     {
       "path": "registry/demo/primitives/tooltip-preview/index.tsx",

@@ -18,7 +18,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@workspace/ui/components/ui/select";
-import { Switch } from "@workspace/ui/components/ui/switch";
+import { AppleSwitch } from "@workspace/ui/components/unlumen-ui/apple-switch";
 import { ChevronsUpDown, Settings2 as Settings2Icon } from "lucide-react";
 
 type BaseBindNumber = { value: number };
@@ -276,7 +276,13 @@ const renderBoolean = (
         {key}
       </Label>
       <div className="h-7 flex items-center">
-        <Switch id={key} checked={bind.value} onCheckedChange={onChange} />
+        <AppleSwitch
+          id={key}
+          size="sm"
+          tone="accent"
+          checked={bind.value}
+          onCheckedChange={onChange}
+        />
       </div>
     </div>
   );

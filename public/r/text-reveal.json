@@ -3,9 +3,7 @@
   "name": "text-reveal",
   "title": "Text Reveal",
   "description": "Scroll-driven word-by-word or character-by-character text reveal using Motion's useScroll and useTransform.",
-  "dependencies": [
-    "motion"
-  ],
+  "dependencies": ["motion"],
   "registryDependencies": [],
   "files": [
     {

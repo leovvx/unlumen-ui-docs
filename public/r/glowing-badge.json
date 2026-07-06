@@ -3,9 +3,7 @@
   "name": "glowing-badge",
   "title": "Glowing Badge",
   "description": "Badge with an animated pulsing glow dot. Supports status variants: default, success, warning, error, info.",
-  "dependencies": [
-    "motion"
-  ],
+  "dependencies": ["motion"],
   "registryDependencies": [],
   "files": [
     {

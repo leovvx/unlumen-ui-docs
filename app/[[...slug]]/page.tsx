@@ -27,18 +27,24 @@ function DocsUiTocCtas() {
     <div className="mt-6 flex flex-col gap-3">
       <Link
         href="https://ui.unlumen.com/components"
-        className="group rounded-xl bg-surface p-4.5 text-sm transition-colors hover:bg-accent/40"
+        className="group rounded-xl bg-surface p-6  transition-colors hover:bg-accent/40"
       >
-        <p className="text-lg tracking-tight leading-6 font-medium ">
-          Need polished motion components ready to go?
+        <p className="text-xl tracking-tight leading-6 font-medium ">
+          Need beautifully designed{" "}
+          <Link
+            href="https://ui.unlumen.com/components"
+            className="hover:underline decoration-accent-pro underline-offset-3 text-"
+          >
+            components
+          </Link>{" "}
+          ready to go?
         </p>
-        <p className="text-sm text-muted-foreground mt-2">
-          Save time and stand the hell out with my premium components library.
+        <p className="text-sm text-muted-foreground mt-3 leading-tight">
+          If you liked the docs, you'll love the components.
         </p>
-        <span className="mt-3 inline-flex w-full items-center justify-center gap-1.5 rounded-md bg-foreground px-3 py-1.5 text-xs font-medium text-background transition-opacity group-hover:opacity-90">
+        <Button variant="default" size="sm" className="mt-4">
           Explore components
-          <ArrowRight className="size-3.5 transition-transform group-hover:translate-x-0.5" />
-        </span>
+        </Button>
       </Link>
       {/*  <Link
         href={SPONSOR_CONTACT_URL}
@@ -118,9 +124,9 @@ export default async function Page(props: {
     guideIndex >= 0 && guideItems.length > 0
       ? guideIndex < guideItems.length - 1
         ? {
-          url: guideItems[guideIndex + 1].url,
-          name: guideItems[guideIndex + 1].text,
-        }
+            url: guideItems[guideIndex + 1].url,
+            name: guideItems[guideIndex + 1].text,
+          }
         : { url: "/ui", name: "UI" }
       : nextPage
         ? { url: nextPage.url, name: String(nextPage.name ?? "Suivant") }
@@ -133,16 +139,16 @@ export default async function Page(props: {
       tableOfContent={
         showDocsUiTocCtas
           ? {
-            enabled: true,
-            footer: <DocsUiTocCtas />,
-          }
+              enabled: true,
+              footer: <DocsUiTocCtas />,
+            }
           : undefined
       }
       tableOfContentPopover={
         showDocsUiTocCtas
           ? {
-            footer: <DocsUiTocCtas />,
-          }
+              footer: <DocsUiTocCtas />,
+            }
           : undefined
       }
       footer={{
@@ -244,15 +250,15 @@ export async function generateMetadata(props: {
     description: page.data.description,
     authors: page.data?.author
       ? [
-        {
-          name: page.data.author.name,
-          ...(page.data.author?.url && { url: page.data.author.url }),
-        },
-      ]
+          {
+            name: page.data.author.name,
+            ...(page.data.author?.url && { url: page.data.author.url }),
+          },
+        ]
       : {
-        name: "Léo",
-        url: "https://unlumen.com",
-      },
+          name: "Léo",
+          url: "https://unlumen.com",
+        },
     openGraph: {
       title: page.data.title,
       description: page.data.description,

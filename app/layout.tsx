@@ -3,7 +3,7 @@ import { DocsLayout, type DocsLayoutProps } from "fumadocs-ui/layouts/docs";
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import { GeistSans } from "geist/font/sans";
-import { Instrument_Sans, Instrument_Serif, Nunito } from "next/font/google";
+import { Instrument_Serif, Inter, Nunito } from "next/font/google";
 import XIcon from "@workspace/ui/components/icons/x-icon";
 import { cn } from "@workspace/ui/lib/utils";
 
@@ -22,9 +22,9 @@ const instrumentSerif = Instrument_Serif({
   weight: "400",
 });
 
-const instrumentSans = Instrument_Sans({
+const inter = Inter({
   subsets: ["latin"],
-  variable: "--font-instrument-sans",
+  variable: "--font-inter",
   weight: ["400", "500", "600", "700"],
 });
 
@@ -64,6 +64,7 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/docs",
   },
+  manifest: "/docs/site.webmanifest",
   icons: [
     {
       rel: "icon",
@@ -112,7 +113,7 @@ export default function Layout({ children }: { children: ReactNode }) {
       className={cn(
         GeistSans.variable,
         instrumentSerif.variable,
-        instrumentSans.variable,
+        inter.variable,
         nunito.variable,
         "font-sans",
       )}

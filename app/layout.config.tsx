@@ -44,11 +44,6 @@ export const baseOptions: BaseLayoutProps = {
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
     } as any,
     {
-      text: "Roadmap",
-      url: "/roadmap",
-      secondary: false,
-    },
-    {
       text: "Credits",
       url: "/credits",
       secondary: false,
@@ -56,11 +51,6 @@ export const baseOptions: BaseLayoutProps = {
     {
       text: "License",
       url: "/license",
-      secondary: false,
-    },
-    {
-      text: "Made with Unlumen UI",
-      url: "/showcase",
       secondary: false,
     },
     {

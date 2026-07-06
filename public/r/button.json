@@ -3,12 +3,8 @@
   "name": "button",
   "title": "Button",
   "description": "A simple button that animates on hover and tap.",
-  "dependencies": [
-    "motion"
-  ],
-  "registryDependencies": [
-    "@unlumen-ui/slot"
-  ],
+  "dependencies": ["motion"],
+  "registryDependencies": ["@unlumen-ui/slot"],
   "files": [
     {
       "path": "registry/primitives/button/index.tsx",

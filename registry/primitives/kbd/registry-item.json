@@ -3,7 +3,7 @@
   "name": "kbd",
   "type": "registry:ui",
   "title": "Kbd",
-  "description": "Keyboard key and shortcut display component with a realistic keycap style.",
+  "description": "Keyboard key and shortcut display component with a soft, minimal key style.",
   "files": [
     {
       "path": "registry/primitives/kbd/index.tsx",

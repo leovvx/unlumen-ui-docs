@@ -3,9 +3,7 @@
   "name": "demo-scramble-text",
   "title": "Scramble Text Demo",
   "description": "Interactive demo cycling through phrases with a character-scramble reveal animation.",
-  "registryDependencies": [
-    "@unlumen-ui/scramble-text"
-  ],
+  "registryDependencies": ["@unlumen-ui/scramble-text"],
   "files": [
     {
       "path": "registry/demo/primitives/scramble-text/index.tsx",

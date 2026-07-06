@@ -3,9 +3,7 @@
   "name": "demo-text-reveal",
   "title": "Text Reveal Demo",
   "description": "Word-by-word and character-by-character scroll-driven text reveal.",
-  "registryDependencies": [
-    "@unlumen-ui/text-reveal"
-  ],
+  "registryDependencies": ["@unlumen-ui/text-reveal"],
   "files": [
     {
       "path": "registry/demo/primitives/text-reveal/index.tsx",

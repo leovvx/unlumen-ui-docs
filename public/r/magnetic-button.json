@@ -3,10 +3,7 @@
   "name": "magnetic-button",
   "title": "Magnetic Button",
   "description": "A button that magnetically follows cursor proximity with spring physics. Smoothly snaps back when the cursor leaves.",
-  "dependencies": [
-    "motion",
-    "class-variance-authority"
-  ],
+  "dependencies": ["motion", "class-variance-authority"],
   "registryDependencies": [],
   "files": [
     {

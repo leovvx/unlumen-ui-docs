@@ -3,12 +3,8 @@
   "name": "demo-glow",
   "title": "Glow Button Demo",
   "description": "Three glow buttons with different colour palettes and animation modes.",
-  "dependencies": [
-    "lucide-react"
-  ],
-  "registryDependencies": [
-    "@unlumen-ui/glow"
-  ],
+  "dependencies": ["lucide-react"],
+  "registryDependencies": ["@unlumen-ui/glow"],
   "files": [
     {
       "path": "registry/demo/primitives/glow/index.tsx",

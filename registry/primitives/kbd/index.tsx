@@ -16,17 +16,15 @@ interface ShortcutProps extends HTMLAttributes<HTMLSpanElement> {
 
 function Kbd({ size = "md", children, className, ...props }: KbdProps) {
   const sizeClass: Record<KbdSize, string> = {
-    sm: "h-5 min-w-5 px-1 text-[10px]",
-    md: "h-6 min-w-6 px-1.5 text-[11px]",
-    lg: "h-7 min-w-7 px-2 text-[12px]",
+    sm: "h-5 min-w-5 px-1.5 text-[10px]",
+    md: "h-6 min-w-6 px-2 text-[11px]",
+    lg: "h-7 min-w-7 px-2.5 text-xs",
   };
 
   return (
     <kbd
       className={cn(
-        "inline-flex items-center justify-center rounded border font-mono font-medium leading-none select-none",
-        "border-b-2 border-border bg-muted text-muted-foreground",
-        "shadow-[inset_0_-1px_0_rgba(0,0,0,0.08)]",
+        "inline-flex items-center justify-center rounded-md bg-accent font-mono font-medium leading-none text-accent-foreground/75 select-none",
         sizeClass[size],
         className,
       )}
@@ -55,7 +53,7 @@ function Shortcut({
           <Kbd size={size}>{key}</Kbd>
           {i < keys.length - 1 && (
             <span
-              className="text-muted-foreground/60 text-[10px] font-medium px-0.5"
+              className="px-0.5 text-[10px] font-medium text-muted-foreground/45"
               aria-hidden
             >
               {separator}

@@ -3,13 +3,11 @@
   "name": "demo-velocity-highlight",
   "title": "Velocity Highlight Demo",
   "description": "Interactive highlight with velocity-based scaling effects.",
-  "registryDependencies": [
-    "@unlumen-ui/velocity-highlight"
-  ],
+  "registryDependencies": ["@unlumen-ui/velocity-highlight"],
   "files": [
     {
       "path": "registry/demo/primitives/velocity-highlight/index.tsx",
-      "content": "\"use client\";\n\nimport {\n  Highlight,\n  HighlightItem,\n} from \"@/components/unlumen-ui/primitives/velocity-highlight\";\n\nconst ITEMS = [\n  { id: \"react\", label: \"React\" },\n  { id: \"vue\", label: \"Vue\" },\n  { id: \"svelte\", label: \"Svelte\" },\n  { id: \"next\", label: \"Next.js\" },\n  { id: \"angular\", label: \"Angular\" },\n];\n\nexport const HighlightDemo = ({ hover = true }: { hover?: boolean }) => {\n  return (\n    <div className=\"flex items-center justify-center min-h-[300px] w-full p-8\">\n      <Highlight\n        mode=\"parent\"\n        hover={hover}\n        defaultValue={hover ? undefined : \"react\"}\n        containerClassName=\"flex gap-4 p-4 flex-wrap justify-center\"\n        className=\"bg-accent \"\n      >\n        {ITEMS.map((item) => (\n          <HighlightItem\n            key={item.id}\n            value={item.id}\n            className=\"px-5 py-1 rounded-md font-medium cursor-pointer\"\n          >\n            <div>{item.label}</div>\n          </HighlightItem>\n        ))}\n      </Highlight>\n    </div>\n  );\n};\n",
+      "content": "\"use client\";\n\nimport {\n  Highlight,\n  HighlightItem,\n} from \"@/components/unlumen-ui/primitives/velocity-highlight\";\n\nconst LINKS = Array.from({ length: 16 }, (_, index) => ({\n  id: `link-${index + 1}`,\n  label: `Link ${String(index + 1).padStart(2, \"0\")}`,\n}));\n\nexport const HighlightDemo = ({ hover = true }: { hover?: boolean }) => {\n  return (\n    <div className=\"flex min-h-[420px] w-full items-center justify-center p-8\">\n      <Highlight\n        mode=\"parent\"\n        hover={hover}\n        defaultValue={hover ? undefined : \"link-1\"}\n        containerClassName=\"grid w-full max-w-2xl grid-cols-4 gap-6 p-6\"\n        className=\"rounded-lg bg-accent\"\n      >\n        {LINKS.map((item) => (\n          <HighlightItem key={item.id} value={item.id} asChild>\n            <button\n              type=\"button\"\n              className=\"relative z-10 cursor-pointer rounded-lg px-4 py-3 text-center text-sm font-medium\"\n            >\n              {item.label}\n            </button>\n          </HighlightItem>\n        ))}\n      </Highlight>\n    </div>\n  );\n};\n",
       "type": "registry:example"
     }
   ],

@@ -2,12 +2,8 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "demo-refresh",
   "title": "Refresh Button Demo",
-  "dependencies": [
-    "lucide-react"
-  ],
-  "registryDependencies": [
-    "@unlumen-ui/refresh"
-  ],
+  "dependencies": ["lucide-react"],
+  "registryDependencies": ["@unlumen-ui/refresh"],
   "files": [
     {
       "path": "registry/demo/primitives/refresh/index.tsx",

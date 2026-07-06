@@ -5,31 +5,29 @@ import {
   HighlightItem,
 } from "@/registry/primitives/velocity-highlight";
 
-const ITEMS = [
-  { id: "react", label: "React" },
-  { id: "vue", label: "Vue" },
-  { id: "svelte", label: "Svelte" },
-  { id: "next", label: "Next.js" },
-  { id: "angular", label: "Angular" },
-];
+const LINKS = Array.from({ length: 16 }, (_, index) => ({
+  id: `link-${index + 1}`,
+  label: `Link ${String(index + 1).padStart(2, "0")}`,
+}));
 
 export const HighlightDemo = ({ hover = true }: { hover?: boolean }) => {
   return (
-    <div className="flex items-center justify-center min-h-[300px] w-full p-8">
+    <div className="flex min-h-[420px] w-full items-center justify-center p-8">
       <Highlight
         mode="parent"
         hover={hover}
-        defaultValue={hover ? undefined : "react"}
-        containerClassName="flex gap-4 p-4 flex-wrap justify-center"
-        className="bg-accent "
+        defaultValue={hover ? undefined : "link-1"}
+        containerClassName="grid w-full max-w-2xl grid-cols-4 gap-6 p-6"
+        className="rounded-lg bg-accent"
       >
-        {ITEMS.map((item) => (
-          <HighlightItem
-            key={item.id}
-            value={item.id}
-            className="px-5 py-1 rounded-md font-medium cursor-pointer"
-          >
-            <div>{item.label}</div>
+        {LINKS.map((item) => (
+          <HighlightItem key={item.id} value={item.id} asChild>
+            <button
+              type="button"
+              className="relative z-10 cursor-pointer rounded-lg px-4 py-3 text-center text-sm font-medium"
+            >
+              {item.label}
+            </button>
           </HighlightItem>
         ))}
       </Highlight>

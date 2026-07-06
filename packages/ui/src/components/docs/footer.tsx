@@ -11,8 +11,7 @@ export const Footer = ({ lastUpdate }: { lastUpdate?: Date }) => {
               target="_blank"
             >
               Léo
-            </a>{" "}
-            from <a href="https://unlumen.com">Unlumen</a> :3
+            </a>
           </p>
         </div>
       </div>

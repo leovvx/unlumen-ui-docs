@@ -3,9 +3,7 @@
   "name": "demo-glowing-badge",
   "title": "Glowing Badge Demo",
   "description": "Shows all badge variants with animated glow dots.",
-  "registryDependencies": [
-    "@unlumen-ui/glowing-badge"
-  ],
+  "registryDependencies": ["@unlumen-ui/glowing-badge"],
   "files": [
     {
       "path": "registry/demo/primitives/glowing-badge/index.tsx",

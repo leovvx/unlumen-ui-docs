@@ -5,6 +5,7 @@
   "title": "Floating Tooltip",
   "description": "A floating tooltip component.",
   "dependencies": [
+    "class-variance-authority",
     "motion"
   ],
   "files": [

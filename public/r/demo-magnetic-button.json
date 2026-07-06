@@ -3,9 +3,7 @@
   "name": "demo-magnetic-button",
   "title": "Magnetic Button Demo",
   "description": "Three magnetic buttons showing different radius and spring configurations.",
-  "registryDependencies": [
-    "@unlumen-ui/magnetic-button"
-  ],
+  "registryDependencies": ["@unlumen-ui/magnetic-button"],
   "files": [
     {
       "path": "registry/demo/primitives/magnetic-button/index.tsx",

@@ -3,10 +3,7 @@
   "name": "count-up",
   "title": "Count Up",
   "description": "An animated number counter that springs to its target value when it enters the viewport, with support for decimals, separators, and direction.",
-  "dependencies": [
-    "motion",
-    "react-use-measure"
-  ],
+  "dependencies": ["motion", "react-use-measure"],
   "registryDependencies": [],
   "files": [
     {

@@ -3,9 +3,7 @@
   "name": "demo-theme-switch",
   "title": "Theme Switch Demo",
   "description": "Animated dark/light mode toggle with spring icon transitions.",
-  "registryDependencies": [
-    "@unlumen-ui/theme-switch"
-  ],
+  "registryDependencies": ["@unlumen-ui/theme-switch"],
   "files": [
     {
       "path": "registry/demo/primitives/theme-switch/index.tsx",

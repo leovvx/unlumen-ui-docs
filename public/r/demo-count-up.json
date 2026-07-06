@@ -3,9 +3,7 @@
   "name": "demo-count-up",
   "title": "Count Up Demo",
   "description": "Demo showing animated number counters with spring physics.",
-  "registryDependencies": [
-    "@unlumen-ui/count-up"
-  ],
+  "registryDependencies": ["@unlumen-ui/count-up"],
   "files": [
     {
       "path": "registry/demo/primitives/count-up/index.tsx",

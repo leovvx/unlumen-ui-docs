@@ -3,9 +3,7 @@
   "name": "demo-switch",
   "title": "Switch Demo",
   "description": "Four labeled toggle switches showing common settings controls.",
-  "registryDependencies": [
-    "@unlumen-ui/switch"
-  ],
+  "registryDependencies": ["@unlumen-ui/switch"],
   "files": [
     {
       "path": "registry/demo/primitives/switch/index.tsx",

@@ -10,11 +10,34 @@ import {
   useVelocity,
   useTransform,
 } from "motion/react";
+import { cva, type VariantProps } from "class-variance-authority";
 
 import { cn } from "@workspace/ui/lib/utils";
 
+const floatingTooltipVariants = cva("ml-4 mt-4 font-medium", {
+  variants: {
+    variant: {
+      default: "bg-primary text-background dark:bg-white",
+      outline: "border border-border bg-background text-foreground shadow-none",
+    },
+    size: {
+      md: "rounded-md px-3.5 py-2.5 text-sm",
+      lg: "rounded-lg px-5 py-4 text-base",
+    },
+  },
+  defaultVariants: {
+    variant: "default",
+    size: "md",
+  },
+});
+
 interface TooltipContextType {
-  setContent: (content: string, description?: string) => void;
+  setContent: (
+    content: string,
+    description?: string,
+    contentClassName?: string,
+    descriptionClassName?: string,
+  ) => void;
   setIsActive: (active: boolean) => void;
 }
 
@@ -23,14 +46,16 @@ const TooltipContext = createContext<TooltipContextType | null>(null);
 export function FloatingTooltipProvider({
   children,
   className,
+  variant,
+  size,
 }: {
   children: React.ReactNode;
   className?: string;
-}) {
+} & VariantProps<typeof floatingTooltipVariants>) {
   const x = useMotionValue(0);
   const y = useMotionValue(0);
 
-  const springConfig = { damping: 25, stiffness: 300 };
+  const springConfig = { damping: 45, stiffness: 750 };
   const smoothX = useSpring(x, springConfig);
   const smoothY = useSpring(y, springConfig);
 
@@ -43,15 +68,11 @@ export function FloatingTooltipProvider({
   const skewX = useTransform(velocityX, [-1000, 0, 1000], [-3, 0, 3]);
   const skewY = useTransform(velocityY, [-1000, 0, 1000], [-3, 0, 3]);
 
-  const borderRadius = useTransform([velocityX, velocityY], ([vx, vy]) => {
-    const velocity = Math.sqrt((vx as number) ** 2 + (vy as number) ** 2);
-    const radius = 8 + Math.min(velocity / 80, 16);
-    return `${radius}px`;
-  });
-
   const [isActive, setIsActive] = useState(false);
   const [content, setContent] = useState("");
   const [description, setDescription] = useState("");
+  const [contentClassName, setContentClassName] = useState("");
+  const [descriptionClassName, setDescriptionClassName] = useState("");
   useEffect(() => {
     if (typeof window === "undefined") return;
 
@@ -74,9 +95,16 @@ export function FloatingTooltipProvider({
     };
   }, [x, y]);
 
-  const handleSetContent = (newContent: string, newDescription?: string) => {
+  const handleSetContent = (
+    newContent: string,
+    newDescription?: string,
+    newContentClassName?: string,
+    newDescriptionClassName?: string,
+  ) => {
     setContent(newContent);
     setDescription(newDescription || "");
+    setContentClassName(newContentClassName || "");
+    setDescriptionClassName(newDescriptionClassName || "");
   };
 
   return (
@@ -114,7 +142,7 @@ export function FloatingTooltipProvider({
                 <motion.div
                   layout
                   className={cn(
-                    "ml-4 mt-4 bg-primary dark:bg-white px-4 py-3 text-sm font-medium text-background shadow-lg",
+                    floatingTooltipVariants({ variant, size }),
                     className,
                   )}
                   style={{
@@ -122,7 +150,6 @@ export function FloatingTooltipProvider({
                     scaleY,
                     skewX,
                     skewY,
-                    borderRadius,
                   }}
                   transition={{
                     layout: {
@@ -139,11 +166,21 @@ export function FloatingTooltipProvider({
                     transition={{ duration: 0.15 }}
                     className="flex flex-col gap-1"
                   >
-                    <span className="whitespace-nowrap font-semibold">
+                    <span
+                      className={cn(
+                        "whitespace-nowrap font-semibold",
+                        contentClassName,
+                      )}
+                    >
                       {content}
                     </span>
                     {description && (
-                      <span className="max-w-[28ch] whitespace-normal text-sm leading-snug opacity-70 font-normal">
+                      <span
+                        className={cn(
+                          "max-w-[28ch] whitespace-normal text-sm leading-snug font-normal opacity-70",
+                          descriptionClassName,
+                        )}
+                      >
                         {description}
                       </span>
                     )}
@@ -162,10 +199,14 @@ export function FloatingTooltipTrigger({
   children,
   content,
   description,
+  contentClassName,
+  descriptionClassName,
 }: {
   children: React.ReactNode;
   content: string;
   description?: string;
+  contentClassName?: string;
+  descriptionClassName?: string;
 }) {
   const context = useContext(TooltipContext);
 
@@ -178,7 +219,7 @@ export function FloatingTooltipTrigger({
   const { setContent, setIsActive } = context;
 
   const handleMouseEnter = () => {
-    setContent(content, description);
+    setContent(content, description, contentClassName, descriptionClassName);
     setIsActive(true);
   };
 

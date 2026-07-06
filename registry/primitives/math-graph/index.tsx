@@ -6,6 +6,8 @@ import useMeasure from "react-use-measure";
 
 import { cn } from "@workspace/ui/lib/utils";
 
+import { evaluateMathExpression } from "./math-expression";
+
 const CURVE_COLORS = ["#3b82f6", "#22d3ee", "#f472b6", "#a78bfa"];
 
 const CURVE_BG = [
@@ -16,80 +18,7 @@ const CURVE_BG = [
 ];
 
 function evalMath(expr: string, x: number): number | null {
-  try {
-    const normalized = expr
-      .replace(/\^/g, "**")
-      .replace(/(\d)\s*x/g, "$1*x")
-      .replace(/x\s*(\d)/g, "x*$1");
-
-    // eslint-disable-next-line no-new-func
-    const fn = new Function(
-      "x",
-      "sin",
-      "cos",
-      "tan",
-      "asin",
-      "acos",
-      "atan",
-      "atan2",
-      "sinh",
-      "cosh",
-      "tanh",
-      "sqrt",
-      "cbrt",
-      "abs",
-      "log",
-      "log2",
-      "log10",
-      "exp",
-      "pow",
-      "floor",
-      "ceil",
-      "round",
-      "min",
-      "max",
-      "sign",
-      "PI",
-      "E",
-      `"use strict"; return (${normalized});`,
-    );
-
-    const result = fn(
-      x,
-      Math.sin,
-      Math.cos,
-      Math.tan,
-      Math.asin,
-      Math.acos,
-      Math.atan,
-      Math.atan2,
-      Math.sinh,
-      Math.cosh,
-      Math.tanh,
-      Math.sqrt,
-      Math.cbrt,
-      Math.abs,
-      Math.log,
-      Math.log2,
-      Math.log10,
-      Math.exp,
-      Math.pow,
-      Math.floor,
-      Math.ceil,
-      Math.round,
-      Math.min,
-      Math.max,
-      Math.sign,
-      Math.PI,
-      Math.E,
-    );
-
-    if (typeof result !== "number" || !isFinite(result) || isNaN(result))
-      return null;
-    return result;
-  } catch {
-    return null;
-  }
+  return evaluateMathExpression(expr, x);
 }
 
 function validateExpr(expr: string): boolean {

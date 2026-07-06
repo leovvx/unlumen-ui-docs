@@ -17,18 +17,9 @@
 @source '../node_modules/fumadocs-ui/dist/**/*.js';
 
 /* Override Fumadocs table dark background */
-table {
-  @apply !bg-transparent;
-}
-
-thead {
-  @apply !bg-transparent;
-}
-
-tbody {
-  @apply !bg-transparent;
-}
-
+table,
+thead,
+tbody,
 tr {
   @apply !bg-transparent;
 }
@@ -268,9 +259,7 @@ tr {
 
   --breakpoint-3xl: 1670px;
 
-  --font-sans:
-    var(--font-instrument-sans), "Instrument Sans", ui-sans-serif, system-ui,
-    sans-serif;
+  --font-sans: var(--font-inter), "Inter", ui-sans-serif, system-ui, sans-serif;
 
   --font-geist:
     var(--font-geist-sans), "Geist", "Geist Fallback", ui-sans-serif, system-ui,
@@ -281,8 +270,7 @@ tr {
     Times, serif;
 
   --font-heading:
-    var(--font-instrument-sans), "Instrument Sans", ui-sans-serif, system-ui,
-    sans-serif;
+    var(--font-inter), "Inter", ui-sans-serif, system-ui, sans-serif;
 
   --font-rounded:
     var(--font-nunito), "Nunito", ui-rounded, ui-sans-serif, system-ui,
@@ -355,19 +343,19 @@ tr {
   #docs-body h4,
   #docs-body h5,
   #docs-body h6 {
-    @apply text-foreground;
+    @apply text-foreground font-medium!;
   }
 
   #docs-body h2 {
-    @apply mt-11 mb-4 scroll-m-28 text-2xl font-medium! leading-tight tracking-tight text-foreground;
+    @apply mt-11 mb-4 scroll-m-28 text-2xl font-normal! leading-tight tracking-tight text-foreground;
   }
 
   #docs-body h3 {
-    @apply mt-8 mb-3 scroll-m-28 text-xl font-medium leading-snug tracking-normal text-foreground;
+    @apply mt-8 mb-3 scroll-m-28 text-xl font-normal! tracking-normal text-foreground;
   }
 
   #docs-body p {
-    @apply max-w-prose text-lg font-light leading-relaxed tracking-[-0.025em] text-muted-foreground;
+    @apply max-w-prose text-lg font-normal  leading-relaxed tracking-[-0.022em] text-foreground/85;
   }
 
   #docs-body ul {
@@ -385,6 +373,34 @@ tr {
 
   #docs-body a {
     @apply text-accent-pro decoration-accent-pro underline-offset-4 transition-colors hover:underline;
+  }
+
+  #docs-body table {
+    @apply my-4 w-full border-collapse overflow-hidden rounded-lg bg-surface! text-left text-sm;
+  }
+
+  #docs-body thead {
+    @apply border-b border-border;
+  }
+
+  #docs-body tr {
+    @apply border-border;
+  }
+
+  #docs-body tbody tr + tr {
+    @apply border-t;
+  }
+
+  #docs-body th {
+    @apply px-4 py-2.5 text-left align-top text-sm font-normal text-muted-foreground;
+  }
+
+  #docs-body td {
+    @apply px-4 py-2.5 align-top text-sm leading-relaxed text-foreground/80;
+  }
+
+  #docs-body table code {
+    @apply inline-block max-w-full overflow-x-auto rounded-md border-0 bg-transparent! px-2 py-0.5 font-mono text-sm tracking-tight text-foreground;
   }
 
   #docs-body h1 a,
@@ -480,7 +496,7 @@ tr {
 }
 
 ::selection {
-  @apply bg-pink-300 text-white;
+  @apply bg-accent-pro/25  text-white;
 }
 
 .no-scrollbar {

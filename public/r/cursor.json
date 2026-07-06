@@ -3,12 +3,8 @@
   "name": "cursor",
   "title": "Cursor",
   "description": "An animated cursor component that allows you to customize both the cursor and cursor follow elements with smooth animations.",
-  "dependencies": [
-    "motion"
-  ],
-  "registryDependencies": [
-    "@unlumen-ui/cursor-primitive"
-  ],
+  "dependencies": ["motion"],
+  "registryDependencies": ["@unlumen-ui/cursor-primitive"],
   "files": [
     {
       "path": "registry/primitives/cursor/index.tsx",

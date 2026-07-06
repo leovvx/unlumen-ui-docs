@@ -57,10 +57,6 @@ export function LLMCopyButton({ markdown }: { markdown: string }) {
   );
 }
 
-export function ViewOptions({
-  markdown,
-}: {
-  markdown: string;
-}) {
+export function ViewOptions({ markdown }: { markdown: string }) {
   return <LLMCopyButton markdown={markdown} />;
 }

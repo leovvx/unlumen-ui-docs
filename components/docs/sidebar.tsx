@@ -43,7 +43,7 @@ const EFFECTS_STORAGE_KEY = "sidebar-effects";
 const EffectsContext = createContext<{
   enabled: boolean;
   toggle: () => void;
-}>({ enabled: true, toggle: () => { } });
+}>({ enabled: true, toggle: () => {} });
 
 function EffectsProvider({ children }: { children: React.ReactNode }) {
   const [enabled, setEnabled] = useState(() => {
@@ -130,7 +130,7 @@ const HoverContext = createContext<{
   hoveredCenter: null,
   hoverRect: null,
   containerRef: { current: null },
-  setHovered: () => { },
+  setHovered: () => {},
 });
 
 function HoverProvider({
@@ -189,7 +189,12 @@ function SidebarHoverHighlight() {
             opacity: 1,
           }}
           exit={{ opacity: 0 }}
-          transition={{ type: "spring", stiffness: 750, damping: 35, mass: 0.5 }}
+          transition={{
+            type: "spring",
+            stiffness: 2000,
+            damping: 50,
+            mass: 0.5,
+          }}
         />
       )}
     </AnimatePresence>
@@ -434,6 +439,7 @@ export const DocsSidebar = ({
   const { root } = useTreeContext();
   const shouldRenderLayoutLinks = isRootFolder(root) && root.root === true;
   const containerRef = useRef<HTMLDivElement>(null);
+  const sidebarScrollRef = useRef<HTMLDivElement>(null);
 
   return (
     <EffectsProvider>
@@ -443,25 +449,29 @@ export const DocsSidebar = ({
           className="md:mt-20 3xl:!absolute bg-background"
           {...sidebarProps}
         >
-          <SidebarViewport className="md:[&_[data-radix-scroll-area-viewport]]:pb-14 [&_[data-radix-scroll-area-viewport]]:pb-4 max-md:pt-2">
-            <div ref={containerRef} className="relative">
-              <SidebarHoverHighlight />
-              {(shouldRenderLayoutLinks ? links : [])
-                .filter((v) => v.type !== "icon")
-                .map((item, i, list) => (
-                  <SidebarLinkItem
-                    key={i}
-                    item={item}
-                    className={cn(
-                      item.type !== "custom" && sidebarItemClassName,
-                      i === list.length - 1 && "mb-4",
-                    )}
-                  />
-                ))}
+          <div ref={sidebarScrollRef} className="min-h-0 flex-1">
+            <SidebarViewport
+              className="md:[&_[data-radix-scroll-area-viewport]]:pb-14 [&_[data-radix-scroll-area-viewport]]:pb-4 max-md:pt-2"
+            >
+              <div ref={containerRef} className="relative">
+                <SidebarHoverHighlight />
+                {(shouldRenderLayoutLinks ? links : [])
+                  .filter((v) => v.type !== "icon")
+                  .map((item, i, list) => (
+                    <SidebarLinkItem
+                      key={i}
+                      item={item}
+                      className={cn(
+                        item.type !== "custom" && sidebarItemClassName,
+                        i === list.length - 1 && "mb-4",
+                      )}
+                    />
+                  ))}
 
-              <SidebarPageTree components={sidebarComponents} />
-            </div>
-          </SidebarViewport>
+                <SidebarPageTree components={sidebarComponents} />
+              </div>
+            </SidebarViewport>
+          </div>
 
           <HideIfEmpty>
             <SidebarFooter className="data-[empty=true]:hidden md:hidden border-0">

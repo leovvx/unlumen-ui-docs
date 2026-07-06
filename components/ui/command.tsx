@@ -114,7 +114,7 @@ function CommandList({
     <CommandPrimitive.List
       data-slot="command-list"
       className={cn(
-        "scroll-py-1 overflow-x-hidden overflow-y-auto transition-[height] duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden",
+        "scroll-py-1 overflow-x-hidden overflow-y-auto overscroll-contain transition-[height] duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden",
         className,
       )}
       style={{

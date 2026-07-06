@@ -3,9 +3,7 @@
   "name": "slot",
   "title": "Animate Slot",
   "description": "A slot component that allows you to use motion components with any element.",
-  "dependencies": [
-    "motion"
-  ],
+  "dependencies": ["motion"],
   "registryDependencies": [],
   "files": [
     {

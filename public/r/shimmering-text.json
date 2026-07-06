@@ -3,9 +3,7 @@
   "name": "shimmering-text",
   "title": "Shimmering Text",
   "description": "Animated gradient shimmer text with viewport-triggered and repeating animation support.",
-  "dependencies": [
-    "motion"
-  ],
+  "dependencies": ["motion"],
   "registryDependencies": [],
   "files": [
     {

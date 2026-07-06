@@ -3,13 +3,8 @@
   "name": "tilt-card",
   "title": "Tilt Card",
   "description": "A card with 3D spring tilt, optional floating image, badge and radial shine on hover.",
-  "dependencies": [
-    "motion"
-  ],
-  "registryDependencies": [
-    "@unlumen-ui/tilt",
-    "@unlumen-ui/clipped-circle"
-  ],
+  "dependencies": ["motion"],
+  "registryDependencies": ["@unlumen-ui/tilt", "@unlumen-ui/clipped-circle"],
   "files": [
     {
       "path": "registry/primitives/tilt-card/index.tsx",

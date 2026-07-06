@@ -2,7 +2,6 @@
 
 import { ClippedCircle } from "@/registry/primitives/clipped-circle";
 import { Button } from "@workspace/ui/components/ui/button";
-import Image from "next/image";
 
 interface ClippedCircleDemoProps {
   circleSize: number;
@@ -11,32 +10,36 @@ interface ClippedCircleDemoProps {
 export default function ClippedCircleDemo({
   circleSize = 400,
 }: ClippedCircleDemoProps) {
-  return (
-    <div className="flex flex-wrap gap-8 items-center justify-center p-8">
-      {/* Button */}
-      <Button variant="outline" className="overflow-hidden relative group">
-        Get Started
-        <ClippedCircle circleSize={300} circleClassName="bg-white" />
-      </Button>
+  const actions = [
+    { label: "Docs", variant: "default" },
+    { label: "Install", variant: "outline" },
+    { label: "Components", variant: "ghost" },
+  ] as const;
 
-      {/* Card */}
-      <div className="relative text-background border aspect-square overflow-hidden rounded-xl bg-primary p-6 w-64 cursor-default">
-        <h3 className="font-medium text-3xl mb-1">Fast & Lightweight</h3>
-        <p className="text-background/50 text-xs leading-relaxed">
-          Built with performance in mind, keeping your bundle size minimal.
-        </p>
-        <ClippedCircle circleSize={circleSize} circleClassName="bg-white" />
+  return (
+    <div className="mx-auto flex w-full max-w-xl flex-col gap-5 p-6">
+      <div className="grid grid-cols-3 gap-3">
+        {actions.map(({ label, variant }) => (
+          <Button
+            key={label}
+            variant={variant}
+            size="sm"
+            className="relative overflow-hidden"
+          >
+            {label}
+            <ClippedCircle circleSize={260} circleClassName="bg-white" />
+          </Button>
+        ))}
       </div>
 
-      {/* Image */}
-      <div className="relative border-5 overflow-hidden rounded-xl cursor-default">
-        <Image
-          src="/web-app-manifest-512x512.png"
-          width={200}
-          height={200}
-          alt="Clipped Circle Demo"
-          className="w-full h-full object-cover"
-        />
+      <div className="relative min-h-75 overflow-hidden rounded-2xl border border-border/70 bg-[radial-gradient(circle_at_top_left,hsl(var(--primary)/0.16),transparent_38%),linear-gradient(135deg,hsl(var(--muted)),hsl(var(--background)))] p-8 shadow-sm">
+        <div className="flex h-full min-h-59 items-center justify-center rounded-xl border border-border/60 bg-white p-10 shadow-inner">
+          <img
+            src="/docs/unlumen-ui.svg"
+            alt="Unlumen UI"
+            className="h-auto w-full max-w-52 object-contain"
+          />
+        </div>
         <ClippedCircle circleSize={circleSize} circleClassName="bg-white" />
       </div>
     </div>

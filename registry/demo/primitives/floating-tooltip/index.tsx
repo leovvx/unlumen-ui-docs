@@ -1,14 +1,7 @@
 "use client";
 
 import { FloatingTooltip } from "@/registry/primitives/floating-tooltip";
-import {
-  Archive,
-  Copy,
-  MoveVertical,
-  Pencil,
-  Share2,
-  Trash2,
-} from "lucide-react";
+import { Archive, Copy, Pencil, Share2, Trash2 } from "lucide-react";
 
 const ACTIONS = [
   {
@@ -45,13 +38,10 @@ const ACTIONS = [
 
 export function FloatingTooltipDemo() {
   return (
-    <FloatingTooltip.Provider>
-      <div className="flex flex-col gap-10 p-10 max-w-lg mx-auto w-full select-none">
-        {/* Section 1 — title only */}
+    <div className="flex flex-col gap-10 p-10 max-w-lg mx-auto w-full select-none">
+      <FloatingTooltip.Provider>
         <div className="flex flex-col gap-3">
-          <p className="text-sm font-medium text-muted-foreground">
-            Title only
-          </p>
+          <p className="text-sm font-medium text-muted-foreground">Default</p>
           <div className="flex flex-wrap gap-2">
             {ACTIONS.map(({ label, Icon, content }) => (
               <FloatingTooltip.Trigger key={label} content={content}>
@@ -63,21 +53,25 @@ export function FloatingTooltipDemo() {
             ))}
           </div>
         </div>
+      </FloatingTooltip.Provider>
 
-        {/* Section 3 — velocity squish */}
-        <div className="flex flex-col  justify-center gap-3">
+      <FloatingTooltip.Provider variant="outline" size="lg">
+        <div className="flex flex-col gap-3">
+          <p className="text-sm font-medium text-muted-foreground">
+            Outline / lg
+          </p>
           <FloatingTooltip.Trigger
-            content="Velocity-driven shape"
-            description="Squish, skew & border-radius all react to cursor speed in real time."
+            content="Detailed tooltip"
+            description="Larger spacing and a fixed rounded shape from the size variant."
+            contentClassName="font-serif text-2xl tracking-normal font-normal"
+            descriptionClassName="text-muted-foreground opacity-100"
           >
-            <div className="flex flex-col h-72 w-full items-center text-center justify-center gap-3 rounded-xl border border-dashed border-border bg-accent/30 text-sm text-muted-foreground transition-colors hover:bg-accent/50">
-              <MoveVertical className="size-4" />
-              <span>Sweep your cursor quickly</span>
-              <MoveVertical className="size-4" />
+            <div className="flex h-32 w-full items-center justify-center rounded-xl border border-dashed border-border bg-accent/30 text-sm text-muted-foreground transition-colors hover:bg-accent/50">
+              Hover for a larger tooltip
             </div>
           </FloatingTooltip.Trigger>
         </div>
-      </div>
-    </FloatingTooltip.Provider>
+      </FloatingTooltip.Provider>
+    </div>
   );
 }

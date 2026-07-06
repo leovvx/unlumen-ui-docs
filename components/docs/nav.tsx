@@ -48,7 +48,7 @@ export const Nav = ({ sidebar = "fumadocs" }: NavProps = {}) => {
   }
 
   if (sidebar === false) {
-    return <NavContent onMobileMenuClick={() => { }} />;
+    return <NavContent onMobileMenuClick={() => {}} />;
   }
 
   return <FumadocsNav />;
@@ -94,7 +94,12 @@ function NavContent({ onMobileMenuClick }: { onMobileMenuClick: () => void }) {
             value={null}
             className="bg-accent rounded-md"
             containerClassName="flex items-center gap-1"
-            transition={{ type: "spring", stiffness: 750, damping: 40, mass: 0.5 }}
+            transition={{
+              type: "spring",
+              stiffness: 1100,
+              damping: 40,
+              mass: 0.5,
+            }}
           >
             <HighlightItem value="/" asChild>
               <Link

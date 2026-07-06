@@ -9,11 +9,6 @@ import {
   useState,
 } from "react";
 import { cn } from "@workspace/ui/lib/utils";
-import {
-  ScrollArea,
-  ScrollBar,
-  ScrollViewport,
-} from "@workspace/ui/components/ui/scroll-area";
 import type { ScrollArea as ScrollAreaPrimitive } from "radix-ui";
 import { CopyButton } from "@/components/buttons/copy";
 
@@ -53,10 +48,10 @@ export const CodeBlock = forwardRef<HTMLElement, CodeBlockProps>(
     ref,
   ) => {
     const [isCopied, setIsCopied] = useState(false);
-    const areaRef = useRef<HTMLDivElement>(null);
+    const viewportRef = useRef<HTMLDivElement>(null);
 
     const onCopy = useCallback(() => {
-      const pre = areaRef.current?.getElementsByTagName("pre").item(0);
+      const pre = viewportRef.current?.getElementsByTagName("pre").item(0);
 
       if (!pre) return;
 
@@ -120,19 +115,17 @@ export const CodeBlock = forwardRef<HTMLElement, CodeBlockProps>(
           )
         )}
         <div className={cn("p-1.5", title && "pt-1.5")}>
-          <ScrollArea ref={areaRef} dir="ltr">
-            <ScrollViewport
-              {...viewportProps}
-              data-slot="codeblock-viewport"
-              className={cn(
-                "max-h-[600px] rounded-lg bg-surface [&_code]:!text-[13px] [&_code_.line]:!px-0",
-                viewportProps?.className,
-              )}
-            >
-              {props.children}
-            </ScrollViewport>
-            <ScrollBar orientation="horizontal" />
-          </ScrollArea>
+          <div
+            {...viewportProps}
+            ref={viewportRef}
+            data-slot="codeblock-viewport"
+            className={cn(
+              "max-h-[600px] overflow-x-auto overflow-y-scroll rounded-lg bg-surface [scrollbar-gutter:stable] scrollbar-thin scrollbar-track-transparent scrollbar-thumb-border [&_code]:!text-[13px] [&_code_.line]:!px-0",
+              viewportProps?.className,
+            )}
+          >
+            {props.children}
+          </div>
         </div>
       </figure>
     );

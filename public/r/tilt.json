@@ -3,9 +3,7 @@
   "name": "tilt",
   "title": "Tilt",
   "description": "A spring-animated 3D tilt wrapper that tracks the cursor inside the element.",
-  "dependencies": [
-    "motion"
-  ],
+  "dependencies": ["motion"],
   "registryDependencies": [],
   "files": [
     {

@@ -1,6 +1,6 @@
 ---
 title: Floating Tooltip
-description: A cursor-following tooltip that squishes and skews based on mouse velocity.
+description: A cursor-following tooltip with motion and shadcn-style variants.
 author:
   name: Léo
   url: https://x.com/leouiux
@@ -17,7 +17,7 @@ author:
 ```tsx
 import { FloatingTooltip } from "@/components/unlumen-ui/floating-tooltip";
 
-<FloatingTooltip.Provider>
+<FloatingTooltip.Provider variant="default" size="md">
   <FloatingTooltip.Trigger content="Hello" description="Optional description">
     <button>Hover me</button>
   </FloatingTooltip.Trigger>
@@ -30,10 +30,12 @@ import { FloatingTooltip } from "@/components/unlumen-ui/floating-tooltip";
 
 Wraps your content and renders the tooltip portal. Place it high in your tree so all triggers share a single tooltip instance.
 
-| Prop        | Type        | Default | Description                                 |
-| ----------- | ----------- | ------- | ------------------------------------------- |
-| `children`  | `ReactNode` | —       | Content to render                           |
-| `className` | `string`    | —       | Extra classes applied to the tooltip bubble |
+| Prop        | Type                     | Default     | Description                                 |
+| ----------- | ------------------------ | ----------- | ------------------------------------------- |
+| `children`  | `ReactNode`              | —           | Content to render                           |
+| `className` | `string`                 | —           | Extra classes applied to the tooltip bubble |
+| `variant`   | `"default" \| "outline"` | `"default"` | Tooltip visual style                        |
+| `size`      | `"md" \| "lg"`           | `"md"`      | Tooltip padding, text size, and radius      |
 
 ### FloatingTooltip.Trigger
 

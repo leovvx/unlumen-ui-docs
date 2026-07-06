@@ -3,9 +3,7 @@
   "name": "demo-kbd",
   "title": "Kbd Demo",
   "description": "Single keyboard keys and common shortcuts using the Kbd and Shortcut components.",
-  "registryDependencies": [
-    "@unlumen-ui/kbd"
-  ],
+  "registryDependencies": ["@unlumen-ui/kbd"],
   "files": [
     {
       "path": "registry/demo/primitives/kbd/index.tsx",

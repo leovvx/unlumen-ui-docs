@@ -3,11 +3,7 @@
   "name": "refresh",
   "title": "Refresh Button",
   "description": "An icon button that spins on click and supports async refresh callbacks — ideal for reloading component previews or live data.",
-  "dependencies": [
-    "class-variance-authority",
-    "motion",
-    "lucide-react"
-  ],
+  "dependencies": ["class-variance-authority", "motion", "lucide-react"],
   "registryDependencies": [],
   "files": [
     {

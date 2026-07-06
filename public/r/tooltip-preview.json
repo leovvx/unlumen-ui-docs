@@ -3,9 +3,7 @@
   "name": "tooltip-preview",
   "title": "Tooltip Preview",
   "description": "Link tooltip that reveals a website preview card with title, description, image and favicon.",
-  "dependencies": [
-    "motion"
-  ],
+  "dependencies": ["motion"],
   "registryDependencies": [],
   "files": [
     {

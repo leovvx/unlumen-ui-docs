@@ -3,12 +3,8 @@
   "name": "demo-copy",
   "title": "Copy Button Demo",
   "description": "Demo showing a copy button.",
-  "dependencies": [
-    "lucide-react"
-  ],
-  "registryDependencies": [
-    "@unlumen-ui/copy"
-  ],
+  "dependencies": ["lucide-react"],
+  "registryDependencies": ["@unlumen-ui/copy"],
   "files": [
     {
       "path": "registry/demo/primitives/copy/index.tsx",

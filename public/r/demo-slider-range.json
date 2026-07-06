@@ -3,9 +3,7 @@
   "name": "demo-slider-range",
   "title": "Slider Range Demo",
   "description": "Range sliders for price, temperature and year selection with dual spring-snapped thumbs.",
-  "registryDependencies": [
-    "@unlumen-ui/slider"
-  ],
+  "registryDependencies": ["@unlumen-ui/slider"],
   "files": [
     {
       "path": "registry/demo/primitives/slider-range/index.tsx",

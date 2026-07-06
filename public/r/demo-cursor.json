@@ -3,9 +3,7 @@
   "name": "demo-cursor",
   "title": "Cursor Demo",
   "description": "Demo showing a cursor.",
-  "registryDependencies": [
-    "@unlumen-ui/cursor"
-  ],
+  "registryDependencies": ["@unlumen-ui/cursor"],
   "files": [
     {
       "path": "registry/demo/primitives/cursor/index.tsx",

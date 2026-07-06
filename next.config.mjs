@@ -40,6 +40,32 @@ const config = {
     ],
   },
   reactStrictMode: true,
+  async headers() {
+    return [
+      {
+        source: "/:path*",
+        headers: [
+          {
+            key: "Content-Security-Policy",
+            value:
+              "default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; form-action 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob: https://ui.aceternity.com https://ui.paceui.com https://images.pexels.com https://ph-files.imgix.net https://headlessui.com https://30tools.com https://images.unsplash.com https://plus.unsplash.com https://urjypba3n2iozf8u.public.blob.vercel-storage.com https://res.cloudinary.com https://www.google.com; font-src 'self' data:; connect-src 'self'; worker-src 'self' blob:; upgrade-insecure-requests",
+          },
+          {
+            key: "Strict-Transport-Security",
+            value: "max-age=63072000; includeSubDomains; preload",
+          },
+          { key: "X-Content-Type-Options", value: "nosniff" },
+          { key: "Referrer-Policy", value: "strict-origin-when-cross-origin" },
+          { key: "X-Frame-Options", value: "DENY" },
+          {
+            key: "Permissions-Policy",
+            value:
+              "camera=(), microphone=(), geolocation=(), payment=(), usb=()",
+          },
+        ],
+      },
+    ];
+  },
   async redirects() {
     return [
       {

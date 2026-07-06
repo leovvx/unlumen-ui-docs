@@ -3,11 +3,7 @@
   "name": "copy",
   "title": "Copy Button",
   "description": "A copy button component with a variety of styles and animations.",
-  "dependencies": [
-    "motion",
-    "lucide-react",
-    "class-variance-authority"
-  ],
+  "dependencies": ["motion", "lucide-react", "class-variance-authority"],
   "registryDependencies": [
     "@unlumen-ui/button",
     "@unlumen-ui/hooks-use-controlled-state"

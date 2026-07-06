@@ -93,10 +93,6 @@ export function getMDXComponents(components?: MDXComponents): MDXComponents {
   };
 }
 
-/**
- * MDX components for the /components/[slug] detail pages.
- * Customise HTML element mappings here without touching /docs/ui styles.
- */
 export function getComponentsMDXComponents(
   components?: MDXComponents,
 ): MDXComponents {
@@ -112,13 +108,11 @@ export function getComponentsMDXComponents(
     h3: ({ children }) => (
       <h3 className="text-2xl mt-7 mb-3 text-foreground">{children}</h3>
     ),
-    // ── Body text ─────────────────────────────────────────────────────────────
     p: ({ children }) => (
       <p className="text-lg text-foreground/80 tracking-wide font-light leading-relaxed">
         {children}
       </p>
     ),
-    // ── Lists ─────────────────────────────────────────────────────────────────
     ul: ({ children }) => (
       <ul className="flex flex-col font-light gap-1 text-lg text-foreground/80 tracking-wide list-disc pl-5">
         {children}
@@ -129,7 +123,6 @@ export function getComponentsMDXComponents(
         {children}
       </ol>
     ),
-    // ── Links ─────────────────────────────────────────────────────────────────
     a: ({ children, href, ...props }) => (
       <a
         href={href}
@@ -139,13 +132,10 @@ export function getComponentsMDXComponents(
         {children}
       </a>
     ),
-    // ── Props table ───────────────────────────────────────────────────────────
     TypeTable: PropTable,
-    // ── Bold ──────────────────────────────────────────────────────────────────
     strong: ({ children }) => (
       <strong className="font-medium text-foreground">{children}</strong>
     ),
-    // ── Inline code (not fenced blocks processed by Shiki) ───────────────────
     code: ({ children, className, ...props }) => {
       if (typeof children !== "string")
         return (
