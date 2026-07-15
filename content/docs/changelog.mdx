@@ -16,6 +16,114 @@ import {
 
 <Changelog>
 
+<ChangelogItem date="2026-07-15" major>
+<ChangelogItemVersion>
+
+## 2.0
+
+</ChangelogItemVersion>
+<ChangelogItemTitle>Open source. Rebuilt from the ground up.</ChangelogItemTitle>
+<ChangelogItemDescription>
+
+Unlumen UI 2.0 is the biggest release in the project’s history.
+
+This is more than a new coat of paint. The app, component browser, preview experience, documentation, account system, and public registry have all been rethought as one product. Unlumen UI is also officially open source: the documentation and public registry now live in a dedicated MIT-licensed repository, ready to be inspected, forked, improved, and shaped by the community.
+
+The goal for 2.0 was simple: make discovering a component feel inspiring, make evaluating it feel effortless, and make owning the code feel obvious.
+
+**Unlumen UI is now open source**
+
+- **MIT-licensed public code** — the documentation app and public registry components can be used, copied, modified, distributed, and shipped in commercial projects under the MIT license.
+- **A real contribution path** — the repository now includes contribution guidelines, issue and pull request templates, automated CI, dependency updates, a code of conduct, and a private security reporting process.
+- **A cleaner public registry** — registry sources have been reorganized around a focused, flat primitives structure. Generated shadcn outputs remain easy to inspect, install, and own.
+- **Clear boundaries** — public components and documentation are open. Pro components, licensing services, and private product APIs remain distributed separately under their own terms.
+
+This is the direction Unlumen UI was always moving toward: not a black box, but a collection of ideas you can learn from, adapt, and make yours.
+
+**A complete redesign of the app**
+
+Every major surface has been rebuilt around a calmer visual language, stronger typography, more intentional motion, and a clearer sense of hierarchy.
+
+- **New homepage** — a redesigned hero, richer component storytelling, an expanded showcase, testimonials, credits, FAQs, and more deliberate transitions from discovery to installation.
+- **New navigation system** — the header, page chrome, account navigation, and mobile navigation now behave as one responsive system across the site.
+- **New component gallery** — component cards, filtering, view states, thumbnails, video previews, and responsive layouts have all been redesigned to make a large catalog faster to scan.
+- **New component pages** — demos now get more space, controls are easier to reach, and the surrounding UI stays out of the way while you explore.
+- **New pricing experience** — redesigned plans, interactive visual effects, animated values, clearer Pro positioning, and dynamic Studio seat pricing make the upgrade path easier to understand.
+- **Better polish everywhere** — theme switching, tooltips, sidebars, spacing, color tokens, loading states, responsive behavior, and accessibility details received a full pass.
+
+It should feel faster, quieter, and more alive — the interface moves when it has something to communicate, not just because it can.
+
+**A new way to experience components**
+
+The preview panel has been rebuilt into a proper interactive workspace.
+
+- **Draggable source drawer** — open the implementation without leaving the demo, resize the workspace naturally, and dismiss it with a gesture.
+- **Live component controls** — tune supported props directly from the preview toolbar and see changes immediately.
+- **Adaptive preview surfaces** — previews can opt into surface or page backgrounds, scroll-aware layouts, and smooth background transitions.
+- **Improved code presentation** — source code uses dedicated syntax themes and a layout designed for longer, production-sized components.
+- **Responsive controls** — the toolbar, drawer, settings, Pro states, and mobile experience now share the same interaction model.
+- **Stronger media previews** — generated thumbnails and refined video handling make the gallery faster to browse before opening a component.
+
+The result is a tighter loop: discover, inspect, tweak, understand, install.
+
+**New component: Pixel Scroll Transition**
+
+2.0 introduces **Pixel Scroll Transition**, a canvas-powered transition that turns scroll progress into a configurable pixel wipe between sections.
+
+Choose a direction, mix in patterns such as random, checker, diagonal, wave, spiral, or radial, tune the easing and pixel grid, and add temporary accent-color bands for a more expressive reveal. It supports both sticky full-page transitions and inline scroll containers, responds to theme changes, scales for device pixel ratio, and rebuilds cleanly on resize.
+
+Install it with:
+
+```bash
+npx shadcn@latest add @unlumen-ui/pixel-scroll-transition
+```
+
+**Component upgrades**
+
+- **Smart Animate Text** now handles changing letters and numeric values character by character, understands numeric direction, supports mount animations, and keeps separators stable while values change.
+- **Tilt Card** has been refined with a more expressive tilt treatment and badge support.
+- **Vertical Marquee and Slider** received behavior and presentation improvements.
+- **Math Graph** now has a more robust expression layer for safer, more predictable rendering.
+- **Pixel Scroll Transition** includes a dedicated video preview and full documentation for inline and sticky use cases.
+
+**Accounts and Pro access, rebuilt**
+
+The old activation flow has been replaced by a complete account experience.
+
+- **Passwordless sign-in** with secure, expiring magic links.
+- **Automatic entitlement linking** for the email attached to a Polar purchase.
+- **License key management** with reveal and copy actions, plus a ready-to-use `UNLUMEN_LICENSE_KEY` environment snippet.
+- **Billing and purchases** accessible through the secure Polar customer portal.
+- **Session security** with active-device visibility and the ability to sign out other sessions.
+- **A consistent account menu** across desktop and mobile navigation.
+
+Pro access now feels like part of the product instead of a separate activation step.
+
+**Documentation, now independent**
+
+The documentation has moved into its own standalone application and repository. Existing `/docs` traffic is redirected to the new deployment, while the docs can now evolve, ship, and accept contributions independently from the commercial app.
+
+The docs UI received the same 2.0 treatment: clearer navigation, a refined sidebar, improved code blocks and prop tables, better mobile behavior, updated accessibility guidance, and a public registry focused on the components that can actually be redistributed.
+
+**Under the hood**
+
+- Registry sources, demos, generated metadata, and public install outputs have been cleaned up and aligned.
+- Public primitives now use simpler canonical paths instead of category-heavy internal nesting.
+- Preview tooling gained thumbnail generation and video preparation workflows.
+- Authentication, account data, entitlement persistence, and deployment redirects were rebuilt for the new architecture.
+- The stack is fully aligned around React, TypeScript, Tailwind CSS 4, Motion, Next.js 15, Fumadocs, and the shadcn registry format.
+
+**Upgrading to 2.0**
+
+Most component consumers do not need a migration: keep installing components through their documented shadcn command and the source will continue to land directly in your project.
+
+If you linked to old documentation internals or imported files directly from the former nested registry source tree, switch to the canonical documentation URLs and generated `@unlumen-ui/*` registry names. New public documentation and primitive contributions should target the standalone docs repository.
+
+2.0 is the new foundation for Unlumen UI: more open, more focused, and much more ambitious. The code is yours. The direction is shared. And this is only the beginning.
+
+</ChangelogItemDescription>
+</ChangelogItem>
+
 <ChangelogItem date="2026-05-05">
 <ChangelogItemVersion>
 
