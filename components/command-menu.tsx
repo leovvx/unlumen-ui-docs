@@ -312,7 +312,7 @@ export function CommandMenu({
                 onSelect={() =>
                   runCommand(() =>
                     window.open(
-                      "https://github.com/wicki-leonard-emf/unlumen-ui-pv",
+                      "https://github.com/leovvx/unlumen-ui-docs",
                       "_blank",
                     ),
                   )

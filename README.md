@@ -53,8 +53,9 @@ pnpm test:unit
 pnpm build
 pnpm registry:validate:sources
 pnpm registry:validate:generated
-pnpm audit --prod --audit-level=moderate
 ```
+
+GitHub Dependabot monitors production dependencies for published security advisories.
 
 Release from a clean, reviewed branch only. Keep local browser/debug artifacts, credentials, and commercial source code out of commits.
 

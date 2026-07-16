@@ -70,10 +70,7 @@ const GROUPS: CommandMenuGroupDef[] = [
         label: "GitHub",
         icon: Github,
         action: () =>
-          window.open(
-            "https://github.com/wicki-leonard-emf/unlumen-ui-pv",
-            "_blank",
-          ),
+          window.open("https://github.com/leovvx/unlumen-ui-docs", "_blank"),
         keywords: ["github", "source", "code", "repo"],
       },
       {

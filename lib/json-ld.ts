@@ -24,10 +24,7 @@ export const jsonLd = {
         width: 512,
         height: 512,
       },
-      sameAs: [
-        "https://twitter.com/unlumenui",
-        "https://github.com/wicki-leonard-emf",
-      ],
+      sameAs: ["https://twitter.com/unlumenui", "https://github.com/leovvx"],
     },
     {
       "@type": "SoftwareApplication",

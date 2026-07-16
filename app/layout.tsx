@@ -37,7 +37,7 @@ const nunito = Nunito({
 const docsLayoutProps: DocsLayoutProps = {
   tree: source.pageTree,
   sidebar: {},
-  githubUrl: "https://github.com/wicki-leonard-emf/unlumen-ui-docs",
+  githubUrl: "https://github.com/leovvx/unlumen-ui-docs",
   themeSwitch: {
     component: <ThemeSwitcher />,
   },
