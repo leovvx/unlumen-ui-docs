@@ -11,11 +11,6 @@ import { Menu } from "lucide-react";
 import { Highlight, HighlightItem } from "../animate/highlight";
 import { ThemeSwitcher } from "../animate/theme-switcher";
 import { motion } from "motion/react";
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipTrigger,
-} from "@workspace/ui/components/ui/tooltip";
 import GithubIcon from "@workspace/ui/components/icons/github-icon";
 import XIcon from "@workspace/ui/components/icons/x-icon";
 
@@ -130,21 +125,16 @@ function NavContent({ onMobileMenuClick }: { onMobileMenuClick: () => void }) {
         {/* Actions */}
         <div className="flex items-center gap-3">
           <div className="hidden items-center gap-1 md:flex">
-            <Tooltip>
-              <TooltipTrigger asChild>
-                <span className="inline-flex">
-                  <Button
-                    variant="ghost"
-                    size="icon-sm"
-                    disabled
-                    aria-label="GitHub"
-                  >
-                    <GithubIcon className="size-4" />
-                  </Button>
-                </span>
-              </TooltipTrigger>
-              <TooltipContent className="z-500">Soon</TooltipContent>
-            </Tooltip>
+            <Button variant="ghost" size="icon-sm" asChild>
+              <Link
+                href="https://github.com/leovvx/unlumen-ui-docs"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="GitHub"
+              >
+                <GithubIcon className="size-4" />
+              </Link>
+            </Button>
 
             <Button variant="ghost" size="icon-sm" asChild>
               <Link
