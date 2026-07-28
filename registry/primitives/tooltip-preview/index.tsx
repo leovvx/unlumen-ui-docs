@@ -1,6 +1,12 @@
 "use client";
 
-import { useState, useRef, type ReactNode, type HTMLAttributes } from "react";
+import {
+  useEffect,
+  useRef,
+  useState,
+  type ReactNode,
+  type HTMLAttributes,
+} from "react";
 import { AnimatePresence, motion } from "motion/react";
 import { cn } from "@workspace/ui/lib/utils";
 
@@ -24,7 +30,12 @@ function TooltipPreview({
   ...props
 }: TooltipPreviewProps) {
   const [open, setOpen] = useState(false);
+  const [faviconFailed, setFaviconFailed] = useState(false);
   const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  useEffect(() => {
+    setFaviconFailed(false);
+  }, [favicon]);
 
   const show = () => {
     if (timeoutRef.current) clearTimeout(timeoutRef.current);
@@ -95,12 +106,13 @@ function TooltipPreview({
             )}
             <div className="p-3 space-y-1">
               <div className="flex items-center gap-2">
-                {favicon ? (
+                {favicon && !faviconFailed ? (
                   <img
                     src={favicon}
                     alt=""
                     className="h-4 w-4 rounded-sm object-contain"
                     aria-hidden
+                    onError={() => setFaviconFailed(true)}
                   />
                 ) : (
                   <span
