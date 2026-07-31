@@ -15,7 +15,7 @@
       "esbuild": "0.28.1",
       "hono": "4.12.25",
       "js-yaml": "4.2.0",
-      "postcss": "8.5.10",
+      "postcss": "8.5.18",
       "qs": "6.15.2",
       "turbo": "2.9.14"
     }
@@ -97,7 +97,7 @@
     "@workspace/eslint-config": "workspace:*",
     "eslint": "^9.34.0",
     "eslint-config-next": "15.3.4",
-    "postcss": "^8.5.6",
+    "postcss": "^8.5.18",
     "prettier": "^3.5.3",
     "shadcn": "^4.1.0",
     "tailwind-scrollbar": "^4.0.2",
