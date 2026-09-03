@@ -53,7 +53,7 @@
     "date-fns": "^4.1.0",
     "embla-carousel": "^8.6.0",
     "embla-carousel-react": "^8.6.0",
-    "fflate": "^0.8.2",
+    "fflate": "^0.8.3",
     "framer-motion": "^12.35.1",
     "fumadocs-core": "15.6.3",
     "fumadocs-mdx": "11.6.10",
