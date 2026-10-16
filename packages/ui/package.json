@@ -18,7 +18,7 @@
     "fumadocs-core": "15.2.6",
     "fumadocs-mdx": "11.5.8",
     "fumadocs-ui": "15.2.6",
-    "lucide-react": "^0.577.0",
+    "lucide-react": "^1.24.0",
     "motion": "^12.23.12",
     "next-themes": "^0.4.4",
     "radix-ui": "^1.4.3",
